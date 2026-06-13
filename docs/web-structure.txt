@@ -1,0 +1,33 @@
+├── sobre-nosotros/
+│ └── metodologia/
+├── politica-editorial/
+├── servicios/
+│ ├── fisioterapia/
+│ ├── fisioterapia-deportiva/
+│ ├── entrenamiento-terapeutico/
+│ │ ├── individual/
+│ │ └── grupal/
+│ ├── pilates-terapeutico/
+│ ├── neuromodulacion/
+│ ├── diatermia/
+│ ├── suelo-pelvico/
+│ ├── fisioterapia-embarazo/
+│ ├── postparto/
+│ ├── tratamiento-cicatrices/
+│ └── fisioterapia-pediatrica/
+├── dolencias-y-lesiones/
+│ ├── atm/
+│ ├── dolor-espalda/
+│ ├── lesion-rodilla/
+│ └── lesion-hombro/
+├── sedes/
+│ ├── el-canaveral/
+│ │ ├── [servicios locales prioritarios]
+│ │ └── contacto/
+│ └── tres-cantos/
+│ ├── [servicios locales prioritarios]
+│ └── contacto/
+├── profesionales/
+│ └── nombre-apellido/
+├── blog/
+└── contacto/
