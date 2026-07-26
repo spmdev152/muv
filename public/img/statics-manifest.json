@@ -1,0 +1,130 @@
+[
+  {
+    "source": "Dolencias y lesiones/ATM.jpg",
+    "output": "/img/condition-atm.webp"
+  },
+  {
+    "source": "Dolencias y lesiones/Dolorespalda.jpg",
+    "output": "/img/condition-dolor-espalda.webp"
+  },
+  {
+    "source": "Dolencias y lesiones/Lesionhombro.jpg",
+    "output": "/img/condition-lesion-hombro.webp"
+  },
+  {
+    "source": "Dolencias y lesiones/Lesionrodilla.jpg",
+    "output": "/img/condition-lesion-rodilla.webp"
+  },
+  {
+    "source": "Servicios/Fiisioterapia.heif",
+    "output": "/img/service-fisioterapia.webp"
+  },
+  {
+    "source": "Servicios/Fisiodeportiva.jpeg",
+    "output": "/img/service-fisioterapia-deportiva.webp"
+  },
+  {
+    "source": "Servicios/entrenamiento.heif",
+    "output": "/img/service-entrenamiento-terapeutico.webp"
+  },
+  {
+    "source": "Servicios/Pilates.heif",
+    "output": "/img/service-pilates-terapeutico.webp"
+  },
+  {
+    "source": "Servicios/Neuromodulacion.jpeg",
+    "output": "/img/service-neuromodulacion.webp"
+  },
+  {
+    "source": "Servicios/Diatermia.heic",
+    "output": "/img/service-diatermia.webp"
+  },
+  {
+    "source": "profesionales/CEOMUV.heic",
+    "output": "/img/team-ceo.webp"
+  },
+  {
+    "source": "profesionales/JosedirectorMUV3cantos.JPG",
+    "output": "/img/team-jose.webp"
+  },
+  {
+    "source": "profesionales/LuciaSuelopelvico.HEIC",
+    "output": "/img/team-lucia.webp"
+  },
+  {
+    "source": "profesionales/Gonzalofisioinvasiva.heic",
+    "output": "/img/team-gonzalo.webp"
+  },
+  {
+    "source": "profesionales/VallejoFisiodepor.heic",
+    "output": "/img/team-vallejo.webp"
+  },
+  {
+    "source": "profesionales/Nuria.jpg",
+    "output": "/img/team-nuria.webp"
+  },
+  {
+    "source": "Sobre nosotros/IMG_5038.heif",
+    "output": "/img/about.webp"
+  },
+  {
+    "source": "Sobre nosotros/IMG_0127.heif",
+    "output": "/img/hero-home.webp"
+  },
+  {
+    "source": "MUV Cañaveral/DSCF5107_Original.jpg",
+    "output": "/img/sede-canaveral.webp"
+  },
+  {
+    "source": "MUV Cañaveral/DSC_1451_Original.jpg",
+    "output": "/img/canaveral-01.webp"
+  },
+  {
+    "source": "MUV Cañaveral/DSC_1458_Original.jpg",
+    "output": "/img/canaveral-02.webp"
+  },
+  {
+    "source": "MUV Cañaveral/DSC_1510_Original.jpg",
+    "output": "/img/canaveral-03.webp"
+  },
+  {
+    "source": "MUV Cañaveral/DSC_1555_Original.jpg",
+    "output": "/img/canaveral-04.webp"
+  },
+  {
+    "source": "MUV Cañaveral/DSC_1560_Original.jpg",
+    "output": "/img/canaveral-05.webp"
+  },
+  {
+    "source": "MUV Cañaveral/DSC_1569_Original.jpg",
+    "output": "/img/canaveral-06.webp"
+  },
+  {
+    "source": "MUV Tres Cantos /DSC04552.jpg",
+    "output": "/img/sede-tres-cantos.webp"
+  },
+  {
+    "source": "MUV Tres Cantos /DSC04516.jpg",
+    "output": "/img/tres-cantos-01.webp"
+  },
+  {
+    "source": "MUV Tres Cantos /DSC04559.jpg",
+    "output": "/img/tres-cantos-02.webp"
+  },
+  {
+    "source": "MUV Tres Cantos /DSC04572.jpg",
+    "output": "/img/tres-cantos-03.webp"
+  },
+  {
+    "source": "MUV Tres Cantos /DSC04591.jpg",
+    "output": "/img/tres-cantos-04.webp"
+  },
+  {
+    "source": "MUV Tres Cantos /DSC04615.jpg",
+    "output": "/img/tres-cantos-05.webp"
+  },
+  {
+    "source": "MUV Tres Cantos /DSC04643.jpg",
+    "output": "/img/tres-cantos-06.webp"
+  }
+]

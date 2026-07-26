@@ -1,26 +1,158 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  MUV — Design tokens
+  Estética: lujo sereno / wellness editorial.
+  Verde oliva profundo + dorado comedido sobre cremas y blancos.
+*/
+
+@theme {
+  /* Palette */
+  --color-olive-50: #f3f5ec;
+  --color-olive-100: #e3e9d2;
+  --color-olive-200: #c6d2a6;
+  --color-olive-300: #a3b673;
+  --color-olive-400: #819347;
+  --color-olive-500: #49671d; /* primario de marca */
+  --color-olive-600: #3f5a19;
+  --color-olive-700: #33491a;
+  --color-olive-800: #20251a;
+  --color-olive-900: #161a11;
+
+  --color-gold-300: #ddc89f;
+  --color-gold-400: #cdb27c;
+  --color-gold-500: #bf9b5f; /* dorado base */
+  --color-gold-600: #a9842f;
+  --color-gold-700: #8a6a25;
+
+  --color-cream: #f7f4ec;
+  --color-cream-dark: #efe9da;
+  --color-ink: #20251a;
+  --color-ink-soft: #4a4f40;
+
+  /* Semantic */
+  --color-background: var(--color-cream);
+  --color-foreground: var(--color-ink);
+
+  /* Typography */
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+
+  /* Easing for micro-animations */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Containers */
+  --spacing-gutter: 1.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01";
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 550;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    color: var(--color-olive-800);
+  }
+
+  ::selection {
+    background-color: var(--color-olive-500);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-600);
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Thin decorative gold rule */
+  .rule-gold {
+    height: 1px;
+    width: 3.5rem;
+    background: linear-gradient(
+      90deg,
+      var(--color-gold-500),
+      transparent
+    );
+  }
+
+  /* Small all-caps label, editorial accent */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-gold-700);
+  }
+
+  /* Grano sutil para superficies oscuras */
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Custom scrollbar in the brand palette (olive on cream).
+   Not wrapped in @layer so it takes priority over the layered styles. */
+
+/* WebKit (Chrome, Edge, Safari): classic, always-visible colored bar.
+   Using ::-webkit-scrollbar forces this style on every platform (incl. macOS),
+   avoiding the overlay bars that hide the color. */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-olive-500);
+  border-radius: 9999px;
+  /* Track-colored border to give a "pill" feel with margin */
+  border: 3px solid var(--color-cream-dark);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-olive-700);
+}
+
+/* Firefox (no ::-webkit-scrollbar support): standard properties. */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-olive-500) var(--color-cream-dark);
+  }
+}
+
+/* Respeto a usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }

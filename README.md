@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MUV — Web de la clínica de fisioterapia
 
-## Getting Started
+Rediseño de la web de [Clínica MUV](https://clinicamuv.com) con Next.js (App Router),
+enfocado en una estética elegante y minimalista y en el **SEO local de las dos sedes**
+(El Cañaveral y Tres Cantos).
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, TypeScript, SSR/SSG) · **React 19**
+- **Tailwind CSS v4** (tokens de diseño en `src/app/globals.css` con `@theme`)
+- **Motion** (Framer Motion) para micro-animaciones — respeta `prefers-reduced-motion`
+- **MDX** para contenido editorial (`next-mdx-remote`, `gray-matter`)
+- Tipografías: **Fraunces** (display) + **Hanken Grotesk** (cuerpo) vía `next/font`
+
+## Comandos
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev      # desarrollo
+npm run build    # build de producción (prerenderiza todas las rutas)
+npm run start    # servir el build
+node scripts/process-images.mjs <dir>   # HEIC/JPG -> WebP en /public/img
+node scripts/seed-content.mjs            # regenerar el MDX de ejemplo
+node scripts/shot.mjs <url> <prefijo>    # capturas por secciones (QA visual)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estructura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/app/**` — rutas (home, servicios, dolencias-y-lesiones, sedes, profesionales, blog, contacto, etc.)
+- `src/components/**` — sistema de diseño (layout, cards, sections, ui, motion, seo, mdx)
+- `src/lib/site.ts` — marca, URL base y navegación
+- `src/lib/sedes.ts` — **datos reales de las dos sedes** (dirección, teléfono, horario, Doctoralia, geo)
+- `src/lib/seo.ts` — `buildMetadata` + constructores JSON-LD
+- `content/**` — contenido MDX (servicios, dolencias, profesionales, blog)
+- `public/img/**` — fotos reales de la clínica (convertidas a WebP)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contenido (para el equipo de SEO)
 
-## Learn More
+Cada pieza es un archivo `.mdx` en `content/<colección>/` con frontmatter
+(`title`, `description`, `excerpt`, `image`, `order`, `featured`, `faqs`, …) seguido del cuerpo
+en Markdown. Editar o añadir archivos crea/actualiza páginas automáticamente; el `sitemap.xml`
+y los metadatos se generan a partir de ellos.
 
-To learn more about Next.js, take a look at the following resources:
+> **Nota:** los textos actuales son de ejemplo (placeholder) y deben sustituirse por el copy definitivo.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## SEO
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Metadata dinámica por ruta con canonical, Open Graph y Twitter Card.
+- JSON-LD: `MedicalOrganization`, `MedicalClinic` por sede (con `address`/`geo`/`openingHours`),
+  `MedicalProcedure`, `FAQPage`, `Person`, `BlogPosting`, `BreadcrumbList`.
+- `sitemap.xml`, `robots.txt` y `opengraph-image` generados automáticamente.
+- La URL base se define en `src/lib/site.ts` (`site.url`) — actualizar al dominio final.
 
-## Deploy on Vercel
+## Pendiente / próximas fases
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Copy y SEO definitivos, integración de CMS headless (opcional), analítica y consentimiento de
+cookies, y backend real del formulario de contacto (ahora compone un `mailto`).
