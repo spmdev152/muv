@@ -26,12 +26,15 @@ function makeRng(seed: number) {
 
 /* ---------- Vertebral body geometry ----------
    Lathe of a superellipse profile: flat-ish endplates with rounded rims and a
-   gentle concave waist — the silhouette of a real vertebral body, but polished
-   like a worked stone. A whisper of spectral noise keeps it organic instead of
-   CAD-perfect. */
+   gentle concave waist — la silueta de un cuerpo vertebral leída como canto
+   rodado. A whisper of spectral noise keeps it organic instead of CAD-perfect. */
 function makeVertebra(radius: number, height: number, seed: number) {
-  const P = 3.4; // superellipse exponent: flat top, rounded rim
-  const WAIST = 0.14; // concavity at the equator
+  const rand = makeRng(seed + 1);
+  // El perfil varía canto a canto: unos más achatados, otros más redondeados,
+  // como piedras de río escogidas a mano. Un apilado de clones no se lee como
+  // algo natural por muy buena que sea la superficie.
+  const P = 2.9 + rand() * 1.4; // superellipse exponent: flat top, rounded rim
+  const WAIST = 0.09 + rand() * 0.1; // concavity at the equator
   const STEPS = 48;
 
   const points: THREE.Vector2[] = [];
@@ -48,7 +51,6 @@ function makeVertebra(radius: number, height: number, seed: number) {
   const geo = mergeVertices(new THREE.LatheGeometry(points, 72));
 
   // Subtle low-frequency displacement so each vertebra is unique.
-  const rand = makeRng(seed + 1);
   const K = 4;
   const waves: { dir: THREE.Vector3; f: number; amp: number; phase: number }[] = [];
   let ampSum = 0;
@@ -67,7 +69,7 @@ function makeVertebra(radius: number, height: number, seed: number) {
   const pos = geo.attributes.position;
   const v = new THREE.Vector3();
   const n = new THREE.Vector3();
-  const BUMP = 0.016;
+  const BUMP = 0.022;
   for (let i = 0; i < pos.count; i++) {
     v.fromBufferAttribute(pos, i);
     n.copy(v).normalize();
@@ -82,12 +84,130 @@ function makeVertebra(radius: number, height: number, seed: number) {
   return geo;
 }
 
+/* ---------- Superficie de piedra procedural ----------
+   Dos mapas cocinados en CPU, sin assets que descargar: un normal map de grano
+   fino (la piedra deja de leerse como plástico) y un roughness map moteado (el
+   reflejo se rompe en zonas mate y satinadas en vez de ser un brillo uniforme).
+   Ahí está el 90% del "esto es un canto rodado". */
+
+// Ruido de valor teselable: la retícula se envuelve, así que el mapa repite sin
+// costura por mucho que se azulejee sobre el torno.
+function makeTileNoise(seed: number, period: number) {
+  const rand = makeRng(seed);
+  const lattice = new Float32Array(period * period);
+  for (let i = 0; i < lattice.length; i++) lattice[i] = rand();
+  const fade = (t: number) => t * t * (3 - 2 * t);
+
+  return (x: number, y: number) => {
+    const xi = Math.floor(x);
+    const yi = Math.floor(y);
+    const x0 = ((xi % period) + period) % period;
+    const y0 = ((yi % period) + period) % period;
+    const x1 = (x0 + 1) % period;
+    const y1 = (y0 + 1) % period;
+    const u = fade(x - xi);
+    const v = fade(y - yi);
+    const a = lattice[y0 * period + x0];
+    const b = lattice[y0 * period + x1];
+    const c = lattice[y1 * period + x0];
+    const d = lattice[y1 * period + x1];
+    return (a + (b - a) * u) * (1 - v) + (c + (d - c) * u) * v;
+  };
+}
+
+// fBm teselable: cada octava dobla el periodo, así que todas envuelven a la vez.
+function makeFbm(seed: number, base: number, octaves: number) {
+  const layers: { noise: (x: number, y: number) => number; p: number }[] = [];
+  for (let k = 0; k < octaves; k++) {
+    layers.push({ noise: makeTileNoise(seed + k * 37, base * (1 << k)), p: base * (1 << k) });
+  }
+  return (u: number, v: number) => {
+    let sum = 0;
+    let amp = 1;
+    let norm = 0;
+    for (const l of layers) {
+      sum += amp * l.noise(u * l.p, v * l.p);
+      norm += amp;
+      amp *= 0.5;
+    }
+    return sum / norm;
+  };
+}
+
+function makeStoneMaps(size: number) {
+  const grain = makeFbm(101, 6, 4); // relieve fino → normal map
+  const mottle = makeFbm(457, 2, 3); // manchas amplias → roughness map
+
+  const height = new Float32Array(size * size);
+  const roughData = new Uint8Array(size * size * 4);
+  for (let y = 0; y < size; y++) {
+    for (let x = 0; x < size; x++) {
+      const i = y * size + x;
+      const h = grain(x / size, y / size);
+      height[i] = h;
+      // Mate de base con parches algo más satinados, más un punto del propio
+      // grano para que el brillo no sea plano dentro de cada mancha.
+      const r = THREE.MathUtils.clamp(0.6 + 0.36 * mottle(x / size, y / size) + 0.08 * (h - 0.5), 0, 1);
+      const b = Math.round(r * 255);
+      roughData[i * 4] = b;
+      roughData[i * 4 + 1] = b; // three lee rugosidad del canal verde
+      roughData[i * 4 + 2] = b;
+      roughData[i * 4 + 3] = 255;
+    }
+  }
+
+  // Normal map por diferencias centrales del relieve, con índices envueltos
+  // para no romper la teselabilidad en los bordes.
+  const normalData = new Uint8Array(size * size * 4);
+  const SLOPE = size * 0.045;
+  for (let y = 0; y < size; y++) {
+    for (let x = 0; x < size; x++) {
+      const xm = (x - 1 + size) % size;
+      const xp = (x + 1) % size;
+      const ym = (y - 1 + size) % size;
+      const yp = (y + 1) % size;
+      const dx = (height[y * size + xp] - height[y * size + xm]) * SLOPE;
+      const dy = (height[yp * size + x] - height[ym * size + x]) * SLOPE;
+      const len = Math.hypot(dx, dy, 1);
+      const i4 = (y * size + x) * 4;
+      normalData[i4] = Math.round(((-dx / len) * 0.5 + 0.5) * 255);
+      normalData[i4 + 1] = Math.round(((-dy / len) * 0.5 + 0.5) * 255);
+      normalData[i4 + 2] = Math.round(((1 / len) * 0.5 + 0.5) * 255);
+      normalData[i4 + 3] = 255;
+    }
+  }
+
+  const build = (data: Uint8Array) => {
+    const tex = new THREE.DataTexture(data, size, size, THREE.RGBAFormat);
+    tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
+    tex.repeat.set(4, 3);
+    // DataTexture nace con filtrado Nearest: sin esto el grano sale pixelado.
+    tex.magFilter = THREE.LinearFilter;
+    tex.minFilter = THREE.LinearMipmapLinearFilter;
+    tex.generateMipmaps = true;
+    tex.anisotropy = 4;
+    tex.needsUpdate = true;
+    return tex;
+  };
+
+  return { normal: build(normalData), roughness: build(roughData) };
+}
+
+// Relieve contenido: se busca el tacto del canto, no una lija.
+const NORMAL_SCALE = new THREE.Vector2(0.45, 0.45);
+
 /* ---------- Spine layout ----------
    12 stylized vertebrae tapering upward (lumbar → cervical), threaded along
    the natural S-curve of a spine seen in profile: lumbar lordosis, thoracic
    kyphosis, a hint of cervical lordosis. Thin gold lenses stand in for the
    intervertebral discs. */
 const COUNT = 12;
+
+/* La curva en S vive en el plano YZ, así que de frente (cámara en +Z) se ve
+   escorzada y la columna no se reconoce. Girando el grupo un cuarto de vuelta
+   el eje Z local cae sobre la horizontal de pantalla: arranca de perfil, con
+   la lordosis lumbar hacia la derecha, y desde ahí sigue girando despacio. */
+const PROFILE_VIEW_Y = Math.PI / 2;
 
 /* Real vertebra names for each stylized piece, bottom (lumbar) to top
    (cervical). C1, C2 and C7 keep their proper anatomical names. */
@@ -136,7 +256,9 @@ function buildSpine(): VertebraSpec[] {
     const t = i / (COUNT - 1);
     radii.push(0.62 - 0.3 * t + (rand() - 0.5) * 0.03);
     heights.push(0.34 - 0.13 * t);
-    discHeights.push(0.14 - 0.05 * t);
+    // El hueco entre cuerpos vertebrales es constante en toda la columna: las
+    // cervicales son más pequeñas, pero no deben verse pegadas entre sí.
+    discHeights.push(0.18);
   }
 
   // Stack heights along Y, then thread that Y through the S-curve.
@@ -159,10 +281,13 @@ function buildSpine(): VertebraSpec[] {
   for (let i = 0; i < COUNT; i++) {
     const t = i / (COUNT - 1);
     const u = (ys[i] - yMin) / total;
-    const position = curve.getPoint(u);
+    // getPointAt (no getPoint): reparametrizado por longitud de arco. Con el
+    // parámetro crudo los tramos superiores de la curva —más cortos en Y— se
+    // comprimían y amontonaban las cervicales.
+    const position = curve.getPointAt(u);
     const quaternion = new THREE.Quaternion().setFromUnitVectors(
       UP,
-      curve.getTangent(u).normalize(),
+      curve.getTangentAt(u).normalize(),
     );
 
     let disc: VertebraSpec["disc"] = null;
@@ -170,10 +295,10 @@ function buildSpine(): VertebraSpec[] {
       const ud = (ys[i] + heights[i] / 2 + discHeights[i] / 2 - yMin) / total;
       const r = Math.min(radii[i], radii[i + 1]) * 0.8;
       disc = {
-        position: curve.getPoint(ud),
+        position: curve.getPointAt(ud),
         quaternion: new THREE.Quaternion().setFromUnitVectors(
           UP,
-          curve.getTangent(ud).normalize(),
+          curve.getTangentAt(ud).normalize(),
         ),
         scale: new THREE.Vector3(r, discHeights[i] * 0.72, r * 0.86),
       };
@@ -279,6 +404,13 @@ function Spine({ reduce }: { reduce: boolean }) {
   const vertebrae = useRef<(THREE.Group | null)[]>([]);
   const materials = useRef<(THREE.MeshPhysicalMaterial | null)[]>([]);
   const specs = useMemo(() => buildSpine(), []);
+  const maps = useMemo(() => makeStoneMaps(256), []);
+  useEffect(() => {
+    return () => {
+      maps.normal.dispose();
+      maps.roughness.dispose();
+    };
+  }, [maps]);
 
   const [hovered, setHovered] = useState<number | null>(null);
   // The tooltip stays mounted while its exit animation plays (state
@@ -296,7 +428,7 @@ function Spine({ reduce }: { reduce: boolean }) {
 
   // Rotation angle with a damped speed so the column gently brakes while the
   // visitor inspects a vertebra and resumes afterwards.
-  const angle = useRef(0);
+  const angle = useRef(PROFILE_VIEW_Y);
   const speed = useRef(1);
 
   useFrame((state, delta) => {
@@ -338,7 +470,7 @@ function Spine({ reduce }: { reduce: boolean }) {
       floatingRange={[-0.04, 0.04]}
     >
       {/* Escala para que toda la columna quepa con margen dentro del encuadre. */}
-      <group ref={group} scale={0.6}>
+      <group ref={group} scale={0.6} rotation={[0, PROFILE_VIEW_Y, 0]}>
         {specs.map((s, i) => (
           <group key={i}>
             <group
@@ -369,11 +501,18 @@ function Spine({ reduce }: { reduce: boolean }) {
                   color={s.color}
                   emissive={s.color}
                   emissiveIntensity={0}
-                  roughness={0.34}
-                  metalness={0.05}
-                  clearcoat={0.85}
-                  clearcoatRoughness={0.32}
-                  sheen={0.4}
+                  normalMap={maps.normal}
+                  normalScale={NORMAL_SCALE}
+                  // El roughnessMap multiplica: con base 0.95 el acabado final
+                  // recorre 0.57–0.82, de satinado suave a mate polvoriento.
+                  roughnessMap={maps.roughness}
+                  roughness={0.95}
+                  metalness={0}
+                  // Barniz tenue y muy difuso: el brillo blando de una piedra de
+                  // spa. El clearcoat alto de antes la volvía cerámica esmaltada.
+                  clearcoat={0.16}
+                  clearcoatRoughness={0.7}
+                  sheen={0.5}
                   sheenColor={"#e3e9d2"}
                 />
               </mesh>
@@ -394,11 +533,21 @@ function Spine({ reduce }: { reduce: boolean }) {
                 castShadow
               >
                 <sphereGeometry args={[1, 48, 24]} />
+                {/* Mate, y liso a propósito: sin mapas, el contraste entre el
+                    grano del canto y esta banda pulida es lo que sigue haciendo
+                    legible el apilado. Si se textura también, todo se empasta.
+                    Arena apagada, no dorado: sin metalness el color deja de
+                    teñir solo el reflejo y pasa a cubrir toda la pieza como
+                    difuso, así que hay que bajarle el croma a la mitad
+                    (0.042 en OKLCh, frente a 0.089 del dorado de marca) o el
+                    disco se va a amarillo. Separa por claridad —queda por
+                    encima del canto más claro— en vez de por tono. */}
                 <meshPhysicalMaterial
-                  color="#bf9b5f"
-                  roughness={0.32}
-                  metalness={0.85}
-                  clearcoat={0.5}
+                  color="#cdbfa2"
+                  roughness={0.78}
+                  metalness={0}
+                  sheen={0.3}
+                  sheenColor={"#f2ece0"}
                 />
               </mesh>
             )}

@@ -80,7 +80,7 @@ export function HomeHero() {
             </motion.div>
           </div>
 
-          {/* 3D stylized spine in brand greens */}
+          {/* 3D stylized spine in brand greens: cantos apilados con textura de piedra */}
           <div className="lg:col-span-5">
             <motion.div
               initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.96 }}
