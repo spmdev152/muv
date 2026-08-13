@@ -9,8 +9,8 @@ type Props = {
 };
 
 export function CTASection({
-  title = "Tu recuperación empieza con una primera cita",
-  description = "Reserva una valoración inicial y diseñaremos contigo un plan de tratamiento personalizado.",
+  title = "Su proceso empieza por una primera valoración",
+  description = "Reserve una valoración inicial y definiremos con usted un plan de tratamiento adaptado a su caso.",
 }: Props) {
   return (
     <section className="relative overflow-hidden bg-olive-500 py-20 md:py-28">
