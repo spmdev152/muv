@@ -1,14 +1,26 @@
-# HOME — versión 7 *(cerrada)*
+# HOME — versión 8
 
-*La v7, del 14 de agosto de 2026, **no cambia ni una palabra del texto publicable**: sigue en 747 palabras. Corrige dos afirmaciones sobre la competencia que estaban en las justificaciones y que resultaron falsas al recomprobar los dominios uno a uno —«ninguno marca `FAQPage`»: lo marca Impulso—. Se corrigen aquí porque son datos que hay que poder defender delante del cliente, no porque afecten al contenido.*
+*__La v8, del 14 de agosto de 2026, sí toca el texto: retira tres afirmaciones que no tenían fuente.__ Se detectaron al auditar la página de Tres Cantos, donde MUV preguntó de dónde salía un dato y resultó que de ninguna parte. Al revisar los tres documentos con el mismo criterio, la home tenía tres frases del mismo tipo. La regla que se aplica: **describir la fisioterapia es libre; describir este negocio exige fuente.***
 
-*La v6 se había reabierto para un único cambio: el H2 del módulo 8 incumplía el vocabulario que MUV marcó en el bloque 1 del documento de arranque.*
+| Frase retirada | Módulo | Por qué |
+|---|---|---|
+| «**Más de 5 años** atendiendo en la Comunidad de Madrid» | 2, franja de confianza | Copiada del sitio actual, sin confirmar. Ya figuraba como pendiente en las notas y aun así estaba escrita como un hecho |
+| «La valoración inicial dura **unos 50 minutos**» | 9, preguntas frecuentes | Deducida. MUV nunca ha dado esa cifra |
+| «**Menos sesiones innecesarias**» | 3, pilar «Eficientes» | Sugiere una comparación de eficacia sin dato. El resto de la tarjeta dice lo mismo sin afirmarlo |
+
+*Se retira además, en la misma pasada, «tras la valoración inicial **le daremos un rango orientativo**» de la cuarta pregunta frecuente: compromete un entregable concreto de la primera cita que nadie ha confirmado. La frase que queda —«No cerramos un número antes de explorar»— dice lo mismo sin prometer nada.*
+
+*__Sobre la cifra de extensión.__ La home queda en **785 palabras publicables**, y ese número no se puede comparar con las 747 de la v7: el contador anterior seguía otras reglas. A partir de la v8 los tres documentos se cuentan con **el mismo script**, que excluye todo lo pendiente, de modo que la cifra dice lo que de verdad interesa —cuánto texto se podría publicar hoy— y las tres son comparables entre sí.*
+
+*Las tres frases retiradas vuelven en cuanto MUV dé el dato. Dos son buenas y una responde a la pregunta más repetida del sector.*
+
+*La v7 corrigió dos afirmaciones sobre la competencia que estaban solo en las justificaciones. La v6 se había reabierto para un único cambio: el H2 del módulo 8 incumplía el vocabulario que MUV marcó en el bloque 1 del documento de arranque.*
 
 - **URL:** `/`
 - **Keyword principal:** Clínica MUV *(marca)*
 - **Keywords de apoyo:** clínica de fisioterapia, fisioterapia, ejercicio terapéutico, fisioterapia deportiva
 - **Entidades geográficas:** Madrid, El Cañaveral (Vicálvaro), Tres Cantos — como entidades, no como keywords objetivo
-- **Extensión:** 747 palabras
+- **Extensión:** **785 palabras publicables hoy** — lo que se puede llevar a la web ahora mismo, sin contar nada de lo que está pendiente de MUV. Contadas con el mismo script que `/sedes` y que Tres Cantos, para que las tres cifras sean comparables entre sí *(la de la v7, 747, salió de un contador anterior con otras reglas: no son comparables, y esta es la buena)*
 - **Trato:** usted · **Voz:** «En MUV…» (nosotros) · **Precios:** no se publican
 - **Estructura:** 11 módulos, mapeados contra `src/app/page.tsx`
 
@@ -41,7 +53,7 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 
 > **Centro sanitario registrado** · CS 17623 `[PENDIENTE MUV: registro de Tres Cantos]`
 > **Equipo colegiado** · fisioterapeutas con número de colegiado público → enlaza a `/profesionales`
-> **Más de 5 años** atendiendo en la Comunidad de Madrid
+> <span style="color:#c0392b">`[PENDIENTE MUV: años de recorrido. Estaba escrito «Más de 5 años atendiendo en la Comunidad de Madrid», copiado del sitio actual, que lo lleva sin fecha desde hace tiempo. No es un dato nuestro y nadie lo ha confirmado, así que se retira hasta que MUV diga la cifra]`</span>
 > **Dos clínicas** · El Cañaveral y Tres Cantos → enlaza a `/sedes`
 
 ---
@@ -56,7 +68,7 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 > Buscamos el origen del problema con una valoración fisioterápica rigurosa y tratamientos respaldados por la evidencia disponible.
 
 **Tarjeta 2 — Eficientes**
-> Elegimos las técnicas y la tecnología que tienen sentido en cada fase, no todas las que tenemos. Menos sesiones innecesarias.
+> Elegimos las técnicas y la tecnología que tienen sentido en cada fase, no todas las que tenemos.
 
 **Tarjeta 3 — Empáticos**
 > Le explicamos qué observamos y por qué proponemos cada abordaje. Entender el propio proceso forma parte del tratamiento.
@@ -182,13 +194,13 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 > No. Puede pedir cita directamente y empezaremos por una valoración fisioterápica completa. Si detectamos que su caso requiere otra valoración sanitaria, se lo indicaremos.
 
 **¿Cuánto dura la primera sesión de fisioterapia?**
-> La valoración inicial dura unos 50 minutos, tiempo suficiente para explorar el caso y plantear un plan de tratamiento.
+> <span style="color:#c0392b">`[PENDIENTE MUV: duración de la valoración inicial. Estaba escrito «unos 50 minutos» y no procede de ninguna fuente de MUV: se dedujo. Es una de las preguntas más repetidas del sector —4 de 4 clínicas del estudio y 3 de 3 competidores directos la responden— así que hay que contestarla, pero con el dato real]`</span>
 
 **¿Qué diferencia hay entre fisioterapia y ejercicio terapéutico?**
 > La fisioterapia abarca la valoración y el tratamiento manual e instrumental. El ejercicio terapéutico es ejercicio pautado y supervisado para recuperar fuerza, movilidad y tolerancia a la carga. En la mayoría de procesos se combinan.
 
 **¿Cuántas sesiones de fisioterapia voy a necesitar?**
-> Depende del caso, del tiempo de evolución y del objetivo. Tras la valoración inicial le daremos un rango orientativo y lo revisaremos según evolucione. No cerramos un número antes de explorar.
+> Depende del caso, del tiempo de evolución y del objetivo. No cerramos un número antes de explorar. <span style="color:#c0392b">*(Seguía «tras la valoración inicial le daremos un rango orientativo y lo revisaremos según evolucione». Se retira: compromete un entregable concreto de la primera sesión que MUV no ha confirmado. Vuelve en cuanto lo digan.)*</span>
 
 **¿Están todos los servicios en las dos clínicas?**
 > No. Cada sede tiene su propia cartera y cada servicio indica dónde se presta. Puede compararlas en la [página de sedes](/sedes).

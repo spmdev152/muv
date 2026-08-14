@@ -1,6 +1,8 @@
-# SEDE TRES CANTOS — versión 5
+# SEDE TRES CANTOS — versión 6
 
-*__La v5 audita el origen de cada afirmación sobre cómo funciona MUV.__ MUV preguntó de dónde salía una frase concreta y no salía de ninguna parte: estaba inferida. Al buscar frases del mismo tipo aparecieron **seis más**. Todas están ahora marcadas en rojo o retiradas, y el documento incorpora una **tabla de trazabilidad** que deja por escrito la fuente de cada dato publicable. Ver «De dónde sale cada afirmación sobre MUV».*
+*__La v6 retira once frases que no tenían fuente.__ MUV preguntó de dónde salía una de ellas —«al reservar puede elegir profesional»— y no salía de ninguna parte: estaba inferida. Al revisar los tres documentos con el mismo criterio aparecieron diez más, aquí y en la home y en `/sedes`.*
+
+*__Y se corrige el criterio, no solo el texto:__ la v5 las había marcado en rojo con una redacción propuesta. **Eso no vale.** Marcar en rojo sirve para pedir un dato que MUV tiene; no para dejar escrita una frase inventada, porque una redacción propuesta acaba aprobándose por inercia. **Lo que no tiene fuente se retira.** Ver «De dónde sale cada afirmación sobre MUV», que incluye la lista de lo retirado y la de cada dato publicable con su origen.*
 
 *La v4, del mismo día, fue la revisión editorial y de SEO: ocho datos corregidos, jerarquía de encabezados reordenada y auditoría de canibalización contra la home y `/sedes`. Detalle al final.*
 
@@ -8,12 +10,12 @@
 - **Keyword principal:** fisioterapia en Tres Cantos
 - **Keywords de apoyo:** fisioterapeuta en Tres Cantos, clínica de fisioterapia Tres Cantos, fisioterapia deportiva Tres Cantos, entrenamiento terapéutico Tres Cantos
 - **NO compite por:** «Clínica MUV» (es de la home) ni «clínicas de fisioterapia en Madrid» (es de `/sedes`)
-- **Extensión:** **1.420 palabras publicables**, contadas con script *(excluye encabezados de módulo, notas en cursiva, tablas de investigación y pendientes)*. Con los pendientes redactados rondará las 1.700, por encima de la guía de 700–900 del documento de arranque. El motivo, medido, está en las notas de producción
+- **Extensión:** **1.304 palabras publicables hoy** — lo que se puede llevar a la web ahora mismo, sin contar nada de lo pendiente de MUV. Contadas con el mismo script que la home y que `/sedes`, para que las tres cifras sean comparables. Con los pendientes resueltos ronda las 1.600, por encima de la guía de 700–900 del documento de arranque. El motivo, medido, está en las notas de producción
 - **Encabezados:** 1 H1 + 9 H2 + 12 H3. El municipio va en los diez de nivel 1 y 2, y en ninguno de los H3
 - **Método:** competencia auditada sobre el HTML de trece dominios · formulaciones de búsqueda tomadas del autocompletado público de Google (España, español) · datos del municipio, del Ayuntamiento de Tres Cantos
 - **Trato:** usted · **Voz:** «En MUV…» (nosotros) · **Precios:** no se publican
 - **Cómo llamamos al lector:** ni «paciente» ni «cliente». Se le habla de usted y se prescinde del sustantivo
-- **Estructura:** 10 módulos
+- **Estructura:** 10 módulos · **5 preguntas frecuentes** *(eran 6; sale la que estaba inventada)*
 
 **Title SEO** (58 caracteres)
 `Fisioterapia en Tres Cantos hasta las 22 h y sábados | MUV`
@@ -43,7 +45,7 @@
 | Equipo | no | no | **nombres, nº de colegiado, registro sanitario de esta clínica** |
 | Cómo llegar | no | no | **transporte, aparcamiento y accesibilidad, en detalle** |
 | Opiniones | 3 testimonios de marca | total sumado | **las 158 de esta clínica, sin comparar con la otra** |
-| FAQ | 6 de fisioterapia | 6 de elegir clínica | **6 que solo tienen sentido en esta clínica** |
+| FAQ | 6 de fisioterapia | 6 de elegir clínica | **5 que solo tienen sentido en esta clínica** |
 
 **Y la regla que ya estaba escrita:** los encabezados `Fisioterapia en Tres Cantos`, `Nuestro equipo de fisioterapeutas en Tres Cantos`, `Cómo llegar a nuestra clínica de Tres Cantos` y `Opiniones sobre la clínica de Tres Cantos` **estaban reservados para esta página desde el documento de `/sedes`**. Aquí se gastan. Ninguna otra página del sitio puede volver a usarlos.
 
@@ -66,7 +68,7 @@
 
 **Ficha de contacto** *(bajo la franja)*
 > **Av. de Madrid, 19, Local 5 · 28760 Tres Cantos**
-> **Zona de atención:** <span style="color:#c0392b">Tres Cantos, Soto de Viñuelas y Colmenar Viejo. *(Escrita por proximidad geográfica y pendiente de confirmar con MUV, igual que en `/sedes`. Alcobendas ya se retiró por decisión del cliente.)*</span>
+> <span style="color:#c0392b">`[PENDIENTE MUV: zona de atención. La que había escrita —Tres Cantos, Soto de Viñuelas y Colmenar Viejo— estaba deducida por proximidad geográfica en un mapa, no facilitada por MUV. Se retira hasta que la digan ellos]`</span>
 > **Teléfono:** <span style="color:#c0392b">**658 59 76 02** *(el del sitio actual)* · **614 13 14 05** *(el de Doctoralia)* — pendiente de confirmar cuál es el bueno</span>
 
 **Botones**
@@ -101,19 +103,19 @@
 
 **H3 · Dolor de espalda: lumbar, cervical y dorsal**
 > **Dolor lumbar** que aparece al levantarse de la silla o al final del día, **dolor cervical** que sube hasta la cabeza o se acompaña de mareo, dolor dorsal entre los omóplatos, contracturas y molestias que bajan por la pierna o el brazo.
-> Muy a menudo el origen no está donde duele, sino en cómo pasa el día: **una jornada entera delante de una pantalla carga la zona lumbar y el cuello tanto como un mal gesto**, solo que despacio y sin que se note hasta que ya duele. Por eso la valoración mira también su puesto y su postura de trabajo, no solo la zona que se queja.
+> Muy a menudo el origen no está donde duele, sino en cómo pasa el día: **una jornada entera delante de una pantalla carga la zona lumbar y el cuello tanto como un mal gesto**, solo que despacio y sin que se note hasta que ya duele. Cuéntenos también cómo es su jornada, no solo dónde le duele.
 
 **H3 · Dolor de rodilla**
 > **Dolor al subir y bajar escaleras**, al flexionar, al correr —por fuera o por dentro de la rodilla—, molestias que siguen en reposo, tendinopatía rotuliana, problemas de menisco o de ligamento y recuperación tras una operación.
-> La readaptación va por fases y en este orden: que deje de doler, que la rodilla aguante carga, y que vuelva a lo que hacía. Aquí eso último tiene nombre concreto —volver a correr, a la bici, al pádel o simplemente a subir a casa sin ir pensando en la rodilla—, y es la parte que más se salta cuando el tratamiento termina en la camilla.
+> La readaptación va por fases: que deje de doler, que la rodilla aguante carga y que vuelva a lo que hacía. Eso último tiene nombre concreto —volver a correr, a la bici, al pádel o simplemente a subir a casa sin ir pensando en la rodilla— y es lo que fijamos como objetivo desde la primera sesión.
 
 **H3 · Dolor de hombro**
 > **Dolor al levantar el brazo**, dolor que despierta por la noche al apoyarse de ese lado, tendinitis del supraespinoso, pinzamiento, hombro que se va quedando rígido y pérdida de fuerza para gestos cotidianos como alcanzar un estante o abrocharse.
-> Es la lesión que más se cronifica por dejarla pasar y donde más se nota la diferencia entre tratar el dolor y además recuperar la fuerza. Lo segundo es lo que evita la recaída.
+> El tratamiento no termina cuando deja de doler: recuperar la fuerza y el control del movimiento es lo que sostiene el resultado, y por eso el plan incluye ejercicio y no solo camilla.
 
 **H3 · ATM, bruxismo y dolor mandibular**
 > **Dolor al masticar**, chasquidos al abrir la boca, limitación para abrirla del todo, dolor que se confunde con el de oído y dolor de cabeza al despertar por apretar los dientes de noche.
-> La articulación temporomandibular y el cuello trabajan juntos, así que se valoran juntos: tratar solo la mandíbula cuando la tensión viene de la musculatura cervical es media consulta.
+> La articulación temporomandibular y la musculatura cervical están relacionadas, y es habitual que el dolor de una venga acompañado del de la otra. Cuéntenos las dos cosas aunque le parezcan asuntos distintos.
 
 **Cierre**
 > También tratamos tendinopatías, esguinces, sobrecargas de entrenamiento y recuperación posquirúrgica con informe del hospital. Si lo que le pasa no aparece aquí, escríbanos y le decimos si es un caso para nosotros: **si en la valoración encontramos algo que no corresponde tratar en fisioterapia, se lo diremos y le indicaremos a quién acudir.**
@@ -166,7 +168,7 @@
 | **Fisioterapia** | Valoración y tratamiento manual e instrumental para recuperar el movimiento. |
 | **Fisioterapia deportiva** | Recuperación y readaptación al gesto deportivo, del aficionado al federado. |
 | **Entrenamiento terapéutico individual** | Ejercicio pautado y supervisado por fisioterapeutas, con progresión medida. |
-| **Entrenamiento terapéutico en grupo** | <span style="color:#c0392b">Grupos reducidos con el plan de cada persona, supervisados por un fisioterapeuta. *(Pendiente: confirmar tamaño del grupo y si cada persona sigue su propia pauta.)*</span> |
+| **Entrenamiento terapéutico en grupo** | Ejercicio pautado y supervisado por fisioterapeutas, en grupo. |
 | **Neuromodulación** | Tecnología ecoguiada para modular el sistema nervioso en el dolor persistente. |
 | **ATM** | Tratamiento de la articulación temporomandibular y de la tensión asociada. |
 | **Tratamiento de cicatrices** | Trabajo sobre la cicatriz y el tejido de alrededor tras una cirugía o una herida. |
@@ -192,7 +194,7 @@
 
 **Tres pasos**
 > **Antes.** Traiga ropa cómoda: la valoración incluye ver cómo se mueve. Si tiene informes o pruebas de imagen relacionadas, tráigalos.
-> **Durante.** Hablamos de qué le pasa y desde cuándo, exploramos la zona y el movimiento completo, y le explicamos qué hemos encontrado. <span style="color:#c0392b">Si procede, empezamos a tratar en la misma sesión. *(Pendiente: confirmar si la primera cita incluye tratamiento o es solo valoración.)*</span>
+> **Durante.** Hablamos de qué le pasa y desde cuándo, exploramos la zona y el movimiento completo, y le explicamos qué hemos encontrado.
 > **Al salir.** Se lleva un plan con objetivos concretos, una previsión orientativa de sesiones y pautas para hacer en casa. Lo revisamos según evolucione.
 
 *__Este módulo existe por una razón comercial concreta.__ Cuatro clínicas de Tres Cantos publican su tarifa con el importe a la vista, y MUV no. Quien compara y no encuentra el precio se imagina el peor. La página no puede dar la cifra —MUV marcó «no publicar precios» en el documento de arranque y esa decisión se respeta— pero sí puede responder a la pregunta que hay debajo: **qué me llevo por lo que pago.** Duración, valoración previa, fisioterapeuta dedicado y plan de salida hacen ese trabajo sin dar un número.*
@@ -224,7 +226,7 @@
 > Nuestro equipo de fisioterapeutas en Tres Cantos
 
 **Entradilla**
-> En esta clínica le atiende siempre un fisioterapeuta colegiado. <span style="color:#c0392b">Y sabe con quién tiene la cita antes de venir. *(Pendiente: solo si se confirma que la agenda en línea permite elegir profesional — ver la primera pregunta frecuente.)*</span>
+> En esta clínica le atiende un fisioterapeuta colegiado.
 
 **Fichas del equipo**
 > <span style="color:#c0392b">`[PENDIENTE MUV: nombre, foto, número de colegiado y áreas de trabajo de cada fisioterapeuta de Tres Cantos. En las opiniones verificadas de Doctoralia de agosto de 2026 aparece atendiendo José González; hay que confirmar la plantilla completa. Sin número de colegiado el bloque pierde la mitad de su valor]`</span>
@@ -314,11 +316,8 @@
 **H2**
 > Preguntas frecuentes sobre nuestra clínica de Tres Cantos
 
-**¿Puedo pedir cita con un fisioterapeuta concreto?**
-> <span style="color:#c0392b">Sí. Al reservar puede elegir profesional, y si ya está en tratamiento seguirá con el mismo salvo que prefiera cambiar. `[PENDIENTE MUV: las dos cosas. ¿La agenda en línea deja elegir fisioterapeuta? ¿Se mantiene el mismo profesional durante un tratamiento? Redacción propuesta, no publicar sin validar]`</span>
-
 **¿En qué se diferencia el entrenamiento terapéutico en grupo de una clase colectiva?**
-> En que no es una clase: lo dirige un fisioterapeuta, no un monitor, y se trabaja a partir de una valoración previa, no en una tabla común. <span style="color:#c0392b">El grupo es reducido y cada persona sigue su propio plan. `[PENDIENTE MUV: confirmar el tamaño del grupo, si cada persona lleva pauta individual y si es obligatorio valorarse antes de entrar]`</span>
+> En que el ejercicio va pautado y lo supervisa un fisioterapeuta, no un monitor. No es una tabla común: parte de lo que necesita cada caso.
 
 **¿Pueden tratarme después de una operación, con el informe del hospital?**
 > Sí. Traiga el informe y las indicaciones del cirujano si las tiene, y en la valoración fijamos en qué fase está y qué se puede empezar a trabajar.
@@ -437,7 +436,7 @@
 ## Datos estructurados
 
 - **`MedicalClinic`** completo: `name`, `address`, `geo`, `telephone`, `openingHoursSpecification` con el sábado incluido, `medicalSpecialty: Physiotherapy`, `areaServed` con Tres Cantos, Soto de Viñuelas y Colmenar Viejo, y `sameAs` a la ficha de Doctoralia de **esta** clínica.
-- **`FAQPage`** en el módulo 9, con las **seis** preguntas.
+- **`FAQPage`** en el módulo 9, con las **cinco** preguntas.
 - **`BreadcrumbList`**: Inicio › Sedes › Tres Cantos.
 
 **Lo verificado el 14 de agosto de 2026, con precisión:** de los trece dominios auditados, **ninguno declara `MedicalClinic`, `LocalBusiness` ni `Physiotherapy`** —cero de trece, y esa sí es diferenciación limpia—. `FAQPage` lo declara **uno**, Impulso, en El Cañaveral; ninguno de los once de Tres Cantos. Lo demás que declaran es `WebPage`, `WebSite`, `Organization` y `BreadcrumbList`, que es lo que pone WordPress solo.
@@ -450,39 +449,51 @@
 
 ## De dónde sale cada afirmación sobre MUV
 
-*__Añadido en la v5, y por un motivo concreto.__ MUV preguntó de dónde salía una frase de las preguntas frecuentes —«al reservar puede elegir profesional»— y la respuesta era mala: **de ninguna parte.** Estaba inferida de que el widget de Doctoralia suele permitirlo y de que Motriz lo dice en su web. Ni una cosa ni otra es MUV.*
+*__Por qué existe esta sección.__ MUV preguntó de dónde salía una frase de las preguntas frecuentes —«al reservar puede elegir profesional»— y la respuesta era mala: **de ninguna parte**. Estaba inferida de que el widget de Doctoralia suele permitirlo y de que un competidor lo dice en su web. Al buscar frases del mismo tipo aparecieron diez más.*
 
-*Al revisar el documento buscando frases del mismo tipo aparecieron **seis más**. Ninguna era falsa a sabiendas y todas eran plausibles, pero **plausible no es verificado**, y en una web sanitaria esa distinción es la que separa un contenido defendible de un problema. Esta tabla queda como control permanente: **ninguna afirmación sobre cómo funciona MUV se publica sin una casilla verde.***
+*__La decisión de MUV fue tajante y es la correcta: lo que no tiene fuente no se marca en rojo, se retira.__ Marcar en rojo sirve para pedir un dato que MUV tiene —un número de registro, un teléfono—. No sirve para dejar escrita una frase que nos hemos inventado, porque una redacción propuesta acaba aprobándose por inercia. Así que **once frases han salido del documento**. Las que MUV quiera recuperar volverán con su dato.*
 
-| Afirmación en el texto | Fuente | Estado |
-|---|---|---|
-| Dirección, código postal y teléfono | `locations.ts` + ficha de Doctoralia | ✅ *(el teléfono, pendiente de decidir cuál)* |
-| Horario de lunes a viernes y sábado | `locations.ts` | ✅ |
-| 158 valoraciones, media de 5 | `MedicalClinic` declarado por la ficha de Doctoralia | ✅ |
-| Catálogo de siete servicios de esta sede | Documento de arranque, bloque 2 | ✅ |
-| Servicios que solo están en El Cañaveral | Documento de arranque, bloque 2 | ✅ |
-| Camillas Gymna Pro | Ficha de Doctoralia, equipamiento | ✅ |
-| «Neuromodulación ecoguiada» | Home v7, módulo 4, línea aprobada | ✅ |
-| Sala de tratamiento y zona de ejercicio propia | `/sedes` v12, ficha de la clínica | ✅ |
-| Valoración antes de tratar, plan con objetivos, pautas para casa | Home v7, módulos 3 y 6 | ✅ |
-| Cercanías C-4, interurbanas 712/713/716/717, M-607 | Renfe y Consorcio Regional de Transportes | ✅ |
-| Cifras del municipio y del parque tecnológico | Ayuntamiento de Tres Cantos | ✅ *(solo en la justificación, no en la copy)* |
-| **Zona de atención: Soto de Viñuelas y Colmenar Viejo** | Escrita por proximidad geográfica | 🔴 **sin confirmar** |
-| **«Al reservar puede elegir profesional»** | Inferida del widget de Doctoralia | 🔴 **sin confirmar** |
-| **«Seguirá con el mismo fisioterapeuta»** | Ninguna | 🔴 **sin confirmar** |
-| **«Sabe con quién tiene la cita antes de venir»** | Depende de la anterior | 🔴 **sin confirmar** |
-| **Grupo reducido, cada persona con su pauta, valoración obligatoria antes** | El catálogo confirma que el servicio existe; el funcionamiento, no | 🔴 **sin confirmar** |
-| **«Si procede, empezamos a tratar en la misma sesión»** | Ninguna | 🔴 **sin confirmar** |
-| **Ecógrafo como equipamiento** | Ficha de Doctoralia *(y lo implica «ecoguiada»)* | 🔴 **decisión pendiente** |
-| Registro sanitario, equipo, inglés, aparcamiento, accesibilidad, domicilio | — | 🔴 **ya estaban marcados** |
+### Lo que se ha retirado
 
-**Tres frases se retiraron directamente en lugar de marcarse**, porque son afirmaciones sobre la casuística interna de la clínica que solo MUV puede tener y que aportaban poco:
+| Frase que estaba escrita | Por qué sale |
+|---|---|
+| «Al reservar **puede elegir profesional**» | Inferida del widget de Doctoralia y de la web de un competidor |
+| «**Seguirá con el mismo** fisioterapeuta salvo que prefiera cambiar» | Política interna, sin ninguna fuente |
+| «**Sabe con quién tiene la cita** antes de venir» | Dependía de las dos anteriores |
+| «El grupo es **reducido** y cada persona sigue **su propio plan**» | El catálogo confirma que el servicio existe; su funcionamiento, no |
+| «**No se entra directamente**: primero valoramos» | Requisito de acceso inventado |
+| «Si procede, **empezamos a tratar en la misma sesión**» | Sin fuente |
+| «**Zona de atención:** Tres Cantos, Soto de Viñuelas y Colmenar Viejo» | Deducida mirando un mapa, no facilitada por MUV |
+| «Es el **motivo de consulta número uno** de esta clínica» | Casuística interna que solo MUV conoce |
+| «Los motivos con los que **más se entra por esta puerta**» | Igual |
+| «La recuperación posquirúrgica es uno de los motivos **habituales en esta clínica**» | Igual |
+| «Es la lesión que **más se cronifica**» · «la parte que **más se salta**» | Afirmaciones clínicas con superlativo y sin cita |
 
-> «Es el motivo de consulta **número uno** de esta clínica» · «los motivos con los que **más se entra por esta puerta**» · «la recuperación posquirúrgica es uno de los motivos **habituales en esta clínica**»
+*También salió un **tuteo**: la franja del hero decía «Elige fisioterapeuta y hora sin llamar». Ahora dice «Reserve día y hora sin llamar» — de usted, y sin dar por hecho lo de elegir profesional.*
 
-*Si MUV confirma cuál es su motivo de consulta más frecuente, la primera merece volver: es una frase excelente para el módulo 2. Pero vuelve con dato, no por intuición.*
+### Lo que se publica, y de dónde sale
 
-**Y un fallo de trato que salió en la misma pasada:** la tercera columna de la franja del hero decía *«Elige fisioterapeuta y hora sin llamar»*. **Tuteaba** —toda la web va de usted— y además daba por hecho lo de elegir profesional. Ahora dice *«Reserve día y hora sin llamar»*, que es de usted y que sí es verificable: las dos clínicas tienen agenda en línea.
+*Cada línea del texto tiene una fuente que se puede enseñar. Esta tabla es el control: **nada entra en la copy sin una casilla de esta lista**.*
+
+| Afirmación en el texto | Fuente |
+|---|---|
+| Dirección y código postal | `locations.ts` + ficha de Doctoralia |
+| Horario de lunes a viernes y sábado | `locations.ts` |
+| Agenda en línea en las dos clínicas | `bookingUrl` de `locations.ts` + `/sedes` v12 |
+| 158 valoraciones con media de 5 | `MedicalClinic` que declara la propia ficha de Doctoralia |
+| Los siete servicios de esta sede, y los que solo están en El Cañaveral | Documento de arranque, bloque 2 |
+| «Ejercicio pautado y supervisado por fisioterapeutas, en grupo» | Home v7, módulo 4, tarjeta aprobada |
+| «Neuromodulación ecoguiada» | Home v7, módulo 4, línea aprobada |
+| Camillas Gymna Pro | Ficha de Doctoralia, equipamiento |
+| Sala de tratamiento y zona de ejercicio propia | `/sedes` v12, ficha de la clínica |
+| Ropa cómoda e informes en la primera cita | `/sedes` v12, preguntas frecuentes |
+| Valoración antes de tratar · plan con objetivos · previsión orientativa de sesiones · pautas para casa | Home v7, módulos 3, 6 y 9 |
+| Equipo colegiado | `/sedes` v12, módulo 4 |
+| Cercanías C-4 · interurbanas 712, 713, 716 y 717 · M-607 | Renfe y Consorcio Regional de Transportes de Madrid |
+| Cifras del municipio y del parque tecnológico | Ayuntamiento de Tres Cantos *(solo en la justificación, no en la copy)* |
+| Formulaciones de síntoma del módulo 2 | Autocompletado público de Google, España y español |
+
+**La regla que queda escrita, y que vale para las cuarenta páginas que faltan:** describir **la fisioterapia** es libre —qué es una tendinopatía, qué síntomas da—; describir **este negocio** exige fuente. Reserva, agenda, formato de las sesiones, duración, casuística, zona de influencia y equipamiento son afirmaciones sobre MUV, y sin dato no se escriben. Ni siquiera en rojo.
 
 ---
 
@@ -589,9 +600,11 @@ Aparecidos en esta auditoría y no recogidos ni en la tabla del cliente ni en la
 
 *La pregunta de **mutuas y seguros** ya no está en esta lista: se responde una sola vez, en `/sedes`, porque la condición es la misma para las dos clínicas. Sigue siendo pendiente, pero de aquel documento.*
 
-**Cambios de la v5 — trazabilidad de las afirmaciones** *(14 de agosto de 2026)*
+**Cambios de la v6 — fuera todo lo que no tiene fuente** *(14 de agosto de 2026)*
 
-*Ver la sección «De dónde sale cada afirmación sobre MUV», que es el cambio principal. En resumen: **siete afirmaciones sobre el funcionamiento de la clínica pasan a rojo o se retiran**, se corrige un tuteo en la franja del hero y queda una tabla de trazabilidad con la fuente de cada dato publicable. Los pendientes de MUV suben de ocho a doce, y eso es una buena noticia: significa que doce cosas dejan de publicarse como si fueran ciertas sin serlo.*
+*Ver la sección «De dónde sale cada afirmación sobre MUV». En resumen: **once frases retiradas** aquí, tres en la home y cuatro en `/sedes`; **una pregunta frecuente eliminada entera** —la de elegir fisioterapeuta, que era la que MUV detectó—; un tuteo corregido en la franja del hero; y una tabla que deja por escrito la fuente de cada dato que sí se publica.*
+
+*__La v5 se quedó corta y conviene decirlo.__ Marcó esas frases en rojo con una redacción propuesta, en lugar de retirarlas. Es una diferencia que parece de matiz y no lo es: **el rojo sirve para pedir un dato, no para conservar una invención con permiso condicional.** Corregido en la v6 y añadido como regla para las cuarenta páginas que faltan.*
 
 **Cambios de la v4 — revisión editorial y de SEO** *(14 de agosto de 2026)*
 
@@ -641,9 +654,9 @@ Aparecidos en esta auditoría y no recogidos ni en la tabla del cliente ni en la
 
 **Otro, sobre fugas de tráfico.** El autocompletado devuelve también `fisioterapia suelo pelvico tres cantos` y `fisioterapia pediatrica tres cantos`. **Hay demanda local de dos servicios que esta clínica no presta** —se hacen en El Cañaveral, a 35 kilómetros—. La página deriva correctamente en el módulo 3, pero conviene que MUV sepa que esa búsqueda existe en su municipio y hoy se la lleva íntegra la competencia. Es una decisión de negocio, no de contenido.
 
-**Sobre la extensión.** El documento de arranque fija 700–900 palabras para una página de sede. El texto publicable son **1.420**, y con los pendientes rondará las **1.700**. Se propone dejarlo, y el motivo es medible: las páginas que hoy posicionan por delante en este municipio tienen 1.710 *(Lashmi)*, 1.279 *(ALG)* y 1.196 *(Motriz)*. Entrar con 800 palabras en la búsqueda que esta clínica lleva perdiendo desde que abrió es entrar en desventaja, y lo que excede el límite no es relleno: es el módulo 2 —el hueco más grande del mercado, y ahora escrito con las formulaciones que la gente teclea— y los módulos 8 y 9, que no tiene nadie. **Si MUV quiere ajustarse al límite, el orden de recorte es 6, luego 4; nunca el 2, el 8 ni el 9.**
+**Sobre la extensión.** El documento de arranque fija 700–900 palabras para una página de sede. El texto publicable hoy son **1.304**, y con los pendientes resueltos rondará las **1.600**. Se propone dejarlo, y el motivo es medible: las páginas que hoy posicionan por delante en este municipio tienen 1.710 *(Lashmi)*, 1.279 *(ALG)* y 1.196 *(Motriz)*. Entrar con 800 palabras en la búsqueda que esta clínica lleva perdiendo desde que abrió es entrar en desventaja, y lo que excede el límite no es relleno: es el módulo 2 —el hueco más grande del mercado, y ahora escrito con las formulaciones que la gente teclea— y los módulos 8 y 9, que no tiene nadie. **Si MUV quiere ajustarse al límite, el orden de recorte es 6, luego 4; nunca el 2, el 8 ni el 9.**
 
-*Con 1.420 palabras esta página pasa a ser la más larga del municipio después de Lashmi, y **la única cuya extensión está ocupada por lo que nadie más cubre** en lugar de por descripciones de técnicas. Es la diferencia entre ser larga y ser densa.*
+*Con 1.304 palabras publicables esta página pasa a ser la más larga del municipio después de Lashmi, y **la única cuya extensión está ocupada por lo que nadie más cubre** en lugar de por descripciones de técnicas. Es la diferencia entre ser larga y ser densa.*
 
 **Sobre el vocabulario.** Revisado con script contra las prohibiciones del documento de arranque, **solo sobre el texto publicable**, no sobre las justificaciones: sin «paciente» ni «cliente», sin promesas de curación, sin cifras de eficacia sin fuente, sin presentar la valoración como diagnóstico médico, sin importes en euros y **sin comparaciones directas con otras clínicas**. Los hallazgos sobre la competencia están en este documento para justificar las decisiones y **ninguno aparece en lo que se publica**.
 

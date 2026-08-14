@@ -1,13 +1,26 @@
-# SEDES — versión 12 *(lista para MUV)*
+# SEDES — versión 13
 
-*Revisada dos veces el 14 de agosto de 2026, y **ninguna de las dos cambia una sola palabra del texto publicable**: sigue en 558 palabras. La v11 corrigió tres justificaciones que resultaron falsas al recomprobar la competencia. La v12 revisa la tabla de origen de las preguntas frecuentes contra los competidores directos y sube la pregunta de mutuas a bloqueante, con un dato de búsqueda nuevo. Detalle al final del documento.*
+*__La v13 retira cuatro afirmaciones que no tenían fuente.__ Se detectaron al auditar la página de Tres Cantos, donde MUV preguntó de dónde salía un dato concreto y la respuesta era que de ninguna parte. Revisados los tres documentos con el mismo criterio —**describir la fisioterapia es libre; describir este negocio exige fuente**—, `/sedes` tenía cuatro frases del mismo tipo.*
+
+| Frase retirada | Módulo | Por qué |
+|---|---|---|
+| «**Zona de atención:** El Cañaveral, Vicálvaro y el este de Madrid» | 2, ficha 1 | Deducida mirando un mapa, no facilitada por MUV. Ya figuraba como pendiente en las notas y aun así estaba escrita como un hecho |
+| «**Zona de atención:** Tres Cantos, Soto de Viñuelas y Colmenar Viejo» | 2, ficha 2 | Igual |
+| «el número de colegiado de cada profesional **es público en su ficha**» | 4 | Hoy esas fichas no llevan número. Afirmaba algo del sitio que todavía no es cierto |
+| «**No necesita nada más**» | 5, preguntas frecuentes | Cierra una lista de requisitos que nadie ha confirmado que sea completa |
+
+*Las dos zonas de atención son el pendiente más fácil de resolver de todo el proyecto: MUV sabe de dónde le viene la gente.*
+
+*__Sobre la cifra de extensión.__ La página queda en **396 palabras publicables**, y ese número no se puede comparar con las 558 de la v12: el contador anterior seguía otras reglas y contaba parte de lo pendiente. A partir de la v13 los tres documentos se cuentan con **el mismo script**, que excluye todo lo que está en rojo. La cifra es baja porque esta página es la que más pendientes acumula, no porque haya adelgazado: **con los pendientes resueltos vuelve a rondar las 600.***
+
+*La v12 revisó la tabla de origen de las preguntas frecuentes contra los competidores directos y subió la pregunta de mutuas a bloqueante. La v11 corrigió tres justificaciones sobre la competencia que resultaron falsas. Ninguna de las dos tocaba el texto publicable.*
 
 - **URL:** `/sedes`
 - **Keyword principal:** clínicas de fisioterapia MUV *(marca + ubicación)*
 - **Keywords de apoyo:** clínica de fisioterapia en Madrid, dónde está MUV, sedes MUV
 - **Entidades geográficas:** Madrid, El Cañaveral (Vicálvaro), Tres Cantos — como entidades
 - **NO compite por:** «fisioterapia Tres Cantos» ni «fisioterapia El Cañaveral». Esas son de `/sedes/<sede>/`
-- **Extensión:** 558 palabras de cuerpo, contadas con script. Con las tres respuestas pendientes redactadas subirá a unas 645, por encima de la guía de 400–600 del documento de arranque. Se asume: esa guía se escribió para un índice de dos direcciones y la página ya no es eso
+- **Extensión:** **396 palabras publicables hoy** — lo que se puede llevar a la web ahora mismo, sin contar nada de lo pendiente de MUV, que en esta página es mucho: tres preguntas frecuentes, los dos teléfonos, el registro sanitario de Tres Cantos y las dos zonas de atención. Con todo resuelto la página ronda las 600. Contadas con el mismo script que la home y que Tres Cantos *(la cifra de la v12, 558, salía de un contador con otras reglas y no es comparable)*
 - **Trato:** usted · **Voz:** «En MUV…» (nosotros) · **Precios:** no se publican
 - **Cómo llamamos al lector:** **ni «paciente» ni «cliente».** En el bloque 1 del documento de arranque MUV marcó «Persona» y «evitar la etiqueta». Se le habla de usted y se prescinde del sustantivo
 - **Estructura:** 6 módulos
@@ -79,7 +92,7 @@ Este es el bloque más importante del documento. La home ya está cerrada y las 
 
 ### Ficha 1 — **H3:** `MUV El Cañaveral`
 
-> **Zona de atención:** El Cañaveral, Vicálvaro y el este de Madrid.
+> <span style="color:#c0392b">`[PENDIENTE MUV: zona de atención. Decía «El Cañaveral, Vicálvaro y el este de Madrid», deducido por proximidad geográfica en un mapa y no facilitado por MUV. Se retira hasta que lo digan ellos]`</span>
 > **Dirección:** C. Victoria Kent, Local 8 · 28052 Madrid
 > **Horario:** Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00
 > **Teléfono:** <span style="color:#c0392b">**603 30 30 10** *(el del sitio actual)* · **634 47 85 44** *(el de Doctoralia)* — pendiente de confirmar cuál es el bueno</span>
@@ -89,7 +102,7 @@ Este es el bloque más importante del documento. La home ya está cerrada y las 
 
 ### Ficha 2 — **H3:** `MUV Tres Cantos`
 
-> **Zona de atención:** Tres Cantos, Soto de Viñuelas y Colmenar Viejo.
+> <span style="color:#c0392b">`[PENDIENTE MUV: zona de atención. Decía «Tres Cantos, Soto de Viñuelas y Colmenar Viejo», deducido por proximidad geográfica. Se retira hasta que lo confirme MUV]`</span>
 > **Dirección:** Av. de Madrid, 19, Local 5 · 28760 Tres Cantos
 > **Horario:** Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00
 > **Teléfono:** <span style="color:#c0392b">**658 59 76 02** *(el del sitio actual)* · **614 13 14 05** *(el de Doctoralia)* — pendiente de confirmar cuál es el bueno</span>
@@ -142,7 +155,7 @@ Este es el bloque más importante del documento. La home ya está cerrada y las 
 
 **Tres puntos**
 > **Centro sanitario registrado.** MUV El Cañaveral está inscrita en el registro de centros sanitarios de la Comunidad de Madrid con el número CS 17623. <span style="color:#c0392b">`[PENDIENTE MUV: número de registro de Tres Cantos. En cuanto llegue, la frase pasa a «Las dos clínicas están inscritas…, con los números X e Y»]`</span>
-> **Fisioterapeutas colegiados.** Todo el equipo está colegiado, y el número de colegiado de cada profesional es público en su ficha. → `/profesionales`
+> **Fisioterapeutas colegiados.** Todo el equipo está colegiado. <span style="color:#c0392b">*(La frase seguía «y el número de colegiado de cada profesional es público en su ficha». Se retira: hoy esas fichas no llevan el número, y publicarlo depende de que MUV facilite los datos. La frase vuelve cuando las fichas existan.)*</span> → `/profesionales`
 > **Más de 1.800 opiniones verificadas.** Entre las dos clínicas sumamos más de 1.800 valoraciones en Doctoralia, con una media de 5 sobre 5.
 
 *__Reformulado el 14/08/2026.__ El módulo se titulaba «Ventajas de una clínica de fisioterapia con dos sedes» y defendía que tener dos sedes beneficia a quien lee. No se sostiene: El Cañaveral y Tres Cantos están a 35 kilómetros y en municipios distintos, así que «continuidad si cambia de zona» exigía imaginarse una mudanza, y «no se queda sin tratamiento» significaba en la práctica proponer un desplazamiento de tres cuartos de hora. Eran ventajas para la clínica disfrazadas de ventajas para el lector.*
@@ -176,7 +189,7 @@ Este es el bloque más importante del documento. La home ya está cerrada y las 
 > Sí. Las dos tienen agenda en línea y puede reservar desde esta misma página. Si prefiere que le orientemos antes de elegir clínica, escríbanos.
 
 **¿Qué debo llevar a la primera cita?**
-> Ropa cómoda, porque la valoración incluye explorar cómo se mueve, y cualquier informe o prueba de imagen relacionada con su caso, si dispone de ellos. No necesita nada más.
+> Ropa cómoda, porque la valoración incluye explorar cómo se mueve, y cualquier informe o prueba de imagen relacionada con su caso, si dispone de ellos.
 
 **¿Qué ocurre si no puedo acudir a una cita?**
 > <span style="color:#c0392b">Avísenos con al menos 24 horas de antelación y le buscamos otro hueco sin coste. `[PENDIENTE MUV: confirmar el plazo de aviso y si hay penalización. Redacción propuesta, no publicar sin validar]`</span>
