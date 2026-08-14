@@ -1,6 +1,8 @@
-# HOME — versión 6 *(cerrada)*
+# HOME — versión 7 *(cerrada)*
 
-*Reabierta el 14 de agosto de 2026 para un único cambio: el H2 del módulo 8 incumplía el vocabulario que MUV marcó en el bloque 1 del documento de arranque. Nada más se ha tocado.*
+*La v7, del 14 de agosto de 2026, **no cambia ni una palabra del texto publicable**: sigue en 747 palabras. Corrige dos afirmaciones sobre la competencia que estaban en las justificaciones y que resultaron falsas al recomprobar los dominios uno a uno —«ninguno marca `FAQPage`»: lo marca Impulso—. Se corrigen aquí porque son datos que hay que poder defender delante del cliente, no porque afecten al contenido.*
+
+*La v6 se había reabierto para un único cambio: el H2 del módulo 8 incumplía el vocabulario que MUV marcó en el bloque 1 del documento de arranque.*
 
 - **URL:** `/`
 - **Keyword principal:** Clínica MUV *(marca)*
@@ -236,7 +238,7 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 | **H2** · Nuestras clínicas de fisioterapia en El Cañaveral y Tres Cantos | ambos municipios | Único punto de la home con geografía, sin competir con las páginas de sede. |
 | **H2** · Divulgación de fisioterapia escrita por nuestro equipo | fisioterapia + autoría | Señal E-E-A-T: en YMYL Google valora quién firma. Da al blog camino de rastreo desde la home. |
 | **H2** · Opiniones sobre Clínica MUV | marca + opiniones | Captura «muv opiniones», búsqueda de marca con intención de decisión. En el bloque 1 del documento de arranque MUV marcó «Persona» y «evitar la etiqueta», y no marcó ni «Paciente» ni «Cliente»: la palabra sale del encabezado. Además apunta mejor a la búsqueda real, porque «pacientes» no aportaba nada. |
-| **H2** · Preguntas frecuentes sobre fisioterapia en MUV | fisioterapia + marca | Habilita `FAQPage`: **ninguno de los 12 competidores lo marca**, pese a tener FAQ visibles. |
+| **H2** · Preguntas frecuentes sobre fisioterapia en MUV | fisioterapia + marca | Habilita `FAQPage`. *(Corregido el 14/08/2026: aquí se decía «ninguno de los 12 competidores lo marca». **Es falso** — Impulso, en El Cañaveral, sí lo declara. Lo cierto y comprobado: de trece dominios, solo uno lo marca, y ninguno de los once de Tres Cantos.)* |
 | **H2** · Pida cita en El Cañaveral o en Tres Cantos | acción + ambos municipios | Cierra con intención transaccional y refuerza las dos entidades locales. |
 
 **Criterio general:** los diez encabezados llevan entidad. La geografía se concentra en el H1 y dos H2 para no canibalizar `/sedes/<sede>/`, que es donde se compite por «fisioterapia Tres Cantos». La home compite por marca y reparte autoridad.
@@ -291,7 +293,7 @@ El ALT es texto indexable y hoy no está definido. Uno por imagen, descriptivo, 
 
 ## Datos estructurados
 
-Ninguno de los doce competidores auditados declara schema de negocio sanitario ni marca sus FAQ. Es diferenciación gratuita y verificada.
+*__Recomprobado el 14 de agosto de 2026 descargando el HTML de trece dominios.__ Lo que se afirmaba aquí —«ninguno declara schema de negocio sanitario ni marca sus FAQ»— era cierto a medias. **Sigue siendo cierto** que ninguno declara `MedicalClinic`, `LocalBusiness` ni `Physiotherapy`: cero de trece, y ahí la diferenciación es real. **Ya no es cierto** de `FAQPage`: Impulso, en El Cañaveral, lo declara. Sigue sin declararlo ninguna de las once clínicas de Tres Cantos.*
 
 - **`Organization`** en la home, con `name`, `logo`, `url` y **`sameAs`** apuntando a las fichas de Doctoralia de las dos sedes, al perfil de Google Business y a las redes. El `sameAs` es lo que consolida la entidad de marca: le dice a Google que la web, las dos fichas de Doctoralia y el perfil de Google son el mismo negocio.
 - **`FAQPage`** en el módulo 9, con las seis preguntas.

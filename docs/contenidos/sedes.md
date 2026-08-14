@@ -1,6 +1,6 @@
-# SEDES — versión 10 *(lista para MUV)*
+# SEDES — versión 11 *(lista para MUV)*
 
-*Revisada el 14 de agosto de 2026 en ocho pasadas, la última un repaso editorial y de SEO completo. Cambios al final del documento.*
+*Revisada el 14 de agosto de 2026. La v11 no cambia una sola palabra publicable: corrige tres justificaciones que resultaron ser falsas al recomprobar la competencia. Detalle al final del documento.*
 
 - **URL:** `/sedes`
 - **Keyword principal:** clínicas de fisioterapia MUV *(marca + ubicación)*
@@ -149,7 +149,11 @@ Este es el bloque más importante del documento. La home ya está cerrada y las 
 
 *La pregunta que esta página sí deja abierta es otra: **«¿me puedo fiar de la clínica que me toque?»**. El módulo pasa a responder eso, y lo hace solo con hechos comprobables: el registro sanitario, la colegiación y las opiniones. Ninguna frase de aquí depende de que alguien la confirme de palabra.*
 
-*También es el bloque que más pesa en un sitio sanitario: Google valora en salud quién firma y qué acredita. **Ninguno de los doce competidores auditados publica su número de registro sanitario.***
+*También es el bloque que más pesa en un sitio sanitario: Google valora en salud quién firma y qué acredita.*
+
+*__Corregido el 14/08/2026, y es una corrección importante.__ La v10 de este documento afirmaba que «ninguno de los doce competidores auditados publica su número de registro sanitario». **Es falso.** Descargando el HTML de trece dominios —portada, contacto, aviso legal y equipo— aparecen tres: **Motriz (CS20487)**, **ALG Fisio (CS11939)** y **Fisio 3 Cantos (CS9056, en su aviso legal)**. Y el número de colegiado por profesional lo publican cinco: Motriz, ALG Fisio, Islas21, Fisio 3 Cantos y FisioSanfe.*
+
+*__Qué cambia y qué no.__ El módulo se queda tal cual: registro, colegiación y opiniones siguen siendo las tres pruebas correctas y son lo que sostiene el E-E-A-T de un sitio sanitario. **Lo que cambia es el argumento.** Esto no es una ventaja, es un requisito: los dos competidores con mejor contenido del mercado ya lo publican, y MUV sin el número de Tres Cantos no destaca, va por detrás. Deja de ser «diferenciación gratuita» y pasa a ser un pendiente urgente.*
 
 *La primera versión llevaba una tercera tarjeta, «Dos equipos que consultan entre sí», eliminada el 14/08/2026 por no poder confirmarse.*
 
@@ -178,7 +182,9 @@ Este es el bloque más importante del documento. La home ya está cerrada y las 
 > <span style="color:#c0392b">Avísenos con al menos 24 horas de antelación y le buscamos otro hueco sin coste. `[PENDIENTE MUV: confirmar el plazo de aviso y si hay penalización. Redacción propuesta, no publicar sin validar]`</span>
 
 **¿Trabajan con seguros médicos o mutuas?**
-> <span style="color:#c0392b">`[PENDIENTE MUV: es la pregunta más repetida del sector y no la responde ninguno de los doce competidores auditados. Si la respuesta es sí, hay que decir con qué compañías y si hace falta autorización previa; si es no, decirlo también, porque quien lo busca lo agradece igual]`</span>
+> <span style="color:#c0392b">`[PENDIENTE MUV: sí o no, pero con respuesta. Si es sí, con qué compañías y si hace falta autorización previa; si es no, decirlo igual y explicar el reembolso, que es lo que hacen los competidores que la responden]`</span>
+
+*__Corregido el 14/08/2026.__ Esta pregunta estaba marcada como «hueco de mercado que no responde ninguno de los doce competidores». **Es falso, y por bastante margen:** la responden siete —Centro Vitruvio (en su contacto, y dice que no trabaja con mutuas pero explica el reembolso), Lashmi (nombra MAPFRE, Unión Madrileña, Verisalud, Mediyou y cuatro más), ALG Fisio y Islas21 (los dos en su página de tarifas), Ohana e Impulso (con página propia de reembolso) y Escalante (explica los pasos)—. **No es una oportunidad, es lo normal del sector, y el único que calla es MUV.** Sigue habiendo que responderla; lo que ya no se puede decir es que sea un diferencial.*
 
 **¿Las clínicas son accesibles para personas con movilidad reducida?**
 > <span style="color:#c0392b">`[PENDIENTE MUV: acceso a pie de calle, escalones, ascensor y aseo adaptado en cada clínica. Es un dato que en un centro sanitario no debería faltar y que no publica ningún competidor del mapa]`</span>
@@ -234,7 +240,7 @@ Revisada el 14 de agosto de 2026. **Los seis encabezados llevan término del sec
 | **H2** · Direcciones, horarios y contacto de cada clínica | direcciones + horarios + contacto | Son tres búsquedas reales por sí mismas («horario clínica fisioterapia», «dirección»). Antes este encabezado no capturaba nada. |
 | **H3** · MUV El Cañaveral · **H3** · MUV Tres Cantos | nombre de marca + local | Nombre propio de negocio, que es lo que Google asocia al `MedicalClinic` de cada ficha. |
 | **H2** · Servicios de fisioterapia disponibles en cada clínica | servicios de fisioterapia | Término comercial principal del sector, encabezando el contenido único de la página. |
-| **H2** · Centro sanitario registrado y fisioterapeutas colegiados | centro sanitario registrado + fisioterapeutas colegiados | Dos términos que se buscan tal cual y que **ningún competidor auditado publica**. Encabeza el bloque de mayor peso E-E-A-T de la página. |
+| **H2** · Centro sanitario registrado y fisioterapeutas colegiados | centro sanitario registrado + fisioterapeutas colegiados | Dos términos que se buscan tal cual. Encabeza el bloque de mayor peso E-E-A-T de la página. *(Corregido el 14/08/2026: no es un término que la competencia deje libre — tres publican su registro y cinco los números de colegiado.)* |
 | **H2** · Preguntas frecuentes sobre nuestras dos clínicas | preguntas frecuentes | Habilita `FAQPage`. Formulación distinta de la de la home para no solaparse. |
 | **H2** · Pida cita en su clínica de fisioterapia MUV | pedir cita + clínica de fisioterapia + marca | Cierre transaccional con el término de conversión del sector. |
 
@@ -266,7 +272,9 @@ Revisada el 14 de agosto de 2026. **Los seis encabezados llevan término del sec
 
 *Se añade además **accesibilidad para personas con movilidad reducida**, que solo publica una de las cuatro y ninguno de los doce competidores del mapa de MUV. En un centro sanitario es un dato que no debería faltar.*
 
-*__El hallazgo que conviene aprovechar:__ la pregunta por **seguros y mutuas** aparece en las cuatro clínicas estudiadas y **no la responde ninguno de los doce competidores auditados**. Es un hueco abierto en el mercado y cuesta una respuesta de dos líneas.*
+*__Corregido el 14/08/2026.__ Aquí se decía que la pregunta por **seguros y mutuas** era «un hueco abierto en el mercado». **No lo es:** siete de los trece dominios comprobados la responden, unos para decir que sí y otros para decir que no y explicar el reembolso. Es la pregunta que el sector ya tiene resuelta y la que MUV tiene en blanco. Sigue entrando en la página —hay que responderla— pero como paridad, no como ventaja.*
+
+*__Lo que sí queda libre, comprobado con el HTML delante:__ de los trece dominios, **ninguno menciona aparcamiento, ninguno explica cómo llegar en transporte público y ninguno dice si su local es accesible**. Cero de trece en los tres. Eso sí es hueco de mercado, y son tres líneas.*
 
 *__Las tres preguntas en rojo llevan redacción propuesta, no un espacio en blanco.__ Es la diferencia con la que se eliminó antes: MUV solo tiene que confirmar o corregir, no escribir. Ninguna se publica sin su visto bueno.*
 
@@ -374,8 +382,22 @@ Ninguna clínica del mapa local de MUV tiene dos sedes, así que la referencia s
 
 **Pendientes de MUV** *(lo que impide publicar)*
 1. **Qué teléfono es el correcto en cada clínica.** En la home se pudo publicar sin teléfono; aquí no. Una página de sedes sin teléfono está rota, y el desajuste con Doctoralia es exactamente la señal local que el proyecto viene a arreglar. **Es el bloqueante número uno.**
-2. **Número de registro sanitario de Tres Cantos**, y confirmación de que MUV acepta publicar los dos. Argumentos, por si hay reparos: el registro es **público por ley** —el Real Decreto 1277/2003 lo define como «de carácter público e informativo»— y la Comunidad de Madrid mantiene un buscador abierto donde cualquiera puede consultar una clínica por nombre o dirección; publicar el número no revela nada, solo ahorra la búsqueda. Es además el dato que separa un centro sanitario legal del intrusismo, es lo que Google pide en salud, y no es información personal ni comercial. Que ningún competidor lo publique es el motivo para hacerlo, no el riesgo.
+2. **Número de registro sanitario de Tres Cantos**, y confirmación de que MUV acepta publicar los dos. Argumentos, por si hay reparos: el registro es **público por ley** —el Real Decreto 1277/2003 lo define como «de carácter público e informativo»— y la Comunidad de Madrid mantiene un buscador abierto donde cualquiera puede consultar una clínica por nombre o dirección; publicar el número no revela nada, solo ahorra la búsqueda. Es además el dato que separa un centro sanitario legal del intrusismo, es lo que Google pide en salud, y no es información personal ni comercial. **Y hay un argumento nuevo, del 14/08/2026: ya no es que nadie lo publique — lo publican Motriz, ALG Fisio y Fisio 3 Cantos.** Los dos primeros son los competidores con mejor contenido de Tres Cantos. Esto ha dejado de ser una oportunidad y se ha convertido en una desventaja mientras el número no llegue.
 3. Confirmar las zonas de atención del módulo 2. Están escritas por proximidad geográfica y sin validar con MUV; Alcobendas ya se retiró de Tres Cantos el 14 de agosto de 2026 por decisión del cliente.
+
+**Cambios de la v11** *(14 de agosto de 2026, al escribir la página de Tres Cantos)*
+
+*Escribiendo `/sedes/tres-cantos` hubo que auditar el mercado local con el HTML delante —trece dominios, portada, contacto, aviso legal, equipo y tarifas— y **tres afirmaciones de este documento no resistieron la comprobación**. Ninguna estaba en el texto publicable, las tres estaban en las justificaciones, pero son exactamente el tipo de dato que hay que defender delante del cliente:*
+
+| Lo que decía la v10 | Lo comprobado el 14/08/2026 |
+|---|---|
+| «Ninguno de los doce competidores publica su registro sanitario» | **Falso.** Lo publican tres: Motriz `CS20487`, ALG Fisio `CS11939` y Fisio 3 Cantos `CS9056` |
+| *(implícito)* los números de colegiado son diferenciación | **Falso.** Los publican cinco: Motriz, ALG, Islas21, Fisio 3 Cantos y FisioSanfe |
+| «La pregunta de mutuas no la responde ninguno» | **Falso.** La responden siete, entre ellos Vitruvio, Lashmi, Escalante e Impulso |
+
+*__Lo que sí resistió__, y por tanto es lo que de verdad se puede defender: **cero de trece** declaran `MedicalClinic`, `LocalBusiness` o `Physiotherapy`; **cero de trece** mencionan aparcamiento, transporte público o accesibilidad. `FAQPage` lo declara uno —Impulso, en El Cañaveral—, así que también hubo que matizarlo en la home.*
+
+*__La lección, que vale más que la corrección:__ las tres afirmaciones falsas venían de una auditoría que miró portadas. El registro sanitario de Fisio 3 Cantos está en su aviso legal y la respuesta de mutuas de ALG en su página de tarifas. **Un «nadie lo hace» solo vale si se ha mirado donde la gente lo pone**, y en un sitio sanitario eso incluye el aviso legal, el contacto, las tarifas y la ficha del equipo.*
 
 **Decisiones tomadas en la revisión del 14 de agosto de 2026**
 - **Módulos 1 y 2 fusionados en uno.** Decían lo mismo con otras palabras. La página pasa de 7 módulos a 6 y de 594 a 529 palabras, sin perder una sola idea.
