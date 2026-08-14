@@ -42,7 +42,7 @@ Lo peligroso es que la tentación es de buen desarrollador: normalizar «Av.» a
 |---|---|---|---|
 | `/` | `home.md` | `MUV-HOME-v8.pdf` | Cerrada. **785 palabras publicables** |
 | `/sedes` | `sedes.md` | `MUV-SEDES-v13.pdf` | Cerrada. **396 palabras publicables** |
-| `/sedes/tres-cantos` | `sede-tres-cantos.md` | `MUV-SEDE-TRES-CANTOS-v6.pdf` | Cerrada. **1.304 palabras publicables** |
+| `/sedes/tres-cantos` | `sede-tres-cantos.md` | `MUV-SEDE-TRES-CANTOS-v7.pdf` | Cerrada. **1.323 palabras publicables** |
 | `/sedes/el-canaveral` | — | — | Sin escribir |
 
 **Solo hay un PDF por página y siempre es el vigente.** Cuando sale una versión nueva se borra la anterior en el mismo commit, para que nadie tenga que adivinar cuál es la buena.
