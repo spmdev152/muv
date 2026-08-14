@@ -6,6 +6,36 @@ Esta carpeta contiene la copy aprobada de la web. **Es la fuente de la verdad de
 
 ---
 
+# ⛔ Dos cosas que no hay que hacer nunca
+
+**Lee esto aunque no leas nada más.** Son los dos únicos errores de este proyecto que hacen daño de verdad, y los dos se cometen **haciendo algo que parece buen trabajo**. No dan error, no rompen el build y no se ven en una revisión: se notan semanas después, en el buscador.
+
+## 1 · No declarar las valoraciones de Doctoralia como `aggregateRating`
+
+En la copy verás **«158 valoraciones en Doctoralia con una media de 5 sobre 5»** y **«más de 1.800 valoraciones»**. El impulso natural de cualquiera que sepa de schema es marcarlas con `aggregateRating`. **No se hace.**
+
+Esas opiniones están recogidas **en Doctoralia, no en la web de MUV**. Las directrices de Google prohíben marcar como propias las valoraciones obtenidas en otra plataforma. No es una mala práctica discutible: es motivo de **acción manual**, y una acción manual por marcado engañoso **tumba todos los resultados enriquecidos de todo el dominio**, no solo los de esa página. Se pierden las FAQ, la ficha de negocio, los horarios — todo el trabajo de marcado del proyecto de una vez.
+
+- ✅ Se citan **como texto**, nombrando siempre la plataforma.
+- ✅ Se vinculan con el **`sameAs`** del `Organization` de la home, apuntando a las dos fichas de Doctoralia. Esa es la forma correcta y además consolida la entidad de marca.
+- ❌ `aggregateRating`, `Review` o `ratingValue` con esos datos. Nunca. En ninguna página.
+
+## 2 · No «arreglar» el formato de la dirección, el teléfono ni el horario
+
+La dirección, el teléfono y el horario aparecen repetidos en la home, en `/sedes` y en cada página de sede. **Esa repetición es deliberada.** Se llama NAP —*name, address, phone*— y no es contenido duplicado.
+
+Google cruza esos tres datos entre la web, Google Business Profile y los directorios como Doctoralia para confirmar que un negocio local existe y es el que dice ser. **Tienen que coincidir carácter a carácter en todas partes.**
+
+Lo peligroso es que la tentación es de buen desarrollador: normalizar «Av.» a «Avenida», añadir «Madrid» a una dirección que no lo lleva, unificar el formato de los teléfonos, quitar el «Local 5» porque parece redundante, cambiar `10:00–14:00` por `10:00 - 14:00`. **Cualquiera de esas mejoras degrada la señal local que este proyecto existe para arreglar.**
+
+- ✅ Copiar el dato **tal cual** está en `locations.ts` y en la copy.
+- ✅ Si hay que cambiar un formato, se cambia **a la vez** en la web, en Google Business Profile y en Doctoralia.
+- ❌ Reformatear, abreviar, completar o «limpiar» un NAP en un solo sitio.
+
+> Y ojo con el orden: **hoy los teléfonos del repositorio y los de Doctoralia no coinciden en ninguna de las dos sedes.** Está sin resolver, es el bloqueante número uno, y hasta que el cliente diga cuál es el bueno **no se publica ninguno**.
+
+---
+
 ## Qué hay aquí y qué versión es la buena
 
 | Página | Documento | PDF para el cliente | Estado |
