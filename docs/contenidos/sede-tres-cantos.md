@@ -14,7 +14,7 @@
 - **Keyword principal:** fisioterapia en Tres Cantos
 - **Keywords de apoyo:** fisioterapeuta en Tres Cantos, clínica de fisioterapia Tres Cantos, fisioterapia deportiva Tres Cantos, entrenamiento terapéutico Tres Cantos
 - **NO compite por:** «Clínica MUV» (es de la home) ni «clínicas de fisioterapia en Madrid» (es de `/sedes`)
-- **Extensión:** **1.331 palabras publicables hoy** — lo que se puede llevar a la web ahora mismo, sin contar nada de lo pendiente de MUV. Contadas con el mismo script que la home y que `/sedes`, para que las tres cifras sean comparables. Con los pendientes resueltos ronda las 1.600, por encima de la guía de 700–900 del documento de arranque. El motivo, medido, está en las notas de producción
+- **Extensión:** **1.329 palabras publicables hoy** — lo que se puede llevar a la web ahora mismo, sin contar nada de lo pendiente de MUV. Contadas con el mismo script que la home y que `/sedes`, para que las tres cifras sean comparables. Con los pendientes resueltos ronda las 1.600, por encima de la guía de 700–900 del documento de arranque. El motivo, medido, está en las notas de producción
 - **Encabezados:** 1 H1 + 9 H2 + 12 H3. El municipio va en los diez de nivel 1 y 2, y en ninguno de los H3
 - **Método:** competencia auditada sobre el HTML de trece dominios · formulaciones de búsqueda tomadas del autocompletado público de Google (España, español) · datos del municipio, del Ayuntamiento de Tres Cantos
 - **Trato:** usted · **Voz:** «En MUV…» (nosotros) · **Precios:** no se publican
@@ -233,7 +233,9 @@
 > Nuestro equipo de fisioterapeutas en Tres Cantos
 
 **Entradilla**
-> Quien le atiende en esta clínica es siempre un fisioterapeuta colegiado. Estos son.
+> Quien le atiende en esta clínica es siempre un fisioterapeuta colegiado.
+
+*__Aviso de maquetación:__ la entradilla decía «Quien le atiende… Estos son.» y **«Estos son» anunciaba una lista que hoy no existe**, porque las fichas del equipo están pendientes de MUV. Una frase que presenta algo que viene después no puede publicarse si lo que viene después está en rojo. Cuando lleguen las fichas, esa coletilla puede volver.*
 
 **Fichas del equipo**
 > <span style="color:#c0392b">`[PENDIENTE MUV: nombre, foto, número de colegiado y áreas de trabajo de cada fisioterapeuta de Tres Cantos. En las opiniones verificadas de Doctoralia de agosto de 2026 aparece atendiendo José González; hay que confirmar la plantilla completa. Sin número de colegiado el bloque pierde la mitad de su valor]`</span>
@@ -353,7 +355,7 @@
 **¿Atienden a domicilio en Tres Cantos?**
 > <span style="color:#c0392b">`[PENDIENTE MUV: sí o no. Aparece en 3 de las 4 clínicas del estudio de preguntas frecuentes y en Tres Cantos solo la responde Centro Vitruvio, en su página de contacto. Si es que no, se dice y se acabó]`</span>
 
-*__De ocho preguntas a seis: dos se han caído por repetir, y con motivo.__*
+*__De ocho preguntas a cinco, en dos pasos.__ Primero cayeron dos por repetir lo que ya responden la home o `/sedes`, y otras dos por contestar lo que ya contesta esta misma página; después cayó una quinta, la de elegir fisioterapeuta, **por estar inventada**. Las cuatro primeras, con su motivo:*
 
 | Pregunta descartada | Por qué |
 |---|---|
@@ -777,9 +779,9 @@ Aparecidos en esta auditoría y no recogidos ni en la tabla del cliente ni en la
 
 **Otro, sobre fugas de tráfico.** El autocompletado devuelve también `fisioterapia suelo pelvico tres cantos` y `fisioterapia pediatrica tres cantos`. **Hay demanda local de dos servicios que esta clínica no presta** —se hacen en El Cañaveral, a 35 kilómetros—. La página deriva correctamente en el módulo 3, pero conviene que MUV sepa que esa búsqueda existe en su municipio y hoy se la lleva íntegra la competencia. Es una decisión de negocio, no de contenido.
 
-**Sobre la extensión.** El documento de arranque fija 700–900 palabras para una página de sede. El texto publicable hoy son **1.331**, y con los pendientes resueltos rondará las **1.600**. Se propone dejarlo, y el motivo es medible: las páginas que hoy posicionan por delante en este municipio tienen 1.710 *(Lashmi)*, 1.279 *(ALG)* y 1.196 *(Motriz)*. Entrar con 800 palabras en la búsqueda que esta clínica lleva perdiendo desde que abrió es entrar en desventaja, y lo que excede el límite no es relleno: es el módulo 2 —el hueco más grande del mercado, y ahora escrito con las formulaciones que la gente teclea— y los módulos 8 y 9, que no tiene nadie. **Si MUV quiere ajustarse al límite, el orden de recorte es 6, luego 4; nunca el 2, el 8 ni el 9.**
+**Sobre la extensión.** El documento de arranque fija 700–900 palabras para una página de sede. El texto publicable hoy son **1.329**, y con los pendientes resueltos rondará las **1.600**. Se propone dejarlo, y el motivo es medible: las páginas que hoy posicionan por delante en este municipio tienen 1.710 *(Lashmi)*, 1.279 *(ALG)* y 1.196 *(Motriz)*. Entrar con 800 palabras en la búsqueda que esta clínica lleva perdiendo desde que abrió es entrar en desventaja, y lo que excede el límite no es relleno: es el módulo 2 —el hueco más grande del mercado, y ahora escrito con las formulaciones que la gente teclea— y los módulos 8 y 9, que no tiene nadie. **Si MUV quiere ajustarse al límite, el orden de recorte es 6, luego 4; nunca el 2, el 8 ni el 9.**
 
-*Con 1.331 palabras publicables esta página pasa a ser la más larga del municipio después de Lashmi, y **la única cuya extensión está ocupada por lo que nadie más cubre** en lugar de por descripciones de técnicas. Es la diferencia entre ser larga y ser densa.*
+*Con 1.329 palabras publicables esta página pasa a ser la más larga del municipio después de Lashmi, y **la única cuya extensión está ocupada por lo que nadie más cubre** en lugar de por descripciones de técnicas. Es la diferencia entre ser larga y ser densa.*
 
 **Sobre el vocabulario.** Revisado con script contra las prohibiciones del documento de arranque, **solo sobre el texto publicable**, no sobre las justificaciones: sin «paciente» ni «cliente», sin promesas de curación, sin cifras de eficacia sin fuente, sin presentar la valoración como diagnóstico médico, sin importes en euros y **sin comparaciones directas con otras clínicas**. Los hallazgos sobre la competencia están en este documento para justificar las decisiones y **ninguno aparece en lo que se publica**.
 
