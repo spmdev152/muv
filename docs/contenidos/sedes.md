@@ -1,6 +1,6 @@
-# SEDES — versión 11 *(lista para MUV)*
+# SEDES — versión 12 *(lista para MUV)*
 
-*Revisada el 14 de agosto de 2026. La v11 no cambia una sola palabra publicable: corrige tres justificaciones que resultaron ser falsas al recomprobar la competencia. Detalle al final del documento.*
+*Revisada dos veces el 14 de agosto de 2026, y **ninguna de las dos cambia una sola palabra del texto publicable**: sigue en 558 palabras. La v11 corrigió tres justificaciones que resultaron falsas al recomprobar la competencia. La v12 revisa la tabla de origen de las preguntas frecuentes contra los competidores directos y sube la pregunta de mutuas a bloqueante, con un dato de búsqueda nuevo. Detalle al final del documento.*
 
 - **URL:** `/sedes`
 - **Keyword principal:** clínicas de fisioterapia MUV *(marca + ubicación)*
@@ -256,21 +256,33 @@ Revisada el 14 de agosto de 2026. **Los seis encabezados llevan término del sec
 
 *__Las seis preguntas salen de una investigación, no de una lluvia de ideas.__ El 14/08/2026 se recogieron **127 preguntas frecuentes reales** publicadas por cuatro clínicas de fisioterapia españolas —Fisiolution, Clínica Víctor Díez, eFISIO y Fisioterapia Serenyal— y se cruzaron para ver cuáles se repiten. Lo que aparece en tres o cuatro de las cuatro es lo que la gente pregunta de verdad:*
 
-| Pregunta | Aparece en | Dónde va en el sitio de MUV |
-|---|:---:|---|
-| Qué llevar a la primera cita | 4 de 4 | **Aquí** |
-| Qué pasa si no puedo ir · cancelaciones | 4 de 4 | **Aquí** |
-| Seguros médicos y mutuas | 4 de 4 | **Aquí** |
-| Cuánto dura la sesión | 4 de 4 | Ya está en la home |
-| Horarios | 4 de 4 | Fichas del módulo 2 · sábados ya en la home |
-| Precios y bonos | 4 de 4 | No se publican *(decisión de MUV)* |
-| Cómo pedir cita | 3 de 4 | **Aquí** |
-| Si duele | 3 de 4 | Páginas de servicio |
-| Aparcamiento y cómo llegar | 3 de 4 | Páginas de sede |
-| Elegir fisioterapeuta | 3 de 4 | Páginas de sede, junto al equipo |
-| Atención a domicilio | 3 de 4 | Pendiente de saber si MUV lo ofrece |
+*__Revisada el 14/08/2026 y ampliada con el mercado real.__ El estudio original cruzaba cuatro clínicas españolas cualquiera. Al auditar Tres Cantos y El Cañaveral aparecieron **tres competidores directos con bloque de preguntas frecuentes publicado** —Centro Vitruvio (7 preguntas, en su contacto), Escalante (4) e Impulso (6)—, así que ahora la tabla cruza las dos cosas: lo que pregunta el sector y lo que responden los que compiten con MUV.*
 
-*Se añade además **accesibilidad para personas con movilidad reducida**, que solo publica una de las cuatro y ninguno de los doce competidores del mapa de MUV. En un centro sanitario es un dato que no debería faltar.*
+| Pregunta | Estudio *(4 clínicas)* | **Competencia directa** *(3 con FAQ)* | Dónde va en el sitio de MUV |
+|---|:---:|:---:|---|
+| **Seguros médicos y mutuas** | **4 de 4** | **3 de 3** | **`/sedes`** — la única que sale en las tres fuentes |
+| Cuánto dura la sesión | 4 de 4 | **3 de 3** | Ya está en la home |
+| Qué llevar a la primera cita | 4 de 4 | 1 de 3 | `/sedes` |
+| Qué pasa si no puedo ir · cancelaciones | 4 de 4 | — | `/sedes` |
+| Precios y bonos | 4 de 4 | 1 de 3 | No se publican *(decisión de MUV)* |
+| Horarios | 4 de 4 | — | Fichas del módulo 2 · en Tres Cantos, con H3 propio |
+| Qué servicios hacéis | — | 2 de 3 | Módulo 3 de cada página de sede |
+| Cómo pedir cita | 3 de 4 | 1 de 3 | `/sedes` |
+| Cuántas sesiones necesitaré | — | 1 de 3 | Ya está en la home |
+| Atención a domicilio | 3 de 4 | 1 de 3 | **Páginas de sede** *(depende de la zona de cada clínica)* |
+| Aparcamiento y cómo llegar | 3 de 4 | 1 de 3 | **Páginas de sede**, módulo de cómo llegar |
+| Elegir fisioterapeuta | 3 de 4 | — | **Páginas de sede**, junto al equipo |
+| Si duele | 3 de 4 | — | Páginas de servicio |
+| **Formas de pago** | — | 1 de 3 | **Sin asignar.** Candidata a séptima de `/sedes` si MUV quiere |
+| Accesibilidad para movilidad reducida | 1 de 4 | **0 de 3** | `/sedes`, y el detalle en cada página de sede |
+
+**Qué cambia tras la revisión, en concreto:**
+
+- **La pregunta de mutuas queda confirmada por tres vías independientes** y es la única que lo consigue: 4 de 4 en el estudio, **3 de 3 en la competencia directa** y —el dato nuevo— **el propio autocompletado de Google**. Al teclear «fisioterapia tres cantos», Google sugiere `fisioterapia tres cantos adeslas`, `asisa` y `sanitas` entre las primeras, y lo mismo ocurre con Colmenar Viejo. **No es una pregunta frecuente: es un modificador de la keyword principal.** Ver las notas de producción.
+- **«Atención a domicilio» deja de estar sin asignar y baja a las páginas de sede**, porque la respuesta depende del radio de cada clínica y no es la misma en El Cañaveral que en Tres Cantos. En el mapa local solo la responde Centro Vitruvio, y el autocompletado devuelve `fisioterapia a domicilio tres cantos`.
+- **«Qué servicios hacéis» sale de la lista de candidatas a FAQ.** La responden dos de los tres competidores, pero en el sitio de MUV ya la contestan la tabla de esta página y el módulo de servicios de cada sede. Como pregunta sería la cuarta vez.
+- **Entra «formas de pago»**, que no estaba en el estudio y que publica Escalante. No es publicar precios —que MUV ha descartado— sino decir si se puede pagar con tarjeta o solo en efectivo. Queda como candidata, no se añade sin decisión.
+- **La accesibilidad se confirma como hueco: 0 de 3.** Ninguno de los competidores con FAQ la responde, y ninguno de los trece dominios la menciona en ninguna página.
 
 *__Corregido el 14/08/2026.__ Aquí se decía que la pregunta por **seguros y mutuas** era «un hueco abierto en el mercado». **No lo es:** siete de los trece dominios comprobados la responden, unos para decir que sí y otros para decir que no y explicar el reembolso. Es la pregunta que el sector ya tiene resuelta y la que MUV tiene en blanco. Sigue entrando en la página —hay que responderla— pero como paridad, no como ventaja.*
 
@@ -383,7 +395,15 @@ Ninguna clínica del mapa local de MUV tiene dos sedes, así que la referencia s
 **Pendientes de MUV** *(lo que impide publicar)*
 1. **Qué teléfono es el correcto en cada clínica.** En la home se pudo publicar sin teléfono; aquí no. Una página de sedes sin teléfono está rota, y el desajuste con Doctoralia es exactamente la señal local que el proyecto viene a arreglar. **Es el bloqueante número uno.**
 2. **Número de registro sanitario de Tres Cantos**, y confirmación de que MUV acepta publicar los dos. Argumentos, por si hay reparos: el registro es **público por ley** —el Real Decreto 1277/2003 lo define como «de carácter público e informativo»— y la Comunidad de Madrid mantiene un buscador abierto donde cualquiera puede consultar una clínica por nombre o dirección; publicar el número no revela nada, solo ahorra la búsqueda. Es además el dato que separa un centro sanitario legal del intrusismo, es lo que Google pide en salud, y no es información personal ni comercial. **Y hay un argumento nuevo, del 14/08/2026: ya no es que nadie lo publique — lo publican Motriz, ALG Fisio y Fisio 3 Cantos.** Los dos primeros son los competidores con mejor contenido de Tres Cantos. Esto ha dejado de ser una oportunidad y se ha convertido en una desventaja mientras el número no llegue.
-3. Confirmar las zonas de atención del módulo 2. Están escritas por proximidad geográfica y sin validar con MUV; Alcobendas ya se retiró de Tres Cantos el 14 de agosto de 2026 por decisión del cliente.
+3. **¿Se trabaja con mutuas o seguros médicos?** Sube a bloqueante el 14/08/2026 con un dato nuevo y bastante contundente.
+
+   *Al teclear «fisioterapia tres cantos» en Google, el autocompletado devuelve como primeras sugerencias **`fisioterapia tres cantos adeslas`, `fisioterapia tres cantos asisa` y `fisioterapia tres cantos sanitas`**. Lo mismo ocurre con Colmenar Viejo, que está en la zona de atención de Tres Cantos: `sanitas`, `adeslas`, `asisa`. Comprobado en el endpoint público de sugerencias, en español y desde España, y reproducible en treinta segundos.*
+
+   **Esto reordena la prioridad de la pregunta.** No es una duda que surge una vez dentro de la web: **es un modificador de la keyword principal**, gente que ya está buscando fisioterapia en este municipio *con* el nombre de su aseguradora. Y cuadra con el resto de fuentes: 4 de 4 clínicas del estudio la publican y 3 de 3 competidores directos con FAQ la responden. **Es la única pregunta confirmada por tres vías independientes.**
+
+   Si la respuesta es sí, hay que decir con qué compañías —Lashmi las nombra una por una— y si hace falta autorización previa. Si es no, hay que decirlo igual y explicar el reembolso, que es exactamente lo que hacen Centro Vitruvio, ALG Fisio, Islas21, Ohana, Escalante e Impulso. **Lo único que no vale es callar, que es lo que hacemos hoy.**
+
+4. Confirmar las zonas de atención del módulo 2. Están escritas por proximidad geográfica y sin validar con MUV; Alcobendas ya se retiró de Tres Cantos el 14 de agosto de 2026 por decisión del cliente.
 
 **Cambios de la v11** *(14 de agosto de 2026, al escribir la página de Tres Cantos)*
 

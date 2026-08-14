@@ -1,12 +1,13 @@
-# SEDE TRES CANTOS — versión 2
+# SEDE TRES CANTOS — versión 3
 
-*Escrita el 14 de agosto de 2026 y revisada el mismo día tras recomprobar la competencia dominio a dominio. La v2 corrige tres afirmaciones que no eran ciertas, replantea el argumento de horario, desarrolla el módulo de dolencias y baja las preguntas frecuentes de ocho a seis. Detalle al final.*
+*Escrita y revisada tres veces el 14 de agosto de 2026. La v3 reescribe el módulo de dolencias sobre datos de búsqueda reales, convierte el horario en el elemento visual de la página y verifica el transporte público. Detalle al final.*
 
 - **URL:** `/sedes/tres-cantos`
 - **Keyword principal:** fisioterapia en Tres Cantos
 - **Keywords de apoyo:** fisioterapeuta en Tres Cantos, clínica de fisioterapia Tres Cantos, fisioterapia deportiva Tres Cantos, entrenamiento terapéutico Tres Cantos
 - **NO compite por:** «Clínica MUV» (es de la home) ni «clínicas de fisioterapia en Madrid» (es de `/sedes`)
-- **Extensión:** **1.214 palabras publicables**, contadas con script. Con los ocho pendientes redactados rondará las 1.450, por encima de la guía de 700–900 del documento de arranque. El motivo, medido, está en las notas de producción
+- **Extensión:** **1.451 palabras publicables**, contadas con script *(excluye encabezados de módulo, notas en cursiva, tablas de investigación y pendientes)*. Con los pendientes redactados rondará las 1.700, por encima de la guía de 700–900 del documento de arranque. El motivo, medido, está en las notas de producción
+- **Método:** competencia auditada sobre el HTML de trece dominios · formulaciones de búsqueda tomadas del autocompletado público de Google (España, español) · datos del municipio, del Ayuntamiento de Tres Cantos
 - **Trato:** usted · **Voz:** «En MUV…» (nosotros) · **Precios:** no se publican
 - **Cómo llamamos al lector:** ni «paciente» ni «cliente». Se le habla de usted y se prescinde del sustantivo
 - **Estructura:** 10 módulos
@@ -51,16 +52,28 @@
 **Entradilla**
 > En MUV Tres Cantos tratamos el dolor y la lesión musculoesquelética y deportiva, y acompañamos la recuperación con ejercicio pautado por fisioterapeutas. Empezamos siempre por una valoración: primero entendemos de dónde viene la molestia y después decidimos el tratamiento. **Atendemos hasta las diez de la noche de lunes a viernes y los sábados por la mañana**, para que tratarse no dependa de pedir permiso en el trabajo.
 
-**Ficha rápida** *(visible en el hero, sin encabezado)*
+**Franja de disponibilidad** *(tira de tres columnas bajo el titular, sin encabezado — es el elemento visual de la página)*
+
+| | | |
+|---|---|---|
+| **Hasta las 22:00** | **Sábados por la mañana** | **Cita online** |
+| De lunes a viernes, con la última sesión al salir de trabajar. | De 10:00 a 14:00, para lo que no cabe entre semana. | Elige fisioterapeuta y hora sin llamar. |
+
+**Ficha de contacto** *(bajo la franja)*
 > **Av. de Madrid, 19, Local 5 · 28760 Tres Cantos**
-> **Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00**
 > **Zona de atención:** Tres Cantos, Soto de Viñuelas y Colmenar Viejo.
 > **Teléfono:** <span style="color:#c0392b">**658 59 76 02** *(el del sitio actual)* · **614 13 14 05** *(el de Doctoralia)* — pendiente de confirmar cuál es el bueno</span>
 
 **Botones**
 > `[Pedir cita]` · `[Cómo llegar]` *(ancla al módulo 8)*
 
-*__El horario sube al hero y a la entradilla, y aquí está el porqué, medido el 14/08/2026 leyendo la web de cada clínica una por una.__*
+*__La franja es el sitio donde el par se ve, y hay tres razones para darle este peso.__*
+
+*__Una:__ es lo único que esta clínica gana hoy. **Dos:** hay búsqueda propia detrás — el autocompletado de Google en España devuelve `fisioterapia sábados`, `fisioterapia sábados madrid` y `fisioterapia abierto sábados` como consultas formadas, así que no es un adorno operativo, es demanda. **Tres:** las tres columnas responden en tres segundos a las tres objeciones reales de quien busca fisioterapeuta un martes con dolor —«no me da tiempo», «no puedo entre semana», «no quiero llamar»—, que es exactamente lo que un hero tiene que hacer.*
+
+*El horario sale de la ficha de contacto y sube a la franja: **estaba escrito como un dato administrativo y es un argumento de venta**. Abajo se queda lo que de verdad es ficha: dirección, zona y teléfono.*
+
+*__Y aquí está el porqué del argumento, medido el 14/08/2026 leyendo la web de cada clínica una por una.__*
 
 *__Lo que NO se puede decir:__ que seamos los últimos en cerrar. **Motriz también cierra a las 22:00** (9:00–22:00). En la franja de noche empatamos, no ganamos, y afirmarlo sería exactamente el error que ya se cometió con el registro sanitario.*
 
@@ -82,27 +95,56 @@
 > Casi nadie llega a un fisioterapeuta sabiendo qué técnica necesita: llega sabiendo qué le duele. Así que empiece por ahí. Estos son los motivos de consulta con los que más se entra por esta puerta, y lo que solemos encontrar detrás de cada uno.
 
 **H3 · Dolor de espalda: lumbar, cervical y dorsal**
-> Lumbalgia, cervicalgia, contractura, dolor irradiado hacia la pierna o el brazo, molestias tras un esfuerzo puntual y dolores que llevan meses instalados. Es el motivo número uno en esta clínica, y con mucha frecuencia el origen no está en la espalda sino en cómo pasa el día: **ocho horas sentado delante de una pantalla cargan la zona lumbar y el cuello tanto como un mal gesto**. Por eso la valoración mira también su puesto de trabajo, no solo la zona que duele.
+> **Dolor lumbar** que aparece al levantarse de la silla o al final del día, **dolor cervical** que sube hasta la cabeza o se acompaña de mareo, dolor dorsal entre los omóplatos, contracturas y molestias que bajan por la pierna o el brazo. Es el motivo de consulta número uno de esta clínica.
+> Y muy a menudo el origen no está donde duele, sino en cómo pasa el día: **una jornada entera delante de una pantalla carga la zona lumbar y el cuello tanto como un mal gesto**, solo que despacio y sin que se note hasta que ya duele. Por eso la valoración mira también su puesto y su postura de trabajo, no solo la zona que se queja.
 
-**H3 · Lesión de rodilla**
-> Dolor al bajar escaleras o al correr, tendinopatía rotuliana, molestias de menisco o de ligamento, dolor femoropatelar y recuperación tras una operación. Trabajamos la readaptación por fases: primero que deje de doler, después que aguante la carga, y al final que vuelva a lo que hacía —correr por la Dehesa, la bici, el pádel o subir a casa sin pensarlo.
+**H3 · Dolor de rodilla**
+> **Dolor al subir y bajar escaleras**, al flexionar, al correr —por fuera o por dentro de la rodilla—, molestias que siguen en reposo, tendinopatía rotuliana, problemas de menisco o de ligamento y recuperación tras una operación.
+> La readaptación va por fases y en este orden: que deje de doler, que la rodilla aguante carga, y que vuelva a lo que hacía. Aquí eso último tiene nombre concreto —volver a correr, a la bici, al pádel o simplemente a subir a casa sin ir pensando en la rodilla—, y es la parte que más se salta cuando el tratamiento termina en la camilla.
 
-**H3 · Lesión de hombro**
-> Dolor del manguito rotador, tendinopatías, hombro que se queda rígido, pinzamiento y pérdida de fuerza para levantar el brazo. Es la lesión que más se cronifica por dejarla pasar, y también donde más rápido se nota la diferencia entre tratar y además fortalecer.
+**H3 · Dolor de hombro**
+> **Dolor al levantar el brazo**, dolor que despierta por la noche al apoyarse de ese lado, tendinitis del supraespinoso, pinzamiento, hombro que se va quedando rígido y pérdida de fuerza para gestos cotidianos como alcanzar un estante o abrocharse.
+> Es la lesión que más se cronifica por dejarla pasar y donde más se nota la diferencia entre tratar el dolor y además recuperar la fuerza. Lo segundo es lo que evita la recaída.
 
-**H3 · ATM y dolor mandibular**
-> Dolor al masticar, chasquidos, limitación al abrir la boca y desgaste por apretar los dientes. Casi siempre viene acompañado de tensión cervical, y se trata junto con ella, no por separado.
+**H3 · ATM, bruxismo y dolor mandibular**
+> **Dolor al masticar**, chasquidos al abrir la boca, limitación para abrirla del todo, dolor que se confunde con el de oído y dolor de cabeza al despertar por apretar los dientes de noche.
+> La articulación temporomandibular y el cuello trabajan juntos, así que se valoran juntos: tratar solo la mandíbula cuando la tensión viene de la musculatura cervical es media consulta.
 
 **Cierre**
 > También tratamos tendinopatías, esguinces, sobrecargas de entrenamiento y recuperación posquirúrgica con informe del hospital. Si lo que le pasa no aparece aquí, escríbanos y le decimos si es un caso para nosotros: **si en la valoración encontramos algo que no corresponde tratar en fisioterapia, se lo diremos y le indicaremos a quién acudir.**
 
-*__Este es el módulo con más recorrido de la página y por eso se ha desarrollado por encima del resto.__ De las once webs auditadas del mapa local, **ninguna organiza su página por dolencia**: todas listan servicios y aparatos —osteopatía, INDIBA, EPTE, punción seca, presoterapia—, que es el vocabulario de la clínica. Quien tiene dolor no busca «EPTE», busca «me duele la rodilla al bajar escaleras». Entre el buscador y la clínica hay un idioma de diferencia y nadie lo está traduciendo.*
+*__Este es el módulo con más recorrido de la página y por eso se ha desarrollado por encima del resto.__ De las once webs auditadas del mapa local, **ninguna organiza su página por dolencia**: todas listan servicios y aparatos —osteopatía, INDIBA, EPTE, punción seca, presoterapia—, que es el vocabulario de la clínica. Entre lo que el buscador escribe y lo que la clínica publica hay un idioma de diferencia, y nadie lo está traduciendo.*
 
-*__Cómo se aprovecha sin crear páginas nuevas.__ Cuatro H3 —los cuatro que ya tienen su página de dolencia en la web— y dentro de cada uno, los cuadros concretos escritos con su nombre: lumbalgia, cervicalgia, tendinopatía rotuliana, manguito rotador, dolor femoropatelar, bruxismo. **Son búsquedas propias, con poca competencia local, y entran como texto normal dentro de un bloque que ya existe.** Es exactamente lo que hace Motriz con sus «unidades» —unidad de hombro, unidad lumbar— y lo que hace Nuevo Príncipe con su silo de patologías, que son los dos que mejor cubren la cola larga del municipio.*
+### De dónde salen exactamente estas frases
 
-*__El ángulo local, que es lo que no pueden copiar.__ En Tres Cantos hay más de 3.000 empresas y del orden de 36.000 puestos de trabajo para unos 50.000 habitantes: **hay casi tanta gente trabajando en el municipio como viviendo en él**, y buena parte en oficinas del parque tecnológico. Es la mayor concentración de dolor cervical y lumbar de origen postural del mapa, **ninguna clínica de la competencia la nombra**, y encaja con lo único que MUV tiene y ellos no: consulta hasta las diez de la noche.*
+*__No están escritas de oído.__ El 14/08/2026 se consultó el **autocompletado de Google en España y en español** —el endpoint público de sugerencias, reproducible por cualquiera— para veintitrés consultas semilla. Cada sugerencia es una consulta que la gente teclea de verdad. Las formulaciones del módulo son literalmente esas, no sinónimos elegidos por gusto:*
 
-*__Y la frase del cierre no es de relleno.__ Decir que si algo no es de fisioterapia se deriva es señal de criterio clínico en un sitio de salud, es coherente con la primera pregunta frecuente de la home, y **cumple la prohibición del documento de arranque de no presentar una valoración fisioterápica como un diagnóstico médico**. Cuesta una línea y no la dice nadie.*
+| Semilla | Lo que Google devuelve *(extracto)* | Dónde se ha usado |
+|---|---|---|
+| dolor de rodilla | «**al subir escaleras**» *(1.ª sugerencia)* · «al flexionar y estirar» · «al bajar escaleras» · «en reposo y al caminar» | H3 de rodilla, literal |
+| dolor de rodilla al correr | «**parte externa**» · «parte interna» · «y bajar escaleras» | «por fuera o por dentro de la rodilla» |
+| dolor de hombro | «**al levantar el brazo**» · «al dormir» · «y brazo derecho» | H3 de hombro, literal |
+| tendinitis hombro | «**supraespinoso**» · «tratamiento» · «ejercicios» | Se nombra el supraespinoso |
+| dolor cervical | «**y de cabeza**» · «**y mareos**» · «constante» · «ejercicios» | H3 de espalda: «sube hasta la cabeza o se acompaña de mareo» |
+| dolor de espalda | «baja» · «alta» · «media» · «al dormir» · «al respirar» | «lumbar, cervical y dorsal» en el H3 |
+| dolor de espalda de estar sentado | «**por estar sentado mucho tiempo**» · «todo el día» · «en la computadora» · «al levantarse de estar sentado» | El párrafo del trabajo de oficina |
+| dolor mandíbula | «**al masticar**» · «**y oído**» · «**bruxismo**» · «y cabeza» | H3 de ATM, las cuatro |
+
+*__La consecuencia práctica es un cambio real:__ la v2 decía «dolor al bajar escaleras» y **la primera sugerencia de Google es «al subir escaleras»**. Se escribe «al subir y bajar», que es como se busca. Es la diferencia entre redactar bonito y redactar para que te encuentren.*
+
+*__Por qué esto y no un listado de volúmenes.__ Porque un volumen de búsqueda sin herramienta declarada no se puede defender delante del cliente —ya hay un pendiente abierto por eso en el proyecto—, y **el autocompletado sí: es público, gratuito, se repite en treinta segundos y es la propia máquina la que dice qué se escribe.** No dice cuánta gente busca; dice cómo lo escribe, que es lo que hace falta para redactar.*
+
+*__Cómo se captura sin crear una sola página.__ Cuatro H3 —los cuatro que ya tienen su página de dolencia en la web— y dentro de cada uno, las formulaciones concretas como texto corrido. Es lo que hace Motriz con sus «unidades» —unidad de hombro, unidad lumbar— y Nuevo Príncipe con su silo de patologías, los dos que mejor cubren la cola larga del municipio. La diferencia es que ellos lo hacen con nombre de patología y aquí se hace **con el síntoma**, que es lo que se teclea.*
+
+### El ancla local, y esta vez con dato de búsqueda
+
+*__El dato de partida es del Ayuntamiento de Tres Cantos__, no de un blog: el municipio tiene **unos 50.000 habitantes**, es sede del **Parque Científico y Tecnológico de Madrid** y **alberga 3.000 empresas que generan más de 36.000 puestos de trabajo** en sectores de alto componente tecnológico. Más del 60% de la población tiene estudios medios o superiores. Es decir: **hay casi tanta gente trabajando en el municipio como viviendo en él**, y buena parte delante de una pantalla.*
+
+*__Y no es solo demografía, hay búsqueda.__ Al teclear «fisioterapia tres cantos p», el autocompletado devuelve **`ptm fisioterapia tres cantos`** — PTM es el Parque Tecnológico de Madrid. **Hay gente buscando fisioterapeuta asociándolo al parque tecnológico.** Ninguna de las once clínicas del mapa lo nombra en su web.*
+
+*Esa población encaja con las tres cosas que esta clínica tiene: dolor cervical y lumbar de origen postural, consulta hasta las diez de la noche y sábado por la mañana. **El módulo no lo dice con estadísticas —las cifras envejecen y no convencen a nadie con dolor—, lo dice con la frase del día delante de la pantalla.** Los números se quedan aquí, en la justificación, que es su sitio.*
+
+*__Y la frase del cierre no es de relleno, también sale del dato.__ Entre las sugerencias reales aparecen **«dolor de espalda cáncer»**, **«dolor mandíbula infarto»** y «dolor mandibular cáncer»: hay gente buscando si su dolor es una señal de alarma. Decir que si encontramos algo que no corresponde tratar en fisioterapia lo diremos y derivaremos responde exactamente a ese miedo, es señal de criterio clínico en un sitio de salud, y **cumple la prohibición del documento de arranque de no presentar una valoración fisioterápica como un diagnóstico médico**. Cuesta una línea y no la dice nadie.*
 
 ---
 
@@ -213,14 +255,23 @@
 
 **Ficha**
 > **Dirección:** Av. de Madrid, 19, Local 5 · 28760 Tres Cantos, Madrid
-> **Horario:** Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00
 > **Teléfono:** <span style="color:#c0392b">pendiente de confirmar cuál de los dos</span>
-> **En tren:** estación de Tres Cantos, línea C-4 de Cercanías. <span style="color:#c0392b">`[PENDIENTE MUV: minutos a pie desde la estación]`</span>
-> **En autobús:** líneas interurbanas desde Plaza de Castilla. <span style="color:#c0392b">`[PENDIENTE MUV: qué líneas paran cerca y en qué parada bajarse]`</span>
-> **En coche:** salida de la M-607. <span style="color:#c0392b">`[PENDIENTE MUV: dónde aparcar — si hay zona libre en la calle, parking cercano o plaza propia]`</span>
+> **En tren:** estación de Tres Cantos, **línea C-4 de Cercanías** (Chamartín, Sol y Atocha en directo). <span style="color:#c0392b">`[PENDIENTE MUV: minutos a pie desde la estación]`</span>
+> **En autobús:** líneas interurbanas **712, 713, 716 y 717** desde Plaza de Castilla, y los urbanos de Tres Cantos. <span style="color:#c0392b">`[PENDIENTE MUV: en qué parada bajarse]`</span>
+> **En coche:** salida de la **M-607**. <span style="color:#c0392b">`[PENDIENTE MUV: dónde aparcar — si hay zona libre en la calle, aparcamiento cercano o plaza propia]`</span>
 > **Accesibilidad:** <span style="color:#c0392b">`[PENDIENTE MUV: entrada a pie de calle o con escalón, ascensor y aseo adaptado. Baja aquí desde las preguntas frecuentes, que es donde el lector la busca de verdad]`</span>
 
+**H3**
+> Horario de la clínica: tardes hasta las 22:00 y sábados por la mañana
+
+**Texto**
+> Abrimos de **lunes a viernes de 10:00 a 14:00 y de 16:00 a 22:00**, y los **sábados de 10:00 a 14:00**. La última cita de la tarde está pensada para quien sale de trabajar, y la mañana del sábado para lo que no cabe entre semana.
+
 **Mapa** *(incrustado, bajo la ficha)*
+
+*__El H3 de horario es nuevo y es deliberado.__ El horario aparecía en la franja del hero como argumento, pero no tenía **ningún encabezado que lo capturase**, y hay consulta formada detrás: el autocompletado devuelve `fisioterapia sábados`, `fisioterapia sábados madrid` y `fisioterapia abierto sábados`. Un dato que es a la vez el diferencial de la clínica y una búsqueda con nombre propio tiene que llevar encabezado. Así se ataca desde tres sitios sin repetirse: **franja** para convencer, **H3** para posicionar y **`openingHoursSpecification`** para que Google lo enseñe en el resultado.*
+
+*__Transporte: verificado el 14/08/2026, ya no es un pendiente en blanco.__ La estación de Tres Cantos está en la **línea C-4 de Cercanías** (rama C-4b, Parla–Atocha–Sol–Chamartín–Cantoblanco–Tres Cantos–Colmenar Viejo). Las interurbanas que enlazan con **Plaza de Castilla** son la **712** (Avenida de Viñuelas), la **713** (Avenida de Encuartes), la **716** (Soto de Viñuelas) y la **717**, todas del Consorcio Regional de Transportes. **Se comprobó también que la 714 NO sirve a Tres Cantos** —va a la Universidad Autónoma—, que era el error fácil de cometer. Lo único que sigue pendiente es la parada concreta y los minutos a pie, que solo MUV puede decir con exactitud.*
 
 *__Este módulo es el mayor hueco libre del mercado local y por eso está desarrollado, aunque hoy sea el que más pendientes acumula.__ Comprobado sobre el HTML de trece dominios el 14/08/2026, mirando portada, contacto y páginas de «dónde estamos»: **cero mencionan aparcamiento, cero explican cómo llegar en transporte público y cero dicen si su local es accesible.** Todas ponen la dirección y un mapa, y ahí se acaba. Es de las poquísimas afirmaciones de «esto no lo hace nadie» que ha resistido la recomprobación.*
 
@@ -298,10 +349,11 @@
 | **H2** · Instalaciones y equipamiento de la clínica de Tres Cantos | instalaciones + equipamiento | Término que los tres competidores fuertes usan como reclamo. |
 | **H2** · Opiniones sobre la clínica de Tres Cantos | opiniones + municipio | «\<clínica\> opiniones» es búsqueda de decisión. Sin la palabra «pacientes», que MUV no marcó en el documento de arranque. |
 | **H2** · Cómo llegar a nuestra clínica de fisioterapia de Tres Cantos | cómo llegar + clínica de fisioterapia | Búsqueda local pura. Encabezado reservado a esta página. |
+| **H3** · Horario de la clínica: tardes hasta las 22:00 y sábados por la mañana | horario + sábados | **Nuevo en la v3.** El autocompletado devuelve `fisioterapia sábados`, `fisioterapia sábados madrid` y `fisioterapia abierto sábados` como consultas formadas. Era el diferencial de la clínica sin ningún encabezado que lo capturase. |
 | **H2** · Preguntas frecuentes sobre nuestra clínica de Tres Cantos | preguntas frecuentes | Habilita `FAQPage`, que no declara ninguna de las once webs de Tres Cantos *(sí Impulso, en El Cañaveral)*. |
 | **H2** · Pida cita en nuestra clínica de fisioterapia de Tres Cantos | pedir cita + clínica de fisioterapia + municipio | Cierre transaccional con el término de conversión. |
 
-**Los once encabezados llevan entidad y siete llevan el municipio.** Es exactamente lo contrario de la regla de la home y de `/sedes`, y es deliberado: **esta es la página que tiene permiso para repetir «Tres Cantos»**, porque es la que compite por él. Las otras dos lo tienen prohibido justo para que esta pueda.
+**Los doce encabezados llevan entidad y siete llevan el municipio.** Es exactamente lo contrario de la regla de la home y de `/sedes`, y es deliberado: **esta es la página que tiene permiso para repetir «Tres Cantos»**, porque es la que compite por él. Las otras dos lo tienen prohibido justo para que esta pueda.
 
 **El precedente que lo respalda:** Escalante, que es el número dos en El Cañaveral, no lleva el municipio en ninguna URL pero lo pone en el título, en el H1 y en **todos** sus H2. Funciona.
 
@@ -447,6 +499,14 @@ Aparecidos en esta auditoría y no recogidos ni en la tabla del cliente ni en la
 
 *La pregunta de **mutuas y seguros** ya no está en esta lista: se responde una sola vez, en `/sedes`, porque la condición es la misma para las dos clínicas. Sigue siendo pendiente, pero de aquel documento.*
 
+**Cambios de la v3** *(14 de agosto de 2026)*
+
+1. **El módulo de dolencias, reescrito sobre el autocompletado de Google.** Veintitrés consultas semilla, endpoint público, España y español. Las formulaciones del texto son ahora las que la gente teclea, no las que sonaban bien: «al subir y bajar escaleras» —**Google sugiere «subir» antes que «bajar», y la v2 decía solo «bajar»**—, «al levantar el brazo», «dolor cervical y de cabeza», «al masticar», «y oído», «supraespinoso». La tabla de correspondencias está dentro del módulo.
+2. **El ancla local pasa de demográfica a comprobada.** A las cifras del Ayuntamiento —50.000 habitantes, 3.000 empresas y más de 36.000 puestos de trabajo— se suma un dato de búsqueda: **el autocompletado devuelve `ptm fisioterapia tres cantos`**, es decir, gente que busca fisioterapeuta asociándolo al Parque Tecnológico. Ninguna de las once clínicas lo nombra.
+3. **El horario se convierte en el elemento visual del hero**: franja de tres columnas —hasta las 22:00 · sábados por la mañana · cita online—, que responde en tres segundos a las tres objeciones reales. Y gana **H3 propio en el módulo 8**, porque había búsqueda formada y ningún encabezado la capturaba.
+4. **Transporte público verificado**, deja de ser un hueco en blanco: Cercanías **C-4**, interurbanas **712, 713, 716 y 717** desde Plaza de Castilla. Se descartó la 714, que no sirve a Tres Cantos.
+5. **La tabla de origen de las preguntas frecuentes, revisada en `/sedes` v12** contra los tres competidores directos que sí publican FAQ.
+
 **Cambios de la v2** *(14 de agosto de 2026, tras recomprobar la competencia con el HTML delante)*
 
 1. **Tres afirmaciones retiradas por falsas** — registro sanitario, números de colegiado y mutuas. Las tres venían de una auditoría que solo había mirado portadas. Consecuencia real: el módulo 5 deja de ser una ventaja y pasa a ser un pendiente urgente, y la pregunta de mutuas sale de esta página *(la responde `/sedes`)*. **Corregido también en `/sedes` v11 y en la home**, que arrastraban las mismas frases.
@@ -455,7 +515,13 @@ Aparecidos en esta auditoría y no recogidos ni en la tabla del cliente ni en la
 4. **Preguntas frecuentes de ocho a seis.** Fuera las dos que repetían la home o `/sedes`, fuera la de servicios que ya contesta el módulo 3 de esta página, y la accesibilidad baja al módulo 8. Entra la de domicilio, que en el estudio de 127 preguntas aparecía en 3 de 4 clínicas.
 5. **La ficha del hero recupera la zona de atención**, que en la v1 estaba solo en la entradilla.
 
-**Sobre la extensión.** El documento de arranque fija 700–900 palabras para una página de sede. El texto publicable son **1.214**, y con los pendientes rondará las **1.450**. Se propone dejarlo, y el motivo es medible: las páginas que hoy posicionan por delante en este municipio tienen 1.710 *(Lashmi)*, 1.279 *(ALG)* y 1.196 *(Motriz)*. Entrar con 800 palabras en la búsqueda que esta clínica lleva perdiendo desde que abrió es entrar en desventaja, y lo que excede el límite no es relleno: es el módulo 2 —el hueco más grande del mercado— y los módulos 8 y 9, que no tiene nadie. **Si MUV quiere ajustarse al límite, el orden de recorte es 6, luego 4; nunca el 2, el 8 ni el 9.**
+**Un hallazgo que no es de esta página pero sale de esta investigación: las mutuas son un modificador de la keyword principal.** Al teclear «fisioterapia tres cantos», el autocompletado de Google devuelve entre las primeras sugerencias `fisioterapia tres cantos adeslas`, `fisioterapia tres cantos asisa` y `fisioterapia tres cantos sanitas`. Lo mismo con Colmenar Viejo, que está en la zona de atención de esta clínica. **No es una duda que aparece dentro de la web: es gente buscando fisioterapia en este municipio con el nombre de su seguro.** Sumado a que la responden 3 de 3 competidores directos y 4 de 4 clínicas del estudio, es la pregunta mejor confirmada de todo el proyecto y hoy MUV no la contesta. Está escalada en `/sedes` v12 y en la tarea de GitHub.
+
+**Otro, sobre fugas de tráfico.** El autocompletado devuelve también `fisioterapia suelo pelvico tres cantos` y `fisioterapia pediatrica tres cantos`. **Hay demanda local de dos servicios que esta clínica no presta** —se hacen en El Cañaveral, a 35 kilómetros—. La página deriva correctamente en el módulo 3, pero conviene que MUV sepa que esa búsqueda existe en su municipio y hoy se la lleva íntegra la competencia. Es una decisión de negocio, no de contenido.
+
+**Sobre la extensión.** El documento de arranque fija 700–900 palabras para una página de sede. El texto publicable son **1.451**, y con los pendientes rondará las **1.700**. Se propone dejarlo, y el motivo es medible: las páginas que hoy posicionan por delante en este municipio tienen 1.710 *(Lashmi)*, 1.279 *(ALG)* y 1.196 *(Motriz)*. Entrar con 800 palabras en la búsqueda que esta clínica lleva perdiendo desde que abrió es entrar en desventaja, y lo que excede el límite no es relleno: es el módulo 2 —el hueco más grande del mercado, y ahora escrito con las formulaciones que la gente teclea— y los módulos 8 y 9, que no tiene nadie. **Si MUV quiere ajustarse al límite, el orden de recorte es 6, luego 4; nunca el 2, el 8 ni el 9.**
+
+*Con 1.451 palabras esta página pasa a ser la más larga del municipio después de Lashmi, y **la única cuya extensión está ocupada por lo que nadie más cubre** en lugar de por descripciones de técnicas. Es la diferencia entre ser larga y ser densa.*
 
 **Sobre el vocabulario.** Revisado con script contra las prohibiciones del documento de arranque: sin «paciente» ni «cliente», sin promesas de curación, sin cifras de eficacia sin fuente, sin presentar la valoración como diagnóstico médico y **sin comparaciones directas con otras clínicas** —los hallazgos sobre la competencia están en este documento para justificar las decisiones, y **ninguno de ellos aparece en el texto que se publica**.
 
