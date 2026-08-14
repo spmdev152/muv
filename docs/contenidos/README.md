@@ -120,6 +120,7 @@ Es la diferenciación técnica más barata que tiene el proyecto: de trece domin
 
 ## Por dónde empezar
 
+0. 🔴 **Corregir las coordenadas de Tres Cantos.** El campo `geo` de esa sede en `locations.ts` apunta a 2,6 km de su propia dirección: está junto a la estación de Cercanías, no en la Avenida de Madrid. La dirección postal está bien; la coordenada, no. Va antes que todo lo demás porque alimenta el `MedicalClinic` de la página que este proyecto existe para levantar.
 1. **Datos pendientes del cliente** — bloquean varios módulos.
 2. **Configuración incorrecta** — `locations.ts` declara servicios que Tres Cantos no presta.
 3. **Construir las páginas** — home, `/sedes` y `/sedes/tres-cantos`.

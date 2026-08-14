@@ -454,7 +454,7 @@
 
 **Centro Vitruvio lidera ese mapa con 487 reseñas y una web de 936 palabras con tres H1 duplicados.** Es la prueba de que se puede ganar el mapa con una web mediocre. Según la auditoría inicial, MUV Tres Cantos tenía **72 reseñas en Google** frente a esas 487 y a las 200 de Motriz *(cifra que conviene volver a comprobar, es del material del cliente)*.
 
-**Traducción sin adornos:** este trabajo de contenido nos mete en la pelea del orgánico y nos saca del top 20 en el que no estamos. **No nos mete en el mapa.** Para eso hace falta trabajo sobre el perfil de Google Business —reseñas, fotos, publicaciones, categorías, preguntas— que **hoy no está en el encargo y nadie lo está haciendo**. Merece plantearlo al cliente, porque es la mitad del resultado que espera.
+**Traducción sin adornos:** este trabajo de contenido nos mete en la pelea del orgánico y nos saca del top 20 en el que no estamos. **No nos mete en el mapa.** Para eso hace falta trabajo sobre el perfil de Google Business —reseñas, fotos, categorías, atributos—, que **sí está en el encargo pero planificado como segunda fase, cuando la web esté hecha**. Merece revisar ese orden: las reseñas son el activo más lento del proyecto y el único donde cada mes de espera es un mes que no se recupera.
 
 *Lo único que esta página aporta al mapa, y no es poco, es la **coherencia NAP**: dirección, teléfono y horario idénticos entre web, Google Business y Doctoralia, más el `MedicalClinic` con `openingHoursSpecification`. Eso sí valida el negocio local. Pero valida, no posiciona.*
 
