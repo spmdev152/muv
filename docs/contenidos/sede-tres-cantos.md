@@ -404,6 +404,54 @@
 
 ---
 
+## Contra qué competimos de verdad: la página actual y el mapa local
+
+*Añadido en la v7 porque es la pregunta que hay que poder responder: **¿esto mejora lo que ya hay?***
+
+### Frente a la página actual de MUV
+
+*`clinicamuv.com/tres-cantos/`, medida el 14/08/2026. **Tiene 1.700 palabras visibles, más que la nueva.** Y aun así no aparece en el top 20 de su búsqueda. El problema nunca fue la cantidad.*
+
+| | Página actual | Página nueva |
+|---|---|---|
+| **H1** | `FISIOTERAPIA Y REHABILITACIÓNINTEGRAL EN TRES CANTOS` — **falta un espacio**, y así lleva publicado quién sabe cuánto | Correcto, con la búsqueda exacta delante |
+| **H2** | **22, y diez de ellos son trozos de precio**: `200`, `€`, `45`, `€`, `85`, `€/mes`, `5 clases/mes`… | 9, todos con entidad |
+| **H3** | 26, entre ellos `+3000`, `pacientes satisfechos`, `5`, `en Google`, `+5` | 12, todos con entidad |
+| **Erratas en encabezados** | `serviciosde`, `Fisioterapiadel`, `avanzaday`, `tRES CANTOS` | — |
+| **Trato** | Tutea | Usted, como marcó el cliente |
+| **Servicios que anuncia** | Pediátrica, suelo pélvico y Pilates — **que no se prestan en Tres Cantos** | Solo los siete aprobados |
+| **Contenido caducado** | «Oferta por **inauguración**» y «Certificado a la excelencia **2023**» | — |
+| **Afirmación prohibida** | «**+3.000 pacientes satisfechos**» — cifra de eficacia sin fuente, vetada en el documento de arranque | — |
+| **FAQ** | No | 5, con `FAQPage` |
+| **Colegiación · registro sanitario · mutuas** | No · No · No | Sí, en cuanto lleguen los datos |
+| **Aparcamiento · transporte · accesibilidad** | No · No · No | Sí, en cuanto lleguen los datos |
+| **Schema sanitario** | No. Declara `Service`, `Place`, `Offer`, `WebPage` | `MedicalClinic` + `FAQPage` + `BreadcrumbList` |
+| **Organizada por** | Técnicas y aparatos | **Síntoma** |
+
+**El diagnóstico, en una frase:** la página actual **le está diciendo a Google que sus temas principales son «€», «200» y «45»**, tutea en una web que va de usted, anuncia tres servicios que esa clínica no presta y publica una cifra que el propio cliente prohibió. No es que le falte contenido: es que el contenido que tiene está mal colocado.
+
+### Frente a los once competidores del mapa
+
+*Estimación honesta, sobre lo medido. No es una promesa de posiciones: es en qué grupo entramos.*
+
+| Grupo | Quiénes | Por qué |
+|---|---|---|
+| **Deberíamos pasarles** | Atlas *(8 palabras, la web no carga)* · Vizcaíno *(306, sin H1)* · Fisio 3 Cantos *(495, tres H1)* · FisioSanfe *(563, H1 = la marca)* · Islas21 *(575)* · Nuevo Príncipe *(782, sin estructura)* | Estructuralmente por debajo en todo lo medible |
+| **Podemos disputarles** | Centro Vitruvio *(936, pero tres H1 duplicados y todos los H2 repetidos)* · Ohana *(551, sin H1)* | Contenido flojo, pero **Vitruvio manda en el mapa y Ohana gana su nicho por especialización** |
+| **No a corto plazo** | Motriz · ALG Fisio · Lashmi | Página dedicada por servicio, acreditación publicada, anclaje local real |
+
+### Y aquí está lo que esta página **no** arregla
+
+**El contenido no gana el mapa.** En «fisioterapia Tres Cantos» lo primero que se ve no son los enlaces azules: es el bloque de Google Maps con tres resultados, y ese bloque se decide por **proximidad, reseñas y actividad del perfil de Google Business**, no por lo buena que sea la página.
+
+**Centro Vitruvio lidera ese mapa con 487 reseñas y una web de 936 palabras con tres H1 duplicados.** Es la prueba de que se puede ganar el mapa con una web mediocre. Según la auditoría inicial, MUV Tres Cantos tenía **72 reseñas en Google** frente a esas 487 y a las 200 de Motriz *(cifra que conviene volver a comprobar, es del material del cliente)*.
+
+**Traducción sin adornos:** este trabajo de contenido nos mete en la pelea del orgánico y nos saca del top 20 en el que no estamos. **No nos mete en el mapa.** Para eso hace falta trabajo sobre el perfil de Google Business —reseñas, fotos, publicaciones, categorías, preguntas— que **hoy no está en el encargo y nadie lo está haciendo**. Merece plantearlo al cliente, porque es la mitad del resultado que espera.
+
+*Lo único que esta página aporta al mapa, y no es poco, es la **coherencia NAP**: dirección, teléfono y horario idénticos entre web, Google Business y Doctoralia, más el `MedicalClinic` con `openingHoursSpecification`. Eso sí valida el negocio local. Pero valida, no posiciona.*
+
+---
+
 ## Qué puede ganar esta página y qué no
 
 *Conviene decirlo antes de publicar, para que nadie espere de esta página algo que estructuralmente no puede dar.*
