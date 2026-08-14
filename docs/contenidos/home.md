@@ -1,10 +1,12 @@
-# HOME — versión 5 *(cerrada)*
+# HOME — versión 6 *(cerrada)*
+
+*Reabierta el 14 de agosto de 2026 para un único cambio: el H2 del módulo 8 incumplía el vocabulario que MUV marcó en el bloque 1 del documento de arranque. Nada más se ha tocado.*
 
 - **URL:** `/`
 - **Keyword principal:** Clínica MUV *(marca)*
 - **Keywords de apoyo:** clínica de fisioterapia, fisioterapia, ejercicio terapéutico, fisioterapia deportiva
 - **Entidades geográficas:** Madrid, El Cañaveral (Vicálvaro), Tres Cantos — como entidades, no como keywords objetivo
-- **Extensión:** 749 palabras
+- **Extensión:** 747 palabras
 - **Trato:** usted · **Voz:** «En MUV…» (nosotros) · **Precios:** no se publican
 - **Estructura:** 11 módulos, mapeados contra `src/app/page.tsx`
 
@@ -160,7 +162,7 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 
 **Eyebrow:** Opiniones
 **H2**
-> Opiniones de pacientes de Clínica MUV
+> Opiniones sobre Clínica MUV
 
 `[PENDIENTE MUV: tres testimonios reales anonimizados, marcados como «sí, anonimizados» en el bloque 1 del documento de arranque. No se inventan.]`
 
@@ -233,7 +235,7 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 | **H2** · Cómo trabajamos: de la valoración fisioterápica al alta | valoración fisioterápica | Término clínico con búsqueda propia; refuerza E-E-A-T. |
 | **H2** · Nuestras clínicas de fisioterapia en El Cañaveral y Tres Cantos | ambos municipios | Único punto de la home con geografía, sin competir con las páginas de sede. |
 | **H2** · Divulgación de fisioterapia escrita por nuestro equipo | fisioterapia + autoría | Señal E-E-A-T: en YMYL Google valora quién firma. Da al blog camino de rastreo desde la home. |
-| **H2** · Opiniones de pacientes de Clínica MUV | marca + opiniones | Captura «muv opiniones», búsqueda de marca con intención de decisión. |
+| **H2** · Opiniones sobre Clínica MUV | marca + opiniones | Captura «muv opiniones», búsqueda de marca con intención de decisión. En el bloque 1 del documento de arranque MUV marcó «Persona» y «evitar la etiqueta», y no marcó ni «Paciente» ni «Cliente»: la palabra sale del encabezado. Además apunta mejor a la búsqueda real, porque «pacientes» no aportaba nada. |
 | **H2** · Preguntas frecuentes sobre fisioterapia en MUV | fisioterapia + marca | Habilita `FAQPage`: **ninguno de los 12 competidores lo marca**, pese a tener FAQ visibles. |
 | **H2** · Pida cita en El Cañaveral o en Tres Cantos | acción + ambos municipios | Cierra con intención transaccional y refuerza las dos entidades locales. |
 
@@ -298,6 +300,9 @@ Ninguno de los doce competidores auditados declara schema de negocio sanitario n
 ---
 
 ## Notas de producción
+
+**Cambio de la v6** *(14 de agosto de 2026)*
+1. **H2 del módulo 8:** «Opiniones de pacientes de Clínica MUV» → **«Opiniones sobre Clínica MUV»**. Es el único punto de la home que incumplía el vocabulario marcado por MUV. Comprobado el resto del texto contra las cuatro prohibiciones del documento de arranque —promesas de curación, comparaciones con otras clínicas, cifras de eficacia sin fuente y presentar una valoración fisioterápica como diagnóstico médico—: sin incidencias. La extensión pasa de 749 a 747 palabras.
 
 **Cambios frente a la v4**
 1. **H1 híbrido:** «Valoramos antes de tratar. Fisioterapia y ejercicio terapéutico en Madrid.» Sale la marca, entra el diferencial. Entradilla reescrita para no duplicar la frase.
