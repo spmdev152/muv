@@ -83,10 +83,10 @@ export function BookingModal({ open, onClose }: Props) {
               id="booking-modal-title"
               className="mt-2 text-2xl text-olive-800 sm:text-3xl"
             >
-              ¿En qué sede quieres tu cita?
+              ¿En qué sede prefiere su cita?
             </h2>
             <p className="mt-2 text-sm text-ink-soft">
-              Reserva online en Doctoralia o escríbenos por WhatsApp.
+              Reserve online en Doctoralia o escríbanos por WhatsApp.
             </p>
 
             <div className="mt-6 space-y-4">
