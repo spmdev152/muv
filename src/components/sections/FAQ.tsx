@@ -5,7 +5,17 @@ import { AnimatePresence, motion } from "motion/react";
 import { Plus } from "@/components/ui/icons";
 import { cn } from "@/lib/cn";
 
-export type QA = { question: string; answer: string };
+export type QA = {
+  question: string;
+  /** Plain text. This is what `faqJsonLd` publishes as the accepted answer. */
+  answer: string;
+  /**
+   * Same answer with inline markup (a link, for instance). When present it
+   * replaces `answer` on screen — the two must say the same thing, so that the
+   * FAQPage schema never diverges from what the reader sees.
+   */
+  answerNode?: React.ReactNode;
+};
 
 export function FAQ({ items }: { items: QA[] }) {
   const [open, setOpen] = useState<number | null>(0);
@@ -42,7 +52,7 @@ export function FAQ({ items }: { items: QA[] }) {
                   className="overflow-hidden"
                 >
                   <p className="pb-6 pr-10 text-ink-soft leading-relaxed">
-                    {item.answer}
+                    {item.answerNode ?? item.answer}
                   </p>
                 </motion.div>
               )}
