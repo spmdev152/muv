@@ -1,6 +1,16 @@
-# SEDE TRES CANTOS — versión 8 *(cerrada)*
+# SEDE TRES CANTOS — versión 10 *(cerrada)*
 
-*__La v8 corrige el módulo de cómo llegar.__ MUV comprobó en Google Maps que **la estación de Cercanías está a 41 minutos andando** de la clínica, y tenía razón: verificado con geocodificación pública, son 2,75 km en línea recta —la Avenida de Madrid está en el norte de Tres Cantos y la estación en el sur—. El bloque pedía «los minutos a pie desde la estación» dando por hecho un paseo que nadie va a dar. **Se reordena entero: esta clínica es un sitio al que se llega en coche**, y el aparcamiento pasa a ser el dato número uno. De paso salió un error del repositorio, en las notas para desarrollo.*
+*__La v10 aplica aquí los tres hallazgos de la última pasada editorial, hecha sobre El Cañaveral, para que las dos páginas de sede sigan siendo gemelas.__*
+
+*__1. Tres eyebrows repetían su propio encabezado__ —«Servicios», «Opiniones» y «Preguntas frecuentes» encima de un H2 que empezaba por esa misma palabra—. Ahora son **Tratamientos**, **Valoraciones** y **Dudas habituales**.*
+
+*__2. La cifra de extensión estaba inflada.__ El contador se dejaba fuera los cuatro H3 del módulo 2 y las cinco preguntas frecuentes, y a cambio contaba la tabla de preguntas descartadas y las instrucciones de maquetación. **Son 1.203 palabras publicables, no 1.329.** Con eso cae una afirmación que este documento hacía: **ya no es la segunda página más larga del municipio**, queda tercera. Lo que no cambia es el argumento de fondo, que nunca fue la longitud sino qué ocupa esa longitud.*
+
+*__3. Existe una ruta que ningún documento cubría: `/sedes/<sede>/contacto`__, que publica la misma dirección, teléfono, horario y mapa que el módulo 8 y declara el mismo `MedicalClinic`. Está en las notas para desarrollo.*
+
+*__La v9 corrigió la atribución de los teléfonos.__ Este documento decía que **658 59 76 02** era «el del sitio actual». **No lo es: es el del repositorio.** El sitio actual publica **614 13 14 05**, igual que Doctoralia y que el Instagram de MUV. Comprobado el 14/08/2026 al escribir la página de El Cañaveral, donde ocurre exactamente lo mismo con el otro número. Detalle y tabla de fuentes en `sede-el-canaveral.md`, notas de producción. **El pendiente sigue abierto —hace falta que MUV lo confirme— pero deja de ser una duda a ciegas: tres fuentes públicas dicen lo mismo y el repositorio no coincide con ninguna.***
+
+*__La v8 corrigió el módulo de cómo llegar.__ MUV comprobó en Google Maps que **la estación de Cercanías está a 41 minutos andando** de la clínica, y tenía razón: verificado con geocodificación pública, son 2,75 km en línea recta —la Avenida de Madrid está en el norte de Tres Cantos y la estación en el sur—. El bloque pedía «los minutos a pie desde la estación» dando por hecho un paseo que nadie va a dar. **Se reordena entero: esta clínica es un sitio al que se llega en coche**, y el aparcamiento pasa a ser el dato número uno. De paso salió un error del repositorio, en las notas para desarrollo.*
 
 *__La v7 fue la última pasada editorial y de SEO.__ Encontró siete cosas: **dos incoherencias con lo que se había retirado de la home y de `/sedes`** —una previsión de sesiones y los números de colegiado «públicos en cada ficha», que seguían aquí—, dos repeticiones, una línea de tarjeta que se había quedado tautológica, y **tres huecos de SEO que faltaban**: la galería de fotos, el responsable sanitario y la miga de pan visible. Detalle al final.*
 
@@ -14,7 +24,7 @@
 - **Keyword principal:** fisioterapia en Tres Cantos
 - **Keywords de apoyo:** fisioterapeuta en Tres Cantos, clínica de fisioterapia Tres Cantos, fisioterapia deportiva Tres Cantos, entrenamiento terapéutico Tres Cantos
 - **NO compite por:** «Clínica MUV» (es de la home) ni «clínicas de fisioterapia en Madrid» (es de `/sedes`)
-- **Extensión:** **1.329 palabras publicables hoy** — lo que se puede llevar a la web ahora mismo, sin contar nada de lo pendiente de MUV. Contadas con el mismo script que la home y que `/sedes`, para que las tres cifras sean comparables. Con los pendientes resueltos ronda las 1.600, por encima de la guía de 700–900 del documento de arranque. El motivo, medido, está en las notas de producción
+- **Extensión:** **1.203 palabras publicables hoy** — lo que se puede llevar a la web ahora mismo, sin contar nada de lo pendiente de MUV. Contadas con el contador corregido del 17/08/2026, el mismo para los cuatro documentos. **Sustituye a las 1.329 que declaraban las versiones anteriores**, que eran una cifra inflada; el detalle está en las notas de producción. Los pendientes suman entre 150 y 250 palabras más. Por encima de la guía de 700–900 del documento de arranque
 - **Encabezados:** 1 H1 + 9 H2 + 12 H3. El municipio va en los diez de nivel 1 y 2, y en ninguno de los H3
 - **Método:** competencia auditada sobre el HTML de trece dominios · formulaciones de búsqueda tomadas del autocompletado público de Google (España, español) · datos del municipio, del Ayuntamiento de Tres Cantos
 - **Trato:** usted · **Voz:** «En MUV…» (nosotros) · **Precios:** no se publican
@@ -73,7 +83,7 @@
 **Ficha de contacto** *(bajo la franja)*
 > **Av. de Madrid, 19, Local 5 · 28760 Tres Cantos**
 > <span style="color:#c0392b">`[PENDIENTE MUV: zona de atención. La que había escrita —Tres Cantos, Soto de Viñuelas y Colmenar Viejo— estaba deducida por proximidad geográfica en un mapa, no facilitada por MUV. Se retira hasta que la digan ellos]`</span>
-> **Teléfono:** <span style="color:#c0392b">**658 59 76 02** *(el del sitio actual)* · **614 13 14 05** *(el de Doctoralia)* — pendiente de confirmar cuál es el bueno</span>
+> **Teléfono:** <span style="color:#c0392b">**614 13 14 05** — el que publican la web actual, Doctoralia e Instagram. `locations.ts` dice **658 59 76 02** y no coincide con ninguna. Pendiente de que MUV confirme</span>
 
 **Botones**
 > `[Pedir cita]` · `[Cómo llegar]` *(ancla al módulo 8)*
@@ -161,7 +171,7 @@
 
 ## Módulo 3 · Servicios de esta clínica
 
-**Eyebrow:** Servicios
+**Eyebrow:** Tratamientos
 **H2**
 > Servicios de fisioterapia en nuestra clínica de Tres Cantos
 
@@ -279,7 +289,7 @@
 
 ## Módulo 7 · Opiniones
 
-**Eyebrow:** Opiniones
+**Eyebrow:** Valoraciones
 **H2**
 > Opiniones sobre la clínica de Tres Cantos
 
@@ -302,7 +312,7 @@
 
 **Ficha**
 > **Dirección:** Av. de Madrid, 19, Local 5 · 28760 Tres Cantos, Madrid
-> **Teléfono:** <span style="color:#c0392b">pendiente de confirmar cuál de los dos</span>
+> **Teléfono:** <span style="color:#c0392b">614 13 14 05 — pendiente de que MUV confirme, ver la ficha del hero</span>
 > **En coche:** salida de la **M-607**. <span style="color:#c0392b">`[PENDIENTE MUV: dónde aparcar — si hay zona libre en la calle, aparcamiento cercano o plaza propia. Es el dato más importante de este módulo]`</span>
 > **En autobús:** líneas interurbanas **712, 713, 716 y 717** desde Plaza de Castilla, y los autobuses urbanos de Tres Cantos. <span style="color:#c0392b">`[PENDIENTE MUV: qué línea y en qué parada bajarse]`</span>
 > **En tren:** estación de Tres Cantos, **línea C-4 de Cercanías** (Chamartín, Sol y Atocha en directo), a unos **3 km** de la clínica. <span style="color:#c0392b">`[PENDIENTE MUV: con qué autobús urbano se enlaza desde la estación]`</span>
@@ -336,7 +346,7 @@
 
 ## Módulo 9 · Preguntas frecuentes *(marcar con schema `FAQPage`)*
 
-**Eyebrow:** Preguntas frecuentes
+**Eyebrow:** Dudas habituales
 **H2**
 > Preguntas frecuentes sobre nuestra clínica de Tres Cantos
 
@@ -690,7 +700,7 @@ Aparecidos en esta auditoría y no recogidos ni en la tabla del cliente ni en la
 
 **Pendientes de MUV** *(lo que impide publicar, por orden de urgencia)*
 
-1. **Qué teléfono es el correcto.** El del sitio y el de Doctoralia no coinciden. Bloqueante en una página local.
+1. **Confirmar el teléfono.** Ya no hay dos candidatos empatados: la web actual, Doctoralia y el Instagram de MUV publican **614 13 14 05**, y `locations.ts` publica **658 59 76 02**, que no coincide con ninguna de las tres. Solo hay que confirmar que el repositorio está mal y corregirlo. Sigue siendo bloqueante en una página local.
 2. **Número de registro sanitario de Tres Cantos.** Ha subido de prioridad: **tres competidores del municipio publican el suyo**, dos de ellos los que mejor contenido tienen. Sin este número el módulo 5 no empata, va por detrás.
 3. **El equipo:** nombre, foto, número de colegiado y áreas de cada fisioterapeuta de esta clínica. **Cinco competidores publican los suyos**; es lo normal, no un extra.
 4. **Los tres datos del módulo 8: dónde aparcar** *(el más importante de la página: se viene en coche)*, **qué autobús y en qué parada** —tanto el urbano que enlaza con la estación como las interurbanas, que ya están verificadas— y **si el local es accesible**. Tres respuestas de una línea que MUV sabe de memoria y que **no publica ninguno de los trece dominios auditados**. Es el pendiente más barato y el más rentable de toda la página.
@@ -779,9 +789,9 @@ Aparecidos en esta auditoría y no recogidos ni en la tabla del cliente ni en la
 
 **Otro, sobre fugas de tráfico.** El autocompletado devuelve también `fisioterapia suelo pelvico tres cantos` y `fisioterapia pediatrica tres cantos`. **Hay demanda local de dos servicios que esta clínica no presta** —se hacen en El Cañaveral, a 35 kilómetros—. La página deriva correctamente en el módulo 3, pero conviene que MUV sepa que esa búsqueda existe en su municipio y hoy se la lleva íntegra la competencia. Es una decisión de negocio, no de contenido.
 
-**Sobre la extensión.** El documento de arranque fija 700–900 palabras para una página de sede. El texto publicable hoy son **1.329**, y con los pendientes resueltos rondará las **1.600**. Se propone dejarlo, y el motivo es medible: las páginas que hoy posicionan por delante en este municipio tienen 1.710 *(Lashmi)*, 1.279 *(ALG)* y 1.196 *(Motriz)*. Entrar con 800 palabras en la búsqueda que esta clínica lleva perdiendo desde que abrió es entrar en desventaja, y lo que excede el límite no es relleno: es el módulo 2 —el hueco más grande del mercado, y ahora escrito con las formulaciones que la gente teclea— y los módulos 8 y 9, que no tiene nadie. **Si MUV quiere ajustarse al límite, el orden de recorte es 6, luego 4; nunca el 2, el 8 ni el 9.**
+**Sobre la extensión.** El documento de arranque fija 700–900 palabras para una página de sede. El texto publicable hoy son **1.203**, y los pendientes suman entre 150 y 250 más. Se propone dejarlo, y el motivo es medible: las páginas que hoy posicionan por delante en este municipio tienen 1.710 *(Lashmi)*, 1.279 *(ALG)* y 1.196 *(Motriz)*. Entrar con 800 palabras en la búsqueda que esta clínica lleva perdiendo desde que abrió es entrar en desventaja, y lo que excede el límite no es relleno: es el módulo 2 —el hueco más grande del mercado, y ahora escrito con las formulaciones que la gente teclea— y los módulos 8 y 9, que no tiene nadie. **Si MUV quiere ajustarse al límite, el orden de recorte es 6, luego 4; nunca el 2, el 8 ni el 9.**
 
-*Con 1.329 palabras publicables esta página pasa a ser la más larga del municipio después de Lashmi, y **la única cuya extensión está ocupada por lo que nadie más cubre** en lugar de por descripciones de técnicas. Es la diferencia entre ser larga y ser densa.*
+*__Corregido el 17/08/2026, y conviene decirlo porque la versión anterior afirmaba de más.__ Con 1.203 palabras publicables esta página **no es la segunda más larga del municipio**: queda tercera, detrás de Lashmi (1.710) y ALG (1.279), y apenas por delante de Motriz (1.196). Lo que sigue siendo cierto, y es el argumento de verdad, es que **es la única cuya extensión está ocupada por lo que nadie más cubre** —dolencias por síntoma, cómo llegar, accesibilidad— en lugar de por descripciones de técnicas. Es la diferencia entre ser larga y ser densa, y esa no dependía del recuento.*
 
 **Sobre el vocabulario.** Revisado con script contra las prohibiciones del documento de arranque, **solo sobre el texto publicable**, no sobre las justificaciones: sin «paciente» ni «cliente», sin promesas de curación, sin cifras de eficacia sin fuente, sin presentar la valoración como diagnóstico médico, sin importes en euros y **sin comparaciones directas con otras clínicas**. Los hallazgos sobre la competencia están en este documento para justificar las decisiones y **ninguno aparece en lo que se publica**.
 
@@ -789,6 +799,8 @@ Aparecidos en esta auditoría y no recogidos ni en la tabla del cliente ni en la
 
 **Para desarrollo**
 - La página `/sedes/tres-cantos` hoy se genera desde `src/app/sedes/[location]/page.tsx` leyendo `locations.ts`: es un marcador, y no contiene ninguno de los diez módulos de este documento.
+- **🔴 `/sedes/tres-cantos/contacto` existe y ningún documento la cubría.** Publica la misma dirección, teléfono, horario y mapa que el módulo 8, declara el mismo `MedicalClinic` y tutea. Sumada a `/contacto`, son tres páginas con intención de contacto. **La decisión y las tres opciones están desarrolladas en `sede-el-canaveral.md`, notas para desarrollo** — se resuelve igual para las dos sedes.
+- **Al `MedicalClinic` le falta `sameAs`, que no existe en todo el proyecto**, más `availableService`, la galería en `image` y el responsable sanitario como `Person`. Detalle en `sede-el-canaveral.md`. Aplica igual aquí.
 - Declarar `MedicalClinic` con `openingHoursSpecification` incluyendo el sábado, y `FAQPage` en el módulo 9.
 - Incrustar el mapa en el módulo 8, y que no bloquee la carga.
 - Pasar `title` y `description` a `CTASection`.

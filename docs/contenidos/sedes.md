@@ -1,6 +1,18 @@
-# SEDES — versión 13
+# SEDES — versión 14
 
-*__La v13 retira cuatro afirmaciones que no tenían fuente.__ Se detectaron al auditar la página de Tres Cantos, donde MUV preguntó de dónde salía un dato concreto y la respuesta era que de ninguna parte. Revisados los tres documentos con el mismo criterio —**describir la fisioterapia es libre; describir este negocio exige fuente**—, `/sedes` tenía cuatro frases del mismo tipo.*
+*__La v14 corrige la atribución de los teléfonos, y es una corrección que desbloquea la página.__ Aquí se decía que había dos candidatos por sede, «el del sitio actual» y «el de Doctoralia», sin manera de saber cuál era el bueno. **Es incorrecto: los números que este documento atribuía al sitio actual son los del repositorio, y el sitio actual publica los otros.** Comprobado el 14/08/2026 al escribir la página de El Cañaveral:*
+
+| Fuente | El Cañaveral | Tres Cantos |
+|---|---|---|
+| `clinicamuv.com` *(la web que hay publicada hoy)* | 634 47 85 44 | 614 13 14 05 |
+| Ficha de Doctoralia | 634 47 85 44 | 614 13 14 05 |
+| Ficha de Google Business | 634 47 85 44 | — |
+| Instagram de MUV | 634 47 85 44 | 614 13 14 05 |
+| **`locations.ts` (el repositorio)** | **603 30 30 10** | **658 59 76 02** |
+
+*__Cuatro fuentes públicas coinciden y el repositorio no coincide con ninguna.__ Salvo que MUV haya cambiado de número esta misma semana y solo lo haya actualizado en el repositorio, los buenos son los de las cuatro plataformas. Sigue haciendo falta que MUV lo confirme —por eso siguen en rojo— pero **ya no es una duda a ciegas: es confirmar lo que dicen todas sus fichas.** Ver `sede-el-canaveral.md`, notas de producción.*
+
+*__La v13 retiró cuatro afirmaciones que no tenían fuente.__ Se detectaron al auditar la página de Tres Cantos, donde MUV preguntó de dónde salía un dato concreto y la respuesta era que de ninguna parte. Revisados los tres documentos con el mismo criterio —**describir la fisioterapia es libre; describir este negocio exige fuente**—, `/sedes` tenía cuatro frases del mismo tipo.*
 
 | Frase retirada | Módulo | Por qué |
 |---|---|---|
@@ -95,7 +107,7 @@ Este es el bloque más importante del documento. La home ya está cerrada y las 
 > <span style="color:#c0392b">`[PENDIENTE MUV: zona de atención. Decía «El Cañaveral, Vicálvaro y el este de Madrid», deducido por proximidad geográfica en un mapa y no facilitado por MUV. Se retira hasta que lo digan ellos]`</span>
 > **Dirección:** C. Victoria Kent, Local 8 · 28052 Madrid
 > **Horario:** Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00
-> **Teléfono:** <span style="color:#c0392b">**603 30 30 10** *(el del sitio actual)* · **634 47 85 44** *(el de Doctoralia)* — pendiente de confirmar cuál es el bueno</span>
+> **Teléfono:** <span style="color:#c0392b">**634 47 85 44** — el que publican la web actual, Doctoralia, Google Business e Instagram. `locations.ts` dice **603 30 30 10** y no coincide con ninguna. Pendiente de que MUV confirme</span>
 > **Centro sanitario registrado:** CS 17623
 > **Instalaciones:** boxes individuales, sala de Pilates con máquinas y zona de entrenamiento funcional.
 > `[Ver la clínica de fisioterapia de El Cañaveral]` → `/sedes/el-canaveral`
@@ -105,7 +117,7 @@ Este es el bloque más importante del documento. La home ya está cerrada y las 
 > <span style="color:#c0392b">`[PENDIENTE MUV: zona de atención. Decía «Tres Cantos, Soto de Viñuelas y Colmenar Viejo», deducido por proximidad geográfica. Se retira hasta que lo confirme MUV]`</span>
 > **Dirección:** Av. de Madrid, 19, Local 5 · 28760 Tres Cantos
 > **Horario:** Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00
-> **Teléfono:** <span style="color:#c0392b">**658 59 76 02** *(el del sitio actual)* · **614 13 14 05** *(el de Doctoralia)* — pendiente de confirmar cuál es el bueno</span>
+> **Teléfono:** <span style="color:#c0392b">**614 13 14 05** — el que publican la web actual, Doctoralia e Instagram. `locations.ts` dice **658 59 76 02** y no coincide con ninguna. Pendiente de que MUV confirme</span>
 > **Centro sanitario registrado:** <span style="color:#c0392b">pendiente del número de registro de Tres Cantos</span>
 > **Instalaciones:** sala de tratamiento y zona de ejercicio para trabajo individual y en grupo reducido.
 > `[Ver la clínica de fisioterapia de Tres Cantos]` → `/sedes/tres-cantos`

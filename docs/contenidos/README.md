@@ -2,7 +2,7 @@
 
 Esta carpeta contiene la copy aprobada de la web. **Es la fuente de la verdad de todo el texto que se publica.** Si un texto del código no coincide con lo que hay aquí, manda este documento.
 
-Última actualización: **14 de agosto de 2026**.
+Última actualización: **17 de agosto de 2026**.
 
 ---
 
@@ -32,7 +32,7 @@ Lo peligroso es que la tentación es de buen desarrollador: normalizar «Av.» a
 - ✅ Si hay que cambiar un formato, se cambia **a la vez** en la web, en Google Business Profile y en Doctoralia.
 - ❌ Reformatear, abreviar, completar o «limpiar» un NAP en un solo sitio.
 
-> Y ojo con el orden: **hoy los teléfonos del repositorio y los de Doctoralia no coinciden en ninguna de las dos sedes.** Está sin resolver, es el bloqueante número uno, y hasta que el cliente diga cuál es el bueno **no se publica ninguno**.
+> Y ojo con el orden: **los teléfonos de `locations.ts` no coinciden con los que MUV publica en ninguna de sus plataformas.** La web actual, Doctoralia, Google Business e Instagram dicen **634 47 85 44** (El Cañaveral) y **614 13 14 05** (Tres Cantos); el repositorio dice otros dos. Cuatro fuentes contra una: casi con seguridad el repositorio está mal. Hasta que el cliente lo confirme **no se publica ninguno**, pero ya no es una duda a ciegas.
 
 ---
 
@@ -40,10 +40,14 @@ Lo peligroso es que la tentación es de buen desarrollador: normalizar «Av.» a
 
 | Página | Documento | PDF para el cliente | Estado |
 |---|---|---|---|
-| `/` | `home.md` | `MUV-HOME-v8.pdf` | Cerrada. **785 palabras publicables** |
-| `/sedes` | `sedes.md` | `MUV-SEDES-v13.pdf` | Cerrada. **396 palabras publicables** |
-| `/sedes/tres-cantos` | `sede-tres-cantos.md` | `MUV-SEDE-TRES-CANTOS-v8.pdf` | Cerrada. **1.329 palabras publicables** |
-| `/sedes/el-canaveral` | — | — | Sin escribir |
+| `/` | `home.md` | `MUV-HOME-v8.pdf` | Cerrada. **800 palabras publicables** |
+| `/sedes` | `sedes.md` | `MUV-SEDES-v14.pdf` | Cerrada. **422 palabras publicables** |
+| `/sedes/tres-cantos` | `sede-tres-cantos.md` | `MUV-SEDE-TRES-CANTOS-v10.pdf` | Cerrada. **1.203 palabras publicables** |
+| `/sedes/el-canaveral` | `sede-el-canaveral.md` | `MUV-SEDE-EL-CANAVERAL-v2.pdf` | Cerrada. **1.358 palabras publicables** |
+
+**Con esto se cierra la primera fase de contenidos: las cuatro páginas de la estructura de sedes.**
+
+> **Las cifras de extensión se recontaron el 17/08/2026 y bajaron.** El contador anterior se dejaba fuera los H3 del módulo de dolencias y las preguntas frecuentes, y a cambio contaba tablas de justificación e instrucciones de maquetación. Los dos errores casi se compensaban, y por eso tardaron en verse. **Estas son las buenas.** Ninguna decisión editorial cambia; sí cayó una afirmación de Tres Cantos, que ya no es la segunda página más larga de su municipio.
 
 **Solo hay un PDF por página y siempre es el vigente.** Cuando sale una versión nueva se borra la anterior en el mismo commit, para que nadie tenga que adivinar cuál es la buena.
 
@@ -104,7 +108,9 @@ Cambiar un encabezado por otro que «suena mejor» rompe ese reparto. Cada docum
 
 ## Datos estructurados
 
-Es la diferenciación técnica más barata que tiene el proyecto: de trece dominios de la competencia auditados el 14/08/2026, **ninguno declara `MedicalClinic`, `LocalBusiness` ni `Physiotherapy`**.
+Es la diferenciación técnica más barata que tiene el proyecto. De los trece dominios auditados el 14/08/2026 —los once de Tres Cantos más Escalante e Impulso— **ninguno declara `MedicalClinic`, `LocalBusiness` ni `Physiotherapy`**.
+
+> **Matiz añadido el 14/08/2026, al auditar El Cañaveral.** Eso no se puede convertir en un «no lo hace nadie» general: **Focus Clinic**, en El Cañaveral, **sí declara `Physiotherapist`** con dirección, coordenadas y horario. Es uno de cinco clínicas de ese barrio, y no estaba en ninguna lista previa del proyecto. Sigue siendo diferenciación —cuatro de cinco no declaran nada sanitario y **ninguna de las cinco declara el horario del sábado**— pero se cuenta como lo que es. Es la tercera vez en este proyecto que una afirmación negativa se cae al ampliar la búsqueda: **una afirmación negativa exige buscar más que una positiva.**
 
 | Marcado | Dónde |
 |---|---|
@@ -120,10 +126,12 @@ Es la diferenciación técnica más barata que tiene el proyecto: de trece domin
 
 ## Por dónde empezar
 
-0. 🔴 **Corregir las coordenadas de Tres Cantos.** El campo `geo` de esa sede en `locations.ts` apunta a 2,6 km de su propia dirección: está junto a la estación de Cercanías, no en la Avenida de Madrid. La dirección postal está bien; la coordenada, no. Va antes que todo lo demás porque alimenta el `MedicalClinic` de la página que este proyecto existe para levantar.
+0. 🔴 **Corregir las coordenadas de las dos sedes.** El campo `geo` está mal en las dos. La de **Tres Cantos** apunta a 2,6 km de su propia dirección —junto a la estación de Cercanías, no en la Avenida de Madrid—. La de **El Cañaveral** cae en el **polígono industrial**, en la calle Batalla de Salamina, entre 0,7 y 1,3 km de la calle Victoria Kent. Las direcciones postales están bien; las coordenadas, no. Va antes que todo lo demás porque alimenta el `MedicalClinic` de las dos páginas locales.
 1. **Datos pendientes del cliente** — bloquean varios módulos.
-2. **Configuración incorrecta** — `locations.ts` declara servicios que Tres Cantos no presta.
-3. **Construir las páginas** — home, `/sedes` y `/sedes/tres-cantos`.
-4. **Datos estructurados** — una vez el contenido está en su sitio.
+2. **Configuración incorrecta** — `locations.ts` declara servicios que Tres Cantos no presta, y el `bookingUrl` de El Cañaveral devuelve 404: apunta a `doctoralia.es/clinicas/clinica-muv-el-canaveral` cuando la ficha real es `doctoralia.es/clinicas/muv-canaveral`. El botón principal de conversión de esa sede está roto.
+3. **Decidir qué pasa con `/sedes/<sede>/contacto`.** Esa ruta existe, duplica la dirección, el teléfono, el horario y el mapa de la página de sede, declara el mismo `MedicalClinic` y tutea. Con `/contacto` son tres páginas con intención de contacto. Las opciones están en `sede-el-canaveral.md`, notas para desarrollo.
+4. **Añadir `sameAs`, que no existe en el proyecto.** Ni en `clinicJsonLd` ni en `organizationJsonLd`. Es lo que le dice a Google que la web, la ficha de Doctoralia con más de 1.800 opiniones y los perfiles de Google Business son el mismo negocio. Es la señal más barata que queda sin poner.
+5. **Construir las páginas** — home, `/sedes`, `/sedes/tres-cantos` y `/sedes/el-canaveral`.
+6. **Datos estructurados** — una vez el contenido está en su sitio.
 
 El orden importa: si las páginas se construyen leyendo `locations.ts` antes de corregirlo, publican un catálogo falso.
