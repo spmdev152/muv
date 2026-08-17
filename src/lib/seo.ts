@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
-import { locations, type Location, openingHoursSpec } from "@/lib/locations";
+import { locations, type Location } from "@/lib/locations";
 
 /** Builds consistent Metadata with canonical + Open Graph + Twitter. */
 export function buildMetadata({
@@ -28,7 +28,10 @@ export function buildMetadata({
     (path === "/" ? `${site.name} · ${site.tagline}` : `${title} · ${site.name}`);
 
   return {
-    title: fullTitle,
+    // Con `rawTitle` el título se publica tal cual, saltándose la plantilla
+    // `%s · MUV` del layout raíz: si no, el sufijo se añadiría por segunda vez
+    // y los títulos aprobados se pasarían de los caracteres contados.
+    title: rawTitle ? { absolute: rawTitle } : fullTitle,
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -76,34 +79,112 @@ export function organizationJsonLd() {
   };
 }
 
-/** Per-location MedicalClinic — key piece of local SEO. */
-export function clinicJsonLd(location: Location) {
+function postalAddress(location: Location) {
+  return {
+    "@type": "PostalAddress",
+    streetAddress: location.street,
+    postalCode: location.postalCode,
+    addressLocality: location.city,
+    addressRegion: location.region,
+    addressCountry: location.country,
+  };
+}
+
+function geoCoordinates(location: Location) {
+  return {
+    "@type": "GeoCoordinates",
+    latitude: location.geo.lat,
+    longitude: location.geo.lng,
+  };
+}
+
+/**
+ * `MedicalClinic` de una sede — la pieza principal del SEO local.
+ *
+ * Se declara una sola vez por clínica, en su propia página.
+ *
+ * Tres campos se omiten a propósito mientras MUV no facilite el dato, porque un
+ * schema que contradice a Google Business resta en vez de sumar:
+ *
+ * - `telephone`: el número de `locations.ts` no coincide con ninguna de las
+ *   cuatro fuentes que MUV publica.
+ * - `openingHoursSpecification`: sale de `location.openingHours`, que en El
+ *   Cañaveral va sin definir hasta que se resuelva si cierra a las 21:00 o a
+ *   las 22:00.
+ * - `areaServed`: la zona de atención se dedujo de un mapa y se retiró.
+ *
+ * Nunca se declara `aggregateRating` con las opiniones de Doctoralia ni de
+ * Google: están recogidas en otra plataforma.
+ */
+export function clinicJsonLd(
+  location: Location,
+  services: readonly { label: string; href: string }[] = [],
+) {
+  const manager = location.healthManager;
+
   return {
     "@context": "https://schema.org",
     "@type": ["MedicalClinic", "Physiotherapy"],
     "@id": `${site.url}/sedes/${location.slug}#clinic`,
     name: location.name,
     url: `${site.url}/sedes/${location.slug}`,
-    telephone: `+34${location.phoneHref.replace("+34", "")}`,
     email: location.email,
+    // Solo la portada. Las seis fotos de la galería no entran hasta que el
+    // equipo confirme qué muestra cada una: una de las de Tres Cantos es de
+    // fisioterapia pediátrica, que esa sede no presta, y declararla como imagen
+    // de la clínica es la misma señal falsa que publicarla en la página.
     image: `${site.url}${location.heroImage}`,
     priceRange: "€€",
     medicalSpecialty: "Physiotherapy",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: location.street,
-      postalCode: location.postalCode,
-      addressLocality: location.city,
-      addressRegion: location.region,
-      addressCountry: location.country,
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: location.geo.lat,
-      longitude: location.geo.lng,
-    },
-    openingHoursSpecification: openingHoursSpec,
-    areaServed: location.area,
+    address: postalAddress(location),
+    geo: geoCoordinates(location),
+    openingHoursSpecification: location.openingHours,
+    // Vincula esta clínica con su ficha de Doctoralia: es lo que le dice a
+    // Google que son el mismo negocio.
+    sameAs: [location.bookingUrl],
+    availableService: services.length
+      ? services.map((s) => ({
+          "@type": "MedicalProcedure",
+          name: s.label,
+          url: `${site.url}${s.href}`,
+        }))
+      : undefined,
+    // El responsable sanitario con su número de colegiado es la señal E-E-A-T
+    // más fuerte de la página.
+    employee: manager
+      ? {
+          "@type": "Person",
+          name: manager.name,
+          jobTitle: "Responsable sanitario",
+          identifier: manager.collegiateNumber,
+        }
+      : undefined,
+  };
+}
+
+/**
+ * `ItemList` de las dos clínicas para `/sedes`.
+ *
+ * Es el marcado propio de una página índice de ubicaciones. Cada elemento
+ * apunta con `@id` al `MedicalClinic` completo de su página de sede, para que
+ * Google trate las dos declaraciones como la misma entidad y no como dos.
+ */
+export function clinicListJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: locations.map((location, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": ["MedicalClinic", "Physiotherapy"],
+        "@id": `${site.url}/sedes/${location.slug}#clinic`,
+        name: location.name,
+        url: `${site.url}/sedes/${location.slug}`,
+        address: postalAddress(location),
+        geo: geoCoordinates(location),
+      },
+    })),
   };
 }
 

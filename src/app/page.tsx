@@ -27,6 +27,7 @@ import {
   method,
   pillars,
   services,
+  trust,
 } from "@/content/home";
 
 /**
@@ -80,7 +81,7 @@ export default function HomePage() {
       <HomeHero />
 
       {/* Módulo 2 · Franja de confianza */}
-      <TrustStrip />
+      <TrustStrip items={trust} />
 
       {/* Módulo 3 · Pilares */}
       <section className="py-20 md:py-28">
