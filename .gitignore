@@ -51,3 +51,7 @@ next-env.d.ts
 # No se versiona: no es entregable, no se lee desde el codigo y engorda el clon.
 # Vive en el Drive del proyecto; la copia local es de trabajo.
 /historical-data/
+
+# python
+__pycache__/
+*.pyc
