@@ -200,7 +200,8 @@ export const elCanaveral: SedeContent = {
     text: "La clínica tiene boxes individuales de tratamiento, una sala de Pilates con máquinas y una zona de entrenamiento funcional, que es lo que permite pasar del tratamiento en camilla al trabajo de carga sin cambiar de sitio ni esperar. Trabajamos con camillas Gymna Pro, electroterapia, polea inercial, equipos de neuromodulación ecoguiada y ecógrafo.",
     // PENDIENTE MUV: emparejamiento foto ↔ ALT. Estos textos vienen del
     // documento, pero no describen la foto que les toca en el repositorio.
-    // La galería no se publica hasta que el equipo lo confirme.
+    // Se publican a la espera de aclararlo con el cliente; al corregirlo solo
+    // hay que reordenar esta lista.
     galleryAlt: [
       "Fachada de la clínica MUV en la calle Victoria Kent, El Cañaveral",
       "Recepción de la clínica de fisioterapia MUV El Cañaveral",

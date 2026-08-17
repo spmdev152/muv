@@ -174,7 +174,8 @@ export const tresCantos: SedeContent = {
     // en el catálogo aprobado. Hasta entonces no se nombra.
     // PENDIENTE MUV: emparejamiento foto ↔ ALT. Estos textos vienen del
     // documento, pero no describen la foto que les toca en el repositorio.
-    // La galería no se publica hasta que el equipo lo confirme.
+    // Se publican a la espera de aclararlo con el cliente; al corregirlo solo
+    // hay que reordenar esta lista.
     galleryAlt: [
       "Fachada de la clínica MUV en la avenida de Madrid, 19, Tres Cantos",
       "Recepción de la clínica de fisioterapia MUV Tres Cantos",

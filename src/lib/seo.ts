@@ -129,11 +129,12 @@ export function clinicJsonLd(
     name: location.name,
     url: `${site.url}/sedes/${location.slug}`,
     email: location.email,
-    // Solo la portada. Las seis fotos de la galería no entran hasta que el
-    // equipo confirme qué muestra cada una: una de las de Tres Cantos es de
-    // fisioterapia pediátrica, que esa sede no presta, y declararla como imagen
-    // de la clínica es la misma señal falsa que publicarla en la página.
-    image: `${site.url}${location.heroImage}`,
+    // La portada y las seis fotos de la galería: en búsqueda local las imágenes
+    // pesan. PENDIENTE MUV: confirmar qué muestra cada una — la primera de Tres
+    // Cantos es de fisioterapia pediátrica, que esa sede no presta.
+    image: [location.heroImage, ...location.gallery].map(
+      (src) => `${site.url}${src}`,
+    ),
     priceRange: "€€",
     medicalSpecialty: "Physiotherapy",
     address: postalAddress(location),

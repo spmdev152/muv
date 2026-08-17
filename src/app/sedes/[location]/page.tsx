@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PageHero } from "@/components/sections/PageHero";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { StepList } from "@/components/sections/StepList";
+import { Gallery } from "@/components/sections/Gallery";
 import { FAQ, type QA } from "@/components/sections/FAQ";
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
@@ -270,19 +271,24 @@ export default async function SedePage({
             description={content.facilities.text}
           />
           {/*
-            PENDIENTE MUV: la galería. Las seis fotos de cada clínica están en
-            el repositorio, pero los ALT aprobados no describen la foto que les
-            toca —en El Cañaveral fallan cinco de seis— y en el juego no existe
-            ninguna imagen de recepción, de box de tratamiento ni de zona de
-            entrenamiento funcional. Además `tres-cantos-01` muestra
-            fisioterapia pediátrica, que esa sede no presta, y dos fotos de
-            El Cañaveral muestran punción ecoguiada, que no está en el catálogo
-            aprobado.
+            PENDIENTE MUV: el emparejamiento foto ↔ ALT. Los ALT aprobados no
+            describen la foto que les toca —en El Cañaveral fallan cinco de
+            seis— y en el juego no existe ninguna imagen de recepción, de box
+            de tratamiento ni de zona de entrenamiento funcional. Además
+            `tres-cantos-01` muestra fisioterapia pediátrica, que esa sede no
+            presta, y dos fotos de El Cañaveral muestran punción ecoguiada, que
+            no está en el catálogo aprobado.
 
-            El bloque espera a que el equipo de contenidos confirme el
-            emparejamiento foto ↔ ALT. `Gallery` ya está implementado y solo
-            hay que volver a llamarlo con `location.gallery` y los ALT buenos.
+            Se publica igualmente por decisión de producto, a la espera de
+            aclararlo con el cliente. Al corregirlo solo hay que reordenar
+            `galleryAlt` en los dos ficheros de `src/content/`.
           */}
+          <div className="mt-12">
+            <Gallery
+              images={location.gallery}
+              alts={content.facilities.galleryAlt}
+            />
+          </div>
         </Container>
       </section>
 
