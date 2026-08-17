@@ -36,20 +36,36 @@ Lo peligroso es que la tentación es de buen desarrollador: normalizar «Av.» a
 
 ---
 
-## Qué hay aquí y qué versión es la buena
+## Qué hay aquí y para quién
 
-| Página | Documento | PDF para el cliente | Estado |
+Cada página tiene **un documento y dos PDF**, y los dos PDF son para dos personas distintas.
+
+| Página | Documento *(manda siempre)* | 🔧 Para maquetar | 📋 Para el cliente |
 |---|---|---|---|
-| `/` | `home.md` | `MUV-HOME-v8.pdf` | Cerrada. **800 palabras publicables** |
-| `/sedes` | `sedes.md` | `MUV-SEDES-v14.pdf` | Cerrada. **422 palabras publicables** |
-| `/sedes/tres-cantos` | `sede-tres-cantos.md` | `MUV-SEDE-TRES-CANTOS-v10.pdf` | Cerrada. **1.203 palabras publicables** |
-| `/sedes/el-canaveral` | `sede-el-canaveral.md` | `MUV-SEDE-EL-CANAVERAL-v2.pdf` | Cerrada. **1.358 palabras publicables** |
+| `/` | `home.md` | `MUV-WEB-HOME.pdf` | `MUV-HOME-v8.pdf` |
+| `/sedes` | `sedes.md` | `MUV-WEB-SEDES.pdf` | `MUV-SEDES-v14.pdf` |
+| `/sedes/tres-cantos` | `sede-tres-cantos.md` | `MUV-WEB-TRES-CANTOS.pdf` | `MUV-SEDE-TRES-CANTOS-v10.pdf` |
+| `/sedes/el-canaveral` | `sede-el-canaveral.md` | `MUV-WEB-EL-CANAVERAL.pdf` | `MUV-SEDE-EL-CANAVERAL-v2.pdf` |
 
 **Con esto se cierra la primera fase de contenidos: las cuatro páginas de la estructura de sedes.**
 
-> **Las cifras de extensión se recontaron el 17/08/2026 y bajaron.** El contador anterior se dejaba fuera los H3 del módulo de dolencias y las preguntas frecuentes, y a cambio contaba tablas de justificación e instrucciones de maquetación. Los dos errores casi se compensaban, y por eso tardaron en verse. **Estas son las buenas.** Ninguna decisión editorial cambia; sí cayó una afirmación de Tres Cantos, que ya no es la segunda página más larga de su municipio.
+### 🔧 Si vas a construir la página, usa el `MUV-WEB-*`
 
-**Solo hay un PDF por página y siempre es el vigente.** Cuando sale una versión nueva se borra la anterior en el mismo commit, para que nadie tenga que adivinar cuál es la buena.
+Trae **solo lo que va a la web**: los módulos en orden, los encabezados exactos, el texto literal, las líneas de tarjeta, los ALT, el enlazado y el schema. Nada de justificaciones. Empieza con una tabla de **todos los datos que faltan**, y cada uno vuelve a aparecer en rojo dentro de su módulo.
+
+### 📋 El otro PDF explica por qué
+
+`MUV-<PÁGINA>-v<N>.pdf` lleva los mismos módulos y el mismo texto, y además el porqué de cada decisión: qué búsqueda defiende cada encabezado, qué se puede ganar y qué no, de dónde sale cada dato y qué hubo que corregir. Es el que se revisa con el cliente.
+
+### Y el `.md` manda sobre los dos
+
+Los PDF **se generan** del markdown, no se escriben aparte. Si un PDF y su `.md` no coinciden, gana el `.md`. Las carpetas `web/` y `resumen/` son intermedios generados: no se editan a mano.
+
+**Extensiones publicables:** home 800 palabras · `/sedes` 422 · Tres Cantos 1.203 · El Cañaveral 1.358.
+
+> **Las cifras se recontaron el 17/08/2026 y bajaron.** El contador anterior se dejaba fuera los H3 del módulo de dolencias y las preguntas frecuentes, y a cambio contaba tablas de justificación e instrucciones de maquetación. Los dos errores casi se compensaban, y por eso tardaron en verse. **Estas son las buenas.** Ninguna decisión editorial cambia; sí cayó una afirmación de Tres Cantos, que ya no es la segunda página más larga de su municipio.
+
+**Solo hay una versión de cada PDF y siempre es la vigente.** Cuando sale una nueva se borra la anterior en el mismo commit, para que nadie tenga que adivinar cuál es la buena.
 
 Cada documento se abre con una ficha —URL, keyword principal, extensión, trato— y sigue con los módulos numerados. **Los módulos del documento se corresponden uno a uno con los bloques de la página.**
 

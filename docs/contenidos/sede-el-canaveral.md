@@ -125,7 +125,7 @@
 **Ficha de contacto** *(bajo la franja)*
 > **C. Victoria Kent, Local 8 · 28052 Madrid** *(El Cañaveral, distrito de Vicálvaro)*
 > <span style="color:#c0392b">`[PENDIENTE MUV: zona de atención. La que estaba escrita —El Cañaveral, Vicálvaro y el este de Madrid— se dedujo mirando un mapa, no la facilitó MUV. Se retira hasta que la digan ellos]`</span>
-> **Teléfono:** <span style="color:#c0392b">**634 47 85 44** — ver la nota sobre teléfonos en las notas de producción, porque el repositorio dice otro número</span>
+> **Teléfono:** <span style="color:#c0392b">**634 47 85 44** — es el que publican la web actual, Doctoralia, Google Business e Instagram. `locations.ts` dice otro número y no coincide con ninguna de las cuatro. Pendiente de que MUV lo confirme</span>
 
 **Botones**
 > `[Pedir cita]` · `[Cómo llegar]` *(ancla al módulo 8)*
@@ -354,7 +354,7 @@
 
 **Ficha**
 > **Dirección:** C. Victoria Kent, Local 8 · 28052 Madrid — barrio de El Cañaveral, distrito de Vicálvaro.
-> **Teléfono:** <span style="color:#c0392b">634 47 85 44 — pendiente de que MUV confirme, ver notas de producción</span>
+> **Teléfono:** <span style="color:#c0392b">**634 47 85 44** — es el que publican la web actual, Doctoralia, Google Business e Instagram. `locations.ts` dice otro número y no coincide con ninguna de las cuatro. Pendiente de que MUV lo confirme</span>
 > **En autobús:** parada **Mario Moreno Cantinflas – Victoria Kent**, a unos 60 metros de la puerta. Por ella pasan la **159** de la EMT, que enlaza con el metro de Alsacia; la **290**, que conecta con Coslada; y el nocturno **N6** hacia Cibeles. <span style="color:#c0392b">`[PENDIENTE MUV: confirmar las líneas con el Consorcio antes de publicar; los datos son de OpenStreetMap]`</span>
 > **En coche:** <span style="color:#c0392b">`[PENDIENTE MUV: dónde aparcar — si hay zona libre en la calle, aparcamiento cercano o plaza propia. Es el dato más importante de este módulo]`</span>
 > **En metro o Cercanías:** el barrio no tiene estación propia. Las más cercanas son **Barrio del Puerto y Coslada Central (línea 7)** y la estación de **Cercanías de Coslada**, todas a unos 2,5 km, y **Puerta de Arganda (línea 9)** a 2,7 km. Desde ellas se enlaza en autobús.

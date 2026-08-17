@@ -312,7 +312,7 @@
 
 **Ficha**
 > **Dirección:** Av. de Madrid, 19, Local 5 · 28760 Tres Cantos, Madrid
-> **Teléfono:** <span style="color:#c0392b">614 13 14 05 — pendiente de que MUV confirme, ver la ficha del hero</span>
+> **Teléfono:** <span style="color:#c0392b">**614 13 14 05** — es el que publican la web actual, Doctoralia, Google Business e Instagram. `locations.ts` dice otro número y no coincide con ninguna de las cuatro. Pendiente de que MUV lo confirme</span>
 > **En coche:** salida de la **M-607**. <span style="color:#c0392b">`[PENDIENTE MUV: dónde aparcar — si hay zona libre en la calle, aparcamiento cercano o plaza propia. Es el dato más importante de este módulo]`</span>
 > **En autobús:** líneas interurbanas **712, 713, 716 y 717** desde Plaza de Castilla, y los autobuses urbanos de Tres Cantos. <span style="color:#c0392b">`[PENDIENTE MUV: qué línea y en qué parada bajarse]`</span>
 > **En tren:** estación de Tres Cantos, **línea C-4 de Cercanías** (Chamartín, Sol y Atocha en directo), a unos **3 km** de la clínica. <span style="color:#c0392b">`[PENDIENTE MUV: con qué autobús urbano se enlaza desde la estación]`</span>
