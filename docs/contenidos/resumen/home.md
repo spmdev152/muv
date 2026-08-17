@@ -1,34 +1,47 @@
-# HOME — versión 8
+# HOME — resumen (v8)
 
-*__La v8, del 14 de agosto de 2026, sí toca el texto: retira tres afirmaciones que no tenían fuente.__ Se detectaron al auditar la página de Tres Cantos, donde MUV preguntó de dónde salía un dato y resultó que de ninguna parte. Al revisar los tres documentos con el mismo criterio, la home tenía tres frases del mismo tipo. La regla que se aplica: **describir la fisioterapia es libre; describir este negocio exige fuente.***
+*Versión corta del documento de trabajo. **Los textos y los módulos van íntegros**; lo que se ha resumido son las justificaciones. El documento completo, con toda la investigación y sus fuentes, está en el repositorio.*
 
-| Frase retirada | Módulo | Por qué |
-|---|---|---|
-| «**Más de 5 años** atendiendo en la Comunidad de Madrid» | 2, franja de confianza | Copiada del sitio actual, sin confirmar. Ya figuraba como pendiente en las notas y aun así estaba escrita como un hecho |
-| «La valoración inicial dura **unos 50 minutos**» | 9, preguntas frecuentes | Deducida. MUV nunca ha dado esa cifra |
-| «**Menos sesiones innecesarias**» | 3, pilar «Eficientes» | Sugiere una comparación de eficacia sin dato. El resto de la tarjeta dice lo mismo sin afirmarlo |
+---
 
-*Se retira además, en la misma pasada, «tras la valoración inicial **le daremos un rango orientativo**» de la cuarta pregunta frecuente: compromete un entregable concreto de la primera cita que nadie ha confirmado. La frase que queda —«No cerramos un número antes de explorar»— dice lo mismo sin prometer nada.*
+## Lo esencial
 
-*__Sobre la cifra de extensión.__ La home queda en **785 palabras publicables**, y ese número no se puede comparar con las 747 de la v7: el contador anterior seguía otras reglas. A partir de la v8 los tres documentos se cuentan con **el mismo script**, que excluye todo lo pendiente, de modo que la cifra dice lo que de verdad interesa —cuánto texto se podría publicar hoy— y las tres son comparables entre sí.*
+| | |
+|---|---|
+| **Qué defiende** | La marca y el término genérico. **Tiene prohibido ampliar la geografía**: «fisioterapia Tres Cantos» y «fisioterapia El Cañaveral» son de las páginas de sede. |
+| **Extensión** | 800 palabras publicables, sobre una guía de 900–1.200. La cifra es baja porque hay módulos esperando datos del cliente. |
+| **El dato que la ordena** | **Nadie pone su catálogo completo en la portada.** Medido: Vitruvio 4 servicios, Ohana 2, Motriz 6. Por eso la home destaca seis de once. |
+| **Dónde no se gana** | La portada no es donde se decide este mercado. Vitruvio lidera con 595 palabras y 487 reseñas. **La guerra está en las páginas de servicio y de sede.** |
 
-*Las tres frases retiradas vuelven en cuanto MUV dé el dato. Dos son buenas y una responde a la pregunta más repetida del sector.*
+### La ficha
 
-*La v7 corrigió dos afirmaciones sobre la competencia que estaban solo en las justificaciones. La v6 se había reabierto para un único cambio: el H2 del módulo 8 incumplía el vocabulario que MUV marcó en el bloque 1 del documento de arranque.*
-
-- **URL:** `/`
-- **Keyword principal:** Clínica MUV *(marca)*
-- **Keywords de apoyo:** clínica de fisioterapia, fisioterapia, ejercicio terapéutico, fisioterapia deportiva
-- **Entidades geográficas:** Madrid, El Cañaveral (Vicálvaro), Tres Cantos — como entidades, no como keywords objetivo
-- **Extensión:** **785 palabras publicables hoy** — lo que se puede llevar a la web ahora mismo, sin contar nada de lo que está pendiente de MUV. Contadas con el mismo script que `/sedes` y que Tres Cantos, para que las tres cifras sean comparables entre sí *(la de la v7, 747, salió de un contador anterior con otras reglas: no son comparables, y esta es la buena)*
+- **URL:** `/`  ·  **Keyword principal:** Clínica MUV *(marca)*
+- **Encabezados:** —
 - **Trato:** usted · **Voz:** «En MUV…» (nosotros) · **Precios:** no se publican
-- **Estructura:** 11 módulos, mapeados contra `src/app/page.tsx`
+- **Al lector no se le llama «paciente» ni «cliente».**
 
 **Title SEO** (60 caracteres)
 `Clínica MUV | Fisioterapia y ejercicio terapéutico en Madrid`
 
 **Meta description** (149 caracteres)
 `Clínica de fisioterapia, fisioterapia deportiva y ejercicio terapéutico en El Cañaveral y Tres Cantos. Centro sanitario registrado. Pida cita en MUV.`
+
+---
+
+## Lo que hubo que corregir
+
+**La home se reabrió dos veces después de darse por cerrada**, y las dos por el mismo motivo: algo escrito que no tenía fuente.
+
+- Se retiraron **«más de 5 años»**, **«la valoración dura unos 50 minutos»** y **«menos sesiones innecesarias»**. Las tres vuelven en cuanto MUV dé el dato.
+- Se cambió «Opiniones de pacientes» por **«Opiniones sobre Clínica MUV»**: el cliente marcó no usar la etiqueta «paciente», y eso alcanza también a los bloques de opiniones.
+
+**La regla que quedó escrita para las páginas que faltan:** describir la fisioterapia es libre; describir este negocio exige fuente.
+
+---
+
+# Los módulos
+
+> Lo marcado <span style="color:#c0392b">**en rojo**</span> está pendiente de que MUV lo confirme. **No se publica tal cual.** Esta página tiene **3 datos pendientes**.
 
 ---
 
@@ -42,8 +55,6 @@
 
 **Botones**
 > `[Pedir cita]` *(abre el selector de sede)* · `[Ver nuestros servicios]` → `/servicios`
-
-*La marca sale del H1 porque ya está en el logo, en el title, en el `name` del schema y en tres H2. El espacio se invierte en el diferencial.*
 
 ---
 
@@ -97,8 +108,6 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 
 > `[Ver todos los servicios]` → `/servicios`
 
-*Criterio de selección: los cuatro priorizados por MUV en la oleada 2 del documento de arranque (fisioterapia, deportiva, suelo pélvico, entrenamiento terapéutico) más neuromodulación y Pilates, que son los dos diferenciadores de equipamiento.*
-
 ---
 
 ## Módulo 5 · Dolencias y lesiones `[NUEVO — añadir]` *(4 tarjetas + botón)*
@@ -120,8 +129,6 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 | **ATM** | Dolor mandibular, chasquidos y limitación al abrir la boca. |
 
 > `[Ver todas las dolencias]` → `/dolencias-y-lesiones`
-
-*Son las cuatro que existen en `content/conditions/`, así que no hay selección que hacer: van todas. Puede reutilizar el mismo `ServiceCard` del módulo 4, porque el frontmatter tiene la misma forma.*
 
 ---
 
@@ -168,8 +175,6 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 > Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00
 > `[Ver MUV Tres Cantos]`
 
-*Los teléfonos no se incluyen todavía: el número del repositorio y el de Doctoralia no coinciden en ninguna de las dos sedes. En cuanto MUV confirme cuál es el bueno, van aquí — son señal local y punto de contacto directo.*
-
 ---
 
 ## Módulo 8 · Testimonios *(3)*
@@ -179,8 +184,6 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 > Opiniones sobre Clínica MUV
 
 `[PENDIENTE MUV: tres testimonios reales anonimizados, marcados como «sí, anonimizados» en el bloque 1 del documento de arranque. No se inventan.]`
-
-*Aviso: los testimonios del boceto atribuyen embarazo y postparto a Tres Cantos, sede donde no se prestan según el catálogo aprobado. No reutilizarlos.*
 
 ---
 
@@ -222,8 +225,6 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 > Las tres últimas entradas, en tarjeta con título y fecha *(contenido dinámico, no requiere copy fijo)*
 > `[Ver todas las entradas]` → `/blog`
 
-*Entra ahora, no más adelante: la home se cierra en esta versión. Centro Vitruvio tiene su bloque de «últimos artículos» en la home y es el líder del mercado. Además le da al blog camino de rastreo desde la página con más autoridad del sitio, y una señal de frescura permanente sin tocar la home nunca más. El «lo firma un fisioterapeuta» es señal E-E-A-T directa en un sitio YMYL: enlaza con `/politica-editorial`, que ya existe.*
-
 ---
 
 ## Módulo 11 · `CTASection`
@@ -238,7 +239,9 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 
 ---
 
-## Justificación SEO de cada encabezado
+# Anexos
+
+## Los encabezados, y por qué no se tocan
 
 | Encabezado | Entidad que captura | Por qué |
 |---|---|---|
@@ -252,10 +255,6 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 | **H2** · Opiniones sobre Clínica MUV | marca + opiniones | Captura «muv opiniones», búsqueda de marca con intención de decisión. En el bloque 1 del documento de arranque MUV marcó «Persona» y «evitar la etiqueta», y no marcó ni «Paciente» ni «Cliente»: la palabra sale del encabezado. Además apunta mejor a la búsqueda real, porque «pacientes» no aportaba nada. |
 | **H2** · Preguntas frecuentes sobre fisioterapia en MUV | fisioterapia + marca | Habilita `FAQPage`. *(Corregido el 14/08/2026: aquí se decía «ninguno de los 12 competidores lo marca». **Es falso** — Impulso, en El Cañaveral, sí lo declara. Lo cierto y comprobado: de trece dominios, solo uno lo marca, y ninguno de los once de Tres Cantos.)* |
 | **H2** · Pida cita en El Cañaveral o en Tres Cantos | acción + ambos municipios | Cierra con intención transaccional y refuerza las dos entidades locales. |
-
-**Criterio general:** los diez encabezados llevan entidad. La geografía se concentra en el H1 y dos H2 para no canibalizar `/sedes/<sede>/`, que es donde se compite por «fisioterapia Tres Cantos». La home compite por marca y reparte autoridad.
-
----
 
 ## Enlazado interno de la home
 
@@ -278,34 +277,7 @@ La home es la página que más autoridad reparte. Mapa completo:
 
 **Sin deuda.** Las seis secciones del menú principal —Servicios, Dolencias y lesiones, Sedes, Profesionales, Sobre nosotros y Blog— reciben enlace desde el cuerpo de la home. No queda ninguna huérfana.
 
----
-
-## Textos alternativos de las imágenes
-
-El ALT es texto indexable y hoy no está definido. Uno por imagen, descriptivo, sin repetir keywords:
-
-| Imagen | ALT |
-|---|---|
-| Hero | Fisioterapeuta de Clínica MUV durante una sesión de terapia manual |
-| Tarjeta · Fisioterapia | Valoración fisioterápica de la movilidad del hombro en camilla |
-| Tarjeta · Fisioterapia deportiva | Readaptación al gesto deportivo en la sala de entrenamiento de MUV |
-| Tarjeta · Entrenamiento terapéutico | Sesión de ejercicio terapéutico supervisada por un fisioterapeuta |
-| Tarjeta · Neuromodulación | Aplicación de neuromodulación ecoguiada en la clínica |
-| Tarjeta · Suelo pélvico | Consulta de fisioterapia de suelo pélvico en MUV El Cañaveral |
-| Tarjeta · Pilates terapéutico | Ejercicio de Pilates terapéutico con máquina en MUV El Cañaveral |
-| Tarjeta · Dolor de espalda | Exploración de la columna lumbar en consulta de fisioterapia |
-| Tarjeta · Lesión de rodilla | Valoración de la movilidad de la rodilla en camilla |
-| Tarjeta · Lesión de hombro | Exploración del hombro por un fisioterapeuta de MUV |
-| Tarjeta · ATM | Tratamiento de la articulación temporomandibular en consulta |
-| Metodología (`about.webp`) | Equipo de fisioterapeutas de Clínica MUV en consulta |
-| Sede El Cañaveral | Interior de la clínica MUV El Cañaveral, en Vicálvaro |
-| Sede Tres Cantos | Interior de la clínica MUV Tres Cantos |
-
----
-
 ## Datos estructurados
-
-*__Recomprobado el 14 de agosto de 2026 descargando el HTML de trece dominios.__ Lo que se afirmaba aquí —«ninguno declara schema de negocio sanitario ni marca sus FAQ»— era cierto a medias. **Sigue siendo cierto** que ninguno declara `MedicalClinic`, `LocalBusiness` ni `Physiotherapy`: cero de trece, y ahí la diferenciación es real. **Ya no es cierto** de `FAQPage`: Impulso, en El Cañaveral, lo declara. Sigue sin declararlo ninguna de las once clínicas de Tres Cantos.*
 
 - **`Organization`** en la home, con `name`, `logo`, `url` y **`sameAs`** apuntando a las fichas de Doctoralia de las dos sedes, al perfil de Google Business y a las redes. El `sameAs` es lo que consolida la entidad de marca: le dice a Google que la web, las dos fichas de Doctoralia y el perfil de Google son el mismo negocio.
 - **`FAQPage`** en el módulo 9, con las seis preguntas.
@@ -313,30 +285,10 @@ El ALT es texto indexable y hoy no está definido. Uno por imagen, descriptivo, 
 
 ---
 
-## Notas de producción
+## Lo que falta de MUV para publicar
 
-**Cambio de la v6** *(14 de agosto de 2026)*
-1. **H2 del módulo 8:** «Opiniones de pacientes de Clínica MUV» → **«Opiniones sobre Clínica MUV»**. Es el único punto de la home que incumplía el vocabulario marcado por MUV. Comprobado el resto del texto contra las cuatro prohibiciones del documento de arranque —promesas de curación, comparaciones con otras clínicas, cifras de eficacia sin fuente y presentar una valoración fisioterápica como diagnóstico médico—: sin incidencias. La extensión pasa de 749 a 747 palabras.
-
-**Cambios frente a la v4**
-1. **H1 híbrido:** «Valoramos antes de tratar. Fisioterapia y ejercicio terapéutico en Madrid.» Sale la marca, entra el diferencial. Entradilla reescrita para no duplicar la frase.
-2. **Módulo nuevo de dolencias y lesiones**, con las cuatro tarjetas y botón al listado. Cierra el desajuste entre el peso que le da el menú principal y el que tenía en la home.
-3. Fuera la mención a dolencias dentro de la descripción de servicios, ya redundante con el módulo propio.
-4. Metodología comprimida: los cuatro pasos ganan al ser más cortos, un módulo de pasos se escanea, no se lee.
-5. **Módulo nuevo de blog**, con las tres últimas entradas y firma de autoría. Entra ahora porque la home se cierra en esta versión.
-6. Recuperados los horarios en las tarjetas de sede.
-7. **Extensión final: 749 palabras**, dentro del límite de 1.200 del documento de arranque y por debajo de Motriz (1.186), la home con más contenido del mercado.
-
-**Pendientes de MUV** *(lo único que impide publicar)*
-1. Número de registro sanitario de Tres Cantos.
-2. Tres testimonios reales anonimizados.
-3. Confirmación del dato de años de recorrido.
-4. Qué teléfono es el correcto en cada sede: el del repositorio y el de Doctoralia no coinciden. Hasta entonces no se publican en la home.
-5. ¿Se trabaja con mutuas o seguros médicos? Es de las preguntas más buscadas del sector y hoy no la responde nadie de la competencia. Si la respuesta es sí, entra como séptima FAQ.
-
-**Para desarrollo**
-- Marcar el bloque de FAQ con schema `FAQPage`.
-- Declarar `MedicalClinic` en cada página de sede y `Organization` con `sameAs` en la home.
-- Los módulos 2 (franja de confianza), 5 (dolencias) y 10 (blog) no existen todavía en `page.tsx`. El 5 puede reutilizar `ServiceCard` y `getCollection("conditions")`, que devuelve exactamente las cuatro.
-- `ServiceCard` no tiene hueco para la etiqueta de sede: solo acepta `href`, `title`, `excerpt` e `image`. Hay que añadirle una prop. El dato ya está en `locations.ts`, así que puede derivarse en vez de escribirse a mano.
-- La misma etiqueta sirve para el catálogo de `/servicios`, que hoy pinta las once tarjetas sin indicar disponibilidad.
+| Módulo | Qué falta |
+|---|---|
+| **Franja de confianza `[NUEVO — añadir]`** | <span style="color:#c0392b">años de recorrido. Estaba escrito «Más de 5 años atendiendo en la Comunidad de Madrid», copiado del sitio actual, que lo lleva sin fecha desde hace tiempo. No es un dato nuestro y nadie lo ha confirmado, así que se retira hasta que MUV diga la cifra</span> |
+| **Preguntas frecuentes** | <span style="color:#c0392b">duración de la valoración inicial. Estaba escrito «unos 50 minutos» y no procede de ninguna fuente de MUV: se dedujo. Es una de las preguntas más repetidas del sector —4 de 4 clínicas del estudio y 3 de 3 competidores directos la responden— así que hay que contestarla, pero con el dato real</span> |
+| **Preguntas frecuentes** | <span style="color:#c0392b">(Seguía «tras la valoración inicial le daremos un rango orientativo y lo revisaremos según evolucione». Se retira: compromete un entregable concreto de la primera sesión que MUV no ha confirmado. Vuelve en cuanto lo digan.)</span> |
