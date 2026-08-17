@@ -8,10 +8,22 @@ type Props = {
   title: string;
   excerpt: string;
   image?: string;
+  /** Descriptive ALT. Falls back to the title when the copy doesn't set one. */
+  imageAlt?: string;
+  /** Where the service is available, e.g. "Ambas sedes". */
+  availability?: string;
   className?: string;
 };
 
-export function ServiceCard({ href, title, excerpt, image, className }: Props) {
+export function ServiceCard({
+  href,
+  title,
+  excerpt,
+  image,
+  imageAlt,
+  availability,
+  className,
+}: Props) {
   return (
     <Link
       href={href}
@@ -24,7 +36,7 @@ export function ServiceCard({ href, title, excerpt, image, className }: Props) {
         <div className="relative aspect-[4/3] overflow-hidden">
           <Image
             src={image}
-            alt={title}
+            alt={imageAlt ?? title}
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
             className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
@@ -34,6 +46,11 @@ export function ServiceCard({ href, title, excerpt, image, className }: Props) {
       )}
       <div className="flex flex-1 flex-col p-7">
         <h3 className="text-xl text-olive-800">{title}</h3>
+        {availability && (
+          <p className="mt-2 text-xs uppercase tracking-[0.14em] text-gold-700">
+            {availability}
+          </p>
+        )}
         <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
           {excerpt}
         </p>

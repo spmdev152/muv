@@ -48,7 +48,8 @@ export const locations: Location[] = [
     phoneHref: "+34603303010",
     whatsappUrl: "https://wa.me/34603303010",
     email: "info@clinicamuv.com",
-    bookingUrl: "https://www.doctoralia.es/clinicas/clinica-muv-el-canaveral",
+    // La ficha real es `muv-canaveral`; `clinica-muv-el-canaveral` da 404.
+    bookingUrl: "https://www.doctoralia.es/clinicas/muv-canaveral",
     geo: { lat: 40.4079, lng: -3.5709 },
     mapEmbed:
       "https://www.google.com/maps?q=C.+Victoria+Kent+8,+28052+Madrid&output=embed",

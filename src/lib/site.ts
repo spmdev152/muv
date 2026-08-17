@@ -7,8 +7,11 @@ export const site = {
   name: "MUV",
   legalName: "Clínica MUV",
   tagline: "Fisioterapia eficaz, eficiente y empática",
+  // Meta description aprobada de la home (`docs/contenidos/home.md`, v8). Sirve
+  // además de descripción por defecto del sitio y del `Organization`. La
+  // anterior tuteaba, y el trato de usted alcanza también a la configuración.
   description:
-    "Clínica de fisioterapia avanzada, Pilates y entrenamiento funcional en Madrid con dos sedes, El Cañaveral y Tres Cantos. Tratamientos personalizados con tecnología de vanguardia y un equipo especialista en mejorar tu calidad de vida.",
+    "Clínica de fisioterapia, fisioterapia deportiva y ejercicio terapéutico en El Cañaveral y Tres Cantos. Centro sanitario registrado. Pida cita en MUV.",
   // Replaced by the real domain in production.
   url: "https://clinicamuv.com",
   email: "info@clinicamuv.com",

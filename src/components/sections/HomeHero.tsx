@@ -1,11 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import dynamic from "next/dynamic";
 import { motion, useReducedMotion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { BookingButton } from "@/components/BookingButton";
+import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "@/components/ui/icons";
+import { hero } from "@/content/home";
 
 // The 3D scene is client-only (WebGL). Fallback: soft background while loading.
 const SpineCanvas = dynamic(() => import("@/components/three/SpineCanvas"), {
@@ -16,10 +17,13 @@ const SpineCanvas = dynamic(() => import("@/components/three/SpineCanvas"), {
 });
 
 /**
- * Editorial, typographic, asymmetric hero:
- * a leading serif headline with an italic accent, a framed figure with an
- * offset double gold border, a single primary CTA + text link, and a bottom
- * masthead with the two locations. No blobs or floating cards.
+ * Módulo 1 · Hero editorial, tipográfico y asimétrico: titular con acento en
+ * itálica, figura 3D a la derecha y los dos botones de la copy aprobada.
+ *
+ * El texto sale de `src/content/home.ts`. El eyebrow y la franja inferior con
+ * las dos sedes que había aquí se retiraron: no figuraban en
+ * `docs/contenidos/home.md` y la regla 2 del README no admite copy sin fuente.
+ * Las señales de confianza las cubre ahora `TrustStrip` (módulo 2).
  */
 export function HomeHero() {
   const reduce = useReducedMotion();
@@ -31,52 +35,50 @@ export function HomeHero() {
   });
 
   return (
-    <section className="relative overflow-hidden bg-cream pb-12 pt-32 md:pb-16 md:pt-40">
+    // `min-h-svh` reserva el viewport inicial entero para el header y el hero:
+    // la franja de confianza (módulo 2) queda siempre por debajo del pliegue.
+    // svh y no dvh — es la medida más pequeña, así en móvil tampoco asoma
+    // cuando el navegador oculta su propia barra.
+    <section className="relative min-h-svh overflow-hidden bg-cream pb-12 pt-32 md:pb-16 md:pt-40">
       <Container size="wide">
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-8">
+        {/*
+          `items-center` y no `items-end`: la franja inferior que alineaba por
+          abajo con la figura ya no existe, y con el titular en tres líneas el
+          bloque de texto quedaba 114 px por debajo del centro de la imagen.
+        */}
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-8">
           {/* Typographic column */}
           <div className="lg:col-span-7">
-            <motion.div {...rise(0)} className="mb-7 flex items-center gap-4">
-              <span className="h-px w-12 bg-gold-500" />
-              <span className="eyebrow">Clínica de fisioterapia · Madrid</span>
-            </motion.div>
-
-            <h1 className="text-5xl leading-[1.03] tracking-[-0.02em] sm:text-6xl lg:text-7xl">
+            {/*
+              El titular fluye como una sola frase: un único bloque animado,
+              porque `transform` no se aplica a elementos en línea y partirlo en
+              varios spans obligaría a cortes de línea fijos. `text-balance`
+              reparte las líneas en lugar de dejar una huérfana al final.
+            */}
+            <h1 className="text-[2rem] leading-[1.08] tracking-[-0.02em] text-balance sm:text-5xl lg:text-[3.25rem]">
               <motion.span {...rise(0.06)} className="block">
-                Cuidamos de tu
-              </motion.span>
-              <motion.span
-                {...rise(0.14)}
-                className="block italic text-olive-500"
-              >
-                movimiento
-              </motion.span>
-              <motion.span {...rise(0.22)} className="block">
-                para que recuperes tu vida
+                {hero.h1.before}
+                <span className="italic text-olive-500">{hero.h1.accent}</span>
+                {hero.h1.after}
               </motion.span>
             </h1>
 
             <motion.p
-              {...rise(0.32)}
-              className="mt-8 max-w-md text-lg leading-relaxed text-ink-soft"
+              {...rise(0.2)}
+              className="mt-8 max-w-xl text-lg leading-relaxed text-ink-soft"
             >
-              Tratamientos personalizados con tecnología de vanguardia y un
-              equipo especialista. Eficaces, eficientes y, sobre todo,
-              empáticos.
+              {hero.lede}
             </motion.p>
 
             <motion.div
-              {...rise(0.4)}
-              className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4"
+              {...rise(0.3)}
+              className="mt-9 flex flex-wrap items-center gap-4"
             >
               <BookingButton size="lg" />
-              <Link
-                href="/sobre-nosotros/metodologia"
-                className="group inline-flex items-center gap-2 text-sm font-medium text-olive-700 transition-colors hover:text-gold-700"
-              >
-                Conoce nuestro método
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
+              <Button href={hero.secondaryCta.href} variant="outline" size="lg">
+                {hero.secondaryCta.label}
+                <ArrowRight className="h-4 w-4" />
+              </Button>
             </motion.div>
           </div>
 
@@ -97,32 +99,6 @@ export function HomeHero() {
             </motion.div>
           </div>
         </div>
-
-        {/* Bottom masthead with the locations */}
-        <motion.div
-          {...rise(0.52)}
-          className="mt-16 flex flex-col gap-3 border-t border-olive-900/10 pt-6 text-sm sm:flex-row sm:items-center sm:justify-between md:mt-20"
-        >
-          <p className="text-ink-soft">
-            Fisioterapia avanzada, Pilates y entrenamiento funcional · Dos
-            sedes en Madrid
-          </p>
-          <div className="flex items-center gap-4 text-olive-700">
-            <Link
-              href="/sedes/el-canaveral"
-              className="font-medium transition-colors hover:text-gold-700"
-            >
-              El Cañaveral
-            </Link>
-            <span className="text-olive-900/25">·</span>
-            <Link
-              href="/sedes/tres-cantos"
-              className="font-medium transition-colors hover:text-gold-700"
-            >
-              Tres Cantos
-            </Link>
-          </div>
-        </motion.div>
       </Container>
     </section>
   );

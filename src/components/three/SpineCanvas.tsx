@@ -14,6 +14,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import * as THREE from "three";
 import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils.js";
+import { hero } from "@/content/home";
 
 /* ---------- PRNG determinista a partir de una semilla ---------- */
 function makeRng(seed: number) {
@@ -578,7 +579,7 @@ export default function SpineCanvas() {
     return (
       <Image
         src="/img/hero-home.webp"
-        alt="Interior de la clínica MUV"
+        alt={hero.fallbackImageAlt}
         fill
         priority
         sizes="(max-width: 1024px) 100vw, 40vw"
