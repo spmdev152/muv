@@ -11,6 +11,13 @@ type Props = {
   image?: string;
   /** Must match the page content's Container so they stay aligned. */
   size?: "default" | "narrow" | "wide";
+  /**
+   * `compact` baja el cuerpo del titular y lo deja correr más ancho. Es para
+   * los H1 largos que llevan la entidad de búsqueda dentro —los de las páginas
+   * de sede pasan de 75 caracteres— y que a tamaño completo caen en cuatro
+   * líneas, apelotonando el arranque de la página.
+   */
+  titleSize?: "default" | "compact";
 };
 
 /** Inner-page header. With an image → immersive dark version. */
@@ -21,7 +28,13 @@ export function PageHero({
   crumbs,
   image,
   size = "wide",
+  titleSize = "default",
 }: Props) {
+  const titleClass =
+    titleSize === "compact"
+      ? "max-w-5xl text-balance text-3xl sm:text-4xl lg:text-[2.75rem]"
+      : "max-w-4xl text-balance text-4xl sm:text-5xl lg:text-6xl";
+
   if (image) {
     return (
       <header className="relative isolate overflow-hidden bg-olive-800 pt-28">
@@ -44,11 +57,9 @@ export function PageHero({
             {eyebrow && (
               <p className="eyebrow mb-4 text-gold-400">{eyebrow}</p>
             )}
-            <h1 className="max-w-3xl text-4xl text-cream sm:text-5xl lg:text-6xl">
-              {title}
-            </h1>
+            <h1 className={`${titleClass} text-cream`}>{title}</h1>
             {description && (
-              <p className="mt-5 max-w-2xl text-lg text-cream/80">
+              <p className="mt-5 max-w-3xl text-lg leading-relaxed text-cream/80">
                 {description}
               </p>
             )}
@@ -73,9 +84,9 @@ export function PageHero({
         <Reveal>
           {eyebrow && <p className="eyebrow mb-4">{eyebrow}</p>}
           <span className="rule-gold mb-6 block" />
-          <h1 className="max-w-3xl text-4xl sm:text-5xl lg:text-6xl">{title}</h1>
+          <h1 className={titleClass}>{title}</h1>
           {description && (
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            <p className="mt-5 max-w-3xl text-lg leading-relaxed text-ink-soft">
               {description}
             </p>
           )}

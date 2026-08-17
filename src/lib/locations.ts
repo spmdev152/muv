@@ -1,8 +1,21 @@
 /**
- * Real data for MUV's two clinic locations.
- * Source: clinicamuv.com. Key for local SEO (MedicalClinic JSON-LD).
- * Note: user-facing strings stay in Spanish (the site's locale).
+ * Las dos clínicas de MUV.
+ *
+ * Aquí viven los DATOS de cada sede, no la copy: los textos publicables están
+ * en `src/content/`, uno por página, con su documento de origen anotado.
+ *
+ * La dirección, el teléfono y el horario son NAP: tienen que coincidir carácter
+ * a carácter con Google Business Profile y con Doctoralia. No se reformatean,
+ * no se abrevian y no se «limpian» aquí solos.
  */
+
+/** Horario en formato schema.org. */
+export type OpeningHours = {
+  "@type": "OpeningHoursSpecification";
+  dayOfWeek: string[];
+  opens: string;
+  closes: string;
+};
 
 export type Location = {
   slug: string;
@@ -19,19 +32,30 @@ export type Location = {
   /** Contact via WhatsApp (the phone numbers are WhatsApp lines). */
   whatsappUrl: string;
   email: string;
-  /** Booking via Doctoralia. */
+  /** Booking via Doctoralia. Also feeds `sameAs` in the schema. */
   bookingUrl: string;
-  /** Approximate coordinates for geo schema and map. */
   geo: { lat: number; lng: number };
   mapEmbed: string;
   hours: { days: string; time: string }[];
-  /** Priority local services (slugs under /servicios). */
+  /**
+   * Horario en formato schema.org, por sede y no compartido: son dos negocios
+   * locales distintos. Si falta, la sede NO declara `openingHoursSpecification`.
+   */
+  openingHours?: OpeningHours[];
+  /** Nº en el registro de centros sanitarios de la Comunidad de Madrid. */
+  healthRegistry?: string;
+  /** Responsable sanitario que consta en el registro. */
+  healthManager?: { name: string; collegiateNumber: string; since: string };
+  /** Municipios y barrios que atiende la clínica. */
+  serviceArea?: string[];
+  /** Servicios prioritarios de la sede (slugs bajo /servicios). */
   priorityServices: string[];
   heroImage: string;
-  /** Interior photos of the location for the gallery section. */
+  /** Fotos del interior de la clínica para la galería. */
   gallery: string[];
-  blurb: string;
 };
+
+const WEEKDAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
 export const locations: Location[] = [
   {
@@ -44,13 +68,21 @@ export const locations: Location[] = [
     city: "Madrid",
     region: "Comunidad de Madrid",
     country: "ES",
+    // PENDIENTE MUV: cuatro fuentes públicas —web actual, Doctoralia, Google
+    // Business e Instagram— publican 634 47 85 44, que no coincide con este.
+    // Hasta que MUV confirme cuál es el bueno no se publica ninguno.
     phone: "603 30 30 10",
     phoneHref: "+34603303010",
     whatsappUrl: "https://wa.me/34603303010",
     email: "info@clinicamuv.com",
     // La ficha real es `muv-canaveral`; `clinica-muv-el-canaveral` da 404.
     bookingUrl: "https://www.doctoralia.es/clinicas/muv-canaveral",
-    geo: { lat: 40.4079, lng: -3.5709 },
+    // Corregida el 17/08/2026. La anterior (40.4079, -3.5709) caía a 1,27 km,
+    // en el polígono industrial. Esta es el eje de la calle Victoria Kent en
+    // El Cañaveral, con barrio y CP correctos (OpenStreetMap).
+    // PENDIENTE MUV: la coordenada del portal, que pueden dar desde su perfil
+    // de Google Business.
+    geo: { lat: 40.3996, lng: -3.5606 },
     mapEmbed:
       "https://www.google.com/maps?q=C.+Victoria+Kent+8,+28052+Madrid&output=embed",
     hours: [
@@ -58,6 +90,17 @@ export const locations: Location[] = [
       { days: "Sábado", time: "10:00–14:00" },
       { days: "Domingo", time: "Cerrado" },
     ],
+    // PENDIENTE MUV: la hora de cierre. La web dice 22:00 y el perfil de Google
+    // de esta clínica dice 21:00. Mientras no se resuelva, esta sede NO declara
+    // `openingHoursSpecification`: un schema que contradice al perfil de Google
+    // es una señal local en contra. Por eso `openingHours` va sin definir.
+    healthRegistry: "CS 17623",
+    healthManager: {
+      name: "Álvaro Ortega Rienda",
+      collegiateNumber: "12868",
+      since: "2021-01-25",
+    },
+    // PENDIENTE MUV: zona de atención. La que había se dedujo de un mapa.
     priorityServices: [
       "fisioterapia",
       "fisioterapia-deportiva",
@@ -73,8 +116,6 @@ export const locations: Location[] = [
       "/img/canaveral-05.webp",
       "/img/canaveral-06.webp",
     ],
-    blurb:
-      "Nuestra sede en El Cañaveral (Vicálvaro) combina fisioterapia avanzada, Pilates y entrenamiento funcional, con boxes individuales para un tratamiento totalmente personalizado.",
   },
   {
     slug: "tres-cantos",
@@ -86,12 +127,18 @@ export const locations: Location[] = [
     city: "Tres Cantos",
     region: "Comunidad de Madrid",
     country: "ES",
+    // PENDIENTE MUV: la web actual, Doctoralia e Instagram publican
+    // 614 13 14 05, que no coincide con este. No se publica ninguno.
     phone: "658 59 76 02",
     phoneHref: "+34658597602",
     whatsappUrl: "https://wa.me/34658597602",
     email: "info@clinicamuv.com",
     bookingUrl: "https://www.doctoralia.es/clinicas/clinica-muv-tres-cantos",
-    geo: { lat: 40.6019, lng: -3.7088 },
+    // Corregida el 17/08/2026. La anterior (40.6019, -3.7088) caía a 1,66 km,
+    // junto a la estación de Cercanías. Esta es el eje de la Avenida de Madrid
+    // (OpenStreetMap).
+    // PENDIENTE MUV: la coordenada del portal.
+    geo: { lat: 40.6142, lng: -3.72 },
     mapEmbed:
       "https://www.google.com/maps?q=Av.+de+Madrid+19,+28760+Tres+Cantos&output=embed",
     hours: [
@@ -99,11 +146,23 @@ export const locations: Location[] = [
       { days: "Sábado", time: "10:00–14:00" },
       { days: "Domingo", time: "Cerrado" },
     ],
+    // El horario de esta sede no está en disputa, así que sí se declara. Con el
+    // sábado dentro: es lo que permite que Google lo muestre en el resultado.
+    openingHours: [
+      { "@type": "OpeningHoursSpecification", dayOfWeek: WEEKDAYS, opens: "10:00", closes: "14:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: WEEKDAYS, opens: "16:00", closes: "22:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "10:00", closes: "14:00" },
+    ],
+    // PENDIENTE MUV: número de registro sanitario y responsable sanitario de
+    // esta clínica. En El Cañaveral los dos datos ya están.
+    // PENDIENTE MUV: zona de atención.
+    // Corregido: antes incluía `fisioterapia-embarazo` y `fisioterapia-pediatrica`,
+    // que según el catálogo aprobado solo se prestan en El Cañaveral.
     priorityServices: [
       "fisioterapia",
+      "fisioterapia-deportiva",
       "neuromodulacion",
-      "fisioterapia-embarazo",
-      "fisioterapia-pediatrica",
+      "tratamiento-cicatrices",
     ],
     heroImage: "/img/sede-tres-cantos.webp",
     gallery: [
@@ -114,33 +173,9 @@ export const locations: Location[] = [
       "/img/tres-cantos-05.webp",
       "/img/tres-cantos-06.webp",
     ],
-    blurb:
-      "En Tres Cantos te esperamos con un equipo especializado en fisioterapia, neuromodulación y salud de la mujer, en un espacio diseñado para tu recuperación.",
   },
 ];
 
 export function getLocation(slug: string): Location | undefined {
   return locations.find((l) => l.slug === slug);
 }
-
-/** Shared opening hours in schema.org format (openingHours). */
-export const openingHoursSpec = [
-  {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "10:00",
-    closes: "14:00",
-  },
-  {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "16:00",
-    closes: "22:00",
-  },
-  {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Saturday"],
-    opens: "10:00",
-    closes: "14:00",
-  },
-];

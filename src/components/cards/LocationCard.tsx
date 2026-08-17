@@ -1,7 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Location } from "@/lib/locations";
-import { ArrowRight, Clock, MapPin, Whatsapp } from "@/components/ui/icons";
+import {
+  ArrowRight,
+  Clock,
+  MapPin,
+  ShieldCheck,
+  Whatsapp,
+} from "@/components/ui/icons";
 
 type Props = {
   location: Location;
@@ -14,6 +20,14 @@ type Props = {
   /** NAP opening hours line, copied verbatim from the approved copy. */
   hours?: string;
   ctaLabel?: string;
+  /** Nº de registro sanitario. Sin él, la línea no se pinta. */
+  registry?: string;
+  /** Una línea sobre el espacio de la clínica. */
+  facilities?: string;
+  /** El nombre de la clínica como encabezado, en vez del nombre corto. */
+  heading?: string;
+  /** Nivel del encabezado. `/sedes` usa H3 dentro de su H2 de sección. */
+  headingAs?: "h2" | "h3";
   /**
    * The phone numbers in `locations.ts` disagree with the four sources MUV
    * publishes. Pages built from the approved copy pass `false` until the
@@ -29,11 +43,18 @@ export function LocationCard({
   address,
   hours,
   ctaLabel = "Ver sede y servicios",
+  registry,
+  facilities,
+  heading,
+  headingAs: Heading = "h3",
   showPhone = true,
 }: Props) {
   return (
-    <div className="group relative overflow-hidden rounded-3xl bg-olive-800 text-cream">
-      <div className="relative aspect-[3/2] overflow-hidden">
+    // `h-full flex flex-col`: en una fila de dos, la rejilla estira el
+    // contenedor pero la tarjeta se quedaba a la altura de su texto, y las dos
+    // clínicas no tienen el mismo número de líneas.
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-olive-800 text-cream">
+      <div className="relative aspect-[3/2] shrink-0 overflow-hidden">
         <Image
           src={location.heroImage}
           alt={imageAlt ?? `Sede MUV ${location.shortName}`}
@@ -42,11 +63,11 @@ export function LocationCard({
           className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-olive-900 via-olive-900/30 to-transparent" />
-        <h3 className="absolute bottom-5 left-6 font-display text-3xl text-cream">
-          {location.shortName}
-        </h3>
+        <Heading className="absolute bottom-5 left-6 font-display text-3xl text-cream">
+          {heading ?? location.shortName}
+        </Heading>
       </div>
-      <div className="p-7">
+      <div className="flex flex-1 flex-col p-7">
         {blurb && (
           <p className="mb-5 text-sm leading-relaxed text-cream/80">{blurb}</p>
         )}
@@ -75,9 +96,25 @@ export function LocationCard({
             {location.phone}
           </a>
         )}
+        {registry && (
+          <p className="mt-2 flex items-start gap-2 text-sm text-cream/70">
+            <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
+            <span>
+              Centro sanitario registrado{" "}
+              <span className="text-cream/90">{registry}</span>
+            </span>
+          </p>
+        )}
+        {facilities && (
+          <p className="mt-4 text-sm leading-relaxed text-cream/70">
+            {facilities}
+          </p>
+        )}
+        {/* `mt-auto` ancla el enlace abajo: con las tarjetas ya a la misma
+            altura, deja los dos CTA alineados entre sí. */}
         <Link
           href={`/sedes/${location.slug}`}
-          className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-gold-400"
+          className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-medium text-gold-400"
         >
           {ctaLabel}
           <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

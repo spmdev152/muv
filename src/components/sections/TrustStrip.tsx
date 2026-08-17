@@ -1,24 +1,47 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/motion/Reveal";
-import { trust } from "@/content/home";
+import { cn } from "@/lib/cn";
+
+export type TrustItem = {
+  label: string;
+  value: string;
+  href?: string;
+  /** Dominio externo: se abre en pestaña nueva. */
+  external?: boolean;
+};
+
+type Props = {
+  items: TrustItem[];
+  className?: string;
+};
 
 /**
- * Módulo 2 · Franja de confianza.
+ * Tira compacta de datos, sin titular.
  *
- * Tira compacta sin titular, justo debajo del hero. Es el único bloque que
- * aporta señales E-E-A-T en toda la home y ocupa una línea.
+ * La usan la franja de confianza de la home (módulo 2) y las franjas de
+ * garantías y de disponibilidad de las dos páginas de sede (módulo 1). En todas
+ * es la misma forma: un rótulo, una línea y a veces un enlace.
  *
- * El documento define cuatro columnas; se publican las tres que tienen dato.
- * La cuarta —años de recorrido— está pendiente de MUV y no se maqueta: ver
- * `src/content/home.ts`.
+ * El número de columnas sale de los datos, no de una constante: cuando un dato
+ * está pendiente de MUV, su columna sencillamente no se pasa.
  */
-export function TrustStrip() {
+export function TrustStrip({ items, className }: Props) {
+  if (items.length === 0) return null;
+
   return (
-    <section className="border-y border-olive-900/10 bg-cream py-7">
+    <section
+      className={cn("border-y border-olive-900/10 bg-cream py-7", className)}
+    >
       <Container size="wide">
-        <ul className="grid gap-6 sm:grid-cols-3">
-          {trust.map((item, i) => {
+        <ul
+          className={cn(
+            "grid gap-6",
+            items.length === 2 && "sm:grid-cols-2",
+            items.length >= 3 && "sm:grid-cols-3",
+          )}
+        >
+          {items.map((item, i) => {
             const body = (
               <>
                 <span className="block font-display text-base text-olive-700">

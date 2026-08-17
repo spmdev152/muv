@@ -25,12 +25,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "" ? 1 : 0.7,
   }));
 
-  // Locations + their contact page (high priority for local SEO).
+  // Páginas de sede: máxima prioridad después de la home, porque son las que
+  // compiten por «fisioterapia <municipio>». Su antigua ruta `/contacto`
+  // redirige aquí y ya no se lista.
   for (const location of locations) {
-    entries.push(
-      { url: `${base}/sedes/${location.slug}`, changeFrequency: "monthly", priority: 0.9 },
-      { url: `${base}/sedes/${location.slug}/contacto`, changeFrequency: "yearly", priority: 0.5 },
-    );
+    entries.push({
+      url: `${base}/sedes/${location.slug}`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    });
   }
 
   // Dynamic content (services includes nested routes).

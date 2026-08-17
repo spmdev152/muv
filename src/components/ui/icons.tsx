@@ -80,6 +80,23 @@ export function Whatsapp(p: IconProps) {
   );
 }
 
+export function ShieldCheck(p: IconProps) {
+  return (
+    <svg {...base} {...p}>
+      <path d="M12 22s8-3.5 8-10V5.5L12 2 4 5.5V12c0 6.5 8 10 8 10z" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  );
+}
+
+export function Check(p: IconProps) {
+  return (
+    <svg {...base} {...p}>
+      <path d="m5 12.5 4.5 4.5L19 7" />
+    </svg>
+  );
+}
+
 export function X(p: IconProps) {
   return (
     <svg {...base} {...p}>
