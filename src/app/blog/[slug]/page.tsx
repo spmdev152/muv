@@ -82,7 +82,9 @@ export default async function BlogPostPage({
                 src={frontmatter.image}
                 alt={frontmatter.title}
                 fill
-                priority
+                preload
+                loading="eager"
+                fetchPriority="high"
                 sizes="(max-width: 1024px) 100vw, 72rem"
                 className="object-cover"
               />

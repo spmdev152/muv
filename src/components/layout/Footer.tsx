@@ -87,7 +87,9 @@ export function Footer() {
           </div>
         </div>
 
-        <p className="mt-8 text-xs text-cream/40">
+        {/* `/50` y no `/40`: sobre `olive-800` el 40% daba 3,49:1 y WCAG AA
+            pide 4,5:1 para texto normal. Al 50% son 4,66:1. */}
+        <p className="mt-8 text-xs text-cream/50">
           © {2026} {site.legalName}. Todos los derechos reservados.
         </p>
       </Container>

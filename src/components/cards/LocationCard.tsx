@@ -59,7 +59,9 @@ export function LocationCard({
           src={location.heroImage}
           alt={imageAlt ?? `Sede MUV ${location.shortName}`}
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
+          // Dos columnas desde md; a partir de `max-w-7xl` la caja deja de
+          // crecer y 50vw prometería casi el doble del ancho real.
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 37rem"
           className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-olive-900 via-olive-900/30 to-transparent" />

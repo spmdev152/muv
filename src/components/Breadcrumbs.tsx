@@ -23,7 +23,8 @@ const tones: Record<
     base: "text-cream/70",
     link: "hover:text-gold-300",
     current: "text-cream",
-    sep: "text-cream/40",
+    // `/60` es el mínimo que cumple 4,5:1 sobre los héroes oscuros.
+    sep: "text-cream/60",
   },
 };
 

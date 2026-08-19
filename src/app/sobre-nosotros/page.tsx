@@ -42,7 +42,7 @@ export default function SobreNosotrosPage() {
                   src="/img/about.webp"
                   alt="Interior de la clínica MUV"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 37rem"
                   className="object-cover"
                 />
               </div>

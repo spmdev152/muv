@@ -110,6 +110,177 @@
     opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
+
+  /*
+    Entrada del hero sin JavaScript. Antes la hacía `motion` con
+    `initial={{ opacity: 0 }}`, así que el titular y el lede no se pintaban
+    hasta que hidrataba React: el LCP se iba a 5,7 s en móvil por esperar al
+    bundle. En CSS el navegador los pinta en el primer frame.
+  */
+  .rise {
+    animation: rise 0.75s var(--ease-out-soft) both;
+  }
+  .rise-2 {
+    animation-delay: 90ms;
+  }
+  .rise-3 {
+    animation-delay: 180ms;
+  }
+
+  /* La figura del hero solo escala: animar su opacidad retrasaría el LCP. */
+  .settle {
+    animation: settle 0.9s var(--ease-out-soft) both;
+  }
+
+  /*
+    Entrada de bloques al entrar en pantalla. `Reveal` solo alterna
+    `data-revealed` desde un IntersectionObserver compartido; antes esto lo
+    hacía `motion` (45 KB transferidos y 135 KB parseados en cada página) para
+    animar dos propiedades.
+  */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s var(--ease-out-soft),
+      transform 0.7s var(--ease-out-soft);
+    transition-delay: var(--reveal-delay, 0s);
+  }
+  .reveal[data-revealed="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /*
+    Despliegue de alto automático (menú móvil, modal de cita). Interpolar
+    `grid-template-rows` de `0fr` a `1fr` es lo que sustituye al `height: auto`
+    que animaba `motion`. `visibility` sale del flujo de foco al cerrar, y se
+    retrasa hasta el final de la transición para no cortarla.
+  */
+  .disclosure {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      grid-template-rows 0.4s var(--ease-out-soft),
+      opacity 0.4s var(--ease-out-soft),
+      visibility 0s linear 0.4s;
+  }
+  .disclosure > * {
+    overflow: hidden;
+  }
+  .disclosure[data-open="true"] {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+    transition:
+      grid-template-rows 0.4s var(--ease-out-soft),
+      opacity 0.4s var(--ease-out-soft),
+      visibility 0s;
+  }
+
+  /*
+    Acordeón nativo. `<details name="...">` ya trae el «solo uno abierto», el
+    foco y el `aria-expanded` implícito, así que las FAQ no necesitan estado en
+    cliente. La animación es mejora progresiva: donde no haya
+    `::details-content` el panel simplemente aparece.
+  */
+  .faq summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /*
+    Modal de cita. `<dialog>` trae `display: none` cerrado, así que la salida
+    necesita `allow-discrete` para que `display` y `overlay` esperen a que
+    termine la transición. `@starting-style` es el estado del primer frame tras
+    abrirse: sin él el panel aparecería ya colocado.
+  */
+  .modal {
+    margin: auto auto 0;
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+    transition:
+      opacity 0.35s var(--ease-out-soft),
+      transform 0.35s var(--ease-out-soft),
+      overlay 0.35s allow-discrete,
+      display 0.35s allow-discrete;
+  }
+  @media (min-width: 640px) {
+    .modal {
+      margin: auto;
+    }
+  }
+  .modal[open] {
+    opacity: 1;
+    transform: none;
+  }
+  @starting-style {
+    .modal[open] {
+      opacity: 0;
+      transform: translateY(16px) scale(0.98);
+    }
+  }
+  .modal::backdrop {
+    background-color: color-mix(in srgb, var(--color-olive-900) 50%, transparent);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition:
+      opacity 0.35s var(--ease-out-soft),
+      overlay 0.35s allow-discrete,
+      display 0.35s allow-discrete;
+  }
+  .modal[open]::backdrop {
+    opacity: 1;
+  }
+  @starting-style {
+    .modal[open]::backdrop {
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes settle {
+  from {
+    transform: scale(0.96);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/* Alto animado del acordeón nativo donde el navegador lo permite. */
+@supports selector(::details-content) and (interpolate-size: allow-keywords) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+  .faq details::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+      block-size 0.35s var(--ease-out-soft),
+      content-visibility 0.35s allow-discrete;
+  }
+  .faq details[open]::details-content {
+    block-size: auto;
+  }
 }
 
 /* Custom scrollbar in the brand palette (olive on cream).
@@ -153,6 +324,9 @@
   *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
+    /* Sin esto, una entrada con `both` y retardo dejaría el elemento
+       invisible durante el retardo antes de aparecer de golpe. */
+    animation-delay: 0s !important;
     transition-duration: 0.001ms !important;
   }
 }

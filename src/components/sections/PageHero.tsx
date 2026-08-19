@@ -42,7 +42,11 @@ export function PageHero({
           src={image}
           alt=""
           fill
-          priority
+          // Fondo del hero: es el LCP de las páginas interiores. En Next 16
+          // `priority` está deprecado en favor de estas tres.
+          preload
+          loading="eager"
+          fetchPriority="high"
           sizes="100vw"
           className="object-cover opacity-35"
         />

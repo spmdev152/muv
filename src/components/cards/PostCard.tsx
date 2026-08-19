@@ -36,7 +36,8 @@ export function PostCard({
             src={image}
             alt={imageAlt ?? title}
             fill
-            sizes="(max-width: 768px) 100vw, 33vw"
+            // Rejilla de 1 → 2 (md) → 3 (lg) columnas, tope `max-w-7xl`.
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25rem"
             className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
           />
         </div>

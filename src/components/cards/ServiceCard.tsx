@@ -12,6 +12,12 @@ type Props = {
   imageAlt?: string;
   /** Where the service is available, e.g. "Ambas sedes". */
   availability?: string;
+  /**
+   * Solo si la rejilla que la contiene no es la de tres columnas por defecto.
+   * Un `sizes` que promete más ancho del real hace que el navegador baje una
+   * variante más grande de la necesaria.
+   */
+  sizes?: string;
   className?: string;
 };
 
@@ -22,6 +28,7 @@ export function ServiceCard({
   image,
   imageAlt,
   availability,
+  sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25rem",
   className,
 }: Props) {
   return (
@@ -38,7 +45,7 @@ export function ServiceCard({
             src={image}
             alt={imageAlt ?? title}
             fill
-            sizes="(max-width: 768px) 100vw, 33vw"
+            sizes={sizes}
             className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-olive-900/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

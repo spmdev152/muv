@@ -41,9 +41,9 @@ export const hero = {
   },
   lede: "Combinamos fisioterapia, terapia manual y ejercicio terapéutico según lo que necesita cada caso, siempre a partir de una valoración clínica. Dos clínicas en El Cañaveral y Tres Cantos.",
   secondaryCta: { label: "Ver nuestros servicios", href: "/servicios" },
-  /** Solo se ve cuando el navegador no soporta WebGL. */
-  fallbackImageAlt:
-    "Fisioterapeuta de Clínica MUV durante una sesión de terapia manual",
+  // La figura del hero no lleva texto alternativo: es un fotograma decorativo
+  // de la columna 3D, no aporta nada que no digan ya el H1 y el lede. La foto
+  // de consulta sigue en uso como imagen OpenGraph de la home (`page.tsx`).
 } as const;
 
 /**

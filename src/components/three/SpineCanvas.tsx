@@ -6,15 +6,12 @@ import {
   OrbitControls,
   ContactShadows,
   Environment,
-  Float,
   Html,
   Lightformer,
 } from "@react-three/drei";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import Image from "next/image";
 import * as THREE from "three";
 import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils.js";
-import { hero } from "@/content/home";
 
 /* ---------- PRNG determinista a partir de una semilla ---------- */
 function makeRng(seed: number) {
@@ -400,7 +397,16 @@ function VertebraTooltip({
   );
 }
 
-function Spine({ reduce }: { reduce: boolean }) {
+/**
+ * La pose de apertura tiene que ser reproducible al pixel: es la que se
+ * congela en `hero-spine.webp` y la que el visitante ve al fundirse el póster.
+ *
+ * `animate` es lo que la mantiene quieta. Mientras el póster se desvanece la
+ * columna renderiza siempre el mismo fotograma —el de `t = 0`— y no arranca
+ * hasta que el relevo ha terminado. Así el movimiento empieza después del
+ * cambio de imagen y no durante, que es lo que lo hacía visible.
+ */
+function Spine({ reduce, animate }: { reduce: boolean; animate: boolean }) {
   const group = useRef<THREE.Group>(null);
   const vertebrae = useRef<(THREE.Group | null)[]>([]);
   const materials = useRef<(THREE.MeshPhysicalMaterial | null)[]>([]);
@@ -427,10 +433,19 @@ function Spine({ reduce }: { reduce: boolean }) {
     };
   }, [hovered]);
 
-  // Rotation angle with a damped speed so the column gently brakes while the
-  // visitor inspects a vertebra and resumes afterwards.
+  // Ángulo con velocidad amortiguada: la columna frena mientras el visitante
+  // inspecciona una vértebra y luego recupera el ritmo.
   const angle = useRef(PROFILE_VIEW_Y);
   const speed = useRef(1);
+  /*
+    Tiempo propio, acumulado a partir del primer frame pintado, en lugar de
+    `state.clock.elapsedTime`, que empieza a contar cuando se crea el canvas.
+    Con el reloj del canvas el primer frame caía en un `t` distinto en cada
+    carga (según lo que hubiese tardado en compilar los shaders), y con él la
+    pose. El delta se recorta para que una pestaña que vuelve del segundo plano
+    no dé un salto.
+  */
+  const time = useRef(0);
 
   useFrame((state, delta) => {
     // Hover glow runs even under reduced motion (it is state, not decoration).
@@ -445,15 +460,17 @@ function Spine({ reduce }: { reduce: boolean }) {
     }
 
     if (!group.current || reduce) return;
-    const t = state.clock.elapsedTime;
-    speed.current = THREE.MathUtils.lerp(
-      speed.current,
-      hovered === null ? 1 : 0.08,
-      Math.min(1, delta * 4),
-    );
-    angle.current += delta * 0.11 * speed.current;
+
+    // La pose se aplica con el tiempo actual y solo después se avanza: así el
+    // primer frame es exactamente `t = 0`.
+    const t = time.current;
     group.current.rotation.y = angle.current;
     group.current.rotation.z = Math.sin(t * 0.35) * 0.018;
+    // Balanceo vertical lento. Lo hacía `<Float>` de drei, que arranca con una
+    // fase aleatoria (`Math.random() * 10000`): la columna aparecía a una
+    // altura distinta en cada carga y el póster nunca podía cuadrar. Misma
+    // amplitud (±0,016) y mismo periodo que tenía allí.
+    group.current.position.y = Math.sin(t * 0.25) * 0.016;
     // A gentle wave travelling up the column — movement, breath.
     for (let i = 0; i < specs.length; i++) {
       const g = vertebrae.current[i];
@@ -461,16 +478,20 @@ function Spine({ reduce }: { reduce: boolean }) {
       g.rotation.z = Math.sin(t * 1.1 - i * 0.5) * 0.022;
       g.position.x = specs[i].position.x + Math.sin(t * 0.7 - i * 0.42) * 0.012;
     }
+
+    if (!animate) return;
+    speed.current = THREE.MathUtils.lerp(
+      speed.current,
+      hovered === null ? 1 : 0.08,
+      Math.min(1, delta * 4),
+    );
+    const step = Math.min(delta, 1 / 30);
+    angle.current += step * 0.11 * speed.current;
+    time.current += step;
   });
 
   return (
-    <Float
-      speed={reduce ? 0 : 1}
-      rotationIntensity={0}
-      floatIntensity={reduce ? 0 : 0.4}
-      floatingRange={[-0.04, 0.04]}
-    >
-      {/* Escala para que toda la columna quepa con margen dentro del encuadre. */}
+    // Escala para que toda la columna quepa con margen dentro del encuadre.
       <group ref={group} scale={0.6} rotation={[0, PROFILE_VIEW_Y, 0]}>
         {specs.map((s, i) => (
           <group key={i}>
@@ -555,87 +576,132 @@ function Spine({ reduce }: { reduce: boolean }) {
           </group>
         ))}
       </group>
-    </Float>
   );
 }
 
-function webglAvailable() {
-  try {
-    const canvas = document.createElement("canvas");
-    return (
-      !!window.WebGLRenderingContext &&
-      !!(canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
-    );
-  } catch {
-    return false;
-  }
+/**
+ * Avisa cuando la escena ya ha pintado. `useFrame` corre antes del render del
+ * frame, así que en la segunda llamada el primer frame está en pantalla y el
+ * póster del hero puede desvanecerse sin dejar un hueco a medio dibujar.
+ */
+function PaintProbe({ onPainted }: { onPainted: () => void }) {
+  const frames = useRef(0);
+  useFrame(() => {
+    frames.current += 1;
+    if (frames.current === 2) onPainted();
+  });
+  return null;
 }
 
-export default function SpineCanvas() {
+/**
+ * Columna 3D del hero. `HeroFigure` es quien decide si se monta (viewport
+ * ancho, sin `prefers-reduced-motion` y con GPU real): aquí ya se da por hecho
+ * que WebGL merece la pena.
+ *
+ * `animate` llega en false y no pasa a true hasta que el póster ha acabado de
+ * desvanecerse, para que el relevo ocurra sobre una figura quieta.
+ */
+export default function SpineCanvas({
+  onPainted,
+  animate,
+}: {
+  onPainted: () => void;
+  animate: boolean;
+}) {
   const reduce = useReducedMotion() ?? false;
-  const supported = useMemo(() => webglAvailable(), []);
+  const host = useRef<HTMLDivElement>(null);
+  // Sin esto el bucle de render seguía girando la columna con el hero fuera de
+  // pantalla o la pestaña en segundo plano: GPU y batería a cambio de nada.
+  const [running, setRunning] = useState(true);
 
-  if (!supported) {
-    return (
-      <Image
-        src="/img/hero-home.webp"
-        alt={hero.fallbackImageAlt}
-        fill
-        priority
-        sizes="(max-width: 1024px) 100vw, 40vw"
-        className="!absolute inset-0 rounded-[2rem] object-cover"
-      />
+  useEffect(() => {
+    const el = host.current;
+    if (!el) return;
+
+    let visible = !document.hidden;
+    let inView = true;
+    const sync = () => setRunning(visible && inView);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        inView = entry.isIntersecting;
+        sync();
+      },
+      { rootMargin: "120px" },
     );
-  }
+    observer.observe(el);
+
+    const onVisibility = () => {
+      visible = !document.hidden;
+      sync();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
+  }, []);
 
   return (
-    <Canvas
-      shadows={{ type: THREE.PCFShadowMap }}
-      dpr={[1, 2]}
-      gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
-      camera={{ position: [0, 0.15, 8.2], fov: 30 }}
-      className="!absolute inset-0"
-    >
-      <Suspense fallback={null}>
-        <ambientLight intensity={0.55} />
-        <directionalLight
-          position={[4, 6, 5]}
-          intensity={1.9}
-          color="#fff7e8"
-          castShadow
-          shadow-mapSize={[1024, 1024]}
-          shadow-bias={-0.0004}
-        />
-        <directionalLight position={[-5, 3, -4]} intensity={1.1} color="#d9e4c0" />
+    <div ref={host} className="absolute inset-0" aria-hidden="true">
+      <Canvas
+        shadows={{ type: THREE.PCFShadowMap }}
+        // Por encima de 1.5x no se distingue la piedra y el coste por píxel
+        // crece al cuadrado.
+        dpr={[1, 1.5]}
+        frameloop={running ? "always" : "never"}
+        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+        camera={{ position: [0, 0.15, 8.2], fov: 30 }}
+        className="!absolute inset-0"
+      >
+        <Suspense fallback={null}>
+          <ambientLight intensity={0.55} />
+          <directionalLight
+            position={[4, 6, 5]}
+            intensity={1.9}
+            color="#fff7e8"
+            castShadow
+            shadow-mapSize={[512, 512]}
+            shadow-bias={-0.0004}
+          />
+          <directionalLight position={[-5, 3, -4]} intensity={1.1} color="#d9e4c0" />
 
-        <Spine reduce={reduce} />
+          <Spine reduce={reduce} animate={animate} />
 
-        <ContactShadows
-          position={[0, -1.9, 0]}
-          opacity={0.3}
-          scale={6}
-          blur={2.8}
-          far={4}
-          color="#20251a"
-        />
+          {/* `frames={1}`: la sombra de contacto se cocina una vez. Con blur 2.8
+              la silueta congelada es indistinguible y deja de costar una pasada
+              de profundidad en cada frame. */}
+          <ContactShadows
+            position={[0, -1.9, 0]}
+            opacity={0.3}
+            scale={6}
+            blur={2.8}
+            far={4}
+            frames={1}
+            color="#20251a"
+          />
 
-        <Environment resolution={256}>
-          <Lightformer intensity={1.5} position={[3, 3, 4]} scale={[6, 6, 1]} color="#fbf6ea" />
-          <Lightformer intensity={0.8} position={[-4, 1, 2]} scale={[4, 6, 1]} color="#ddc89f" />
-          <Lightformer intensity={0.7} position={[0, -3, 2]} scale={[6, 3, 1]} color="#c6d2a6" />
-        </Environment>
+          <Environment resolution={256}>
+            <Lightformer intensity={1.5} position={[3, 3, 4]} scale={[6, 6, 1]} color="#fbf6ea" />
+            <Lightformer intensity={0.8} position={[-4, 1, 2]} scale={[4, 6, 1]} color="#ddc89f" />
+            <Lightformer intensity={0.7} position={[0, -3, 2]} scale={[6, 3, 1]} color="#c6d2a6" />
+          </Environment>
 
-        <OrbitControls
-          makeDefault
-          enableZoom={false}
-          enablePan={false}
-          enableDamping
-          autoRotate={false}
-          rotateSpeed={0.5}
-          minPolarAngle={Math.PI * 0.36}
-          maxPolarAngle={Math.PI * 0.62}
-        />
-      </Suspense>
-    </Canvas>
+          <OrbitControls
+            makeDefault
+            enableZoom={false}
+            enablePan={false}
+            enableDamping
+            autoRotate={false}
+            rotateSpeed={0.5}
+            minPolarAngle={Math.PI * 0.36}
+            maxPolarAngle={Math.PI * 0.62}
+          />
+
+          <PaintProbe onPainted={onPainted} />
+        </Suspense>
+      </Canvas>
+    </div>
   );
 }

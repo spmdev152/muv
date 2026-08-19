@@ -78,7 +78,8 @@ export default async function ProfesionalPage({
                       src={frontmatter.image}
                       alt={frontmatter.title}
                       fill
-                      priority
+                      loading="eager"
+                      fetchPriority="high"
                       sizes="(max-width: 640px) 100vw, 16rem"
                       className="object-cover"
                     />

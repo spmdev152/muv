@@ -36,6 +36,7 @@ export default function DolenciasPage() {
                   title={doc.frontmatter.title}
                   excerpt={doc.frontmatter.excerpt ?? doc.frontmatter.description}
                   image={doc.frontmatter.image}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 37rem"
                   className="h-full"
                 />
               </Reveal>

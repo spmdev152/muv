@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/cn";
 import { mainNav, hasDarkHero } from "@/lib/site";
 import { BookingButton } from "@/components/BookingButton";
@@ -82,6 +81,12 @@ export function Header() {
                       <li key={child.href}>
                         <Link
                           href={child.href}
+                          // Los submenús listan el sitio entero (23 rutas) y
+                          // están en el DOM desde la carga, así que Next las
+                          // prefetchaba todas: 95 peticiones `_rsc` y medio
+                          // segundo de hilo principal deserializándolas
+                          // mientras el visitante aún no ha visto el hero.
+                          prefetch={false}
                           className="block rounded-xl px-4 py-2.5 text-sm text-ink-soft transition-colors hover:bg-olive-50 hover:text-olive-700"
                         >
                           {child.label}
@@ -102,8 +107,9 @@ export function Header() {
         {/* Mobile menu button */}
         <button
           type="button"
-          aria-label="Abrir menú"
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
+          aria-controls="menu-movil"
           onClick={() => setOpen((v) => !v)}
           className="relative z-10 flex h-10 w-10 items-center justify-center lg:hidden"
         >
@@ -134,50 +140,48 @@ export function Header() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden lg:hidden"
-          >
-            <div className="max-h-[80vh] overflow-y-auto px-6 pb-8 pt-2">
-              <ul className="divide-y divide-olive-900/10">
-                {mainNav.map((item) => (
-                  <li key={item.href} className="py-3">
-                    <Link
-                      href={item.href}
-                      className="block font-display text-2xl text-olive-800"
-                    >
-                      {item.label}
-                    </Link>
-                    {item.children && (
-                      <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
-                        {item.children.map((child) => (
-                          <li key={child.href}>
-                            <Link
-                              href={child.href}
-                              className="text-sm text-ink-soft hover:text-gold-700"
-                            >
-                              {child.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6">
-                <BookingButton className="w-full" size="lg" />
-              </div>
+      {/*
+        Mobile menu. El desplegable de alto automático lo hace CSS
+        (`.disclosure` interpola `grid-template-rows` de 0fr a 1fr); antes lo
+        animaba `motion`, que era la única razón por la que la librería entraba
+        en el bundle de todas las páginas.
+      */}
+      <div id="menu-movil" data-open={open} className="disclosure lg:hidden">
+        <div>
+          <div className="max-h-[80vh] overflow-y-auto px-6 pb-8 pt-2">
+            <ul className="divide-y divide-olive-900/10">
+              {mainNav.map((item) => (
+                <li key={item.href} className="py-3">
+                  <Link
+                    href={item.href}
+                    className="block font-display text-2xl text-olive-800"
+                  >
+                    {item.label}
+                  </Link>
+                  {item.children && (
+                    <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+                      {item.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            prefetch={false}
+                            className="text-sm text-ink-soft hover:text-gold-700"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6">
+              <BookingButton className="w-full" size="lg" />
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

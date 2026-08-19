@@ -55,7 +55,10 @@ export default function MetodologiaPage() {
             {steps.map((s, i) => (
               <Reveal key={s.n} delay={i * 0.06}>
                 <div className="grid gap-6 border-t border-olive-900/10 py-10 md:grid-cols-[8rem_1fr]">
-                  <span className="font-display text-5xl text-gold-500">
+                  {/* `gold-600` y no `gold-500`: sobre crema el 500 da 2,37:1
+                      y ni siquiera llega al 3:1 de texto grande. Es además el
+                      dorado que usan los demás numerales del sitio. */}
+                  <span className="font-display text-5xl text-gold-600">
                     {s.n}
                   </span>
                   <div>

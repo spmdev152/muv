@@ -1,39 +1,35 @@
-"use client";
-
-import dynamic from "next/dynamic";
-import { motion, useReducedMotion } from "motion/react";
+import Image from "next/image";
+/*
+  Import estático y no una ruta de `public/`: así la URL lleva el hash del
+  contenido (`/_next/static/media/hero-spine.<hash>.webp`) y al regenerar el
+  fotograma cambia sola. Con la ruta fija, navegadores y CDN se quedaban
+  sirviendo el póster viejo durante horas —el archivo cambia, la URL no— y no
+  había forma de invalidarlo salvo a mano.
+*/
+import heroSpine from "@/assets/hero-spine.webp";
 import { Container } from "@/components/ui/Container";
 import { BookingButton } from "@/components/BookingButton";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "@/components/ui/icons";
+import { HeroFigure } from "@/components/sections/HeroFigure";
 import { hero } from "@/content/home";
-
-// The 3D scene is client-only (WebGL). Fallback: soft background while loading.
-const SpineCanvas = dynamic(() => import("@/components/three/SpineCanvas"), {
-  ssr: false,
-  loading: () => (
-    <div className="absolute inset-0 animate-pulse rounded-[2rem] bg-olive-100/40" />
-  ),
-});
 
 /**
  * Módulo 1 · Hero editorial, tipográfico y asimétrico: titular con acento en
- * itálica, figura 3D a la derecha y los dos botones de la copy aprobada.
+ * itálica, figura a la derecha y los dos botones de la copy aprobada.
  *
  * El texto sale de `src/content/home.ts`. El eyebrow y la franja inferior con
  * las dos sedes que había aquí se retiraron: no figuraban en
  * `docs/contenidos/home.md` y la regla 2 del README no admite copy sin fuente.
  * Las señales de confianza las cubre ahora `TrustStrip` (módulo 2).
+ *
+ * Es un componente de servidor. Antes era cliente y animaba la entrada con
+ * `motion` desde `opacity: 0`, así que el titular y el lede no se pintaban
+ * hasta que el bundle hidrataba: el LCP de móvil era el lede a 5,7 s. Ahora la
+ * entrada es CSS (`.rise`), el H1 y el póster viajan en el HTML inicial y lo
+ * único que queda en cliente es `HeroFigure` (el 3D) y `BookingButton`.
  */
 export function HomeHero() {
-  const reduce = useReducedMotion();
-  const ease = [0.22, 1, 0.36, 1] as const;
-  const rise = (delay: number) => ({
-    initial: reduce ? { opacity: 0 } : { opacity: 0, y: 24 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.75, delay, ease },
-  });
-
   return (
     // `min-h-svh` reserva el viewport inicial entero para el header y el hero:
     // la franja de confianza (módulo 2) queda siempre por debajo del pliegue.
@@ -56,47 +52,62 @@ export function HomeHero() {
               reparte las líneas en lugar de dejar una huérfana al final.
             */}
             <h1 className="text-[2rem] leading-[1.08] tracking-[-0.02em] text-balance sm:text-5xl lg:text-[3.25rem]">
-              <motion.span {...rise(0.06)} className="block">
+              <span className="rise block">
                 {hero.h1.before}
                 <span className="italic text-olive-500">{hero.h1.accent}</span>
                 {hero.h1.after}
-              </motion.span>
+              </span>
             </h1>
 
-            <motion.p
-              {...rise(0.2)}
-              className="mt-8 max-w-xl text-lg leading-relaxed text-ink-soft"
-            >
+            <p className="rise rise-2 mt-8 max-w-xl text-lg leading-relaxed text-ink-soft">
               {hero.lede}
-            </motion.p>
+            </p>
 
-            <motion.div
-              {...rise(0.3)}
-              className="mt-9 flex flex-wrap items-center gap-4"
-            >
+            <div className="rise rise-3 mt-9 flex flex-wrap items-center gap-4">
               <BookingButton size="lg" />
               <Button href={hero.secondaryCta.href} variant="outline" size="lg">
                 {hero.secondaryCta.label}
                 <ArrowRight className="h-4 w-4" />
               </Button>
-            </motion.div>
+            </div>
           </div>
 
-          {/* 3D stylized spine in brand greens: cantos apilados con textura de piedra */}
+          {/*
+            Figura: fotograma de la columna en el HTML inicial y la escena 3D
+            encima como mejora progresiva.
+          */}
           <div className="lg:col-span-5">
-            <motion.div
-              initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2, ease }}
-              className="relative mx-auto aspect-[4/5] w-full max-w-sm lg:max-w-none"
-            >
-              {/* Subtle radial halo that adds depth behind the figure */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(60%_55%_at_50%_42%,var(--color-olive-100)_0%,transparent_70%)]"
-              />
-              <SpineCanvas />
-            </motion.div>
+            <HeroFigure
+              poster={
+                <Image
+                  // Un fotograma de la propia escena, en la pose de perfil con
+                  // la que arranca (`scripts/render-spine-poster.mjs`). Antes
+                  // aquí había una foto de consulta y el relevo se leía como un
+                  // salto: aparecía una imagen y la sustituía otra distinta.
+                  // Siendo la misma figura, el cambio es imperceptible: la
+                  // columna estática se pone a girar. Y es además lo único que
+                  // ven móvil, tablet y las máquinas sin GPU.
+                  src={heroSpine}
+                  // Decorativa: una figura abstracta de marca que no añade nada
+                  // al H1 ni al lede. El `<canvas>` que la releva también sale
+                  // del árbol de accesibilidad, así que la figura no anuncia
+                  // una cosa distinta según el dispositivo.
+                  alt=""
+                  fill
+                  // Next 16 sustituyó `priority` por estas tres: `preload`
+                  // inserta el `<link>` en el head, y las otras dos marcan la
+                  // petición como urgente en lugar de diferida.
+                  preload
+                  loading="eager"
+                  fetchPriority="high"
+                  // El LCP de la home. `sizes` describe la caja real: 100vw
+                  // menos el gutter hasta sm, el ancho tope del contenedor
+                  // hasta lg y 5/12 de `max-w-7xl` a partir de ahí.
+                  sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1024px) 24rem, 42vw"
+                  className="rounded-[2rem] object-cover"
+                />
+              }
+            />
           </div>
         </div>
       </Container>
