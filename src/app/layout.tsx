@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
+import { mainNav } from "@/lib/nav";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -50,7 +51,7 @@ export default function RootLayout({
           atributos en <body> (p. ej. cz-shortcut-listen) antes de la hidratación. */}
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <JsonLd data={organizationJsonLd()} />
-        <Header />
+        <Header nav={mainNav} />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
