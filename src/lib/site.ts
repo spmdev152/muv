@@ -33,6 +33,10 @@ export function hasDarkHero(pathname: string): boolean {
   return false;
 }
 
+/**
+ * Columnas fijas del pie. Los servicios van aparte, una columna por sede, y
+ * salen de `servicesByLocation` (`nav.ts`), la misma fuente que el header.
+ */
 export const footerNav = {
   Clínica: [
     { label: "Sobre nosotros", href: "/sobre-nosotros" },
@@ -40,13 +44,6 @@ export const footerNav = {
     { label: "Profesionales", href: "/profesionales" },
     { label: "Política editorial", href: "/politica-editorial" },
     { label: "Blog", href: "/blog" },
-  ],
-  Servicios: [
-    { label: "Fisioterapia", href: "/servicios/fisioterapia" },
-    { label: "Fisioterapia deportiva", href: "/servicios/fisioterapia-deportiva" },
-    { label: "Suelo pélvico", href: "/servicios/suelo-pelvico" },
-    { label: "Pilates terapéutico", href: "/servicios/pilates-terapeutico" },
-    { label: "Ver todos", href: "/servicios" },
   ],
   Sedes: [
     { label: "El Cañaveral", href: "/sedes/el-canaveral" },

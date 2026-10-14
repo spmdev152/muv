@@ -23,11 +23,12 @@ export type NavItem = NavLink & {
 };
 
 /**
- * Servicios de cada clínica para el desplegable del header: sus cuatro páginas
+ * Servicios de cada clínica para el desplegable del header y las columnas del
+ * pie: sus cuatro páginas
  * `/sedes/<sede>/<servicio>` (#29), con el nombre y el orden de sus documentos
  * de la fase 2 (issues #39–#46). Solo se listan elementos con enlace (#30).
  */
-const servicesByLocation: NavGroup[] = locations.map((location) => ({
+export const servicesByLocation: NavGroup[] = locations.map((location) => ({
   label: location.shortName,
   href: `/sedes/${location.slug}`,
   items: (sedeServices[location.slug] ?? []).map((service) => ({

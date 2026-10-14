@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { footerNav, site } from "@/lib/site";
 import { locations } from "@/lib/locations";
+import { servicesByLocation } from "@/lib/nav";
 import { Logo } from "@/components/layout/Logo";
 import { Container } from "@/components/ui/Container";
 import { MapPin, Whatsapp, Mail, Clock } from "@/components/ui/icons";
@@ -10,9 +11,9 @@ export function Footer() {
     <footer className="relative overflow-hidden bg-olive-800 text-cream/80">
       <div className="grain" aria-hidden="true" />
       <Container size="wide" className="relative py-16 md:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+        <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1.15fr_1.15fr_0.9fr]">
           {/* Brand + locations */}
-          <div>
+          <div className="sm:col-span-2 lg:col-span-1">
             <Logo className="text-cream" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/60">
               {site.tagline}. Fisioterapia avanzada, Pilates y entrenamiento
@@ -55,8 +56,23 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation columns */}
-          {Object.entries(footerNav).map(([heading, links]) => (
+          {/* Navigation columns: Clínica, los servicios de cada sede y Sedes */}
+          {[
+            { heading: "Clínica", links: footerNav.Clínica },
+            // #30: una columna por sede con sus cuatro servicios destacados.
+            // «Ver todos» abre la pestaña de esa sede en `/servicios`.
+            ...servicesByLocation.map((group) => ({
+              heading: `Servicios en ${group.label}`,
+              links: [
+                ...group.items,
+                {
+                  label: "Ver todos",
+                  href: `/servicios#${group.href.split("/").pop()}`,
+                },
+              ],
+            })),
+            { heading: "Sedes", links: footerNav.Sedes },
+          ].map(({ heading, links }) => (
             <nav key={heading} aria-label={heading}>
               <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-cream">
                 {heading}
