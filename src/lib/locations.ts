@@ -122,16 +122,18 @@ export const locations: Location[] = [
     name: "MUV Tres Cantos",
     shortName: "Tres Cantos",
     area: "Tres Cantos",
-    street: "Av. de Madrid, 19, Local 5",
+    // Tal cual la escribe el perfil de Google Business (comprobado el
+    // 14/10/2026): «Loc 5», no «Local 5».
+    street: "Av. de Madrid, 19, Loc 5",
     postalCode: "28760",
     city: "Tres Cantos",
     region: "Comunidad de Madrid",
     country: "ES",
-    // PENDIENTE MUV: la web actual, Doctoralia e Instagram publican
-    // 614 13 14 05, que no coincide con este. No se publica ninguno.
-    phone: "658 59 76 02",
-    phoneHref: "+34658597602",
-    whatsappUrl: "https://wa.me/34658597602",
+    // Confirmado por MUV el 14/10/2026: es el que ya publicaban la web actual,
+    // Doctoralia e Instagram. El anterior (658 59 76 02) era el erróneo.
+    phone: "614 13 14 05",
+    phoneHref: "+34614131405",
+    whatsappUrl: "https://wa.me/34614131405",
     email: "info@clinicamuv.com",
     bookingUrl: "https://www.doctoralia.es/clinicas/clinica-muv-tres-cantos",
     // Corregida el 17/08/2026. La anterior (40.6019, -3.7088) caía a 1,66 km,
@@ -141,20 +143,23 @@ export const locations: Location[] = [
     geo: { lat: 40.6142, lng: -3.72 },
     mapEmbed:
       "https://www.google.com/maps?q=Av.+de+Madrid+19,+28760+Tres+Cantos&output=embed",
+    // Horario definitivo, confirmado por MUV el 14/10/2026. Antes cerraba a las
+    // 22:00 entre semana y abría a las 10:00 el sábado.
     hours: [
-      { days: "Lunes a viernes", time: "10:00–14:00 · 16:00–22:00" },
-      { days: "Sábado", time: "10:00–14:00" },
+      { days: "Lunes a viernes", time: "10:00–14:00 · 16:00–21:00" },
+      { days: "Sábado", time: "9:00–14:00" },
       { days: "Domingo", time: "Cerrado" },
     ],
-    // El horario de esta sede no está en disputa, así que sí se declara. Con el
-    // sábado dentro: es lo que permite que Google lo muestre en el resultado.
+    // Con el sábado dentro: es lo que permite que Google lo muestre en el
+    // resultado.
     openingHours: [
       { "@type": "OpeningHoursSpecification", dayOfWeek: WEEKDAYS, opens: "10:00", closes: "14:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: WEEKDAYS, opens: "16:00", closes: "22:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "10:00", closes: "14:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: WEEKDAYS, opens: "16:00", closes: "21:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "09:00", closes: "14:00" },
     ],
-    // PENDIENTE MUV: número de registro sanitario y responsable sanitario de
-    // esta clínica. En El Cañaveral los dos datos ya están.
+    healthRegistry: "CS 21018",
+    // PENDIENTE MUV: responsable sanitario de esta clínica. En El Cañaveral ya
+    // está.
     // PENDIENTE MUV: zona de atención.
     // Corregido: antes incluía `fisioterapia-embarazo` y `fisioterapia-pediatrica`,
     // que según el catálogo aprobado solo se prestan en El Cañaveral.

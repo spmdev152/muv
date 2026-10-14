@@ -56,9 +56,8 @@ export const hero = {
  * atendiendo en la Comunidad de Madrid» por no tener fuente. La cuarta columna
  * no se renderiza hasta que MUV dé la cifra.
  *
- * PENDIENTE MUV (2/3): número de registro sanitario de Tres Cantos. El
- * CS 17623 sí está confirmado y se publica; cuando llegue el segundo, entra en
- * la misma columna.
+ * Los dos registros sanitarios van en la misma columna: CS 17623 (El
+ * Cañaveral) y CS 21018 (Tres Cantos, confirmado por MUV el 14/10/2026).
  */
 export type TrustItem = {
   label: string;
@@ -71,7 +70,7 @@ export type TrustItem = {
 export const trust: TrustItem[] = [
   {
     label: "Centro sanitario registrado",
-    value: "CS 17623",
+    value: "CS 17623 · CS 21018",
     // Registro de centros, servicios y establecimientos sanitarios de la
     // Comunidad de Madrid — el de RD 1277/2003, donde se comprueba que un
     // centro está autorizado. Es un buscador, no la ficha directa de MUV.
@@ -286,9 +285,9 @@ export const locationsSection = {
     "tres-cantos": {
       blurb:
         "Enfoque musculoesquelético y deportivo con progresión mediante ejercicio: fisioterapia general y deportiva, entrenamiento terapéutico individual y grupal, neuromodulación y tratamiento de cicatrices.",
-      address: "Av. de Madrid, 19, Local 5 · 28760 Tres Cantos",
+      address: "Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos",
       hours:
-        "Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00",
+        "Lunes a viernes, 10:00–14:00 y 16:00–21:00 · Sábados, 9:00–14:00",
       ctaLabel: "Ver MUV Tres Cantos",
       imageAlt: "Interior de la clínica MUV Tres Cantos",
     },
@@ -352,9 +351,11 @@ export const faqs = [
       "No. Cada sede tiene su propia cartera y cada servicio indica dónde se presta. Puede compararlas en la página de sedes.",
   },
   {
+    // Hasta el 14/10/2026 decía que las dos clínicas tenían el mismo horario.
+    // Desde que Tres Cantos tiene el suyo, cada sede va por separado.
     question: "¿Abren los sábados?",
     answer:
-      "Sí. Las dos clínicas abren de lunes a viernes de 10:00 a 14:00 y de 16:00 a 22:00, y los sábados de 10:00 a 14:00.",
+      "Sí, las dos clínicas abren los sábados por la mañana: El Cañaveral de 10:00 a 14:00 y Tres Cantos de 9:00 a 14:00. De lunes a viernes, El Cañaveral abre de 10:00 a 14:00 y de 16:00 a 22:00, y Tres Cantos de 10:00 a 14:00 y de 16:00 a 21:00.",
   },
 ] as const;
 

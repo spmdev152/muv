@@ -106,8 +106,9 @@ function geoCoordinates(location: Location) {
  * Tres campos se omiten a propósito mientras MUV no facilite el dato, porque un
  * schema que contradice a Google Business resta en vez de sumar:
  *
- * - `telephone`: el número de `locations.ts` no coincide con ninguna de las
- *   cuatro fuentes que MUV publica.
+ * - `telephone`: el de El Cañaveral en `locations.ts` no coincide con ninguna
+ *   de las cuatro fuentes que MUV publica. El de Tres Cantos ya está
+ *   confirmado (14/10/2026), pero se declarará cuando lo estén los dos.
  * - `openingHoursSpecification`: sale de `location.openingHours`, que en El
  *   Cañaveral va sin definir hasta que se resuelva si cierra a las 21:00 o a
  *   las 22:00.

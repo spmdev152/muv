@@ -51,7 +51,7 @@
 
 Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta señales E-E-A-T en toda la home y ocupa una línea.
 
-> **Centro sanitario registrado** · CS 17623 `[PENDIENTE MUV: registro de Tres Cantos]`
+> **Centro sanitario registrado** · CS 17623 · CS 21018 *(el de Tres Cantos, confirmado por MUV el 14/10/2026)*
 > **Equipo colegiado** · fisioterapeutas con número de colegiado público → enlaza a `/profesionales`
 > <span style="color:#c0392b">`[PENDIENTE MUV: años de recorrido. Estaba escrito «Más de 5 años atendiendo en la Comunidad de Madrid», copiado del sitio actual, que lo lleva sin fecha desde hace tiempo. No es un dato nuestro y nadie lo ha confirmado, así que se retira hasta que MUV diga la cifra]`</span>
 > **Dos clínicas** · El Cañaveral y Tres Cantos → enlaza a `/sedes`
@@ -164,8 +164,8 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 
 **Tarjeta · MUV Tres Cantos**
 > Enfoque musculoesquelético y deportivo con progresión mediante ejercicio: fisioterapia general y deportiva, entrenamiento terapéutico individual y grupal, neuromodulación y tratamiento de cicatrices.
-> Av. de Madrid, 19, Local 5 · 28760 Tres Cantos
-> Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00
+> Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos
+> Lunes a viernes, 10:00–14:00 y 16:00–21:00 · Sábados, 9:00–14:00
 > `[Ver MUV Tres Cantos]`
 
 *Los teléfonos no se incluyen todavía: el número del repositorio y el de Doctoralia no coinciden en ninguna de las dos sedes. En cuanto MUV confirme cuál es el bueno, van aquí — son señal local y punto de contacto directo.*
@@ -206,7 +206,9 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 > No. Cada sede tiene su propia cartera y cada servicio indica dónde se presta. Puede compararlas en la [página de sedes](/sedes).
 
 **¿Abren los sábados?**
-> Sí. Las dos clínicas abren de lunes a viernes de 10:00 a 14:00 y de 16:00 a 22:00, y los sábados de 10:00 a 14:00.
+> Sí, las dos clínicas abren los sábados por la mañana: El Cañaveral de 10:00 a 14:00 y Tres Cantos de 9:00 a 14:00. De lunes a viernes, El Cañaveral abre de 10:00 a 14:00 y de 16:00 a 22:00, y Tres Cantos de 10:00 a 14:00 y de 16:00 a 21:00.
+
+*14/10/2026: la respuesta decía que las dos clínicas tenían el mismo horario. Tres Cantos tiene ya su horario definitivo y deja de ser cierto (#37).*
 
 ---
 
@@ -328,7 +330,7 @@ El ALT es texto indexable y hoy no está definido. Uno por imagen, descriptivo, 
 7. **Extensión final: 749 palabras**, dentro del límite de 1.200 del documento de arranque y por debajo de Motriz (1.186), la home con más contenido del mercado.
 
 **Pendientes de MUV** *(lo único que impide publicar)*
-1. Número de registro sanitario de Tres Cantos.
+1. ~~Número de registro sanitario de Tres Cantos.~~ Resuelto el 14/10/2026: CS 21018.
 2. Tres testimonios reales anonimizados.
 3. Confirmación del dato de años de recorrido.
 4. Qué teléfono es el correcto en cada sede: el del repositorio y el de Doctoralia no coinciden. Hasta entonces no se publican en la home.

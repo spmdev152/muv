@@ -96,8 +96,8 @@ export default function SedesPage() {
                     facilities={card?.facilities}
                     ctaLabel={card?.ctaLabel}
                     imageAlt={card?.imageAlt}
-                    // PENDIENTE MUV: qué teléfono es el correcto en cada sede.
-                    showPhone={false}
+                    // Solo las sedes con el teléfono confirmado por MUV.
+                    showPhone={card?.showPhone ?? false}
                   />
                 </Reveal>
               );
