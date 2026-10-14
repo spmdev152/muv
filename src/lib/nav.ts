@@ -41,6 +41,10 @@ const servicesByLocation: NavGroup[] = locations.map((location) => ({
  *
  * Sedes va la primera: el sitio posiciona cada clínica por separado y el menú
  * tiene que dejar clara esa diferenciación desde el primer vistazo.
+ *
+ * Sin «Dolencias y lesiones» (#30): los enlaces del menú están en todas las
+ * páginas y se reservan para las que tienen que posicionar. La dolencia ya se
+ * cubre dentro de las páginas de sede y de servicio.
  */
 export const mainNav: NavItem[] = [
   {
@@ -56,16 +60,6 @@ export const mainNav: NavItem[] = [
     href: "/servicios",
     groups: servicesByLocation,
     footer: { label: "Ver todos los servicios", href: "/servicios" },
-  },
-  {
-    label: "Dolencias y lesiones",
-    href: "/dolencias-y-lesiones",
-    children: [
-      { label: "ATM", href: "/dolencias-y-lesiones/atm" },
-      { label: "Dolor de espalda", href: "/dolencias-y-lesiones/dolor-espalda" },
-      { label: "Lesión de rodilla", href: "/dolencias-y-lesiones/lesion-rodilla" },
-      { label: "Lesión de hombro", href: "/dolencias-y-lesiones/lesion-hombro" },
-    ],
   },
   { label: "Profesionales", href: "/profesionales" },
   { label: "Sobre nosotros", href: "/sobre-nosotros" },
