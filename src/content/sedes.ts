@@ -40,8 +40,9 @@ export const hero = {
  * Vicálvaro y el este de Madrid» y «Tres Cantos, Soto de Viñuelas y Colmenar
  * Viejo»— se dedujo por proximidad en un mapa y no la facilitó MUV.
  *
- * PENDIENTE MUV: el teléfono de cada clínica. Cuatro fuentes públicas
- * contradicen a `locations.ts`, así que las fichas van sin teléfono.
+ * PENDIENTE MUV: el teléfono de El Cañaveral. Cuatro fuentes públicas
+ * contradicen a `locations.ts`, así que su ficha va sin teléfono. El de Tres
+ * Cantos lo confirmó MUV el 14/10/2026 y ya se publica.
  */
 export const clinics = {
   eyebrow: "Dónde estamos",
@@ -53,6 +54,7 @@ export const clinics = {
       hours:
         "Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00",
       registry: "CS 17623",
+      showPhone: false,
       facilities:
         "Boxes individuales, sala de Pilates con máquinas y zona de entrenamiento funcional.",
       ctaLabel: "Ver la clínica de fisioterapia de El Cañaveral",
@@ -61,11 +63,11 @@ export const clinics = {
     },
     "tres-cantos": {
       heading: "MUV Tres Cantos",
-      address: "Av. de Madrid, 19, Local 5 · 28760 Tres Cantos",
+      address: "Avenida de Madrid, 19, Local 5 · 28760 Tres Cantos",
       hours:
-        "Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00",
-      // PENDIENTE MUV: número de registro sanitario de Tres Cantos.
-      registry: undefined,
+        "Lunes a viernes, 10:00–14:00 y 16:00–21:00 · Sábados, 9:00–14:00",
+      registry: "CS 21018",
+      showPhone: true,
       facilities:
         "Sala de tratamiento y zona de ejercicio para trabajo individual y en grupo reducido.",
       ctaLabel: "Ver la clínica de fisioterapia de Tres Cantos",
@@ -122,8 +124,8 @@ export const availability = {
  * `aggregateRating`: están recogidas en Doctoralia, no en la web de MUV, y
  * declararlas como propias expone el dominio a una acción manual.
  *
- * PENDIENTE MUV: número de registro de Tres Cantos. Cuando llegue, la frase
- * pasa a «Las dos clínicas están inscritas…, con los números X e Y».
+ * El registro de Tres Cantos (CS 21018) lo confirmó MUV el 14/10/2026, y la
+ * frase pasó a nombrar las dos clínicas.
  *
  * Del segundo punto se retiró «y el número de colegiado de cada profesional es
  * público en su ficha»: hoy esas fichas no llevan el número.
@@ -134,7 +136,7 @@ export const backing = {
   points: [
     {
       title: "Centro sanitario registrado.",
-      text: "MUV El Cañaveral está inscrita en el registro de centros sanitarios de la Comunidad de Madrid con el número CS 17623.",
+      text: "Las dos clínicas están inscritas en el registro de centros sanitarios de la Comunidad de Madrid, con los números CS 17623 (El Cañaveral) y CS 21018 (Tres Cantos).",
     },
     {
       title: "Fisioterapeutas colegiados.",

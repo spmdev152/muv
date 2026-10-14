@@ -1,4 +1,14 @@
-# SEDE TRES CANTOS — versión 10 *(cerrada)*
+# SEDE TRES CANTOS — versión 10.1 *(cerrada)*
+
+*__La v10.1 (14/10/2026) aplica los datos definitivos que ha confirmado MUV.__ No cambia nada editorial: solo datos, en todos los sitios donde aparecen (#37).*
+
+- *__Registro sanitario:__ **CS 21018**. Entra en el módulo 5.*
+- *__Dirección:__ **Avenida de Madrid, 19, Local 5 · 28760 Tres Cantos**. Antes ponía «Av.»: el cambio tiene que hacerse también en Google Business y en Doctoralia, porque la dirección es NAP.*
+- *__Teléfono:__ **614 13 14 05**, el que ya publicaban la web actual, Doctoralia e Instagram. El del repositorio era el erróneo.*
+- *__Horario:__ de lunes a viernes de **10:00 a 14:00 y de 16:00 a 21:00**, y los sábados de **9:00 a 14:00**. Antes cerraba a las 22:00 y el sábado abría a las 10:00. Cambian el title, la meta, la entradilla, la franja del hero y el H3 del horario.*
+- *__Equipo:__ en esta clínica solo atiende José. El resto del equipo es de El Cañaveral.*
+
+*__Consecuencia para el argumento de horario:__ con el cierre a las 21:00 ya no empatamos con Motriz en la franja de noche (cierra a las 22:00). **El par sigue siendo solo nuestro**: ninguna de las nueve clínicas del municipio que publican horario abre en sábado. El title sigue diciendo las dos cosas, con la hora nueva.*
 
 *__La v10 aplica aquí los tres hallazgos de la última pasada editorial, hecha sobre El Cañaveral, para que las dos páginas de sede sigan siendo gemelas.__*
 
@@ -32,10 +42,10 @@
 - **Estructura:** 10 módulos · 1 H1 + 9 H2 + 12 H3 · 5 preguntas frecuentes
 
 **Title SEO** (58 caracteres)
-`Fisioterapia en Tres Cantos hasta las 22 h y sábados | MUV`
+`Fisioterapia en Tres Cantos hasta las 21 h y sábados | MUV`
 
 **Meta description** (149 caracteres)
-`Clínica de fisioterapia en Tres Cantos: valoramos antes de tratar. Abrimos hasta las 22:00 de lunes a viernes y los sábados por la mañana. Pida cita.`
+`Clínica de fisioterapia en Tres Cantos: valoramos antes de tratar. Abrimos hasta las 21:00 de lunes a viernes y los sábados por la mañana. Pida cita.`
 
 *__Los títulos con los que competimos, uno a uno:__ «Fisioterapia Tres Cantos | Clínica Lashmi», «✓ Clínica de Fisioterapia en Tres Cantos | ALG Fisio», «Fisioterapia en Tres Cantos | Clínica Motriz Fisioterapia» y «Fisioterapia Tres Cantos - Islas21». **Los cuatro dicen lo mismo: el término más la marca.** Ninguno da un motivo para pulsar ese resultado y no el de al lado.*
 
@@ -71,19 +81,19 @@
 > Fisioterapia en Tres Cantos: valoración, tratamiento y ejercicio terapéutico
 
 **Entradilla**
-> En MUV Tres Cantos tratamos el dolor y la lesión musculoesquelética y deportiva, y acompañamos la recuperación con ejercicio pautado por fisioterapeutas. Empezamos siempre por una valoración: primero entendemos de dónde viene la molestia y después decidimos el tratamiento. **Atendemos hasta las diez de la noche de lunes a viernes y los sábados por la mañana**, para que tratarse no dependa de pedir permiso en el trabajo.
+> En MUV Tres Cantos tratamos el dolor y la lesión musculoesquelética y deportiva, y acompañamos la recuperación con ejercicio pautado por fisioterapeutas. Empezamos siempre por una valoración: primero entendemos de dónde viene la molestia y después decidimos el tratamiento. **Atendemos hasta las nueve de la noche de lunes a viernes y los sábados por la mañana**, para que tratarse no dependa de pedir permiso en el trabajo.
 
 **Franja de disponibilidad** *(tira de tres columnas bajo el titular, sin encabezado — es el elemento visual de la página)*
 
 | | | |
 |---|---|---|
-| **Hasta las 22:00** | **Sábados por la mañana** | **Cita online** |
-| De lunes a viernes, con la última sesión al salir de trabajar. | De 10:00 a 14:00, para lo que no cabe entre semana. | Reserve día y hora sin llamar. |
+| **Hasta las 21:00** | **Sábados por la mañana** | **Cita online** |
+| De lunes a viernes, con la última sesión al salir de trabajar. | De 9:00 a 14:00, para lo que no cabe entre semana. | Reserve día y hora sin llamar. |
 
 **Ficha de contacto** *(bajo la franja)*
-> **Av. de Madrid, 19, Local 5 · 28760 Tres Cantos**
+> **Avenida de Madrid, 19, Local 5 · 28760 Tres Cantos**
 > <span style="color:#c0392b">`[PENDIENTE MUV: zona de atención. La que había escrita —Tres Cantos, Soto de Viñuelas y Colmenar Viejo— estaba deducida por proximidad geográfica en un mapa, no facilitada por MUV. Se retira hasta que la digan ellos]`</span>
-> **Teléfono:** <span style="color:#c0392b">**614 13 14 05** — el que publican la web actual, Doctoralia e Instagram. `locations.ts` dice **658 59 76 02** y no coincide con ninguna. Pendiente de que MUV confirme</span>
+> **Teléfono:** **614 13 14 05** *(confirmado por MUV el 14/10/2026)*
 
 **Botones**
 > `[Pedir cita]` · `[Cómo llegar]` *(ancla al módulo 8)*
@@ -96,7 +106,7 @@
 
 *__Y aquí está el porqué del argumento, medido el 14/08/2026 leyendo la web de cada clínica una por una.__*
 
-*__Lo que NO se puede decir:__ que seamos los últimos en cerrar. **Motriz también cierra a las 22:00** (9:00–22:00). En la franja de noche empatamos, no ganamos, y afirmarlo sería exactamente el error que ya se cometió con el registro sanitario.*
+*__Lo que NO se puede decir:__ que seamos los últimos en cerrar. **Motriz cierra a las 22:00** (9:00–22:00) y, desde la v10.1, nosotros a las 21:00. En la franja de noche no ganamos, y afirmarlo sería exactamente el error que ya se cometió con el registro sanitario.*
 
 *__Lo que sí se puede decir, y es más fuerte:__ **la combinación no la tiene nadie**. De las once clínicas de Tres Cantos, **nueve publican horario** —Atlas y Vizcaíno no publican ninguno— y **ninguna de esas nueve abre en sábado**: cuatro lo declaran cerrado por escrito y las cinco restantes solo publican de lunes a viernes. Motriz llega a las 22:00 pero cierra el fin de semana; quien abre más pronto, Centro Vitruvio a las 7:00, cierra a las 21:00. **Noche entre semana y sábado por la mañana a la vez, solo MUV.***
 
@@ -163,7 +173,7 @@
 
 *__Y no es solo demografía, hay búsqueda.__ Al teclear «fisioterapia tres cantos p», el autocompletado devuelve **`ptm fisioterapia tres cantos`** — PTM es el Parque Tecnológico de Madrid. **Hay gente buscando fisioterapeuta asociándolo al parque tecnológico.** Ninguna de las once clínicas del mapa lo nombra en su web.*
 
-*Esa población encaja con las tres cosas que esta clínica tiene: dolor cervical y lumbar de origen postural, consulta hasta las diez de la noche y sábado por la mañana. **El módulo no lo dice con estadísticas —las cifras envejecen y no convencen a nadie con dolor—, lo dice con la frase del día delante de la pantalla.** Los números se quedan aquí, en la justificación, que es su sitio.*
+*Esa población encaja con las tres cosas que esta clínica tiene: dolor cervical y lumbar de origen postural, consulta hasta las nueve de la noche y sábado por la mañana. **El módulo no lo dice con estadísticas —las cifras envejecen y no convencen a nadie con dolor—, lo dice con la frase del día delante de la pantalla.** Los números se quedan aquí, en la justificación, que es su sitio.*
 
 *__Y la frase del cierre no es de relleno, también sale del dato.__ Entre las sugerencias reales aparecen **«dolor de espalda cáncer»**, **«dolor mandíbula infarto»** y «dolor mandibular cáncer»: hay gente buscando si su dolor es una señal de alarma. Decir que si encontramos algo que no corresponde tratar en fisioterapia lo diremos y derivaremos responde exactamente a ese miedo, es señal de criterio clínico en un sitio de salud, y **cumple la prohibición del documento de arranque de no presentar una valoración fisioterápica como un diagnóstico médico**. Cuesta una línea y no la dice nadie.*
 
@@ -248,14 +258,15 @@
 *__Aviso de maquetación:__ la entradilla decía «Quien le atiende… Estos son.» y **«Estos son» anunciaba una lista que hoy no existe**, porque las fichas del equipo están pendientes de MUV. Una frase que presenta algo que viene después no puede publicarse si lo que viene después está en rojo. Cuando lleguen las fichas, esa coletilla puede volver.*
 
 **Fichas del equipo**
-> <span style="color:#c0392b">`[PENDIENTE MUV: nombre, foto, número de colegiado y áreas de trabajo de cada fisioterapeuta de Tres Cantos. En las opiniones verificadas de Doctoralia de agosto de 2026 aparece atendiendo José González; hay que confirmar la plantilla completa. Sin número de colegiado el bloque pierde la mitad de su valor]`</span>
+> **Plantilla:** en esta clínica atiende **un solo fisioterapeuta, José** *(confirmado por MUV el 14/10/2026)*. El resto del equipo es de El Cañaveral.
+> <span style="color:#c0392b">`[PENDIENTE MUV: apellido, foto, número de colegiado y áreas de trabajo de José. En las opiniones verificadas de Doctoralia de agosto de 2026 aparece como José González. Sin número de colegiado el bloque pierde la mitad de su valor]`</span>
 
 **Acreditación** *(tira de datos bajo las fichas)*
-> **Centro sanitario registrado:** <span style="color:#c0392b">`[PENDIENTE MUV: número de registro sanitario de Tres Cantos]`</span>
+> **Centro sanitario registrado:** CS 21018, en el registro de centros sanitarios de la Comunidad de Madrid.
 > **Responsable sanitario:** <span style="color:#c0392b">`[PENDIENTE MUV: nombre del responsable sanitario de esta clínica. Es un dato del propio registro y en El Cañaveral ya lo tenemos]`</span>
 > **Idiomas:** español e inglés. <span style="color:#c0392b">`[PENDIENTE MUV: confirmar. Aparece declarado en la ficha de Doctoralia de esta clínica]`</span>
 
-*__Este bloque era el que más ventaja prometía y ya no da ninguna.__ La auditoría anterior daba por hecho que nadie publicaba acreditación. Recomprobado el 14 de agosto de 2026 sobre trece dominios —incluyendo avisos legales y páginas de equipo, que es justo donde estaba escondido—, **es falso**: publican su registro sanitario **Motriz (`CS20487`)**, **ALG Fisio (`CS11939`)** y **Fisio 3 Cantos (`CS9056`, en el aviso legal)**, y publican el número de colegiado de cada profesional **cinco**: Motriz, ALG Fisio, Islas21, Fisio 3 Cantos y FisioSanfe. **Aquí ya no se gana, se empata. Y mientras no llegue el número de Tres Cantos, se pierde.***
+*__Este bloque era el que más ventaja prometía y ya no da ninguna.__ La auditoría anterior daba por hecho que nadie publicaba acreditación. Recomprobado el 14 de agosto de 2026 sobre trece dominios —incluyendo avisos legales y páginas de equipo, que es justo donde estaba escondido—, **es falso**: publican su registro sanitario **Motriz (`CS20487`)**, **ALG Fisio (`CS11939`)** y **Fisio 3 Cantos (`CS9056`, en el aviso legal)**, y publican el número de colegiado de cada profesional **cinco**: Motriz, ALG Fisio, Islas21, Fisio 3 Cantos y FisioSanfe. **Aquí ya no se gana, se empata. Y mientras no llegue el número de Tres Cantos, se pierde.** (v10.1: ya ha llegado, CS 21018, así que el registro sanitario empata.)*
 
 *__El responsable sanitario es nuevo en la v7 y es la señal E-E-A-T que faltaba.__ En un sitio de salud, Google valora quién firma y quién responde de lo que se publica, y una página de clínica sin una persona identificable al frente es una página anónima. **El responsable sanitario no es un cargo de marketing: es el profesional que figura en el registro de centros sanitarios** de la Comunidad de Madrid, con nombre y fecha de alta. De El Cañaveral ya lo tenemos; el de Tres Cantos hay que pedirlo. Cuesta una línea y no lo publica **ninguno** de los trece competidores auditados.*
 
@@ -311,18 +322,18 @@
 > Cómo llegar a nuestra clínica de fisioterapia de Tres Cantos
 
 **Ficha**
-> **Dirección:** Av. de Madrid, 19, Local 5 · 28760 Tres Cantos, Madrid
-> **Teléfono:** <span style="color:#c0392b">**614 13 14 05** — es el que publican la web actual, Doctoralia, Google Business e Instagram. `locations.ts` dice otro número y no coincide con ninguna de las cuatro. Pendiente de que MUV lo confirme</span>
+> **Dirección:** Avenida de Madrid, 19, Local 5 · 28760 Tres Cantos, Madrid
+> **Teléfono:** **614 13 14 05** *(confirmado por MUV el 14/10/2026)*
 > **En coche:** salida de la **M-607**. <span style="color:#c0392b">`[PENDIENTE MUV: dónde aparcar — si hay zona libre en la calle, aparcamiento cercano o plaza propia. Es el dato más importante de este módulo]`</span>
 > **En autobús:** líneas interurbanas **712, 713, 716 y 717** desde Plaza de Castilla, y los autobuses urbanos de Tres Cantos. <span style="color:#c0392b">`[PENDIENTE MUV: qué línea y en qué parada bajarse]`</span>
 > **En tren:** estación de Tres Cantos, **línea C-4 de Cercanías** (Chamartín, Sol y Atocha en directo), a unos **3 km** de la clínica. <span style="color:#c0392b">`[PENDIENTE MUV: con qué autobús urbano se enlaza desde la estación]`</span>
 > **Accesibilidad:** <span style="color:#c0392b">`[PENDIENTE MUV: entrada a pie de calle o con escalón, ascensor y aseo adaptado. Baja aquí desde las preguntas frecuentes, que es donde el lector la busca de verdad]`</span>
 
 **H3**
-> Horario de la clínica: tardes hasta las 22:00 y sábados por la mañana
+> Horario de la clínica: tardes hasta las 21:00 y sábados por la mañana
 
 **Texto**
-> Abrimos de **lunes a viernes de 10:00 a 14:00 y de 16:00 a 22:00**, y los **sábados de 10:00 a 14:00**. Puede consultar los huecos disponibles y reservar desde la agenda en línea.
+> Abrimos de **lunes a viernes de 10:00 a 14:00 y de 16:00 a 21:00**, y los **sábados de 9:00 a 14:00**. Puede consultar los huecos disponibles y reservar desde la agenda en línea.
 
 **Mapa** *(incrustado, bajo la ficha)*
 
@@ -410,7 +421,7 @@
 | **H2** · Instalaciones y equipamiento de la clínica de Tres Cantos | instalaciones + equipamiento | Término que los tres competidores fuertes usan como reclamo. |
 | **H2** · Opiniones sobre la clínica de Tres Cantos | opiniones + municipio | «\<clínica\> opiniones» es búsqueda de decisión. Sin la palabra «pacientes», que MUV no marcó en el documento de arranque. |
 | **H2** · Cómo llegar a nuestra clínica de fisioterapia de Tres Cantos | cómo llegar + clínica de fisioterapia | Búsqueda local pura. Encabezado reservado a esta página. |
-| **H3** · Horario de la clínica: tardes hasta las 22:00 y sábados por la mañana | horario + sábados | **Nuevo en la v3.** El autocompletado devuelve `fisioterapia sábados`, `fisioterapia sábados madrid` y `fisioterapia abierto sábados` como consultas formadas. Era el diferencial de la clínica sin ningún encabezado que lo capturase. |
+| **H3** · Horario de la clínica: tardes hasta las 21:00 y sábados por la mañana | horario + sábados | **Nuevo en la v3.** El autocompletado devuelve `fisioterapia sábados`, `fisioterapia sábados madrid` y `fisioterapia abierto sábados` como consultas formadas. Era el diferencial de la clínica sin ningún encabezado que lo capturase. |
 | **H2** · Preguntas frecuentes sobre nuestra clínica de Tres Cantos | preguntas frecuentes | Habilita `FAQPage`, que no declara ninguna de las once webs de Tres Cantos *(sí Impulso, en El Cañaveral)*. |
 | **H2** · Pida cita en nuestra clínica de fisioterapia de Tres Cantos | pedir cita + clínica de fisioterapia + municipio | Cierre transaccional con el término de conversión. |
 
@@ -675,11 +686,11 @@
 | ALG Fisio | 10:00–14:00 y 16:30–21:30 | «Sábados y domingos cerrado» |
 | Escalante *(El Cañaveral)* | 10:00–14:00 y 16:00–21:30 *(viernes hasta las 20:00)* | «Sábados, domingos y festivos cerrado» |
 | Impulso *(El Cañaveral)* | 10:00–21:00 | No publica horario de sábado |
-| **MUV Tres Cantos** | **10:00–14:00 y 16:00–22:00** | **10:00–14:00** |
+| **MUV Tres Cantos** *(horario definitivo, v10.1)* | **10:00–14:00 y 16:00–21:00** | **9:00–14:00** |
 
 *Atlas y Vizcaíno no aparecen en la tabla porque **no publican horario en ninguna página de su web**. Son las dos únicas de las once.*
 
-**Lo que la tabla permite afirmar y lo que no.** No permite decir que seamos los últimos en cerrar: **Motriz también cierra a las 22:00.** Sí permite decir que **la combinación no la tiene nadie** — quien llega a las 22:00 cierra el sábado, y quien abre a las 7:00 cierra a las 21:00. En Tres Cantos, cuatro declaran el sábado cerrado por escrito *(Motriz, Nuevo Príncipe, FisioSanfe y ALG Fisio)* y las cinco restantes solo publican de lunes a viernes.
+**Lo que la tabla permite afirmar y lo que no.** No permite decir que seamos los últimos en cerrar: **Motriz cierra a las 22:00**, una hora después que nosotros desde la v10.1. Sí permite decir que **la combinación no la tiene nadie** — quien llega a las 22:00 cierra el sábado, y quien abre a las 7:00 cierra a las 21:00. En Tres Cantos, cuatro declaran el sábado cerrado por escrito *(Motriz, Nuevo Príncipe, FisioSanfe y ALG Fisio)* y las cinco restantes solo publican de lunes a viernes.
 
 **El reverso, y conviene decirlo:** MUV abre a las 10:00 y **ocho de las nueve clínicas de Tres Cantos que publican horario abren antes**; solo ALG Fisio coincide con nosotros. La franja de primera hora —antes de entrar a trabajar— se está cediendo entera. **No es un asunto de contenido, es de horario, y merece que MUV lo valore.** Si algún día se abre a las 8:00, esta página es la primera que hay que actualizar.
 
@@ -700,9 +711,9 @@ Aparecidos en esta auditoría y no recogidos ni en la tabla del cliente ni en la
 
 **Pendientes de MUV** *(lo que impide publicar, por orden de urgencia)*
 
-1. **Confirmar el teléfono.** Ya no hay dos candidatos empatados: la web actual, Doctoralia y el Instagram de MUV publican **614 13 14 05**, y `locations.ts` publica **658 59 76 02**, que no coincide con ninguna de las tres. Solo hay que confirmar que el repositorio está mal y corregirlo. Sigue siendo bloqueante en una página local.
-2. **Número de registro sanitario de Tres Cantos.** Ha subido de prioridad: **tres competidores del municipio publican el suyo**, dos de ellos los que mejor contenido tienen. Sin este número el módulo 5 no empata, va por detrás.
-3. **El equipo:** nombre, foto, número de colegiado y áreas de cada fisioterapeuta de esta clínica. **Cinco competidores publican los suyos**; es lo normal, no un extra.
+1. ~~**Confirmar el teléfono.**~~ **Resuelto en la v10.1:** 614 13 14 05, confirmado por MUV el 14/10/2026.
+2. ~~**Número de registro sanitario de Tres Cantos.**~~ **Resuelto en la v10.1:** CS 21018.
+3. **El equipo:** solo atiende José *(confirmado el 14/10/2026)*. Falta su apellido, foto, número de colegiado y áreas de trabajo. **Cinco competidores publican los suyos**; es lo normal, no un extra.
 4. **Los tres datos del módulo 8: dónde aparcar** *(el más importante de la página: se viene en coche)*, **qué autobús y en qué parada** —tanto el urbano que enlaza con la estación como las interurbanas, que ya están verificadas— y **si el local es accesible**. Tres respuestas de una línea que MUV sabe de memoria y que **no publica ninguno de los trece dominios auditados**. Es el pendiente más barato y el más rentable de toda la página.
 5. **¿Atienden en inglés?** Está declarado en su ficha de Doctoralia. Nadie más lo ofrece.
 6. **¿Atienden a domicilio en la zona de Tres Cantos?** Sí o no.

@@ -425,22 +425,22 @@ const professionals = [
     slug: "alvaro-sanz",
     title: "Álvaro Sanz",
     order: 1,
-    role: "CEO y fisioterapeuta",
+    role: "Dueño de MUV El Cañaveral · Fisioterapeuta",
     image: "/img/team-ceo.webp",
-    locations: ["el-canaveral", "tres-cantos"],
-    credentials: "Col. nº 0000 · Fundador de MUV",
+    locations: ["el-canaveral"],
+    credentials: "Col. nº 0000 · Dueño de MUV El Cañaveral",
     description:
-      "Fundador y CEO de MUV, fisioterapeuta al frente del proyecto en El Cañaveral y Tres Cantos.",
-    excerpt: "Fundador de MUV y fisioterapeuta.",
+      "Fisioterapeuta y dueño de la clínica MUV El Cañaveral.",
+    excerpt: "Dueño de MUV El Cañaveral y fisioterapeuta.",
     intro:
-      "Álvaro es el fundador de MUV. Lidera el proyecto con una idea clara: una fisioterapia eficaz, eficiente y, sobre todo, empática, con la persona en el centro.",
+      "Álvaro es el dueño de MUV El Cañaveral. Lidera la clínica con una idea clara: una fisioterapia eficaz, eficiente y, sobre todo, empática, con la persona en el centro.",
     points: [
-      "Dirección clínica del proyecto MUV",
+      "Dirección de la clínica de El Cañaveral",
       "Fisioterapia avanzada y ejercicio terapéutico",
       "Formación continua del equipo",
     ],
     closing:
-      "Su visión marca la forma de cuidar de MUV en ambas sedes: rigor, cercanía y trabajo en equipo.",
+      "Su visión marca la forma de cuidar de MUV El Cañaveral: rigor, cercanía y trabajo en equipo.",
     faqs: [],
   },
   {
@@ -455,11 +455,11 @@ const professionals = [
       "Fisioterapeuta y director de la sede de MUV en Tres Cantos.",
     excerpt: "Director de la sede de Tres Cantos.",
     intro:
-      "José dirige la sede de Tres Cantos, donde coordina al equipo y acompaña a los pacientes con un trato cercano y un enfoque basado en la evidencia.",
+      "José dirige la sede de Tres Cantos y es el fisioterapeuta que atiende en ella, con un trato cercano y un enfoque basado en la evidencia.",
     points: [
       "Dirección de la sede de Tres Cantos",
       "Fisioterapia y terapia manual",
-      "Coordinación del equipo asistencial",
+      "Seguimiento de cada caso de principio a fin",
     ],
     closing:
       "Vela por que cada paciente de Tres Cantos reciba una atención personalizada de principio a fin.",
@@ -471,7 +471,7 @@ const professionals = [
     order: 3,
     role: "Fisioterapeuta · Suelo pélvico",
     image: "/img/team-lucia.webp",
-    locations: ["el-canaveral", "tres-cantos"],
+    locations: ["el-canaveral"],
     credentials: "Col. nº 0000 · Máster en Fisioterapia Obstétrica y Uroginecológica",
     description:
       "Fisioterapeuta especialista en suelo pélvico y salud de la mujer en MUV.",
@@ -515,10 +515,10 @@ const professionals = [
     order: 5,
     role: "Fisioterapeuta",
     image: "/img/team-nuria.webp",
-    locations: ["tres-cantos"],
+    locations: ["el-canaveral"],
     credentials: "Col. nº 0000 · Fisioterapia y ejercicio terapéutico",
     description:
-      "Fisioterapeuta especialista en terapia manual y ejercicio terapéutico en MUV Tres Cantos.",
+      "Fisioterapeuta especialista en terapia manual y ejercicio terapéutico en MUV El Cañaveral.",
     excerpt: "Fisioterapia y ejercicio terapéutico.",
     intro:
       "Nuria combina la terapia manual con el ejercicio terapéutico para acompañar a cada paciente hacia una recuperación completa y duradera.",

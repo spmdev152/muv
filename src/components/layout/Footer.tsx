@@ -40,6 +40,16 @@ export function Footer() {
                     <Whatsapp className="h-4 w-4 shrink-0" />
                     {location.phone}
                   </a>
+                  {/* Por sede: las dos clínicas ya no tienen el mismo horario. */}
+                  <p className="mt-1 flex items-start gap-2 text-cream/60">
+                    <Clock className="mt-0.5 h-4 w-4 shrink-0" />
+                    <span>
+                      {location.hours
+                        .filter((h) => h.time !== "Cerrado")
+                        .map((h) => `${h.days} ${h.time}`)
+                        .join(" · ")}
+                    </span>
+                  </p>
                 </div>
               ))}
             </div>
@@ -67,11 +77,7 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-cream/10 pt-8 text-xs text-cream/50 md:flex-row md:items-center md:justify-between">
-          <p className="flex items-center gap-2">
-            <Clock className="h-4 w-4" />
-            Lun–Vie 10:00–14:00 · 16:00–22:00 · Sáb 10:00–14:00
-          </p>
+        <div className="mt-14 flex flex-col gap-4 border-t border-cream/10 pt-8 text-xs text-cream/50 md:flex-row md:items-center md:justify-end">
           <div className="flex flex-wrap items-center gap-4">
             <a
               href={`mailto:${site.email}`}

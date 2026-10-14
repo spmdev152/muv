@@ -115,10 +115,10 @@ Este es el bloque más importante del documento. La home ya está cerrada y las 
 ### Ficha 2 — **H3:** `MUV Tres Cantos`
 
 > <span style="color:#c0392b">`[PENDIENTE MUV: zona de atención. Decía «Tres Cantos, Soto de Viñuelas y Colmenar Viejo», deducido por proximidad geográfica. Se retira hasta que lo confirme MUV]`</span>
-> **Dirección:** Av. de Madrid, 19, Local 5 · 28760 Tres Cantos
-> **Horario:** Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00
-> **Teléfono:** <span style="color:#c0392b">**614 13 14 05** — el que publican la web actual, Doctoralia e Instagram. `locations.ts` dice **658 59 76 02** y no coincide con ninguna. Pendiente de que MUV confirme</span>
-> **Centro sanitario registrado:** <span style="color:#c0392b">pendiente del número de registro de Tres Cantos</span>
+> **Dirección:** Avenida de Madrid, 19, Local 5 · 28760 Tres Cantos
+> **Horario:** Lunes a viernes, 10:00–14:00 y 16:00–21:00 · Sábados, 9:00–14:00
+> **Teléfono:** **614 13 14 05** *(confirmado por MUV el 14/10/2026)*
+> **Centro sanitario registrado:** CS 21018
 > **Instalaciones:** sala de tratamiento y zona de ejercicio para trabajo individual y en grupo reducido.
 > `[Ver la clínica de fisioterapia de Tres Cantos]` → `/sedes/tres-cantos`
 
@@ -166,7 +166,7 @@ Este es el bloque más importante del documento. La home ya está cerrada y las 
 > Centro sanitario registrado y fisioterapeutas colegiados
 
 **Tres puntos**
-> **Centro sanitario registrado.** MUV El Cañaveral está inscrita en el registro de centros sanitarios de la Comunidad de Madrid con el número CS 17623. <span style="color:#c0392b">`[PENDIENTE MUV: número de registro de Tres Cantos. En cuanto llegue, la frase pasa a «Las dos clínicas están inscritas…, con los números X e Y»]`</span>
+> **Centro sanitario registrado.** Las dos clínicas están inscritas en el registro de centros sanitarios de la Comunidad de Madrid, con los números CS 17623 (El Cañaveral) y CS 21018 (Tres Cantos).
 > **Fisioterapeutas colegiados.** Todo el equipo está colegiado. <span style="color:#c0392b">*(La frase seguía «y el número de colegiado de cada profesional es público en su ficha». Se retira: hoy esas fichas no llevan el número, y publicarlo depende de que MUV facilite los datos. La frase vuelve cuando las fichas existan.)*</span> → `/profesionales`
 > **Más de 1.800 opiniones verificadas.** Entre las dos clínicas sumamos más de 1.800 valoraciones en Doctoralia, con una media de 5 sobre 5.
 
@@ -419,7 +419,7 @@ Ninguna clínica del mapa local de MUV tiene dos sedes, así que la referencia s
 
 **Pendientes de MUV** *(lo que impide publicar)*
 1. **Qué teléfono es el correcto en cada clínica.** En la home se pudo publicar sin teléfono; aquí no. Una página de sedes sin teléfono está rota, y el desajuste con Doctoralia es exactamente la señal local que el proyecto viene a arreglar. **Es el bloqueante número uno.**
-2. **Número de registro sanitario de Tres Cantos**, y confirmación de que MUV acepta publicar los dos. Argumentos, por si hay reparos: el registro es **público por ley** —el Real Decreto 1277/2003 lo define como «de carácter público e informativo»— y la Comunidad de Madrid mantiene un buscador abierto donde cualquiera puede consultar una clínica por nombre o dirección; publicar el número no revela nada, solo ahorra la búsqueda. Es además el dato que separa un centro sanitario legal del intrusismo, es lo que Google pide en salud, y no es información personal ni comercial. **Y hay un argumento nuevo, del 14/08/2026: ya no es que nadie lo publique — lo publican Motriz, ALG Fisio y Fisio 3 Cantos.** Los dos primeros son los competidores con mejor contenido de Tres Cantos. Esto ha dejado de ser una oportunidad y se ha convertido en una desventaja mientras el número no llegue.
+2. ~~**Número de registro sanitario de Tres Cantos**~~ *(resuelto el 14/10/2026: CS 21018)*, y confirmación de que MUV acepta publicar los dos. Argumentos, por si hay reparos: el registro es **público por ley** —el Real Decreto 1277/2003 lo define como «de carácter público e informativo»— y la Comunidad de Madrid mantiene un buscador abierto donde cualquiera puede consultar una clínica por nombre o dirección; publicar el número no revela nada, solo ahorra la búsqueda. Es además el dato que separa un centro sanitario legal del intrusismo, es lo que Google pide en salud, y no es información personal ni comercial. **Y hay un argumento nuevo, del 14/08/2026: ya no es que nadie lo publique — lo publican Motriz, ALG Fisio y Fisio 3 Cantos.** Los dos primeros son los competidores con mejor contenido de Tres Cantos. Esto ha dejado de ser una oportunidad y se ha convertido en una desventaja mientras el número no llegue.
 3. **¿Se trabaja con mutuas o seguros médicos?** Sube a bloqueante el 14/08/2026 con un dato nuevo y bastante contundente.
 
    *Al teclear «fisioterapia tres cantos» en Google, el autocompletado devuelve como primeras sugerencias **`fisioterapia tres cantos adeslas`, `fisioterapia tres cantos asisa` y `fisioterapia tres cantos sanitas`**. Lo mismo ocurre con Colmenar Viejo, que está en la zona de atención de Tres Cantos: `sanitas`, `adeslas`, `asisa`. Comprobado en el endpoint público de sugerencias, en español y desde España, y reproducible en treinta segundos.*
