@@ -1,16 +1,11 @@
 /**
  * Navegación principal del header.
  *
- * Vive aparte de `site.ts` porque lee la copy de las sedes: solo la importa el
- * layout, que es de servidor, y el Header la recibe ya resuelta por props. Si
- * la importara el Header, las dos copias completas de sede viajarían en el
- * bundle de cliente de todas las páginas.
+ * Vive aparte de `site.ts` para que el Header la reciba ya resuelta por props
+ * desde el layout, que es de servidor.
  */
 
 import { locations } from "@/lib/locations";
-import type { SedeContent } from "@/content/sede-types";
-import { elCanaveral } from "@/content/sede-el-canaveral";
-import { tresCantos } from "@/content/sede-tres-cantos";
 
 export type NavLink = { label: string; href: string };
 
@@ -25,26 +20,61 @@ export type NavItem = NavLink & {
   footer?: NavLink;
 };
 
-const SEDE_CONTENT: Record<string, SedeContent> = {
-  "el-canaveral": elCanaveral,
-  "tres-cantos": tresCantos,
+/**
+ * Los cuatro servicios que MUV eligió destacar en cada clínica, con el nombre
+ * y el orden de sus documentos de contenido de la fase 2 (`MUV-WEB-<SEDE>-*`,
+ * issues #39–#46). Solo se listan elementos con enlace (#30).
+ *
+ * Su página propia, `/sedes/<sede>/<servicio>` (#29), todavía no existe: hasta
+ * entonces cada uno enlaza a la página actual más cercana. La ruta definitiva
+ * va anotada en cada línea; cuando exista, se cambia aquí.
+ */
+const featuredServices: Record<string, NavLink[]> = {
+  "el-canaveral": [
+    // → /sedes/el-canaveral/fisioterapia-invasiva-ecografia
+    { label: "Fisioterapia invasiva y ecografía", href: "/servicios/fisioterapia" },
+    // → /sedes/el-canaveral/suelo-pelvico
+    { label: "Fisioterapia de suelo pélvico", href: "/servicios/suelo-pelvico" },
+    // → /sedes/el-canaveral/pilates
+    {
+      label: "Pilates y pilates para embarazadas",
+      href: "/servicios/pilates-terapeutico",
+    },
+    // → /sedes/el-canaveral/entrenamiento-funcional
+    {
+      label: "Entrenamiento funcional guiado",
+      href: "/servicios/entrenamiento-terapeutico",
+    },
+  ],
+  "tres-cantos": [
+    // → /sedes/tres-cantos/fisioterapia-deportiva
+    {
+      label: "Fisioterapia deportiva y readaptación",
+      href: "/servicios/fisioterapia-deportiva",
+    },
+    // → /sedes/tres-cantos/fisioterapia-rodilla
+    {
+      label: "Fisioterapia de rodilla",
+      href: "/dolencias-y-lesiones/lesion-rodilla",
+    },
+    // → /sedes/tres-cantos/fisioterapia-espalda
+    {
+      label: "Fisioterapia de espalda, cervical y lumbar",
+      href: "/dolencias-y-lesiones/dolor-espalda",
+    },
+    // → /sedes/tres-cantos/entrenamiento-funcional
+    {
+      label: "Clases supervisadas de entrenamiento funcional",
+      href: "/servicios/entrenamiento-terapeutico/grupal",
+    },
+  ],
 };
 
-/**
- * Servicios de cada clínica para el desplegable del header.
- *
- * Son las tarjetas del módulo 3 de cada página de sede, la copy aprobada en
- * `docs/contenidos/sede-*.md`: el catálogo de esa clínica, con sus nombres y en
- * su orden, ni uno más. Los servicios compartidos aparecen en las dos columnas.
- * ATM entra porque el catálogo aprobado lo cuenta como servicio de las dos
- * sedes, y enlaza a su página de dolencia, que es la que existe.
- */
+/** Servicios de cada clínica para el desplegable del header. */
 const servicesByLocation: NavGroup[] = locations.map((location) => ({
   label: location.shortName,
   href: `/sedes/${location.slug}`,
-  items: (SEDE_CONTENT[location.slug]?.services.items ?? []).map(
-    ({ label, href }) => ({ label, href }),
-  ),
+  items: featuredServices[location.slug] ?? [],
 }));
 
 /**
