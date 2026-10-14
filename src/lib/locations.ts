@@ -48,7 +48,10 @@ export type Location = {
   healthManager?: { name: string; collegiateNumber: string; since: string };
   /** Municipios y barrios que atiende la clínica. */
   serviceArea?: string[];
-  /** Servicios prioritarios de la sede (slugs bajo /servicios). */
+  /**
+   * Los cuatro servicios que la sede desarrolla en página propia (slugs bajo
+   * /sedes/<sede>/, #29). El contenido está en `src/content/sede-services/`.
+   */
   priorityServices: string[];
   heroImage: string;
   /** Fotos del interior de la clínica para la galería. */
@@ -102,10 +105,10 @@ export const locations: Location[] = [
     },
     // PENDIENTE MUV: zona de atención. La que había se dedujo de un mapa.
     priorityServices: [
-      "fisioterapia",
-      "fisioterapia-deportiva",
+      "fisioterapia-invasiva-ecografia",
       "suelo-pelvico",
-      "pilates-terapeutico",
+      "pilates",
+      "entrenamiento-funcional",
     ],
     heroImage: "/img/sede-canaveral.webp",
     gallery: [
@@ -161,13 +164,11 @@ export const locations: Location[] = [
     // PENDIENTE MUV: responsable sanitario de esta clínica. En El Cañaveral ya
     // está.
     // PENDIENTE MUV: zona de atención.
-    // Corregido: antes incluía `fisioterapia-embarazo` y `fisioterapia-pediatrica`,
-    // que según el catálogo aprobado solo se prestan en El Cañaveral.
     priorityServices: [
-      "fisioterapia",
       "fisioterapia-deportiva",
-      "neuromodulacion",
-      "tratamiento-cicatrices",
+      "fisioterapia-rodilla",
+      "fisioterapia-espalda",
+      "entrenamiento-funcional",
     ],
     heroImage: "/img/sede-tres-cantos.webp",
     gallery: [

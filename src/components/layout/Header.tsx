@@ -4,12 +4,15 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
-import { mainNav, hasDarkHero } from "@/lib/site";
+import { hasDarkHero } from "@/lib/site";
+import { getLocation } from "@/lib/locations";
+import type { NavItem } from "@/lib/nav";
 import { BookingButton } from "@/components/BookingButton";
-import { ChevronDown } from "@/components/ui/icons";
+import { Button } from "@/components/ui/Button";
+import { ArrowRight, ChevronDown } from "@/components/ui/icons";
 import { Logo } from "@/components/layout/Logo";
 
-export function Header() {
+export function Header({ nav }: { nav: NavItem[] }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -33,6 +36,10 @@ export function Header() {
   // text so it stays legible. On scroll (cream background) or with the mobile
   // menu open, we return to the usual dark text.
   const onDark = hasDarkHero(pathname) && !scrolled && !open;
+  // En las páginas de servicio de una sede (`/sedes/<sede>/<servicio>`) la cita
+  // va directa al Doctoralia de esa clínica, igual que los botones de la página.
+  const sedeSlug = pathname.match(/^\/sedes\/([^/]+)\/[^/]+/)?.[1];
+  const bookingUrl = sedeSlug ? getLocation(sedeSlug)?.bookingUrl : undefined;
 
   return (
     <header
@@ -55,7 +62,7 @@ export function Header() {
 
         {/* Desktop navigation */}
         <ul className="hidden items-center gap-1 lg:flex">
-          {mainNav.map((item) => (
+          {nav.map((item) => (
             <li key={item.href} className="group relative">
               <Link
                 href={item.href}
@@ -69,13 +76,59 @@ export function Header() {
                 )}
               >
                 {item.label}
-                {item.children && (
-                  <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
+                {(item.children || item.groups) && (
+                  <ChevronDown className="h-4 w-4 transition-transform duration-300 group-focus-within:rotate-180 group-hover:rotate-180" />
                 )}
               </Link>
 
+              {item.groups && (
+                <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-300 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                  <div className="w-[36rem] rounded-2xl border border-olive-900/10 bg-cream p-2 shadow-xl shadow-olive-900/10">
+                    <div className="grid grid-cols-2 gap-2">
+                      {item.groups.map((group) => (
+                        <div key={group.href}>
+                          <Link
+                            href={group.href}
+                            prefetch={false}
+                            className="block rounded-xl px-4 pb-2 pt-3 text-xs font-semibold uppercase tracking-[0.14em] text-gold-700 transition-colors hover:text-olive-700"
+                          >
+                            {group.label}
+                          </Link>
+                          <ul>
+                            {group.items.map((child) => (
+                              <li key={child.href}>
+                                <Link
+                                  href={child.href}
+                                  prefetch={false}
+                                  className="block rounded-xl px-4 py-2 text-sm text-ink-soft transition-colors hover:bg-olive-50 hover:text-olive-700"
+                                >
+                                  {child.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                    {item.footer && (
+                      <div className="mt-2 border-t border-olive-900/10 pt-2">
+                        <Button
+                          href={item.footer.href}
+                          size="sm"
+                          prefetch={false}
+                          className="w-full"
+                        >
+                          {item.footer.label}
+                          <ArrowRight className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
               {item.children && (
-                <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
+                <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-300 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                   <ul className="min-w-60 rounded-2xl border border-olive-900/10 bg-cream p-2 shadow-xl shadow-olive-900/10">
                     {item.children.map((child) => (
                       <li key={child.href}>
@@ -101,7 +154,11 @@ export function Header() {
         </ul>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <BookingButton size="sm" variant={onDark ? "cream" : "primary"} />
+          <BookingButton
+            size="sm"
+            variant={onDark ? "cream" : "primary"}
+            bookingUrl={bookingUrl}
+          />
         </div>
 
         {/* Mobile menu button */}
@@ -150,7 +207,7 @@ export function Header() {
         <div>
           <div className="max-h-[80vh] overflow-y-auto px-6 pb-8 pt-2">
             <ul className="divide-y divide-olive-900/10">
-              {mainNav.map((item) => (
+              {nav.map((item) => (
                 <li key={item.href} className="py-3">
                   <Link
                     href={item.href}
@@ -158,6 +215,34 @@ export function Header() {
                   >
                     {item.label}
                   </Link>
+                  {item.groups && (
+                    <div className="mt-3 space-y-4">
+                      {item.groups.map((group) => (
+                        <div key={group.href}>
+                          <Link
+                            href={group.href}
+                            prefetch={false}
+                            className="text-xs font-semibold uppercase tracking-[0.14em] text-gold-700"
+                          >
+                            {group.label}
+                          </Link>
+                          <ul className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1">
+                            {group.items.map((child) => (
+                              <li key={child.href}>
+                                <Link
+                                  href={child.href}
+                                  prefetch={false}
+                                  className="text-sm text-ink-soft hover:text-gold-700"
+                                >
+                                  {child.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   {item.children && (
                     <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
                       {item.children.map((child) => (
@@ -177,7 +262,11 @@ export function Header() {
               ))}
             </ul>
             <div className="mt-6">
-              <BookingButton className="w-full" size="lg" />
+              <BookingButton
+                className="w-full"
+                size="lg"
+                bookingUrl={bookingUrl}
+              />
             </div>
           </div>
         </div>

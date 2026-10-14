@@ -19,70 +19,6 @@ export const site = {
   ogImage: "/opengraph-image",
 } as const;
 
-/** Primary header navigation. */
-export const mainNav: {
-  label: string;
-  href: string;
-  children?: { label: string; href: string }[];
-}[] = [
-  {
-    label: "Servicios",
-    href: "/servicios",
-    children: [
-      { label: "Fisioterapia", href: "/servicios/fisioterapia" },
-      {
-        label: "Fisioterapia deportiva",
-        href: "/servicios/fisioterapia-deportiva",
-      },
-      {
-        label: "Entrenamiento terapéutico",
-        href: "/servicios/entrenamiento-terapeutico",
-      },
-      {
-        label: "Pilates terapéutico",
-        href: "/servicios/pilates-terapeutico",
-      },
-      { label: "Neuromodulación", href: "/servicios/neuromodulacion" },
-      { label: "Diatermia", href: "/servicios/diatermia" },
-      { label: "Suelo pélvico", href: "/servicios/suelo-pelvico" },
-      {
-        label: "Fisioterapia en el embarazo",
-        href: "/servicios/fisioterapia-embarazo",
-      },
-      { label: "Postparto", href: "/servicios/postparto" },
-      {
-        label: "Tratamiento de cicatrices",
-        href: "/servicios/tratamiento-cicatrices",
-      },
-      {
-        label: "Fisioterapia pediátrica",
-        href: "/servicios/fisioterapia-pediatrica",
-      },
-    ],
-  },
-  {
-    label: "Dolencias y lesiones",
-    href: "/dolencias-y-lesiones",
-    children: [
-      { label: "ATM", href: "/dolencias-y-lesiones/atm" },
-      { label: "Dolor de espalda", href: "/dolencias-y-lesiones/dolor-espalda" },
-      { label: "Lesión de rodilla", href: "/dolencias-y-lesiones/lesion-rodilla" },
-      { label: "Lesión de hombro", href: "/dolencias-y-lesiones/lesion-hombro" },
-    ],
-  },
-  {
-    label: "Sedes",
-    href: "/sedes",
-    children: [
-      { label: "El Cañaveral", href: "/sedes/el-canaveral" },
-      { label: "Tres Cantos", href: "/sedes/tres-cantos" },
-    ],
-  },
-  { label: "Profesionales", href: "/profesionales" },
-  { label: "Sobre nosotros", href: "/sobre-nosotros" },
-  { label: "Blog", href: "/blog" },
-];
-
 /**
  * Reports whether a route renders a header (PageHero) with a dark background
  * image. The Header uses this to show light text while in its top transparent
@@ -97,6 +33,10 @@ export function hasDarkHero(pathname: string): boolean {
   return false;
 }
 
+/**
+ * Columnas fijas del pie. Los servicios van aparte, una columna por sede, y
+ * salen de `servicesByLocation` (`nav.ts`), la misma fuente que el header.
+ */
 export const footerNav = {
   Clínica: [
     { label: "Sobre nosotros", href: "/sobre-nosotros" },
@@ -104,13 +44,6 @@ export const footerNav = {
     { label: "Profesionales", href: "/profesionales" },
     { label: "Política editorial", href: "/politica-editorial" },
     { label: "Blog", href: "/blog" },
-  ],
-  Servicios: [
-    { label: "Fisioterapia", href: "/servicios/fisioterapia" },
-    { label: "Fisioterapia deportiva", href: "/servicios/fisioterapia-deportiva" },
-    { label: "Suelo pélvico", href: "/servicios/suelo-pelvico" },
-    { label: "Pilates terapéutico", href: "/servicios/pilates-terapeutico" },
-    { label: "Ver todos", href: "/servicios" },
   ],
   Sedes: [
     { label: "El Cañaveral", href: "/sedes/el-canaveral" },

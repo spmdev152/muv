@@ -34,6 +34,8 @@ type Props = {
   size?: Size;
   className?: string;
   external?: boolean;
+  /** Se pasa a `next/link`. En menús desplegables va a `false`. */
+  prefetch?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function Button({
@@ -43,6 +45,7 @@ export function Button({
   size = "md",
   className,
   external,
+  prefetch,
   ...props
 }: Props) {
   const classes = cn(base, variants[variant], sizes[size], className);
@@ -61,7 +64,7 @@ export function Button({
       );
     }
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} prefetch={prefetch} className={classes}>
         {children}
       </Link>
     );
