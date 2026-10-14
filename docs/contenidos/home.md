@@ -164,7 +164,7 @@ Tira compacta de cuatro datos, sin titular. Es el único bloque que aporta seña
 
 **Tarjeta · MUV Tres Cantos**
 > Enfoque musculoesquelético y deportivo con progresión mediante ejercicio: fisioterapia general y deportiva, entrenamiento terapéutico individual y grupal, neuromodulación y tratamiento de cicatrices.
-> Avenida de Madrid, 19, Local 5 · 28760 Tres Cantos
+> Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos
 > Lunes a viernes, 10:00–14:00 y 16:00–21:00 · Sábados, 9:00–14:00
 > `[Ver MUV Tres Cantos]`
 

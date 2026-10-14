@@ -3,10 +3,10 @@
 *__La v10.1 (14/10/2026) aplica los datos definitivos que ha confirmado MUV.__ No cambia nada editorial: solo datos, en todos los sitios donde aparecen (#37).*
 
 - *__Registro sanitario:__ **CS 21018**. Entra en el módulo 5.*
-- *__Dirección:__ **Avenida de Madrid, 19, Local 5 · 28760 Tres Cantos**. Antes ponía «Av.»: el cambio tiene que hacerse también en Google Business y en Doctoralia, porque la dirección es NAP.*
+- *__Dirección:__ **Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos**, tal cual la escribe el perfil de Google Business (comprobado el 14/10/2026). Antes ponía «Local 5»; si Doctoralia dice otra cosa, se iguala allí, porque la dirección es NAP.*
 - *__Teléfono:__ **614 13 14 05**, el que ya publicaban la web actual, Doctoralia e Instagram. El del repositorio era el erróneo.*
 - *__Horario:__ de lunes a viernes de **10:00 a 14:00 y de 16:00 a 21:00**, y los sábados de **9:00 a 14:00**. Antes cerraba a las 22:00 y el sábado abría a las 10:00. Cambian el title, la meta, la entradilla, la franja del hero y el H3 del horario.*
-- *__Equipo:__ en esta clínica solo atiende José. El resto del equipo es de El Cañaveral.*
+- *__Equipo:__ en esta clínica solo atiende José González. El resto del equipo es de El Cañaveral.*
 
 *__Consecuencia para el argumento de horario:__ con el cierre a las 21:00 ya no empatamos con Motriz en la franja de noche (cierra a las 22:00). **El par sigue siendo solo nuestro**: ninguna de las nueve clínicas del municipio que publican horario abre en sábado. El title sigue diciendo las dos cosas, con la hora nueva.*
 
@@ -91,7 +91,7 @@
 | De lunes a viernes, con la última sesión al salir de trabajar. | De 9:00 a 14:00, para lo que no cabe entre semana. | Reserve día y hora sin llamar. |
 
 **Ficha de contacto** *(bajo la franja)*
-> **Avenida de Madrid, 19, Local 5 · 28760 Tres Cantos**
+> **Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos**
 > <span style="color:#c0392b">`[PENDIENTE MUV: zona de atención. La que había escrita —Tres Cantos, Soto de Viñuelas y Colmenar Viejo— estaba deducida por proximidad geográfica en un mapa, no facilitada por MUV. Se retira hasta que la digan ellos]`</span>
 > **Teléfono:** **614 13 14 05** *(confirmado por MUV el 14/10/2026)*
 
@@ -258,8 +258,8 @@
 *__Aviso de maquetación:__ la entradilla decía «Quien le atiende… Estos son.» y **«Estos son» anunciaba una lista que hoy no existe**, porque las fichas del equipo están pendientes de MUV. Una frase que presenta algo que viene después no puede publicarse si lo que viene después está en rojo. Cuando lleguen las fichas, esa coletilla puede volver.*
 
 **Fichas del equipo**
-> **Plantilla:** en esta clínica atiende **un solo fisioterapeuta, José** *(confirmado por MUV el 14/10/2026)*. El resto del equipo es de El Cañaveral.
-> <span style="color:#c0392b">`[PENDIENTE MUV: apellido, foto, número de colegiado y áreas de trabajo de José. En las opiniones verificadas de Doctoralia de agosto de 2026 aparece como José González. Sin número de colegiado el bloque pierde la mitad de su valor]`</span>
+> **Plantilla:** en esta clínica atiende **un solo fisioterapeuta, José González** *(confirmado por MUV el 14/10/2026)*. El resto del equipo es de El Cañaveral.
+> <span style="color:#c0392b">`[PENDIENTE MUV: foto, número de colegiado y áreas de trabajo de José González. Sin número de colegiado el bloque pierde la mitad de su valor]`</span>
 
 **Acreditación** *(tira de datos bajo las fichas)*
 > **Centro sanitario registrado:** CS 21018, en el registro de centros sanitarios de la Comunidad de Madrid.
@@ -322,7 +322,7 @@
 > Cómo llegar a nuestra clínica de fisioterapia de Tres Cantos
 
 **Ficha**
-> **Dirección:** Avenida de Madrid, 19, Local 5 · 28760 Tres Cantos, Madrid
+> **Dirección:** Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos, Madrid
 > **Teléfono:** **614 13 14 05** *(confirmado por MUV el 14/10/2026)*
 > **En coche:** salida de la **M-607**. <span style="color:#c0392b">`[PENDIENTE MUV: dónde aparcar — si hay zona libre en la calle, aparcamiento cercano o plaza propia. Es el dato más importante de este módulo]`</span>
 > **En autobús:** líneas interurbanas **712, 713, 716 y 717** desde Plaza de Castilla, y los autobuses urbanos de Tres Cantos. <span style="color:#c0392b">`[PENDIENTE MUV: qué línea y en qué parada bajarse]`</span>
@@ -713,7 +713,7 @@ Aparecidos en esta auditoría y no recogidos ni en la tabla del cliente ni en la
 
 1. ~~**Confirmar el teléfono.**~~ **Resuelto en la v10.1:** 614 13 14 05, confirmado por MUV el 14/10/2026.
 2. ~~**Número de registro sanitario de Tres Cantos.**~~ **Resuelto en la v10.1:** CS 21018.
-3. **El equipo:** solo atiende José *(confirmado el 14/10/2026)*. Falta su apellido, foto, número de colegiado y áreas de trabajo. **Cinco competidores publican los suyos**; es lo normal, no un extra.
+3. **El equipo:** solo atiende José González *(confirmado el 14/10/2026)*. Falta su foto, número de colegiado y áreas de trabajo. **Cinco competidores publican los suyos**; es lo normal, no un extra.
 4. **Los tres datos del módulo 8: dónde aparcar** *(el más importante de la página: se viene en coche)*, **qué autobús y en qué parada** —tanto el urbano que enlaza con la estación como las interurbanas, que ya están verificadas— y **si el local es accesible**. Tres respuestas de una línea que MUV sabe de memoria y que **no publica ninguno de los trece dominios auditados**. Es el pendiente más barato y el más rentable de toda la página.
 5. **¿Atienden en inglés?** Está declarado en su ficha de Doctoralia. Nadie más lo ofrece.
 6. **¿Atienden a domicilio en la zona de Tres Cantos?** Sí o no.

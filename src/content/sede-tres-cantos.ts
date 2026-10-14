@@ -39,7 +39,7 @@ export const tresCantos: SedeContent = {
       },
       { label: "Cita online", value: "Reserve día y hora sin llamar." },
     ],
-    address: "Avenida de Madrid, 19, Local 5 · 28760 Tres Cantos",
+    address: "Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos",
     // PENDIENTE MUV: zona de atención. La que había —Tres Cantos, Soto de
     // Viñuelas y Colmenar Viejo— estaba deducida por proximidad en un mapa.
     imageAlt:
@@ -201,7 +201,7 @@ export const tresCantos: SedeContent = {
     facts: [
       {
         label: "Dirección",
-        value: "Avenida de Madrid, 19, Local 5 · 28760 Tres Cantos, Madrid",
+        value: "Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos, Madrid",
       },
       { label: "En coche", value: "Salida de la M-607." },
       {

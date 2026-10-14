@@ -285,7 +285,7 @@ export const locationsSection = {
     "tres-cantos": {
       blurb:
         "Enfoque musculoesquelético y deportivo con progresión mediante ejercicio: fisioterapia general y deportiva, entrenamiento terapéutico individual y grupal, neuromodulación y tratamiento de cicatrices.",
-      address: "Avenida de Madrid, 19, Local 5 · 28760 Tres Cantos",
+      address: "Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos",
       hours:
         "Lunes a viernes, 10:00–14:00 y 16:00–21:00 · Sábados, 9:00–14:00",
       ctaLabel: "Ver MUV Tres Cantos",

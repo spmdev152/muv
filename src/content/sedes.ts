@@ -63,7 +63,7 @@ export const clinics = {
     },
     "tres-cantos": {
       heading: "MUV Tres Cantos",
-      address: "Avenida de Madrid, 19, Local 5 · 28760 Tres Cantos",
+      address: "Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos",
       hours:
         "Lunes a viernes, 10:00–14:00 y 16:00–21:00 · Sábados, 9:00–14:00",
       registry: "CS 21018",

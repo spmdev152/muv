@@ -115,7 +115,7 @@ Este es el bloque más importante del documento. La home ya está cerrada y las 
 ### Ficha 2 — **H3:** `MUV Tres Cantos`
 
 > <span style="color:#c0392b">`[PENDIENTE MUV: zona de atención. Decía «Tres Cantos, Soto de Viñuelas y Colmenar Viejo», deducido por proximidad geográfica. Se retira hasta que lo confirme MUV]`</span>
-> **Dirección:** Avenida de Madrid, 19, Local 5 · 28760 Tres Cantos
+> **Dirección:** Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos
 > **Horario:** Lunes a viernes, 10:00–14:00 y 16:00–21:00 · Sábados, 9:00–14:00
 > **Teléfono:** **614 13 14 05** *(confirmado por MUV el 14/10/2026)*
 > **Centro sanitario registrado:** CS 21018

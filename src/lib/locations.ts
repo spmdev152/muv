@@ -122,9 +122,9 @@ export const locations: Location[] = [
     name: "MUV Tres Cantos",
     shortName: "Tres Cantos",
     area: "Tres Cantos",
-    // Confirmada por MUV el 14/10/2026. Antes «Av. de Madrid»: el cambio a
-    // «Avenida» tiene que hacerse también en Google Business y en Doctoralia.
-    street: "Avenida de Madrid, 19, Local 5",
+    // Tal cual la escribe el perfil de Google Business (comprobado el
+    // 14/10/2026): «Loc 5», no «Local 5».
+    street: "Av. de Madrid, 19, Loc 5",
     postalCode: "28760",
     city: "Tres Cantos",
     region: "Comunidad de Madrid",
@@ -142,7 +142,7 @@ export const locations: Location[] = [
     // PENDIENTE MUV: la coordenada del portal.
     geo: { lat: 40.6142, lng: -3.72 },
     mapEmbed:
-      "https://www.google.com/maps?q=Avenida+de+Madrid+19,+28760+Tres+Cantos&output=embed",
+      "https://www.google.com/maps?q=Av.+de+Madrid+19,+28760+Tres+Cantos&output=embed",
     // Horario definitivo, confirmado por MUV el 14/10/2026. Antes cerraba a las
     // 22:00 entre semana y abría a las 10:00 el sábado.
     hours: [
