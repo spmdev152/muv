@@ -19,6 +19,8 @@ import { buildMetadata, clinicJsonLd, faqJsonLd } from "@/lib/seo";
 import type { SedeContent } from "@/content/sede-types";
 import { elCanaveral } from "@/content/sede-el-canaveral";
 import { tresCantos } from "@/content/sede-tres-cantos";
+import { sedeServicePath, sedeServices } from "@/content/sede-services";
+import { plainText } from "@/components/ui/RichText";
 
 /**
  * `/sedes/<sede>` — una plantilla para las dos clínicas.
@@ -69,6 +71,15 @@ export default async function SedePage({
   if (!location || !content) notFound();
 
   const faqItems: QA[] = content.faqs.map((faq) => ({ ...faq }));
+
+  // Módulo 3: solo los cuatro servicios que la sede desarrolla en página
+  // propia, con el nombre de su documento. La descripción de la tarjeta es la
+  // primera viñeta de «Lo esencial» de esa página: texto aprobado, no nuevo.
+  const featured = (sedeServices[slug] ?? []).map((service) => ({
+    label: service.label,
+    href: sedeServicePath(service),
+    text: plainText(service.hero.essentials[0]),
+  }));
 
   return (
     <>
@@ -168,9 +179,9 @@ export default async function SedePage({
             eyebrow={content.services.eyebrow}
             title={content.services.title}
           />
-          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {content.services.items.map((service, i) => (
-              <Reveal key={service.label} delay={(i % 3) * 0.06} as="li">
+          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {featured.map((service, i) => (
+              <Reveal key={service.label} delay={(i % 4) * 0.06} as="li">
                 <Link
                   href={service.href}
                   className="group flex h-full flex-col rounded-3xl border border-olive-900/10 bg-white p-6 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-xl hover:shadow-olive-900/10"
