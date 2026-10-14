@@ -213,6 +213,39 @@ export function serviceJsonLd({
   };
 }
 
+/**
+ * El servicio de una página `/sedes/<sede>/<servicio>` (#29).
+ *
+ * `provider` apunta con `@id` al `MedicalClinic` de la sede, que se declara
+ * completo en su propia página: así Google lo trata como la misma entidad y no
+ * como una clínica nueva. Sin `areaServed` y sin `aggregateRating` (#20).
+ */
+export function sedeServiceJsonLd({
+  name,
+  description,
+  path,
+  location,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  location: Location;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: `${site.url}${path}`,
+    provider: {
+      "@type": ["MedicalClinic", "Physiotherapy"],
+      "@id": `${site.url}/sedes/${location.slug}#clinic`,
+      name: location.name,
+      url: `${site.url}/sedes/${location.slug}`,
+    },
+  };
+}
+
 export function personJsonLd({
   name,
   role,

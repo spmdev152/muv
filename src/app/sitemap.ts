@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { locations } from "@/lib/locations";
 import { getCollection } from "@/lib/content";
+import { sedeServicePath, sedeServices } from "@/content/sede-services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -34,6 +35,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     });
+  }
+
+  // Páginas de servicio por sede (#29): entre la sede (0.9) y `/servicios`
+  // (0.7), porque son las que compiten por «<servicio> <municipio>».
+  for (const services of Object.values(sedeServices)) {
+    for (const service of services) {
+      entries.push({
+        url: `${base}${sedeServicePath(service)}`,
+        changeFrequency: "monthly",
+        priority: 0.8,
+      });
+    }
   }
 
   // Dynamic content (services includes nested routes).

@@ -1,11 +1,13 @@
 /**
  * Navegación principal del header.
  *
- * Vive aparte de `site.ts` para que el Header la reciba ya resuelta por props
- * desde el layout, que es de servidor.
+ * Vive aparte de `site.ts` porque lee el contenido de las páginas de servicio:
+ * solo la importa el layout, que es de servidor, y el Header la recibe ya
+ * resuelta por props. Así ese contenido no viaja en el bundle de cliente.
  */
 
 import { locations } from "@/lib/locations";
+import { sedeServicePath, sedeServices } from "@/content/sede-services";
 
 export type NavLink = { label: string; href: string };
 
@@ -21,60 +23,17 @@ export type NavItem = NavLink & {
 };
 
 /**
- * Los cuatro servicios que MUV eligió destacar en cada clínica, con el nombre
- * y el orden de sus documentos de contenido de la fase 2 (`MUV-WEB-<SEDE>-*`,
- * issues #39–#46). Solo se listan elementos con enlace (#30).
- *
- * Su página propia, `/sedes/<sede>/<servicio>` (#29), todavía no existe: hasta
- * entonces cada uno enlaza a la página actual más cercana. La ruta definitiva
- * va anotada en cada línea; cuando exista, se cambia aquí.
+ * Servicios de cada clínica para el desplegable del header: sus cuatro páginas
+ * `/sedes/<sede>/<servicio>` (#29), con el nombre y el orden de sus documentos
+ * de la fase 2 (issues #39–#46). Solo se listan elementos con enlace (#30).
  */
-const featuredServices: Record<string, NavLink[]> = {
-  "el-canaveral": [
-    // → /sedes/el-canaveral/fisioterapia-invasiva-ecografia
-    { label: "Fisioterapia invasiva y ecografía", href: "/servicios/fisioterapia" },
-    // → /sedes/el-canaveral/suelo-pelvico
-    { label: "Fisioterapia de suelo pélvico", href: "/servicios/suelo-pelvico" },
-    // → /sedes/el-canaveral/pilates
-    {
-      label: "Pilates y pilates para embarazadas",
-      href: "/servicios/pilates-terapeutico",
-    },
-    // → /sedes/el-canaveral/entrenamiento-funcional
-    {
-      label: "Entrenamiento funcional guiado",
-      href: "/servicios/entrenamiento-terapeutico",
-    },
-  ],
-  "tres-cantos": [
-    // → /sedes/tres-cantos/fisioterapia-deportiva
-    {
-      label: "Fisioterapia deportiva y readaptación",
-      href: "/servicios/fisioterapia-deportiva",
-    },
-    // → /sedes/tres-cantos/fisioterapia-rodilla
-    {
-      label: "Fisioterapia de rodilla",
-      href: "/dolencias-y-lesiones/lesion-rodilla",
-    },
-    // → /sedes/tres-cantos/fisioterapia-espalda
-    {
-      label: "Fisioterapia de espalda, cervical y lumbar",
-      href: "/dolencias-y-lesiones/dolor-espalda",
-    },
-    // → /sedes/tres-cantos/entrenamiento-funcional
-    {
-      label: "Clases supervisadas de entrenamiento funcional",
-      href: "/servicios/entrenamiento-terapeutico/grupal",
-    },
-  ],
-};
-
-/** Servicios de cada clínica para el desplegable del header. */
 const servicesByLocation: NavGroup[] = locations.map((location) => ({
   label: location.shortName,
   href: `/sedes/${location.slug}`,
-  items: featuredServices[location.slug] ?? [],
+  items: (sedeServices[location.slug] ?? []).map((service) => ({
+    label: service.label,
+    href: sedeServicePath(service),
+  })),
 }));
 
 /**
