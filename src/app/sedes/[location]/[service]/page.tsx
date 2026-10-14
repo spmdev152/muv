@@ -180,7 +180,7 @@ export default async function SedeServicePage({
             </Reveal>
             <Reveal delay={0.08}>
               <div className="flex flex-wrap items-center gap-4">
-                <BookingButton size="lg" />
+                <BookingButton size="lg" bookingUrl={location.bookingUrl} />
                 <Button
                   href={`#${content.contact.id}`}
                   variant="outline"
@@ -283,6 +283,7 @@ export default async function SedeServicePage({
           <Reveal delay={0.15}>
             <BookingButton
               label={content.contact.cta}
+              bookingUrl={location.bookingUrl}
               size="lg"
               className="mt-8"
             />

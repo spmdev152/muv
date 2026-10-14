@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
 import { hasDarkHero } from "@/lib/site";
+import { getLocation } from "@/lib/locations";
 import type { NavItem } from "@/lib/nav";
 import { BookingButton } from "@/components/BookingButton";
 import { Button } from "@/components/ui/Button";
@@ -35,6 +36,10 @@ export function Header({ nav }: { nav: NavItem[] }) {
   // text so it stays legible. On scroll (cream background) or with the mobile
   // menu open, we return to the usual dark text.
   const onDark = hasDarkHero(pathname) && !scrolled && !open;
+  // En las páginas de servicio de una sede (`/sedes/<sede>/<servicio>`) la cita
+  // va directa al Doctoralia de esa clínica, igual que los botones de la página.
+  const sedeSlug = pathname.match(/^\/sedes\/([^/]+)\/[^/]+/)?.[1];
+  const bookingUrl = sedeSlug ? getLocation(sedeSlug)?.bookingUrl : undefined;
 
   return (
     <header
@@ -149,7 +154,11 @@ export function Header({ nav }: { nav: NavItem[] }) {
         </ul>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <BookingButton size="sm" variant={onDark ? "cream" : "primary"} />
+          <BookingButton
+            size="sm"
+            variant={onDark ? "cream" : "primary"}
+            bookingUrl={bookingUrl}
+          />
         </div>
 
         {/* Mobile menu button */}
@@ -253,7 +262,11 @@ export function Header({ nav }: { nav: NavItem[] }) {
               ))}
             </ul>
             <div className="mt-6">
-              <BookingButton className="w-full" size="lg" />
+              <BookingButton
+                className="w-full"
+                size="lg"
+                bookingUrl={bookingUrl}
+              />
             </div>
           </div>
         </div>

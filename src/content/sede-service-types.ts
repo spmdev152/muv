@@ -73,7 +73,7 @@ export type SedeServiceContent = {
     title: string;
     details: Rich[];
     directions: Rich;
-    /** Texto del botón de cita, que abre el selector de sede. */
+    /** Texto del botón de cita, que reserva en el Doctoralia de la sede. */
     cta: string;
   };
   /** «Fuentes», al pie y en letra pequeña, con enlace a PubMed. */
