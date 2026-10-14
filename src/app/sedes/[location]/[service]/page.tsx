@@ -14,6 +14,9 @@ import { getLocation } from "@/lib/locations";
 import { buildMetadata, faqJsonLd, sedeServiceJsonLd } from "@/lib/seo";
 import { cn } from "@/lib/cn";
 import type { ServiceBlock } from "@/content/sede-service-types";
+import type { SedeContent } from "@/content/sede-types";
+import { elCanaveral } from "@/content/sede-el-canaveral";
+import { tresCantos } from "@/content/sede-tres-cantos";
 import {
   getSedeService,
   sedeServicePath,
@@ -30,6 +33,11 @@ import {
  * contenido. Encabezados: 1 H1 y 9 H2 (módulos 2 a 10); los H3 son los de cada
  * documento y no llevan municipio.
  */
+
+const SEDE_CONTENT: Record<string, SedeContent> = {
+  "el-canaveral": elCanaveral,
+  "tres-cantos": tresCantos,
+};
 
 // Solo existen las ocho rutas declaradas: cualquier otra es un 404.
 export const dynamicParams = false;
@@ -263,31 +271,49 @@ export default async function SedeServicePage({
       >
         <Container size="wide">
           <SectionHeading title={content.contact.title} />
-          <Reveal delay={0.1}>
-            <div className="mt-10 max-w-3xl space-y-3 leading-relaxed text-ink-soft">
-              {content.contact.details.map((line, i) => (
-                <p key={line} className="flex items-start gap-2">
-                  {i === 0 && (
-                    <MapPin className="mt-1 h-5 w-5 shrink-0 text-gold-600" />
-                  )}
-                  <span>
-                    <RichText text={line} />
-                  </span>
-                </p>
-              ))}
-              <p>
-                <RichText text={content.contact.directions} />
-              </p>
+          <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:items-start">
+            <div>
+              <Reveal delay={0.1}>
+                <div className="space-y-3 leading-relaxed text-ink-soft">
+                  {content.contact.details.map((line, i) => (
+                    <p key={i} className="flex items-start gap-2">
+                      {i === 0 && (
+                        <MapPin className="mt-1 h-5 w-5 shrink-0 text-gold-600" />
+                      )}
+                      <span>
+                        <RichText text={line} />
+                      </span>
+                    </p>
+                  ))}
+                  <p>
+                    <RichText text={content.contact.directions} />
+                  </p>
+                </div>
+              </Reveal>
+              <Reveal delay={0.15}>
+                <BookingButton
+                  label={content.contact.cta}
+                  bookingUrl={location.bookingUrl}
+                  size="lg"
+                  className="mt-8"
+                />
+              </Reveal>
             </div>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <BookingButton
-              label={content.contact.cta}
-              bookingUrl={location.bookingUrl}
-              size="lg"
-              className="mt-8"
-            />
-          </Reveal>
+
+            {/* El mismo mapa que «Cómo llegar» en la página de sede, con su
+                mismo título accesible. */}
+            <Reveal delay={0.1}>
+              <div className="overflow-hidden rounded-3xl border border-olive-900/10 shadow-lg shadow-olive-900/10">
+                <iframe
+                  title={SEDE_CONTENT[location.slug]?.directions.mapAlt}
+                  src={location.mapEmbed}
+                  className="h-[26rem] w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </Reveal>
+          </div>
         </Container>
       </section>
 
