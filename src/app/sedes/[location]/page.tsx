@@ -72,18 +72,23 @@ export default async function SedePage({
 
   const faqItems: QA[] = content.faqs.map((faq) => ({ ...faq }));
 
-  // Módulo 3: solo los cuatro servicios que la sede desarrolla en página
+  // Módulo 3: primero los cuatro servicios que la sede desarrolla en página
   // propia, con el nombre de su documento. La descripción de la tarjeta es la
   // primera viñeta de «Lo esencial» de esa página: texto aprobado, no nuevo.
-  const featured = (sedeServices[slug] ?? []).map((service) => ({
+  // Detrás, el resto del catálogo de la clínica (#31): es la única página que
+  // puede posicionar con el municipio un servicio sin página propia.
+  const featured: SedeContent["services"]["items"] = (
+    sedeServices[slug] ?? []
+  ).map((service) => ({
     label: service.label,
     href: sedeServicePath(service),
     text: plainText(service.hero.essentials[0]),
   }));
+  const catalog = [...featured, ...content.services.items];
 
   return (
     <>
-      <JsonLd data={clinicJsonLd(location, content.services.items)} />
+      <JsonLd data={clinicJsonLd(location, catalog)} />
       {faqItems.length > 0 && <JsonLd data={faqJsonLd(faqItems)} />}
 
       {/* Módulo 1 · Hero */}
@@ -180,23 +185,34 @@ export default async function SedePage({
             title={content.services.title}
           />
           <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {featured.map((service, i) => (
+            {catalog.map((service, i) => (
               <Reveal key={service.label} delay={(i % 4) * 0.06} as="li">
-                <Link
-                  href={service.href}
-                  className="group flex h-full flex-col rounded-3xl border border-olive-900/10 bg-white p-6 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-xl hover:shadow-olive-900/10"
-                >
-                  <h3 className="font-display text-lg text-olive-800">
-                    {service.label}
-                  </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">
-                    {service.text}
-                  </p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-gold-700">
-                    Saber más
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
-                </Link>
+                {service.href ? (
+                  <Link
+                    href={service.href}
+                    className="group flex h-full flex-col rounded-3xl border border-olive-900/10 bg-white p-6 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-xl hover:shadow-olive-900/10"
+                  >
+                    <h3 className="font-display text-lg text-olive-800">
+                      {service.label}
+                    </h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">
+                      {service.text}
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-gold-700">
+                      Saber más
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                ) : (
+                  <div className="flex h-full flex-col rounded-3xl border border-olive-900/10 bg-white p-6">
+                    <h3 className="font-display text-lg text-olive-800">
+                      {service.label}
+                    </h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">
+                      {service.text}
+                    </p>
+                  </div>
+                )}
               </Reveal>
             ))}
           </ul>

@@ -62,6 +62,7 @@ export const elCanaveral: SedeContent = {
     items: [
       {
         title: "Suelo pélvico: escapes de orina, dolor y pesadez",
+        href: "/sedes/el-canaveral/suelo-pelvico",
         paragraphs: [
           {
             lead: "Escapes al toser, al reír o al correr",
@@ -74,6 +75,7 @@ export const elCanaveral: SedeContent = {
       },
       {
         title: "Embarazo: dolor lumbar, ciática y pubalgia",
+        href: "/sedes/el-canaveral/suelo-pelvico#embarazo-y-postparto",
         paragraphs: [
           {
             lead: "Dolor lumbar que aparece a partir del segundo trimestre",
@@ -86,6 +88,7 @@ export const elCanaveral: SedeContent = {
       },
       {
         title: "Postparto: diástasis, cicatriz y recuperación",
+        href: "/sedes/el-canaveral/suelo-pelvico#embarazo-y-postparto",
         paragraphs: [
           {
             lead: "Separación de los abdominales",
@@ -98,6 +101,7 @@ export const elCanaveral: SedeContent = {
       },
       {
         title: "Bebés y niños: cólico, tortícolis y cabeza plana",
+        href: "/servicios#fisioterapia-pediatrica",
         paragraphs: [
           {
             lead: "Cólico del lactante",
@@ -110,7 +114,6 @@ export const elCanaveral: SedeContent = {
       },
       {
         title: "Dolor de espalda, cuello y hombro",
-        href: "/dolencias-y-lesiones/dolor-espalda",
         paragraphs: [
           {
             lead: "Dolor lumbar",
@@ -120,6 +123,7 @@ export const elCanaveral: SedeContent = {
       },
       {
         title: "Lesión deportiva y recuperación tras una operación",
+        href: "/servicios#fisioterapia-deportiva",
         paragraphs: [
           {
             text: "Tendinopatías, esguinces, sobrecargas de entrenamiento, roturas de fibras y vuelta a la actividad después de una cirugía, con el informe del hospital.",
@@ -135,26 +139,26 @@ export const elCanaveral: SedeContent = {
   services: {
     eyebrow: "Tratamientos",
     title: "Servicios de fisioterapia en nuestra clínica de El Cañaveral",
+    // Detrás de las cuatro tarjetas de sus páginas propias, con los enlaces de
+    // #31. «Suelo pélvico», «Pilates terapéutico» y «Entrenamiento terapéutico
+    // individual» no se repiten: las sustituyen las de sus páginas propias.
     items: [
-      { label: "Fisioterapia", href: "/servicios/fisioterapia", text: "Valoración y tratamiento manual e instrumental para recuperar el movimiento." },
-      { label: "Fisioterapia deportiva", href: "/servicios/fisioterapia-deportiva", text: "Recuperación y readaptación al gesto deportivo, del aficionado al federado." },
-      { label: "Suelo pélvico", href: "/servicios/suelo-pelvico", text: "Valoración y tratamiento de escapes, dolor y pesadez, en cualquier etapa de la vida." },
-      { label: "Fisioterapia en el embarazo", href: "/servicios/fisioterapia-embarazo", text: "Tratamiento de las molestias del embarazo y preparación del suelo pélvico." },
-      { label: "Postparto", href: "/servicios/postparto", text: "Revisión de suelo pélvico y pared abdominal, y vuelta progresiva al ejercicio." },
-      { label: "Fisioterapia pediátrica", href: "/servicios/fisioterapia-pediatrica", text: "Tratamiento de bebés y niños, con pautas para casa entre sesión y sesión." },
-      { label: "Pilates terapéutico", href: "/servicios/pilates-terapeutico", text: "Ejercicio con máquinas dirigido por un fisioterapeuta y adaptado a cada caso." },
-      { label: "Entrenamiento terapéutico individual", href: "/servicios/entrenamiento-terapeutico/individual", text: "Ejercicio pautado y supervisado por un fisioterapeuta, con progresión medida." },
-      { label: "Neuromodulación", href: "/servicios/neuromodulacion", text: "Tecnología ecoguiada para modular el sistema nervioso en el dolor persistente." },
-      { label: "Diatermia", href: "/servicios/diatermia", text: "Aplicación de calor profundo para preparar el tejido antes de trabajarlo." },
-      // ATM es una dolencia, no un servicio: no existe `/servicios/atm`.
-      { label: "ATM", href: "/dolencias-y-lesiones/atm", text: "Tratamiento de la articulación temporomandibular y de la tensión asociada." },
+      { label: "Fisioterapia", text: "Valoración y tratamiento manual e instrumental para recuperar el movimiento." },
+      { label: "Fisioterapia deportiva", href: "/servicios#fisioterapia-deportiva", text: "Recuperación y readaptación al gesto deportivo, del aficionado al federado." },
+      { label: "Fisioterapia en el embarazo", href: "/sedes/el-canaveral/suelo-pelvico#embarazo-y-postparto", text: "Tratamiento de las molestias del embarazo y preparación del suelo pélvico." },
+      { label: "Postparto", href: "/sedes/el-canaveral/suelo-pelvico#embarazo-y-postparto", text: "Revisión de suelo pélvico y pared abdominal, y vuelta progresiva al ejercicio." },
+      { label: "Fisioterapia pediátrica", href: "/servicios#fisioterapia-pediatrica", text: "Tratamiento de bebés y niños, con pautas para casa entre sesión y sesión." },
+      { label: "Neuromodulación", href: "/sedes/el-canaveral/fisioterapia-invasiva-ecografia#tecnicas", text: "Tecnología ecoguiada para modular el sistema nervioso en el dolor persistente." },
+      { label: "Diatermia", href: "/sedes/el-canaveral/suelo-pelvico#tecnologia", text: "Aplicación de calor profundo para preparar el tejido antes de trabajarlo." },
+      { label: "ATM", href: "/servicios#atm", text: "Tratamiento de la articulación temporomandibular y de la tensión asociada." },
     ],
     note: {
-      before:
-        "El entrenamiento terapéutico en grupo y el tratamiento de cicatrices se realizan en nuestra clínica de ",
+      // Desde el 15/10/2026 El Cañaveral también ofrece entrenamiento en
+      // grupo (#31).
+      before: "El tratamiento de cicatrices se realiza en nuestra clínica de ",
       linkLabel: "Tres Cantos",
       href: "/sedes/tres-cantos",
-      after: ". Si necesita alguno, dígalo al pedir cita y le orientamos.",
+      after: ". Si lo necesita, dígalo al pedir cita y le orientamos.",
     },
     cta: { label: "Ver todos los servicios", href: "/servicios" },
   },

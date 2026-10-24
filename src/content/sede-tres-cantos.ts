@@ -53,7 +53,7 @@ export const tresCantos: SedeContent = {
     items: [
       {
         title: "Dolor de espalda: lumbar, cervical y dorsal",
-        href: "/dolencias-y-lesiones/dolor-espalda",
+        href: "/sedes/tres-cantos/fisioterapia-espalda",
         paragraphs: [
           {
             lead: "Dolor lumbar",
@@ -66,7 +66,7 @@ export const tresCantos: SedeContent = {
       },
       {
         title: "Dolor de rodilla",
-        href: "/dolencias-y-lesiones/lesion-rodilla",
+        href: "/sedes/tres-cantos/fisioterapia-rodilla",
         paragraphs: [
           {
             lead: "Dolor al subir y bajar escaleras",
@@ -79,7 +79,6 @@ export const tresCantos: SedeContent = {
       },
       {
         title: "Dolor de hombro",
-        href: "/dolencias-y-lesiones/lesion-hombro",
         paragraphs: [
           {
             lead: "Dolor al levantar el brazo",
@@ -92,7 +91,7 @@ export const tresCantos: SedeContent = {
       },
       {
         title: "ATM, bruxismo y dolor mandibular",
-        href: "/dolencias-y-lesiones/atm",
+        href: "/servicios#atm",
         paragraphs: [
           {
             lead: "Dolor al masticar",
@@ -112,15 +111,15 @@ export const tresCantos: SedeContent = {
   services: {
     eyebrow: "Tratamientos",
     title: "Servicios de fisioterapia en nuestra clínica de Tres Cantos",
+    // Detrás de las cuatro tarjetas de sus páginas propias, con los enlaces de
+    // #31. «Fisioterapia deportiva» y «Entrenamiento terapéutico en grupo» no
+    // se repiten: las sustituyen las de sus páginas propias.
     items: [
-      { label: "Fisioterapia", href: "/servicios/fisioterapia", text: "Valoración y tratamiento manual e instrumental para recuperar el movimiento." },
-      { label: "Fisioterapia deportiva", href: "/servicios/fisioterapia-deportiva", text: "Recuperación y readaptación al gesto deportivo, del aficionado al federado." },
-      { label: "Entrenamiento terapéutico individual", href: "/servicios/entrenamiento-terapeutico/individual", text: "Ejercicio pautado y supervisado por un fisioterapeuta, con progresión medida." },
-      { label: "Entrenamiento terapéutico en grupo", href: "/servicios/entrenamiento-terapeutico/grupal", text: "El mismo trabajo, compartiendo sala y dirigido también por un fisioterapeuta." },
-      { label: "Neuromodulación", href: "/servicios/neuromodulacion", text: "Tecnología ecoguiada para modular el sistema nervioso en el dolor persistente." },
-      // ATM es una dolencia, no un servicio: no existe `/servicios/atm`.
-      { label: "ATM", href: "/dolencias-y-lesiones/atm", text: "Tratamiento de la articulación temporomandibular y de la tensión asociada." },
-      { label: "Tratamiento de cicatrices", href: "/servicios/tratamiento-cicatrices", text: "Trabajo sobre la cicatriz y el tejido de alrededor tras una cirugía o una herida." },
+      { label: "Fisioterapia", text: "Valoración y tratamiento manual e instrumental para recuperar el movimiento." },
+      { label: "Entrenamiento terapéutico individual", href: "/servicios#entrenamiento-funcional", text: "Ejercicio pautado y supervisado por un fisioterapeuta, con progresión medida." },
+      { label: "Neuromodulación", href: "/sedes/tres-cantos/fisioterapia-deportiva#tecnicas", text: "Tecnología ecoguiada para modular el sistema nervioso en el dolor persistente." },
+      { label: "ATM", href: "/servicios#atm", text: "Tratamiento de la articulación temporomandibular y de la tensión asociada." },
+      { label: "Tratamiento de cicatrices", href: "/servicios#tratamiento-cicatrices", text: "Trabajo sobre la cicatriz y el tejido de alrededor tras una cirugía o una herida." },
     ],
     // El único enlace que sale de esta página hacia la otra sede. No debe
     // multiplicarse: cada enlace de más reparte hacia la sede que ya lidera la

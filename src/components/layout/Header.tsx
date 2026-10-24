@@ -61,9 +61,15 @@ export function Header({ nav }: { nav: NavItem[] }) {
         </Link>
 
         {/* Desktop navigation */}
-        <ul className="hidden items-center gap-1 lg:flex">
+        <ul className="relative hidden items-center gap-1 lg:flex">
           {nav.map((item) => (
-            <li key={item.href} className="group relative">
+            // El desplegable en columnas es más ancho que el hueco que queda a
+            // la derecha de «Servicios» a 1024 px: se centra en la barra (el
+            // `ul`) en vez de colgar del propio elemento.
+            <li
+              key={item.href}
+              className={cn("group", !item.groups && "relative")}
+            >
               <Link
                 href={item.href}
                 className={cn(
@@ -82,23 +88,30 @@ export function Header({ nav }: { nav: NavItem[] }) {
               </Link>
 
               {item.groups && (
-                <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-300 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-                  <div className="w-[36rem] rounded-2xl border border-olive-900/10 bg-cream p-2 shadow-xl shadow-olive-900/10">
-                    <div className="grid grid-cols-2 gap-2">
+                <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition-all duration-300 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                  <div className="w-[50rem] rounded-2xl border border-olive-900/10 bg-cream p-2 shadow-xl shadow-olive-900/10">
+                    <div className="grid grid-cols-3 gap-2">
                       {item.groups.map((group) => (
-                        <div key={group.href}>
-                          <Link
-                            href={group.href}
-                            prefetch={false}
-                            className="block rounded-xl px-4 pb-2 pt-3 text-xs font-semibold uppercase tracking-[0.14em] text-gold-700 transition-colors hover:text-olive-700"
-                          >
-                            {group.label}
-                          </Link>
+                        <div key={group.label}>
+                          {group.href ? (
+                            <Link
+                              href={group.href}
+                              prefetch={false}
+                              className="block rounded-xl px-4 pb-2 pt-3 text-xs font-semibold uppercase tracking-[0.14em] text-gold-700 transition-colors hover:text-olive-700"
+                            >
+                              {group.label}
+                            </Link>
+                          ) : (
+                            <p className="px-4 pb-2 pt-3 text-xs font-semibold uppercase tracking-[0.14em] text-gold-700">
+                              {group.label}
+                            </p>
+                          )}
                           <ul>
                             {group.items.map((child) => (
                               <li key={child.href}>
                                 <Link
                                   href={child.href}
+                                  aria-label={child.ariaLabel}
                                   prefetch={false}
                                   className="block rounded-xl px-4 py-2 text-sm text-ink-soft transition-colors hover:bg-olive-50 hover:text-olive-700"
                                 >
@@ -218,19 +231,26 @@ export function Header({ nav }: { nav: NavItem[] }) {
                   {item.groups && (
                     <div className="mt-3 space-y-4">
                       {item.groups.map((group) => (
-                        <div key={group.href}>
-                          <Link
-                            href={group.href}
-                            prefetch={false}
-                            className="text-xs font-semibold uppercase tracking-[0.14em] text-gold-700"
-                          >
-                            {group.label}
-                          </Link>
+                        <div key={group.label}>
+                          {group.href ? (
+                            <Link
+                              href={group.href}
+                              prefetch={false}
+                              className="text-xs font-semibold uppercase tracking-[0.14em] text-gold-700"
+                            >
+                              {group.label}
+                            </Link>
+                          ) : (
+                            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gold-700">
+                              {group.label}
+                            </p>
+                          )}
                           <ul className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1">
                             {group.items.map((child) => (
                               <li key={child.href}>
                                 <Link
                                   href={child.href}
+                                  aria-label={child.ariaLabel}
                                   prefetch={false}
                                   className="text-sm text-ink-soft hover:text-gold-700"
                                 >

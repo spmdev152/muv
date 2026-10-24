@@ -119,7 +119,7 @@ function geoCoordinates(location: Location) {
  */
 export function clinicJsonLd(
   location: Location,
-  services: readonly { label: string; href: string }[] = [],
+  services: readonly { label: string; href?: string }[] = [],
 ) {
   const manager = location.healthManager;
 
@@ -144,11 +144,13 @@ export function clinicJsonLd(
     // Vincula esta clínica con su ficha de Doctoralia: es lo que le dice a
     // Google que son el mismo negocio.
     sameAs: [location.bookingUrl],
+    // Cada servicio apunta al mismo destino que su tarjeta del módulo 3 (#31).
+    // Sin `href` («Fisioterapia», que apuntaría a esta misma página), sin `url`.
     availableService: services.length
       ? services.map((s) => ({
           "@type": "MedicalProcedure",
           name: s.label,
-          url: `${site.url}${s.href}`,
+          url: s.href ? `${site.url}${s.href}` : undefined,
         }))
       : undefined,
     // El responsable sanitario con su número de colegiado es la señal E-E-A-T
@@ -187,29 +189,6 @@ export function clinicListJsonLd() {
         geo: geoCoordinates(location),
       },
     })),
-  };
-}
-
-export function serviceJsonLd({
-  name,
-  description,
-  path,
-}: {
-  name: string;
-  description: string;
-  path: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "MedicalProcedure",
-    name,
-    description,
-    url: `${site.url}${path}`,
-    provider: {
-      "@type": "MedicalOrganization",
-      name: site.legalName,
-      url: site.url,
-    },
   };
 }
 

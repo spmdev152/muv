@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { footerNav, site } from "@/lib/site";
 import { locations } from "@/lib/locations";
-import { servicesByLocation } from "@/lib/nav";
+import { servicesByLocation, type NavLink } from "@/lib/nav";
 import { Logo } from "@/components/layout/Logo";
 import { Container } from "@/components/ui/Container";
 import { MapPin, Whatsapp, Mail, Clock } from "@/components/ui/icons";
@@ -60,28 +60,29 @@ export function Footer() {
           {[
             { heading: "Clínica", links: footerNav.Clínica },
             // #30: una columna por sede con sus cuatro servicios destacados.
-            // «Ver todos» abre la pestaña de esa sede en `/servicios`.
+            // «Ver todos» va a `/servicios`, que ya no tiene pestañas ni anclas
+            // con municipio (#31).
             ...servicesByLocation.map((group) => ({
               heading: `Servicios en ${group.label}`,
               links: [
                 ...group.items,
-                {
-                  label: "Ver todos",
-                  href: `/servicios#${group.href.split("/").pop()}`,
-                },
+                { label: "Ver todos", href: "/servicios" },
               ],
             })),
             { heading: "Sedes", links: footerNav.Sedes },
-          ].map(({ heading, links }) => (
+          ].map(({ heading, links }: { heading: string; links: NavLink[] }) => (
             <nav key={heading} aria-label={heading}>
-              <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-cream">
+              {/* No es un encabezado: el esquema de encabezados de cada página
+                  es solo su contenido (#51). */}
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cream">
                 {heading}
-              </h3>
+              </p>
               <ul className="mt-5 space-y-3 text-sm">
                 {links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
+                      aria-label={link.ariaLabel}
                       className="text-cream/60 transition-colors hover:text-gold-400"
                     >
                       {link.label}
