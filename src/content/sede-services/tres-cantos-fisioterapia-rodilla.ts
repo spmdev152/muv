@@ -193,7 +193,7 @@ export const tresCantosRodilla: SedeServiceContent = {
     {
       id: "operacion-o-ejercicio",
       title:
-        "¿Operación o ejercicio? Lo que dice la investigación sobre el menisco",
+        "Rotura de menisco: ¿operar o no? Lo que dice la investigación",
       intro: [],
       subsections: [
         {
@@ -225,7 +225,7 @@ export const tresCantosRodilla: SedeServiceContent = {
     },
     {
       id: "quien-le-atiende",
-      title: "Quién le atiende",
+      title: "Quién trata su rodilla",
       intro: [
         {
           type: "p",
@@ -238,7 +238,7 @@ export const tresCantosRodilla: SedeServiceContent = {
     {
       id: "consejos-y-mitos",
       eyebrow: "Mientras tanto",
-      title: "Tres consejos para su rodilla y tres mitos",
+      title: "Tres consejos para el dolor de rodilla y tres mitos",
       intro: [],
       subsections: [
         {
@@ -305,7 +305,7 @@ export const tresCantosRodilla: SedeServiceContent = {
     },
     {
       id: "cuando-consultar-antes-con-su-medico",
-      title: "Cuándo conviene consultar antes con su médico",
+      title: "Dolor de rodilla: cuándo ir antes al médico o a urgencias",
       intro: [
         {
           type: "p",
@@ -339,7 +339,7 @@ export const tresCantosRodilla: SedeServiceContent = {
           "Depende de la causa, pero casi siempre el centro es el ejercicio: fuerza de muslos y caderas, control del movimiento y carga progresiva, con otras técnicas de apoyo.",
       },
       {
-        question: "¿Cuántas sesiones necesito?",
+        question: "¿Cuántas sesiones de fisioterapia son necesarias para la rodilla?",
         answer:
           "Depende de qué le pasa, desde cuándo y de su actividad. Tras la valoración se concreta un plan.",
       },
@@ -364,7 +364,7 @@ export const tresCantosRodilla: SedeServiceContent = {
           "Moverse suele ayudar más que parar del todo. Conviene dosificar los saltos, las sentadillas profundas y las bajadas. Si el dolor aumenta, consúltenos.",
       },
       {
-        question: "¿Necesito una resonancia para empezar?",
+        question: "¿Necesito una resonancia de rodilla para empezar?",
         answer:
           "No para empezar la valoración. Si ya tiene pruebas de imagen o informes, tráigalos. La ecografía complementa la exploración y no sustituye a las pruebas que indique su médico.",
       },

@@ -36,7 +36,7 @@ export const elCanaveralInvasivaEcografia: SedeServiceContent = {
     {
       id: "diagnostico-con-ecografia",
       eyebrow: "Primero, ver",
-      title: "Diagnóstico con ecografía: ver antes de tratar",
+      title: "Diagnóstico fisioterapéutico con ecografía musculoesquelética",
       intro: [
         {
           type: "p",
@@ -174,7 +174,7 @@ export const elCanaveralInvasivaEcografia: SedeServiceContent = {
     },
     {
       id: "seguridad",
-      title: "Seguridad: lo que conviene saber antes de una técnica con aguja",
+      title: "Punción seca y neuromodulación: riesgos y contraindicaciones",
       intro: [],
       subsections: [
         {
@@ -230,7 +230,7 @@ export const elCanaveralInvasivaEcografia: SedeServiceContent = {
     },
     {
       id: "quien-le-atiende",
-      title: "Quién le atiende",
+      title: "Quién realiza la ecografía y las técnicas con aguja",
       intro: [
         {
           type: "p",
@@ -243,7 +243,7 @@ export const elCanaveralInvasivaEcografia: SedeServiceContent = {
     {
       id: "consejos-y-mitos",
       eyebrow: "Mientras tanto",
-      title: "Tres consejos y tres mitos sobre las técnicas con aguja",
+      title: "Tres consejos y tres mitos sobre la punción seca y la ecografía",
       intro: [],
       subsections: [
         {
@@ -310,7 +310,7 @@ export const elCanaveralInvasivaEcografia: SedeServiceContent = {
     },
     {
       id: "cuando-consultar-antes-con-su-medico",
-      title: "Cuándo conviene consultar antes con su médico",
+      title: "Señales de alarma: cuándo ver antes a su médico",
       intro: [
         { type: "p", text: "Estas señales piden ver antes a su médico:" },
         {
@@ -352,7 +352,7 @@ export const elCanaveralInvasivaEcografia: SedeServiceContent = {
           "Lo más habitual es una zona sensible y, a veces, un moratón diminuto. Los efectos graves son muy poco frecuentes.",
       },
       {
-        question: "¿Cuántas sesiones hacen falta?",
+        question: "¿Cuántas sesiones de punción seca se necesitan?",
         answer:
           "Depende de qué le pasa y de cómo responda. Tras la valoración se concreta el plan.",
       },

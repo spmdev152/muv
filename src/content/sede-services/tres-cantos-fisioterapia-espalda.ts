@@ -106,7 +106,7 @@ export const tresCantosEspalda: SedeServiceContent = {
     },
     {
       id: "como-trabajamos",
-      title: "Cuatro fases para recuperar la función de la espalda",
+      title: "Tratamiento del dolor de espalda y cuello en cuatro fases",
       intro: [],
       subsections: [
         {
@@ -198,7 +198,7 @@ export const tresCantosEspalda: SedeServiceContent = {
     {
       id: "lo-que-dicen-las-pruebas-de-imagen",
       title:
-        "Hernia, protrusión y resonancia: lo que dicen las pruebas de imagen",
+        "Hernia discal, protrusión y resonancia: lo que dicen las pruebas de imagen",
       intro: [],
       subsections: [
         {
@@ -235,7 +235,7 @@ export const tresCantosEspalda: SedeServiceContent = {
     },
     {
       id: "quien-le-atiende",
-      title: "Quién le atiende",
+      title: "Quién trata su espalda",
       intro: [
         {
           type: "p",
@@ -248,7 +248,7 @@ export const tresCantosEspalda: SedeServiceContent = {
     {
       id: "consejos-y-mitos",
       eyebrow: "Mientras tanto",
-      title: "Tres consejos para su espalda y tres mitos",
+      title: "Tres consejos para el dolor de espalda y tres mitos",
       intro: [],
       subsections: [
         {
@@ -315,7 +315,7 @@ export const tresCantosEspalda: SedeServiceContent = {
     },
     {
       id: "cuando-consultar-antes-con-su-medico",
-      title: "Cuándo conviene consultar antes con su médico",
+      title: "Dolor de espalda: cuándo ir antes al médico o a urgencias",
       intro: [
         {
           type: "p",
@@ -379,7 +379,7 @@ export const tresCantosEspalda: SedeServiceContent = {
           "El médico rehabilitador es un médico especialista: diagnostica, puede pedir pruebas y recetar. El fisioterapeuta valora y trata con técnicas físicas y ejercicio.",
       },
       {
-        question: "¿Necesito una resonancia para empezar?",
+        question: "¿Necesito una resonancia lumbar para empezar?",
         answer:
           "No. Las guías recomiendan no pedirla de forma rutinaria en el dolor lumbar. Si ya tiene una, tráigala.",
       },

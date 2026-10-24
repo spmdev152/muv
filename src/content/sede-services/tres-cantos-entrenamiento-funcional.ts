@@ -14,7 +14,7 @@ export const tresCantosFuncional: SedeServiceContent = {
   label: "Clases supervisadas de entrenamiento funcional",
   source: "docs/contenidos/MUV-WEB-TRES-CANTOS-FUNCIONAL.pdf",
   meta: {
-    title: "Entrenamiento funcional en Tres Cantos | MUV",
+    title: "Clases de entrenamiento funcional en Tres Cantos | MUV",
     description:
       "Clases de entrenamiento funcional en Tres Cantos: grupos de hasta cinco personas, dirigidas por un fisioterapeuta colegiado. Pida cita en MUV.",
   },
@@ -81,7 +81,7 @@ export const tresCantosFuncional: SedeServiceContent = {
     },
     {
       id: "como-son-las-clases",
-      title: "Cómo son las clases supervisadas",
+      title: "Cómo son las clases: grupos reducidos de hasta cinco personas",
       intro: [
         {
           type: "p",
@@ -102,7 +102,7 @@ export const tresCantosFuncional: SedeServiceContent = {
     },
     {
       id: "que-se-trabaja",
-      title: "Qué se trabaja en el entrenamiento funcional",
+      title: "Ejercicios del entrenamiento funcional: los seis movimientos básicos",
       intro: [
         {
           type: "p",
@@ -170,7 +170,7 @@ export const tresCantosFuncional: SedeServiceContent = {
     },
     {
       id: "en-que-se-diferencia",
-      title: "¿En qué se diferencia de un gimnasio, del CrossFit o del HIIT?",
+      title: "Entrenamiento funcional, gimnasio, CrossFit o HIIT: en qué se diferencian",
       intro: [],
       subsections: [
         {
@@ -287,7 +287,7 @@ export const tresCantosFuncional: SedeServiceContent = {
     },
     {
       id: "antes-de-empezar",
-      title: "Antes de empezar: cuándo consultar con su médico",
+      title: "Antes de la primera clase: cuándo consultar con su médico",
       intro: [
         {
           type: "p",
@@ -327,7 +327,7 @@ export const tresCantosFuncional: SedeServiceContent = {
           "Llame a la clínica o pida cita y le informamos de las clases y de las plazas disponibles.",
       },
       {
-        question: "¿Qué se trabaja en el entrenamiento funcional?",
+        question: "¿Qué ejercicios se hacen en el entrenamiento funcional?",
         answer:
           "Sentadilla, bisagra de cadera, empuje, tracción, acarreo, rotación y saltos o aterrizajes: los movimientos básicos de la vida diaria y del deporte.",
       },
@@ -347,7 +347,7 @@ export const tresCantosFuncional: SedeServiceContent = {
           "Cuéntenoslo antes de empezar y, si la lesión es reciente, consulte antes con su médico.",
       },
       {
-        question: "¿Sirve para prevenir lesiones?",
+        question: "¿Entrenar la fuerza reduce las lesiones?",
         answer:
           "Una revisión de seis ensayos asocia más entrenamiento de fuerza con menos lesiones deportivas.",
       },
