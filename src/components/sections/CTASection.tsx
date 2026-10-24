@@ -4,13 +4,18 @@ import { BookingButton } from "@/components/BookingButton";
 import { Button } from "@/components/ui/Button";
 
 type Props = {
+  eyebrow?: string;
   title?: string;
   description?: string;
+  /** Sustituye a «Contactar» como segundo botón. */
+  secondary?: { label: string; href: string };
 };
 
 export function CTASection({
+  eyebrow,
   title = "Su proceso empieza por una primera valoración",
   description = "Reserve una valoración inicial y definiremos con usted un plan de tratamiento adaptado a su caso.",
+  secondary = { label: "Contactar", href: "/contacto" },
 }: Props) {
   return (
     <section className="relative overflow-hidden bg-olive-500 py-20 md:py-28">
@@ -26,6 +31,9 @@ export function CTASection({
       />
       <Container className="relative text-center">
         <Reveal>
+          {eyebrow && (
+            <p className="eyebrow mb-4 text-gold-300">{eyebrow}</p>
+          )}
           <span className="rule-gold mx-auto mb-6 block" />
           <h2 className="mx-auto max-w-2xl text-3xl text-cream sm:text-4xl lg:text-5xl">
             {title}
@@ -35,8 +43,8 @@ export function CTASection({
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <BookingButton variant="cream" size="lg" />
-            <Button href="/contacto" variant="outlineLight" size="lg">
-              Contactar
+            <Button href={secondary.href} variant="outlineLight" size="lg">
+              {secondary.label}
             </Button>
           </div>
         </Reveal>

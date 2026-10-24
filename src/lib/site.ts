@@ -26,10 +26,8 @@ export const site = {
  * Keep it aligned with the pages that render <PageHero image=...>.
  */
 export function hasDarkHero(pathname: string): boolean {
-  // Service detail (including nested), condition detail and location pages.
-  if (/^\/servicios\/.+/.test(pathname)) return true;
-  if (/^\/dolencias-y-lesiones\/.+/.test(pathname)) return true;
-  if (/^\/sedes\/[^/]+/.test(pathname)) return true; // /sedes/<location> and /sedes/<location>/contacto
+  // Location pages and their service pages.
+  if (/^\/sedes\/[^/]+/.test(pathname)) return true; // /sedes/<location> and /sedes/<location>/<service>
   return false;
 }
 

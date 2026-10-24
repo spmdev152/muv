@@ -84,8 +84,12 @@ export const clinics = {
  * Tres Cantos y en El Cañaveral no hay una sola clínica con dos sedes. Va como
  * texto rastreable, nunca como imagen.
  *
- * Cada nombre enlaza a su página. ATM es la única fila sin página de servicio
- * propia: es una dolencia, y enlaza a `/dolencias-y-lesiones/atm`.
+ * Cada nombre enlaza a su destino según el mapa de #31: si una sola página
+ * desarrolla el servicio, a ella; si lo desarrollan dos o ninguna, a su ancla
+ * de `/servicios`.
+ *
+ * Desde el 15/10/2026 El Cañaveral también ofrece entrenamiento en grupo
+ * (#31): cambian su fila y la nota.
  */
 export const availability = {
   eyebrow: "Servicios por clínica",
@@ -94,24 +98,24 @@ export const availability = {
     "Disponibilidad de cada servicio de fisioterapia en las clínicas de MUV en El Cañaveral y en Tres Cantos.",
   columns: ["El Cañaveral", "Tres Cantos"],
   rows: [
-    { label: "Fisioterapia", href: "/servicios/fisioterapia", at: [true, true] },
-    { label: "Fisioterapia deportiva", href: "/servicios/fisioterapia-deportiva", at: [true, true] },
-    { label: "Entrenamiento terapéutico individual", href: "/servicios/entrenamiento-terapeutico/individual", at: [true, true] },
-    { label: "Entrenamiento terapéutico en grupo", href: "/servicios/entrenamiento-terapeutico/grupal", at: [false, true] },
-    { label: "Neuromodulación", href: "/servicios/neuromodulacion", at: [true, true] },
-    { label: "ATM", note: "articulación temporomandibular", href: "/dolencias-y-lesiones/atm", at: [true, true] },
-    { label: "Pilates terapéutico", href: "/servicios/pilates-terapeutico", at: [true, false] },
-    { label: "Diatermia", href: "/servicios/diatermia", at: [true, false] },
-    { label: "Suelo pélvico", href: "/servicios/suelo-pelvico", at: [true, false] },
-    { label: "Fisioterapia en el embarazo", href: "/servicios/fisioterapia-embarazo", at: [true, false] },
-    { label: "Postparto", href: "/servicios/postparto", at: [true, false] },
-    { label: "Fisioterapia pediátrica", href: "/servicios/fisioterapia-pediatrica", at: [true, false] },
-    { label: "Tratamiento de cicatrices", href: "/servicios/tratamiento-cicatrices", at: [false, true] },
+    { label: "Fisioterapia", href: "/servicios#fisioterapia", at: [true, true] },
+    { label: "Fisioterapia deportiva", href: "/sedes/tres-cantos/fisioterapia-deportiva", at: [true, true] },
+    { label: "Entrenamiento terapéutico individual", href: "/servicios#entrenamiento-funcional", at: [true, true] },
+    { label: "Entrenamiento terapéutico en grupo", href: "/servicios#entrenamiento-funcional", at: [true, true] },
+    { label: "Neuromodulación", href: "/servicios#neuromodulacion", at: [true, true] },
+    { label: "ATM", note: "articulación temporomandibular", href: "/servicios#atm", at: [true, true] },
+    { label: "Pilates terapéutico", href: "/sedes/el-canaveral/pilates", at: [true, false] },
+    { label: "Diatermia", href: "/sedes/el-canaveral/suelo-pelvico#tecnologia", at: [true, false] },
+    { label: "Suelo pélvico", href: "/sedes/el-canaveral/suelo-pelvico", at: [true, false] },
+    { label: "Fisioterapia en el embarazo", href: "/sedes/el-canaveral/suelo-pelvico#embarazo-y-postparto", at: [true, false] },
+    { label: "Postparto", href: "/sedes/el-canaveral/suelo-pelvico#embarazo-y-postparto", at: [true, false] },
+    { label: "Fisioterapia pediátrica", href: "/servicios#fisioterapia-pediatrica", at: [true, false] },
+    { label: "Tratamiento de cicatrices", href: "/servicios#tratamiento-cicatrices", at: [false, true] },
   ],
   note: {
     before: "Suelo pélvico, embarazo, postparto y pediatría se realizan en ",
     linkCanaveral: "El Cañaveral",
-    middle: ". El entrenamiento en grupo y el tratamiento de cicatrices, en ",
+    middle: ". El tratamiento de cicatrices, en ",
     linkTresCantos: "Tres Cantos",
     after: ". Dígalo al pedir cita y le orientamos.",
   },

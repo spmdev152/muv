@@ -134,7 +134,7 @@ export default function HomePage() {
             {services.items.map((service, i) => (
               <Reveal key={service.slug} delay={(i % 3) * 0.08}>
                 <ServiceCard
-                  href={`/servicios/${service.slug}`}
+                  href={service.href}
                   title={service.title}
                   excerpt={service.text}
                   availability={service.availability}
@@ -153,24 +153,16 @@ export default function HomePage() {
       {/* Módulo 5 · Dolencias y lesiones */}
       <section className="py-20 md:py-28">
         <Container size="wide">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading
-              eyebrow={conditions.eyebrow}
-              title={conditions.title}
-              description={conditions.description}
-            />
-            <Reveal>
-              <Button href={conditions.cta.href} variant="ghost">
-                {conditions.cta.label}
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Reveal>
-          </div>
+          <SectionHeading
+            eyebrow={conditions.eyebrow}
+            title={conditions.title}
+            description={conditions.description}
+          />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {conditions.items.map((condition, i) => (
               <Reveal key={condition.slug} delay={(i % 4) * 0.08}>
                 <ServiceCard
-                  href={`/dolencias-y-lesiones/${condition.slug}`}
+                  href={"href" in condition ? condition.href : undefined}
                   title={condition.title}
                   excerpt={condition.text}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 25vw, 19rem"

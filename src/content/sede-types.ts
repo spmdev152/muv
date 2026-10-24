@@ -38,7 +38,12 @@ export type SedeContent = {
   services: {
     eyebrow: string;
     title: string;
-    items: { label: string; href: string; text: string }[];
+    /**
+     * El resto del catálogo de la clínica, detrás de las cuatro tarjetas de sus
+     * páginas propias. Sin `href`, la tarjeta va sin enlace («Fisioterapia»,
+     * que apuntaría a la propia página).
+     */
+    items: { label: string; href?: string; text: string }[];
     /** Deriva a la otra sede los servicios que aquí no se prestan. */
     note: { before: string; linkLabel: string; href: string; after: string };
     cta: { label: string; href: string };

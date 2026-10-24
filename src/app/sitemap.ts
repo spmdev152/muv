@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/servicios",
-    "/dolencias-y-lesiones",
     "/sedes",
     "/profesionales",
     "/blog",
@@ -49,17 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // Dynamic content (services includes nested routes).
+  // Contenido dinámico. Las colecciones `services` y `conditions` ya no tienen
+  // página: `/servicios/<servicio>` y `/dolencias-y-lesiones/<dolencia>` se
+  // retiraron con una 301 y no se listan (#31).
   const collections = [
-    { name: "services" as const, prefix: "/servicios" },
-    { name: "conditions" as const, prefix: "/dolencias-y-lesiones" },
     { name: "professionals" as const, prefix: "/profesionales" },
     { name: "blog" as const, prefix: "/blog" },
-  ];
-
-  const nestedServices = [
-    "entrenamiento-terapeutico/individual",
-    "entrenamiento-terapeutico/grupal",
   ];
 
   for (const { name, prefix } of collections) {
@@ -70,13 +64,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
       });
     }
-  }
-  for (const slug of nestedServices) {
-    entries.push({
-      url: `${base}/servicios/${slug}`,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    });
   }
 
   return entries;

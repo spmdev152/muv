@@ -4,7 +4,8 @@ import { ArrowRight } from "@/components/ui/icons";
 import { cn } from "@/lib/cn";
 
 type Props = {
-  href: string;
+  /** Sin enlace, la tarjeta se pinta igual pero sin «Saber más». */
+  href?: string;
   title: string;
   excerpt: string;
   image?: string;
@@ -31,14 +32,8 @@ export function ServiceCard({
   sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25rem",
   className,
 }: Props) {
-  return (
-    <Link
-      href={href}
-      className={cn(
-        "group relative flex flex-col overflow-hidden rounded-3xl border border-olive-900/10 bg-white transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-2xl hover:shadow-olive-900/10",
-        className,
-      )}
-    >
+  const body = (
+    <>
       {image && (
         <div className="relative aspect-[4/3] overflow-hidden">
           <Image
@@ -61,11 +56,28 @@ export function ServiceCard({
         <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
           {excerpt}
         </p>
-        <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-gold-700">
-          Saber más
-          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-        </span>
+        {href && (
+          <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-gold-700">
+            Saber más
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
+        )}
       </div>
+    </>
+  );
+
+  const classes = cn(
+    "relative flex flex-col overflow-hidden rounded-3xl border border-olive-900/10 bg-white",
+    href &&
+      "group transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-2xl hover:shadow-olive-900/10",
+    className,
+  );
+
+  return href ? (
+    <Link href={href} className={classes}>
+      {body}
     </Link>
+  ) : (
+    <div className={classes}>{body}</div>
   );
 }

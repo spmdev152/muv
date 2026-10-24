@@ -25,12 +25,12 @@ node scripts/shot.mjs <url> <prefijo>    # capturas por secciones (QA visual)
 
 ## Estructura
 
-- `src/app/**` — rutas (home, servicios, dolencias-y-lesiones, sedes, profesionales, blog, contacto, etc.)
+- `src/app/**` — rutas (home, servicios, sedes, profesionales, blog, contacto, etc.). `/servicios/<servicio>` y `/dolencias-y-lesiones/*` se retiraron con 301 (`next.config.ts`, #31)
 - `src/components/**` — sistema de diseño (layout, cards, sections, ui, motion, seo, mdx)
 - `src/lib/site.ts` — marca, URL base y navegación
 - `src/lib/sedes.ts` — **datos reales de las dos sedes** (dirección, teléfono, horario, Doctoralia, geo)
 - `src/lib/seo.ts` — `buildMetadata` + constructores JSON-LD
-- `content/**` — contenido MDX (servicios, dolencias, profesionales, blog)
+- `content/**` — contenido MDX (profesionales, blog; de `services` y `conditions` solo se usan las imágenes de la home)
 - `public/img/**` — fotos reales de la clínica (convertidas a WebP)
 
 ## Contenido (para el equipo de SEO)

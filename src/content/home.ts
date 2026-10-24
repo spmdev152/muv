@@ -121,7 +121,8 @@ export const pillars = {
  * equipamiento.
  *
  * `title` viene del documento, no del frontmatter: manda la copy aprobada.
- * La imagen sí se resuelve del `.mdx` para no duplicar rutas.
+ * La imagen sí se resuelve del `.mdx` para no duplicar rutas. El `href` es el
+ * del mapa de enlaces de #31: las páginas `/servicios/<servicio>` se retiraron.
  *
  * `availability` se escribe literal a propósito. El README documenta que
  * `priorityServices` de `locations.ts` declara servicios que Tres Cantos no
@@ -137,6 +138,7 @@ export const services = {
   items: [
     {
       slug: "fisioterapia",
+      href: "/servicios#fisioterapia",
       title: "Fisioterapia",
       text: "Valoración y tratamiento manual e instrumental para recuperar el movimiento.",
       availability: "Ambas sedes",
@@ -144,6 +146,7 @@ export const services = {
     },
     {
       slug: "fisioterapia-deportiva",
+      href: "/sedes/tres-cantos/fisioterapia-deportiva",
       title: "Fisioterapia deportiva",
       text: "Recuperación y readaptación al gesto deportivo, del aficionado al federado.",
       availability: "Ambas sedes",
@@ -152,14 +155,16 @@ export const services = {
     },
     {
       slug: "entrenamiento-terapeutico",
+      href: "/servicios#entrenamiento-funcional",
       title: "Entrenamiento terapéutico",
       text: "Ejercicio pautado y supervisado por fisioterapeutas, individual o en grupo.",
-      availability: "Ambas sedes · grupal solo en Tres Cantos",
+      availability: "Ambas sedes",
       imageAlt:
         "Sesión de ejercicio terapéutico supervisada por un fisioterapeuta",
     },
     {
       slug: "neuromodulacion",
+      href: "/servicios#neuromodulacion",
       title: "Neuromodulación",
       text: "Tecnología ecoguiada para modular el sistema nervioso en el dolor persistente.",
       availability: "Ambas sedes",
@@ -167,6 +172,7 @@ export const services = {
     },
     {
       slug: "suelo-pelvico",
+      href: "/sedes/el-canaveral/suelo-pelvico",
       title: "Suelo pélvico",
       text: "Prevención y tratamiento de las disfunciones del suelo pélvico.",
       availability: "Solo El Cañaveral",
@@ -174,6 +180,7 @@ export const services = {
     },
     {
       slug: "pilates-terapeutico",
+      href: "/sedes/el-canaveral/pilates",
       title: "Pilates terapéutico",
       text: "Control, estabilidad y conciencia corporal con enfoque clínico.",
       availability: "Solo El Cañaveral",
@@ -189,22 +196,27 @@ export const services = {
  * Son las cuatro que existen en `content/conditions/`, en el orden del
  * documento, que no es el `order` del frontmatter. El título de la cuarta es
  * «ATM» y no «ATM (articulación temporomandibular)»: manda el documento.
+ *
+ * Enlaces del mapa de #31. «Lesión de hombro» va sin enlace: no hay página que
+ * lo desarrolle. Sin botón «Ver todas las dolencias»: su destino,
+ * `/dolencias-y-lesiones`, se retiró.
  */
 export const conditions = {
   eyebrow: "Dolencias y lesiones",
   title: "Dolencias y lesiones que tratamos",
   description:
     "Si no sabe qué servicio necesita, empiece por lo que le pasa. Valoramos el origen de la molestia y le proponemos el abordaje desde ahí.",
-  cta: { label: "Ver todas las dolencias", href: "/dolencias-y-lesiones" },
   items: [
     {
       slug: "dolor-espalda",
+      href: "/sedes/tres-cantos/fisioterapia-espalda",
       title: "Dolor de espalda",
       text: "Dolor lumbar, cervical o dorsal, reciente o de larga evolución.",
       imageAlt: "Exploración de la columna lumbar en consulta de fisioterapia",
     },
     {
       slug: "lesion-rodilla",
+      href: "/sedes/tres-cantos/fisioterapia-rodilla",
       title: "Lesión de rodilla",
       text: "Dolor y limitación de rodilla, con readaptación progresiva a su actividad.",
       imageAlt: "Valoración de la movilidad de la rodilla en camilla",
@@ -217,6 +229,7 @@ export const conditions = {
     },
     {
       slug: "atm",
+      href: "/servicios#atm",
       title: "ATM",
       text: "Dolor mandibular, chasquidos y limitación al abrir la boca.",
       imageAlt:
