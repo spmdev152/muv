@@ -36,7 +36,7 @@ export const elCanaveralPilates: SedeServiceContent = {
     {
       id: "para-quien",
       eyebrow: "¿Es para usted?",
-      title: "Para quién es el pilates en El Cañaveral",
+      title: "Para quién está indicado el pilates en El Cañaveral",
       intro: [],
       subsections: [
         {
@@ -269,7 +269,7 @@ export const elCanaveralPilates: SedeServiceContent = {
     },
     {
       id: "antes-de-empezar",
-      title: "Cuándo consultar con su médico o su matrona",
+      title: "Pilates en el embarazo: cuándo parar y consultar con su matrona",
       intro: [
         {
           type: "p",

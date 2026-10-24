@@ -94,7 +94,7 @@ export const elCanaveralSueloPelvico: SedeServiceContent = {
     },
     {
       id: "embarazo-y-postparto",
-      title: "Embarazo y postparto: cuándo empezar",
+      title: "Suelo pélvico en el embarazo y el postparto: cuándo empezar",
       intro: [
         {
           type: "p",
@@ -164,7 +164,7 @@ export const elCanaveralSueloPelvico: SedeServiceContent = {
     },
     {
       id: "tecnologia",
-      title: "Diatermia y otras tecnologías, junto al ejercicio",
+      title: "Diatermia de suelo pélvico y otras tecnologías, junto al ejercicio",
       intro: [
         {
           type: "p",
@@ -217,7 +217,7 @@ export const elCanaveralSueloPelvico: SedeServiceContent = {
     },
     {
       id: "como-es-una-sesion",
-      title: "Cómo es la primera sesión de suelo pélvico",
+      title: "Valoración del suelo pélvico: cómo es la primera sesión",
       intro: [
         {
           type: "p",
@@ -229,7 +229,7 @@ export const elCanaveralSueloPelvico: SedeServiceContent = {
     },
     {
       id: "quien-le-atiende",
-      title: "Quién le atiende",
+      title: "Quién trata su suelo pélvico",
       intro: [
         {
           type: "p",
@@ -310,7 +310,7 @@ export const elCanaveralSueloPelvico: SedeServiceContent = {
     },
     {
       id: "cuando-consultar-antes-con-su-medico",
-      title: "Cuándo conviene consultar antes con su médico",
+      title: "Embarazo y postparto: señales para ir al médico o a urgencias",
       intro: [
         {
           type: "p",
@@ -344,7 +344,7 @@ export const elCanaveralSueloPelvico: SedeServiceContent = {
           "Valora la musculatura del suelo pélvico y de la zona que lo rodea. Trata las disfunciones con ejercicio, técnicas manuales y tecnología, y enseña a contraer y a relajar bien.",
       },
       {
-        question: "¿Cuántas sesiones hacen falta?",
+        question: "¿Cuántas sesiones de suelo pélvico hacen falta?",
         answer:
           "Depende del motivo de consulta, de cuánto tiempo lleva y de su evolución. Con la valoración se fija el plan.",
       },

@@ -33,7 +33,7 @@ export const tresCantosDeportiva: SedeServiceContent = {
     {
       id: "que-tratamos",
       eyebrow: "Motivos de consulta",
-      title: "Lesiones deportivas que tratamos en Tres Cantos",
+      title: "Lesiones deportivas más frecuentes que tratamos en Tres Cantos",
       intro: [
         {
           type: "p",
@@ -106,7 +106,7 @@ export const tresCantosDeportiva: SedeServiceContent = {
     },
     {
       id: "como-trabajamos",
-      title: "De la valoración a la vuelta al deporte: cuatro fases",
+      title: "Fases de la readaptación deportiva: de la valoración a la vuelta al deporte",
       intro: [
         {
           type: "p",
@@ -232,7 +232,7 @@ export const tresCantosDeportiva: SedeServiceContent = {
     },
     {
       id: "cuando-puedo-volver-a-entrenar",
-      title: "¿Cuándo puedo volver a entrenar? Criterios, no fechas",
+      title: "¿Cuándo volver a entrenar después de una lesión? Criterios, no fechas",
       intro: [
         {
           type: "p",
@@ -280,7 +280,7 @@ export const tresCantosDeportiva: SedeServiceContent = {
     },
     {
       id: "quien-le-atiende",
-      title: "Quién le atiende",
+      title: "Quién trata su lesión deportiva",
       intro: [
         {
           type: "p",
@@ -360,7 +360,7 @@ export const tresCantosDeportiva: SedeServiceContent = {
     },
     {
       id: "cuando-consultar-antes-con-su-medico",
-      title: "Cuándo conviene consultar antes con su médico",
+      title: "Lesiones deportivas: cuándo ir antes al médico o a urgencias",
       intro: [
         {
           type: "p",
@@ -393,7 +393,7 @@ export const tresCantosDeportiva: SedeServiceContent = {
           "La valoración de la lesión, el tratamiento del dolor y del tejido, y la readaptación: fuerza y gesto deportivo hasta la vuelta. Según el caso se añaden ecografía y técnicas guiadas.",
       },
       {
-        question: "¿Cuántas sesiones necesito?",
+        question: "¿Cuántas sesiones de fisioterapia son necesarias para una lesión deportiva?",
         answer:
           "Depende de la lesión, de lo grave que sea y de su forma física de partida. Con la valoración hecha, se plantea el plan.",
       },

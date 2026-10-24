@@ -83,7 +83,7 @@ export const elCanaveralFuncional: SedeServiceContent = {
     },
     {
       id: "personal-o-en-grupo",
-      title: "Personal o en grupo: cómo elegir",
+      title: "Entrenamiento personal o en grupo: cómo elegir",
       intro: [],
       subsections: [
         {
@@ -276,7 +276,7 @@ export const elCanaveralFuncional: SedeServiceContent = {
     },
     {
       id: "antes-de-empezar",
-      title: "Antes de empezar: cuándo consultar con su médico",
+      title: "Antes de entrenar: cuándo hablar con su médico",
       intro: [
         {
           type: "p",
