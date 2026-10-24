@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { Location } from "@/lib/locations";
+import { whatsappUrl, type Location } from "@/lib/locations";
 import {
   ArrowRight,
   Clock,
@@ -29,9 +29,9 @@ type Props = {
   /** Nivel del encabezado. `/sedes` usa H3 dentro de su H2 de sección. */
   headingAs?: "h2" | "h3";
   /**
-   * The phone numbers in `locations.ts` disagree with the four sources MUV
-   * publishes. Pages built from the approved copy pass `false` until the
-   * client confirms which one is right.
+   * Pages built from the approved copy pass `false` where their document does
+   * not publish the phone. A location without a confirmed phone in
+   * `locations.ts` never shows it (#33).
    */
   showPhone?: boolean;
 };
@@ -49,6 +49,7 @@ export function LocationCard({
   headingAs: Heading = "h3",
   showPhone = true,
 }: Props) {
+  const whatsapp = showPhone ? whatsappUrl(location) : undefined;
   return (
     // `h-full flex flex-col`: en una fila de dos, la rejilla estira el
     // contenedor pero la tarjeta se quedaba a la altura de su texto, y las dos
@@ -87,9 +88,9 @@ export function LocationCard({
             {hours}
           </p>
         )}
-        {showPhone && (
+        {whatsapp && (
           <a
-            href={location.whatsappUrl}
+            href={whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 flex items-center gap-2 text-sm text-cream/70 transition-colors hover:text-gold-400"

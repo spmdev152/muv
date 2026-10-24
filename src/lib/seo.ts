@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
-import { locations, type Location } from "@/lib/locations";
+import { locations, phoneIntl, type Location } from "@/lib/locations";
 
 /** Builds consistent Metadata with canonical + Open Graph + Twitter. */
 export function buildMetadata({
@@ -30,8 +30,14 @@ export function buildMetadata({
   return {
     // Con `rawTitle` el título se publica tal cual, saltándose la plantilla
     // `%s · MUV` del layout raíz: si no, el sufijo se añadiría por segunda vez
-    // y los títulos aprobados se pasarían de los caracteres contados.
-    title: rawTitle ? { absolute: rawTitle } : fullTitle,
+    // y los títulos aprobados se pasarían de los caracteres contados. Sin
+    // `rawTitle`, el título va sin sufijo y lo pone la plantilla, una sola vez
+    // (#32); la portada no pasa por la plantilla.
+    title: rawTitle
+      ? { absolute: rawTitle }
+      : path === "/"
+        ? { absolute: fullTitle }
+        : title,
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -106,9 +112,9 @@ function geoCoordinates(location: Location) {
  * Tres campos se omiten a propósito mientras MUV no facilite el dato, porque un
  * schema que contradice a Google Business resta en vez de sumar:
  *
- * - `telephone`: el de El Cañaveral en `locations.ts` no coincide con ninguna
- *   de las cuatro fuentes que MUV publica. El de Tres Cantos ya está
- *   confirmado (14/10/2026), pero se declarará cuando lo estén los dos.
+ * - `telephone`: sale de `location.phone`, que en El Cañaveral va sin definir
+ *   hasta que MUV confirme el número (#33). El de Tres Cantos está confirmado
+ *   desde el 14/10/2026 y se declara (#51).
  * - `openingHoursSpecification`: sale de `location.openingHours`, que en El
  *   Cañaveral va sin definir hasta que se resuelva si cierra a las 21:00 o a
  *   las 22:00.
@@ -129,6 +135,7 @@ export function clinicJsonLd(
     "@id": `${site.url}/sedes/${location.slug}#clinic`,
     name: location.name,
     url: `${site.url}/sedes/${location.slug}`,
+    telephone: phoneIntl(location),
     email: location.email,
     // La portada y las seis fotos de la galería: en búsqueda local las imágenes
     // pesan. PENDIENTE MUV: confirmar qué muestra cada una — la primera de Tres

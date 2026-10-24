@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Metodología",
   description:
-    "La metodología MUV: valoración, plan personalizado, tratamiento y prevención. Así trabajamos para tu recuperación.",
+    "La metodología MUV: valoración, plan personalizado, tratamiento y prevención. Así trabajamos para su recuperación.",
   path: "/sobre-nosotros/metodologia",
 });
 
@@ -16,22 +16,22 @@ const steps = [
   {
     n: "01",
     title: "Valoración inicial",
-    text: "Dedicamos tiempo a escuchar tu caso y a explorar en profundidad. Cuando es necesario, empleamos ecografía para afinar el diagnóstico funcional.",
+    text: "Dedicamos tiempo a escuchar su caso y a explorar en profundidad. Cuando es necesario, empleamos ecografía para afinar el diagnóstico funcional.",
   },
   {
     n: "02",
     title: "Plan de tratamiento personalizado",
-    text: "Diseñamos un plan a tu medida, con objetivos claros y un calendario realista. Te explicamos cada paso para que entiendas tu proceso.",
+    text: "Diseñamos un plan a su medida, con objetivos claros y un calendario realista. Le explicamos cada paso para que entienda su proceso.",
   },
   {
     n: "03",
     title: "Tratamiento activo",
-    text: "Combinamos terapia manual, técnicas instrumentales (neuromodulación, diatermia) y ejercicio terapéutico supervisado, ajustando según tu evolución.",
+    text: "Combinamos terapia manual, técnicas instrumentales (neuromodulación, diatermia) y ejercicio terapéutico supervisado, ajustando según su evolución.",
   },
   {
     n: "04",
     title: "Prevención y alta",
-    text: "Te damos las herramientas para mantener los resultados y evitar recaídas. El alta llega cuando recuperas tu actividad con seguridad.",
+    text: "Le damos las herramientas para mantener los resultados y evitar recaídas. El alta llega cuando recupera su actividad con seguridad.",
   },
 ];
 

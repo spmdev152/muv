@@ -12,15 +12,15 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Sobre nosotros",
   description:
-    "Conoce MUV: nuestra filosofía, nuestros valores y la forma en que entendemos la fisioterapia. Eficaces, eficientes y empáticos.",
+    "Conozca MUV: nuestra filosofía, nuestros valores y la forma en que entendemos la fisioterapia. Eficaces, eficientes y empáticos.",
   path: "/sobre-nosotros",
 });
 
 const values = [
   { title: "Rigor clínico", text: "Tratamientos basados en la evidencia y formación continua del equipo." },
   { title: "Trato humano", text: "Escuchamos y acompañamos. Cada persona y cada caso son únicos." },
-  { title: "Tecnología", text: "Ecografía, neuromodulación y diatermia al servicio de tu recuperación." },
-  { title: "Resultados", text: "Objetivos claros, revisables y orientados a tu vuelta a la actividad." },
+  { title: "Tecnología", text: "Ecografía, neuromodulación y diatermia al servicio de su recuperación." },
+  { title: "Resultados", text: "Objetivos claros, revisables y orientados a su vuelta a la actividad." },
 ];
 
 export default function SobreNosotrosPage() {
@@ -55,19 +55,19 @@ export default function SobreNosotrosPage() {
               <div className="mt-6 space-y-5 text-lg leading-relaxed text-ink-soft">
                 <p>
                   En MUV creemos que la fisioterapia va mucho más allá de tratar
-                  un síntoma. Nuestro objetivo es entender qué te ocurre, por
-                  qué te ocurre y acompañarte hasta que recuperes tu calidad de
+                  un síntoma. Nuestro objetivo es entender qué le ocurre, por
+                  qué le ocurre y acompañarle hasta que recupere su calidad de
                   vida.
                 </p>
                 <p>
                   Combinamos un diagnóstico riguroso, tecnología de vanguardia y
                   un trato cercano. Eficaces, eficientes y, sobre todo,
-                  empáticos: esa es nuestra forma de cuidarte en nuestras dos
+                  empáticos: esa es nuestra forma de cuidarle en nuestras dos
                   sedes de Madrid.
                 </p>
               </div>
               <Button href="/sobre-nosotros/metodologia" className="mt-8">
-                Descubre nuestra metodología
+                Descubra nuestra metodología
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>

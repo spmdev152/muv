@@ -290,8 +290,11 @@ export const locationsSection = {
       blurb:
         "Nuestra cartera más amplia: fisioterapia general y deportiva, entrenamiento terapéutico, Pilates, diatermia, neuromodulación y las áreas de suelo pélvico, embarazo, postparto y pediatría.",
       address: "C. Victoria Kent, Local 8 · 28052 Madrid (Vicálvaro)",
+      // PENDIENTE MUV: la hora de cierre (#35). El documento dice 22:00 y el
+      // perfil de Google, 21:00: hasta que se confirme, sin horas, como en sus
+      // páginas de servicio y en `locations.ts`.
       hours:
-        "Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00",
+        "De lunes a viernes, por la mañana y por la tarde, y los sábados por la mañana",
       ctaLabel: "Ver MUV El Cañaveral",
       imageAlt: "Interior de la clínica MUV El Cañaveral, en Vicálvaro",
     },
@@ -366,9 +369,11 @@ export const faqs = [
   {
     // Hasta el 14/10/2026 decía que las dos clínicas tenían el mismo horario.
     // Desde que Tres Cantos tiene el suyo, cada sede va por separado.
+    // PENDIENTE MUV: el horario de El Cañaveral (#35). Va sin horas hasta que
+    // se confirme la de cierre.
     question: "¿Abren los sábados?",
     answer:
-      "Sí, las dos clínicas abren los sábados por la mañana: El Cañaveral de 10:00 a 14:00 y Tres Cantos de 9:00 a 14:00. De lunes a viernes, El Cañaveral abre de 10:00 a 14:00 y de 16:00 a 22:00, y Tres Cantos de 10:00 a 14:00 y de 16:00 a 21:00.",
+      "Sí, las dos clínicas abren los sábados por la mañana: Tres Cantos, de 9:00 a 14:00. De lunes a viernes, El Cañaveral abre por la mañana y por la tarde, y Tres Cantos de 10:00 a 14:00 y de 16:00 a 21:00.",
   },
 ] as const;
 
