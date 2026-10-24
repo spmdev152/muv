@@ -1,7 +1,7 @@
 /**
  * Copy aprobada de `/sedes/tres-cantos`.
  *
- * Fuente: `docs/contenidos/sede-tres-cantos.md` (versión 10, cerrada). Ese
+ * Fuente: `docs/contenidos/sede-tres-cantos.md` (versión 10.2, cerrada). Ese
  * documento manda sobre el código: no editar nada de aquí sin actualizarlo.
  *
  * Esta página defiende «fisioterapia Tres Cantos» y tiene prohibido repetir el
@@ -27,7 +27,7 @@ export const tresCantos: SedeContent = {
   hero: {
     title:
       "Fisioterapia en Tres Cantos: valoración, tratamiento y ejercicio terapéutico",
-    lede: "En MUV Tres Cantos tratamos el dolor y la lesión musculoesquelética y deportiva, y acompañamos la recuperación con ejercicio pautado por fisioterapeutas. Empezamos siempre por una valoración: primero entendemos de dónde viene la molestia y después decidimos el tratamiento. Atendemos hasta las nueve de la noche de lunes a viernes y los sábados por la mañana, para que tratarse no dependa de pedir permiso en el trabajo.",
+    lede: "En MUV Tres Cantos tratamos el dolor y la lesión musculoesquelética y deportiva, y acompañamos la recuperación con ejercicio pautado por su fisioterapeuta. Empezamos siempre por una valoración: primero entendemos de dónde viene la molestia y después decidimos el tratamiento. Atendemos hasta las nueve de la noche de lunes a viernes y los sábados por la mañana, para que tratarse no dependa de pedir permiso en el trabajo.",
     strip: [
       {
         label: "Hasta las 21:00",
@@ -146,12 +146,17 @@ export const tresCantos: SedeContent = {
 
   team: {
     eyebrow: "Quién le atiende",
-    title: "Nuestro equipo de fisioterapeutas en Tres Cantos",
-    lede: "Quien le atiende en esta clínica es siempre un fisioterapeuta colegiado.",
-    // PENDIENTE MUV: nombre, foto, número de colegiado y áreas de cada
-    // fisioterapeuta. Cinco competidores del municipio publican los suyos: es
-    // lo normal, no un extra. Sin número de colegiado el bloque pierde la mitad
-    // de su valor, así que las fichas no se maquetan.
+    // v10.2: en esta clínica atiende un solo fisioterapeuta (#36, #37). El H2
+    // es el encabezado reservado de la página: «fisioterapeuta en Tres Cantos».
+    title: "Su fisioterapeuta en Tres Cantos",
+    lede: "En esta clínica le atiende José Luis González Coronado, fisioterapeuta colegiado.",
+    // PENDIENTE MUV: foto y áreas de trabajo de José Luis González Coronado.
+    members: [
+      {
+        name: "José Luis González Coronado",
+        role: "Fisioterapeuta colegiado n.º 15502",
+      },
+    ],
     // PENDIENTE MUV: nombre del responsable sanitario. Es un dato del propio
     // registro y en El Cañaveral ya lo tenemos.
     // PENDIENTE MUV: confirmar el inglés, declarado en su ficha de Doctoralia.

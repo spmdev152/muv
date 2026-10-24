@@ -14,7 +14,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Nuestro equipo de fisioterapeutas",
   description:
-    "Conoce al equipo de fisioterapeutas de MUV: profesionales especializados en fisioterapia, suelo pélvico, deportiva y pediátrica en Madrid.",
+    "Conozca al equipo de fisioterapeutas de MUV: profesionales especializados en fisioterapia, suelo pélvico, deportiva y pediátrica en Madrid.",
   path: "/profesionales",
 });
 
@@ -40,8 +40,8 @@ export default function ProfesionalesPage() {
     <>
       <PageHero
         eyebrow="Profesionales"
-        title="Las personas que cuidan de ti"
-        description="Un equipo especializado, en formación continua y comprometido con tu recuperación."
+        title="Las personas que cuidan de usted"
+        description="Un equipo especializado, en formación continua y comprometido con su recuperación."
         crumbs={[{ label: "Profesionales", href: "/profesionales" }]}
       />
 

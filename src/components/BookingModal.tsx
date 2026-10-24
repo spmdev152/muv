@@ -3,7 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { MapPin, ArrowRight, Whatsapp, X } from "@/components/ui/icons";
-import { locations } from "@/lib/locations";
+import { locations, whatsappUrl } from "@/lib/locations";
 
 type Props = {
   open: boolean;
@@ -12,7 +12,8 @@ type Props = {
 
 /**
  * Booking modal: picks the location and sends the visitor to its Doctoralia
- * (each location has its own), with WhatsApp as a secondary path.
+ * (each location has its own), with WhatsApp as a secondary path where the
+ * phone number is confirmed (#33).
  *
  * Sobre `<dialog>` + `showModal()`. El navegador aporta la capa superior (no
  * hace falta portal ni z-index contra el header), el `aria-modal`, el foco
@@ -83,35 +84,40 @@ export function BookingModal({ open, onClose }: Props) {
       </p>
 
       <div className="mt-6 space-y-4">
-        {locations.map((location, i) => (
-          <div
-            key={location.slug}
-            className={`rise${i > 0 ? " rise-2" : ""} rounded-2xl border border-olive-900/10 bg-white p-5`}
-          >
-            <h3 className="font-display text-lg text-olive-700">
-              {location.shortName}
-            </h3>
-            <p className="mt-1 flex items-center gap-1.5 text-xs text-ink-soft">
-              <MapPin className="h-3.5 w-3.5 shrink-0 text-gold-600" />
-              {location.street}, {location.postalCode} {location.city}
-            </p>
-            <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3">
-              <Button href={location.bookingUrl} external size="sm">
-                Reservar en Doctoralia
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-              <a
-                href={location.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-olive-700 transition-colors hover:text-gold-700"
-              >
-                <Whatsapp className="h-4 w-4" />
-                WhatsApp
-              </a>
+        {locations.map((location, i) => {
+          const whatsapp = whatsappUrl(location);
+          return (
+            <div
+              key={location.slug}
+              className={`rise${i > 0 ? " rise-2" : ""} rounded-2xl border border-olive-900/10 bg-white p-5`}
+            >
+              <h3 className="font-display text-lg text-olive-700">
+                {location.shortName}
+              </h3>
+              <p className="mt-1 flex items-center gap-1.5 text-xs text-ink-soft">
+                <MapPin className="h-3.5 w-3.5 shrink-0 text-gold-600" />
+                {location.street}, {location.postalCode} {location.city}
+              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3">
+                <Button href={location.bookingUrl} external size="sm">
+                  Reservar en Doctoralia
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+                {whatsapp && (
+                  <a
+                    href={whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-olive-700 transition-colors hover:text-gold-700"
+                  >
+                    <Whatsapp className="h-4 w-4" />
+                    WhatsApp
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </dialog>
   );

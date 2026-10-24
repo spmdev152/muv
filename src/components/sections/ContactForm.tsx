@@ -38,7 +38,7 @@ export function ContactForm({ to = site.email }: { to?: string }) {
         name="mensaje"
         required
         rows={5}
-        placeholder="¿En qué podemos ayudarte?"
+        placeholder="¿En qué podemos ayudarle?"
         className={field}
       />
       <div className="flex items-center gap-4">
@@ -47,12 +47,12 @@ export function ContactForm({ to = site.email }: { to?: string }) {
         </Button>
         {sent && (
           <span className="text-sm text-olive-600">
-            Se abrirá tu cliente de correo para completar el envío.
+            Se abrirá su cliente de correo para completar el envío.
           </span>
         )}
       </div>
       <p className="text-xs text-ink-soft">
-        Al enviar aceptas nuestra política de privacidad. Te responderemos lo
+        Al enviar acepta nuestra política de privacidad. Le responderemos lo
         antes posible.
       </p>
     </form>
