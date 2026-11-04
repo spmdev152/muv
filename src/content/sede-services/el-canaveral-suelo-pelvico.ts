@@ -77,7 +77,7 @@ export const elCanaveralSueloPelvico: SedeServiceContent = {
             {
               type: "p",
               text:
-                "Separación de los músculos rectos del abdomen, frecuente tras el embarazo. Una revisión de 2025 asocia el ejercicio abdominal con una menor distancia entre los rectos, aunque con certeza baja.",
+                "Separación de los músculos rectos del abdomen, frecuente tras el embarazo. Una revisión de 2025 asocia el ejercicio abdominal con una menor distancia entre los rectos.",
             },
           ],
         },
@@ -139,7 +139,7 @@ export const elCanaveralSueloPelvico: SedeServiceContent = {
                 ],
                 [
                   "De los 3 meses al año",
-                  "Seguir entrenando el suelo pélvico: una revisión de 2025 con 65 estudios concluye, con certeza moderada, que reduce la probabilidad de incontinencia urinaria. La OMS recomienda al menos 150 minutos de actividad aeróbica moderada a la semana y ejercicios de fuerza variados.",
+                  "Seguir entrenando el suelo pélvico, que ayuda a prevenir la incontinencia urinaria. La OMS recomienda al menos 150 minutos de actividad aeróbica moderada a la semana y ejercicios de fuerza variados.",
                 ],
               ],
             },
@@ -179,7 +179,7 @@ export const elCanaveralSueloPelvico: SedeServiceContent = {
             {
               type: "p",
               text:
-                "Corrientes de radiofrecuencia que calientan los tejidos desde dentro, para aliviar el dolor y la tensión muscular. La evidencia en suelo pélvico es todavía escasa. Un ensayo aleatorizado de 2026 incluyó a 44 mujeres con dolor pélvico crónico y musculatura muy tensa, con aplicación intravaginal. Añadir diatermia al tratamiento habitual redujo el dolor más que un tratamiento simulado, sin efectos adversos.",
+                "Corrientes de radiofrecuencia que calientan los tejidos desde dentro, para aliviar el dolor y la tensión muscular. Se aplica junto al ejercicio, cuando la valoración lo indica.",
             },
           ],
         },
@@ -361,7 +361,7 @@ export const elCanaveralSueloPelvico: SedeServiceContent = {
       {
         question: "¿Para qué sirve la diatermia en el suelo pélvico?",
         answer:
-          "Para aliviar el dolor y la tensión muscular. Un ensayo pequeño de 2026, con aplicación intravaginal, la encontró útil en el dolor pélvico crónico con tensión del suelo pélvico. Hacen falta más estudios.",
+          "Para aliviar el dolor y la tensión muscular del suelo pélvico. Se aplica junto al ejercicio, cuando la valoración lo indica.",
       },
       {
         question: "¿La diatermia tiene contraindicaciones?",

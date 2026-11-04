@@ -24,7 +24,7 @@ export const tresCantosDeportiva: SedeServiceContent = {
       "Una lesión no termina cuando se acaba el dolor: termina cuando vuelve a entrenar con confianza. En MUV Tres Cantos hacemos fisioterapia deportiva y readaptación: valoramos su lesión, la tratamos y trabajamos con usted hasta la vuelta al deporte. Combinamos ecografía musculoesquelética, técnicas invasivas guiadas, terapia manual y ejercicio.",
     essentials: [
       "Lesiones deportivas, de la valoración a la vuelta al entrenamiento.",
-      "Ecografía, neuromodulación percutánea ecoguiada, EPTE, punción seca y electropunción, terapia manual, ejercicio terapéutico, fuerza y readaptación.",
+      "Ecografía, neuromodulación percutánea ecoguiada, electrólisis percutánea, punción seca y electropunción, terapia manual, ejercicio terapéutico, fuerza y readaptación.",
       "El ejercicio es el pilar; el resto de técnicas lo acompañan.",
       "Le atiende un fisioterapeuta colegiado, el mismo de principio a fin.",
     ],
@@ -184,17 +184,17 @@ export const tresCantosDeportiva: SedeServiceContent = {
             {
               type: "p",
               text:
-                "Una aguja muy fina, junto a un nervio y guiada con ecografía, transmite una corriente de baja intensidad. Se utiliza como apoyo en algunos dolores que no ceden con el tratamiento habitual. Es una técnica reciente y la investigación todavía es limitada: por eso se considera un complemento y no un tratamiento único.",
+                "Una aguja muy fina, junto a un nervio y guiada con ecografía, transmite una corriente de baja intensidad. Se utiliza como apoyo en algunos dolores que no ceden con el tratamiento habitual, y se combina con el ejercicio.",
             },
           ],
         },
         {
-          title: "Electrólisis percutánea (EPTE)",
+          title: "Electrólisis percutánea",
           blocks: [
             {
               type: "p",
               text:
-                "Una aguja guiada con ecografía aplica una corriente galvánica de baja intensidad sobre un tejido alterado, sobre todo un tendón. Una revisión de 2024 concluyó que parece reducir el dolor en las tendinopatías, con una certeza entre baja y moderada: hacen falta más estudios.",
+                "Una aguja guiada con ecografía aplica una corriente galvánica de baja intensidad sobre un tejido alterado, sobre todo un tendón. Se utiliza en las tendinopatías para aliviar el dolor, y se combina con el ejercicio de carga.",
             },
           ],
         },
@@ -204,7 +204,7 @@ export const tresCantosDeportiva: SedeServiceContent = {
             {
               type: "p",
               text:
-                "Una aguja fina, sin inyectar nada, en un punto muy sensible del músculo para aliviar el dolor y la tensión. En la electropunción se añade una corriente suave. En el dolor cervical con puntos gatillo, una revisión de 2020 halló evidencia entre baja y moderada de alivio a corto plazo.",
+                "Una aguja fina, sin inyectar nada, en un punto muy sensible del músculo para aliviar el dolor y la tensión. En la electropunción se añade una corriente suave.",
             },
           ],
         },
@@ -214,7 +214,7 @@ export const tresCantosDeportiva: SedeServiceContent = {
             {
               type: "p",
               text:
-                "Masaje, movilizaciones y técnicas sobre músculos y articulaciones para aliviar el dolor y ganar movilidad. En el dolor lumbar y en el dolor femoropatelar, las guías la sitúan como complemento del ejercicio, no como sustituto.",
+                "Masaje, movilizaciones y técnicas sobre músculos y articulaciones para aliviar el dolor y ganar movilidad. Acompaña al ejercicio; no lo sustituye.",
             },
           ],
         },
@@ -224,7 +224,7 @@ export const tresCantosDeportiva: SedeServiceContent = {
             {
               type: "p",
               text:
-                "Es el pilar. Una revisión de seis ensayos asocia más entrenamiento de fuerza con menos lesiones deportivas: la fuerza no solo recupera, también protege. En la clínica también hay clases de [entrenamiento funcional supervisado en Tres Cantos](/sedes/tres-cantos/entrenamiento-funcional).",
+                "Es el pilar: la fuerza no solo recupera, también protege frente a nuevas lesiones. En la clínica también hay clases de [entrenamiento funcional supervisado en Tres Cantos](/sedes/tres-cantos/entrenamiento-funcional).",
             },
           ],
         },
@@ -420,7 +420,7 @@ export const tresCantosDeportiva: SedeServiceContent = {
       {
         question: "¿Qué pasa después de una punción seca?",
         answer:
-          "Es frecuente un pequeño sangrado o un moratón en el punto de la aguja, y a veces molestia en la zona. En un estudio con unos 20.500 tratamientos, declarados por los propios fisioterapeutas, el 37 % tuvo algún efecto leve. Los graves fueron alrededor de uno por cada mil. Si algo le preocupa, avísenos.",
+          "Es frecuente un pequeño sangrado o un moratón en el punto de la aguja, y a veces molestia en la zona. Los efectos graves son muy poco frecuentes. Si algo le preocupa, avísenos.",
       },
       {
         question: "¿Qué debo llevar a la primera cita?",

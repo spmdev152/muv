@@ -164,7 +164,7 @@ export const tresCantosRodilla: SedeServiceContent = {
             {
               type: "p",
               text:
-                "Es la base que recomiendan el consenso sobre el dolor femoropatelar y la guía NICE de artrosis. Se parte de una carga que usted tolere y se sube de forma progresiva.",
+                "Es la base del tratamiento de la rodilla. Se parte de una carga que usted tolere y se sube de forma progresiva.",
             },
           ],
         },
@@ -184,7 +184,7 @@ export const tresCantosRodilla: SedeServiceContent = {
             {
               type: "p",
               text:
-                "En la rodilla se utiliza como complemento del ejercicio, cuando la valoración lo indica. Es una técnica reciente y la investigación todavía es limitada.",
+                "En la rodilla se utiliza para aliviar el dolor que persiste, como complemento del ejercicio y cuando la valoración lo indica.",
             },
           ],
         },
