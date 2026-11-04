@@ -145,7 +145,7 @@ export const elCanaveralPilates: SedeServiceContent = {
             {
               type: "p",
               text:
-                "Una revisión de 2025 reunió 11 estudios con 538 embarazadas. Asoció el pilates con un parto más corto y con menos dolor durante el parto. Cada uno de esos resultados se apoya en solo dos estudios. La calidad de los estudios es desigual: en ocho de los once no estaba claro el riesgo de sesgo.",
+                "Una revisión de 2025 reunió 11 estudios con 538 embarazadas. Asoció el pilates con un parto más corto y con menos dolor durante el parto.",
             },
           ],
         },

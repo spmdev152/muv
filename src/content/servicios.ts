@@ -114,7 +114,7 @@ export const modules: ServiceModule[] = [
       {
         id: "neuromodulacion",
         title: "Neuromodulación",
-        text: "La neuromodulación percutánea estimula un nervio con una corriente eléctrica suave, a través de una aguja fina que se coloca viendo el nervio en la ecografía. Se emplea para modular el dolor que se mantiene en el tiempo. Todavía hay pocos estudios sobre ella, así que en general se usa junto a otros tratamientos, nunca sola.",
+        text: "La neuromodulación percutánea estimula un nervio con una corriente eléctrica suave, a través de una aguja fina que se coloca viendo el nervio en la ecografía. Se emplea para modular el dolor que se mantiene en el tiempo, y en general se combina con el ejercicio y con otros tratamientos.",
         where: [
           {
             ...EL_CANAVERAL,
