@@ -75,6 +75,16 @@ export const elCanaveralInvasivaEcografia: SedeServiceContent = {
             },
           ],
         },
+        {
+          title: "Medimos su progreso: la ecografía, revisión a revisión",
+          blocks: [
+            {
+              type: "p",
+              text:
+                "La ecografía no solo sirve para empezar. Cuando una lesión hay que vigilarla de cerca —una rotura muscular, un ligamento o un tendón dañado—, volvemos a hacerla cada semana, cada dos semanas o una vez al mes. Registramos cada imagen y cada medida, y las ponemos al lado de las anteriores para ajustar el tratamiento a cómo evoluciona el tejido.",
+            },
+          ],
+        },
       ],
     },
     {

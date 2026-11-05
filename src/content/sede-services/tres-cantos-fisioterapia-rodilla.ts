@@ -145,6 +145,16 @@ export const tresCantosRodilla: SedeServiceContent = {
             },
           ],
         },
+        {
+          title: "Medimos su progreso: ecografía de los ligamentos y tendones de la rodilla",
+          blocks: [
+            {
+              type: "p",
+              text:
+                "Si su lesión necesita un seguimiento cercano —un ligamento lateral, el tendón rotuliano o una rotura en el músculo del muslo—, la controlamos con ecografía a intervalos que van de una vez por semana a una al mes, según el caso. Guardamos cada medición y la cotejamos con la anterior para ver cómo evoluciona su rodilla. El ligamento cruzado anterior apenas se ve en la ecografía: en su caso, el progreso se mide con la exploración y las pruebas de fuerza.",
+            },
+          ],
+        },
       ],
     },
     {

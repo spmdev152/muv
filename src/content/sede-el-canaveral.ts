@@ -126,7 +126,7 @@ export const elCanaveral: SedeContent = {
         href: "/servicios#fisioterapia-deportiva",
         paragraphs: [
           {
-            text: "Tendinopatías, esguinces, sobrecargas de entrenamiento, roturas de fibras y vuelta a la actividad después de una cirugía, con el informe del hospital.",
+            text: "Tendinopatías, esguinces, sobrecargas de entrenamiento, roturas de fibras y vuelta a la actividad después de una cirugía, con el informe del hospital. Las roturas de fibras y las lesiones de ligamento las controlamos con ecografías periódicas, para medir cómo avanzan.",
           },
         ],
       },
