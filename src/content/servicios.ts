@@ -95,7 +95,7 @@ export const modules: ServiceModule[] = [
       {
         id: "fisioterapia-invasiva-ecografia",
         title: "Fisioterapia invasiva y ecografía",
-        text: "La ecografía musculoesquelética permite ver el músculo o el tendón mientras se valora, y seguir la aguja en la pantalla durante el tratamiento. Así se guían las dos técnicas con aguja, punción seca y neuromodulación percutánea: quien trata ve en todo momento dónde está la punta.",
+        text: "La ecografía musculoesquelética permite ver el músculo o el tendón mientras se valora, y seguir la aguja en la pantalla durante el tratamiento. Así se guían las dos técnicas con aguja, punción seca y neuromodulación percutánea: quien trata ve en todo momento dónde está la punta. También sirve para el seguimiento: en las lesiones que lo necesitan, la ecografía se repite y se compara con la anterior para medir el progreso.",
         where: [
           {
             ...EL_CANAVERAL,

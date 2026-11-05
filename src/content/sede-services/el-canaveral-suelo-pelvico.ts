@@ -72,12 +72,12 @@ export const elCanaveralSueloPelvico: SedeServiceContent = {
           ],
         },
         {
-          title: "Diástasis abdominal",
+          title: "Diástasis abdominal: medimos su progreso con ecografía",
           blocks: [
             {
               type: "p",
               text:
-                "Separación de los músculos rectos del abdomen, frecuente tras el embarazo. Una revisión de 2025 asocia el ejercicio abdominal con una menor distancia entre los rectos.",
+                "Separación de los músculos rectos del abdomen, frecuente tras el embarazo. Medimos la distancia entre los rectos con ecografía y repetimos la medición durante el tratamiento, para comparar y ver cómo evoluciona. Una revisión de 2025 asocia el ejercicio abdominal con una menor distancia entre los rectos.",
             },
           ],
         },

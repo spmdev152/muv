@@ -18,9 +18,9 @@
 export const meta = {
   /** 60 caracteres. Se publica literal, sin la plantilla «· MUV» del layout. */
   title: "Clínica MUV | Fisioterapia y ejercicio terapéutico en Madrid",
-  /** 149 caracteres. */
+  /** 144 caracteres. */
   description:
-    "Clínica de fisioterapia, fisioterapia deportiva y ejercicio terapéutico en El Cañaveral y Tres Cantos. Centro sanitario registrado. Pida cita en MUV.",
+    "Fisioterapia, fisioterapia deportiva y ejercicio terapéutico en El Cañaveral y Tres Cantos. Medimos su progreso con ecografía. Pida cita en MUV.",
 } as const;
 
 /**
@@ -39,7 +39,7 @@ export const hero = {
     accent: "Fisioterapia y ejercicio terapéutico",
     after: " en Madrid.",
   },
-  lede: "Combinamos fisioterapia, terapia manual y ejercicio terapéutico según lo que necesita cada caso, siempre a partir de una valoración clínica. Dos clínicas en El Cañaveral y Tres Cantos.",
+  lede: "Combinamos fisioterapia, terapia manual y ejercicio terapéutico según lo que necesita cada caso, siempre a partir de una valoración clínica, y medimos su progreso de principio a fin. Dos clínicas en El Cañaveral y Tres Cantos.",
   secondaryCta: { label: "Ver nuestros servicios", href: "/servicios" },
   // La figura del hero no lleva texto alternativo: es un fotograma decorativo
   // de la columna 3D, no aporta nada que no digan ya el H1 y el lede. La foto
@@ -238,10 +238,17 @@ export const conditions = {
   ],
 } as const;
 
-/** Módulo 6 · Metodología */
+/**
+ * Módulo 3 · Medimos su progreso
+ *
+ * Sustituye al antiguo módulo «Metodología» y sube al tercer lugar, después de
+ * la franja de confianza (#57, validado por MUV el 5/11/2026).
+ */
 export const method = {
-  eyebrow: "Metodología MUV",
-  title: "Cómo trabajamos: de la valoración fisioterápica al alta",
+  eyebrow: "Nuestro método",
+  title: "Medimos su progreso: valoración, ecografía y seguimiento hasta el alta",
+  intro:
+    "En las lesiones que necesitan un seguimiento cercano —roturas musculares o de ligamento, diástasis abdominal, lesiones de rodilla o de hombro— no damos por hecho que va mejor: lo medimos. Trabajamos así en las dos clínicas.",
   imageAlt: "Equipo de fisioterapeutas de Clínica MUV en consulta",
   cta: {
     label: "Conocer nuestra metodología",
@@ -250,18 +257,18 @@ export const method = {
   steps: [
     {
       n: "01",
-      title: "Valoración",
-      text: "Exploramos el movimiento y la función, y fijamos un punto de partida medible.",
+      title: "Valoramos y medimos",
+      text: "Exploramos el movimiento y la función y, cuando está indicado, vemos la lesión con ecografía. Ese es el punto de partida.",
     },
     {
       n: "02",
-      title: "Plan de tratamiento",
-      text: "Objetivos concretos y las herramientas adecuadas para su caso, no un protocolo cerrado.",
+      title: "Un seguimiento para cada lesión",
+      text: "No hay un calendario fijo: según la lesión, repetimos la ecografía cada semana, cada quince días o cada mes.",
     },
     {
       n: "03",
-      title: "Tratamiento",
-      text: "Terapia manual, técnicas específicas y ejercicio terapéutico, ajustados según evoluciona.",
+      title: "Comparamos en cada sesión",
+      text: "Cada medición queda registrada. En cada sesión la comparamos con las anteriores, le explicamos cómo evoluciona y ajustamos el tratamiento.",
     },
     {
       n: "04",

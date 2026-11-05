@@ -155,6 +155,16 @@ export const tresCantosDeportiva: SedeServiceContent = {
             },
           ],
         },
+        {
+          title: "Medimos su progreso con ecografía: roturas fibrilares y de ligamento",
+          blocks: [
+            {
+              type: "p",
+              text:
+                "En las lesiones que piden un seguimiento cercano, como una rotura fibrilar o una lesión de ligamento, repetimos la ecografía con una frecuencia semanal, quincenal o mensual, según lo que pida la lesión. Cada imagen queda registrada y, sesión a sesión, la contrastamos con las anteriores: así vemos cómo se recupera el tejido y decidimos con datos cuándo avanzar de fase.",
+            },
+          ],
+        },
       ],
     },
     {
