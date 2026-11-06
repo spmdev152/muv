@@ -6,28 +6,25 @@
 - **Encabezados:** 1 H1 + 9 H2 + 12 H3
 
 **Title SEO** (58 caracteres)
-`Fisioterapia en Tres Cantos hasta las 22 h y sábados | MUV`
+`Fisioterapia en Tres Cantos hasta las 21 h y sábados | MUV`
 
 **Meta description** (149 caracteres)
-`Clínica de fisioterapia en Tres Cantos: valoramos antes de tratar. Abrimos hasta las 22:00 de lunes a viernes y los sábados por la mañana. Pida cita.`
+`Clínica de fisioterapia en Tres Cantos: valoramos antes de tratar. Abrimos hasta las 21:00 de lunes a viernes y los sábados por la mañana. Pida cita.`
 
 > **Convención de este documento:** lo marcado <span style="color:#c0392b">**en rojo**</span> es un dato que MUV todavía no ha facilitado. **No se maqueta, no se rellena con algo parecido y no se inventa.** Si un módulo depende de un dato rojo, ese módulo espera.
 
 ---
 
-## ⚠ Esta página tiene 16 datos pendientes
+## ⚠ Esta página tiene 13 datos pendientes
 
 | Módulo | Qué falta |
 |---|---|
 | **Hero** | <span style="color:#c0392b">zona de atención. La que había escrita —Tres Cantos, Soto de Viñuelas y Colmenar Viejo— estaba deducida por proximidad geográfica en un mapa, no facilitada por MUV. Se retira hasta que la digan ellos</span> |
-| **Hero** | <span style="color:#c0392b">614 13 14 05 — el que publican la web actual, Doctoralia e Instagram. locations.ts dice 658 59 76 02 y no coincide con ninguna. Pendiente de que MUV confirme</span> |
-| **Equipo y acreditación** | <span style="color:#c0392b">nombre, foto, número de colegiado y áreas de trabajo de cada fisioterapeuta de Tres Cantos. En las opiniones verificadas de Doctoralia de agosto de 2026 aparece atendiendo José González; hay que confirmar la plantilla completa. Sin número de colegiado el bloque pierde la mitad de su valor</span> |
-| **Equipo y acreditación** | <span style="color:#c0392b">número de registro sanitario de Tres Cantos</span> |
+| **Equipo y acreditación** | <span style="color:#c0392b">foto y áreas de trabajo de José Luis González Coronado</span> |
 | **Equipo y acreditación** | <span style="color:#c0392b">nombre del responsable sanitario de esta clínica. Es un dato del propio registro y en El Cañaveral ya lo tenemos</span> |
 | **Equipo y acreditación** | <span style="color:#c0392b">confirmar. Aparece declarado en la ficha de Doctoralia de esta clínica</span> |
 | **Instalaciones** | <span style="color:#c0392b">el ecógrafo. La ficha de Doctoralia de esta clínica lo declara como equipamiento, y la home ya aprobada describe la neuromodulación como «ecoguiada», lo que implica que hay uno. Falta decidir dos cosas distintas: (1) si se nombra explícitamente como equipamiento —es con lo que abren Motriz, Fisio 3 Cantos y Centro Vitruvio— y (2) si se ofrece la ecografía como servicio, que NO está en el catálogo aprobado y no puede venderse hasta que MUV lo confirme</span> |
 | **Opiniones** | <span style="color:#c0392b">dos o tres testimonios reales anonimizados de esta clínica. El documento de arranque los aprueba anonimizados. No se inventan</span> |
-| **Cómo llegar** | <span style="color:#c0392b">614 13 14 05 — es el que publican la web actual, Doctoralia, Google Business e Instagram. locations.ts dice otro número y no coincide con ninguna de las cuatro. Pendiente de que MUV lo confirme</span> |
 | **Cómo llegar** | <span style="color:#c0392b">dónde aparcar — si hay zona libre en la calle, aparcamiento cercano o plaza propia. Es el dato más importante de este módulo</span> |
 | **Cómo llegar** | <span style="color:#c0392b">qué línea y en qué parada bajarse</span> |
 | **Cómo llegar** | <span style="color:#c0392b">con qué autobús urbano se enlaza desde la estación</span> |
@@ -46,19 +43,19 @@
 > Fisioterapia en Tres Cantos: valoración, tratamiento y ejercicio terapéutico
 
 **Entradilla**
-> En MUV Tres Cantos tratamos el dolor y la lesión musculoesquelética y deportiva, y acompañamos la recuperación con ejercicio pautado por fisioterapeutas. Empezamos siempre por una valoración: primero entendemos de dónde viene la molestia y después decidimos el tratamiento. **Atendemos hasta las diez de la noche de lunes a viernes y los sábados por la mañana**, para que tratarse no dependa de pedir permiso en el trabajo.
+> En MUV Tres Cantos tratamos el dolor y la lesión musculoesquelética y deportiva, y acompañamos la recuperación con ejercicio pautado por su fisioterapeuta. Empezamos siempre por una valoración: primero entendemos de dónde viene la molestia y después decidimos el tratamiento. **Atendemos hasta las nueve de la noche de lunes a viernes y los sábados por la mañana**, para que tratarse no dependa de pedir permiso en el trabajo.
 
 **Franja de disponibilidad** *(tira de tres columnas bajo el titular, sin encabezado — es el elemento visual de la página)*
 
 | | | |
 |---|---|---|
-| **Hasta las 22:00** | **Sábados por la mañana** | **Cita online** |
-| De lunes a viernes, con la última sesión al salir de trabajar. | De 10:00 a 14:00, para lo que no cabe entre semana. | Reserve día y hora sin llamar. |
+| **Hasta las 21:00** | **Sábados por la mañana** | **Cita online** |
+| De lunes a viernes, con la última sesión al salir de trabajar. | De 9:00 a 14:00, para lo que no cabe entre semana. | Reserve día y hora sin llamar. |
 
 **Ficha de contacto** *(bajo la franja)*
-> **Av. de Madrid, 19, Local 5 · 28760 Tres Cantos**
+> **Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos**
 > <span style="color:#c0392b">`[PENDIENTE MUV: zona de atención. La que había escrita —Tres Cantos, Soto de Viñuelas y Colmenar Viejo— estaba deducida por proximidad geográfica en un mapa, no facilitada por MUV. Se retira hasta que la digan ellos]`</span>
-> **Teléfono:** <span style="color:#c0392b">**614 13 14 05** — el que publican la web actual, Doctoralia e Instagram. `locations.ts` dice **658 59 76 02** y no coincide con ninguna. Pendiente de que MUV confirme</span>
+> **Teléfono:** **614 13 14 05** *(confirmado por MUV el 14/10/2026)*
 
 **Botones**
 > `[Pedir cita]` · `[Cómo llegar]` *(ancla al módulo 8)*
@@ -138,16 +135,17 @@
 
 **Eyebrow:** Quién le atiende
 **H2**
-> Nuestro equipo de fisioterapeutas en Tres Cantos
+> Su fisioterapeuta en Tres Cantos
 
 **Entradilla**
-> Quien le atiende en esta clínica es siempre un fisioterapeuta colegiado.
+> En esta clínica le atiende José Luis González Coronado, fisioterapeuta colegiado.
 
-**Fichas del equipo**
-> <span style="color:#c0392b">`[PENDIENTE MUV: nombre, foto, número de colegiado y áreas de trabajo de cada fisioterapeuta de Tres Cantos. En las opiniones verificadas de Doctoralia de agosto de 2026 aparece atendiendo José González; hay que confirmar la plantilla completa. Sin número de colegiado el bloque pierde la mitad de su valor]`</span>
+**Ficha del fisioterapeuta**
+> **José Luis González Coronado** · Fisioterapeuta colegiado n.º 15502
+> <span style="color:#c0392b">`[PENDIENTE MUV: foto y áreas de trabajo de José Luis González Coronado]`</span>
 
 **Acreditación** *(tira de datos bajo las fichas)*
-> **Centro sanitario registrado:** <span style="color:#c0392b">`[PENDIENTE MUV: número de registro sanitario de Tres Cantos]`</span>
+> **Centro sanitario registrado:** CS 21018, en el registro de centros sanitarios de la Comunidad de Madrid.
 > **Responsable sanitario:** <span style="color:#c0392b">`[PENDIENTE MUV: nombre del responsable sanitario de esta clínica. Es un dato del propio registro y en El Cañaveral ya lo tenemos]`</span>
 > **Idiomas:** español e inglés. <span style="color:#c0392b">`[PENDIENTE MUV: confirmar. Aparece declarado en la ficha de Doctoralia de esta clínica]`</span>
 
@@ -189,18 +187,18 @@
 > Cómo llegar a nuestra clínica de fisioterapia de Tres Cantos
 
 **Ficha**
-> **Dirección:** Av. de Madrid, 19, Local 5 · 28760 Tres Cantos, Madrid
-> **Teléfono:** <span style="color:#c0392b">**614 13 14 05** — es el que publican la web actual, Doctoralia, Google Business e Instagram. `locations.ts` dice otro número y no coincide con ninguna de las cuatro. Pendiente de que MUV lo confirme</span>
+> **Dirección:** Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos, Madrid
+> **Teléfono:** **614 13 14 05** *(confirmado por MUV el 14/10/2026)*
 > **En coche:** salida de la **M-607**. <span style="color:#c0392b">`[PENDIENTE MUV: dónde aparcar — si hay zona libre en la calle, aparcamiento cercano o plaza propia. Es el dato más importante de este módulo]`</span>
 > **En autobús:** líneas interurbanas **712, 713, 716 y 717** desde Plaza de Castilla, y los autobuses urbanos de Tres Cantos. <span style="color:#c0392b">`[PENDIENTE MUV: qué línea y en qué parada bajarse]`</span>
 > **En tren:** estación de Tres Cantos, **línea C-4 de Cercanías** (Chamartín, Sol y Atocha en directo), a unos **3 km** de la clínica. <span style="color:#c0392b">`[PENDIENTE MUV: con qué autobús urbano se enlaza desde la estación]`</span>
 > **Accesibilidad:** <span style="color:#c0392b">`[PENDIENTE MUV: entrada a pie de calle o con escalón, ascensor y aseo adaptado. Baja aquí desde las preguntas frecuentes, que es donde el lector la busca de verdad]`</span>
 
 **H3**
-> Horario de la clínica: tardes hasta las 22:00 y sábados por la mañana
+> Horario de la clínica: tardes hasta las 21:00 y sábados por la mañana
 
 **Texto**
-> Abrimos de **lunes a viernes de 10:00 a 14:00 y de 16:00 a 22:00**, y los **sábados de 10:00 a 14:00**. Puede consultar los huecos disponibles y reservar desde la agenda en línea.
+> Abrimos de **lunes a viernes de 10:00 a 14:00 y de 16:00 a 21:00**, y los **sábados de 9:00 a 14:00**. Puede consultar los huecos disponibles y reservar desde la agenda en línea.
 
 **Mapa** *(incrustado, bajo la ficha)*
 

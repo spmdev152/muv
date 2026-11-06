@@ -1,4 +1,10 @@
-# SEDE TRES CANTOS — versión 10.1 *(cerrada)*
+# SEDE TRES CANTOS — versión 10.2 *(cerrada)*
+
+*__La v10.2 (14/10/2026) pasa a singular lo que hablaba de un equipo.__ En esta clínica atiende un solo fisioterapeuta (#37), y la página no puede presentar un equipo que no existe. Cambia solo esto:*
+
+- *__H2 del módulo 5:__ «Nuestro equipo de fisioterapeutas en Tres Cantos» → **«Su fisioterapeuta en Tres Cantos»**. Además gana en SEO: la búsqueda es «fisioterapeuta en Tres Cantos», en singular, y ahora va literal dentro del encabezado.*
+- *__Entradilla y ficha del módulo 5:__ con nombre y número de colegiado, **José Luis González Coronado, colegiado n.º 15502**. Lo facilitó el dueño el 6/10/2026 y coincide con su ficha pública de Doctoralia, donde figura como «José González». Se usa el nombre completo, como en las ocho páginas de servicio. Quedan en rojo la foto y las áreas de trabajo.*
+- *__Entradilla del hero:__ «ejercicio pautado por fisioterapeutas» → «ejercicio pautado por su fisioterapeuta».*
 
 *__La v10.1 (14/10/2026) aplica los datos definitivos que ha confirmado MUV.__ No cambia nada editorial: solo datos, en todos los sitios donde aparecen (#37).*
 
@@ -34,7 +40,7 @@
 - **Keyword principal:** fisioterapia en Tres Cantos
 - **Keywords de apoyo:** fisioterapeuta en Tres Cantos, clínica de fisioterapia Tres Cantos, fisioterapia deportiva Tres Cantos, entrenamiento terapéutico Tres Cantos
 - **NO compite por:** «Clínica MUV» (es de la home) ni «clínicas de fisioterapia en Madrid» (es de `/sedes`)
-- **Extensión:** **1.203 palabras publicables hoy** — lo que se puede llevar a la web ahora mismo, sin contar nada de lo pendiente de MUV. Contadas con el contador corregido del 17/08/2026, el mismo para los cuatro documentos. **Sustituye a las 1.329 que declaraban las versiones anteriores**, que eran una cifra inflada; el detalle está en las notas de producción. Los pendientes suman entre 150 y 250 palabras más. Por encima de la guía de 700–900 del documento de arranque
+- **Extensión:** **1.231 palabras publicables hoy** *(v10.2; eran 1.203 en la v10)* — lo que se puede llevar a la web ahora mismo, sin contar nada de lo pendiente de MUV. Contadas con el contador corregido del 17/08/2026, el mismo para los cuatro documentos. **Sustituye a las 1.329 que declaraban las versiones anteriores**, que eran una cifra inflada; el detalle está en las notas de producción. Los pendientes suman entre 150 y 250 palabras más. Por encima de la guía de 700–900 del documento de arranque
 - **Encabezados:** 1 H1 + 9 H2 + 12 H3. El municipio va en los diez de nivel 1 y 2, y en ninguno de los H3
 - **Método:** competencia auditada sobre el HTML de trece dominios · formulaciones de búsqueda tomadas del autocompletado público de Google (España, español) · datos del municipio, del Ayuntamiento de Tres Cantos
 - **Trato:** usted · **Voz:** «En MUV…» (nosotros) · **Precios:** no se publican
@@ -71,7 +77,7 @@
 | Opiniones | 3 testimonios de marca | total sumado | **las 158 de esta clínica, sin comparar con la otra** |
 | FAQ | 6 de fisioterapia | 6 de elegir clínica | **5 que solo tienen sentido en esta clínica** |
 
-**Y la regla que ya estaba escrita:** los encabezados `Fisioterapia en Tres Cantos`, `Nuestro equipo de fisioterapeutas en Tres Cantos`, `Cómo llegar a nuestra clínica de Tres Cantos` y `Opiniones sobre la clínica de Tres Cantos` **estaban reservados para esta página desde el documento de `/sedes`**. Aquí se gastan. Ninguna otra página del sitio puede volver a usarlos.
+**Y la regla que ya estaba escrita:** los encabezados `Fisioterapia en Tres Cantos`, `Fisioterapeuta en Tres Cantos` *(desde la v10.2 va dentro de «Su fisioterapeuta en Tres Cantos», que sustituye a `Nuestro equipo de fisioterapeutas en Tres Cantos`)*, `Cómo llegar a nuestra clínica de Tres Cantos` y `Opiniones sobre la clínica de Tres Cantos` **estaban reservados para esta página desde el documento de `/sedes`**. Aquí se gastan. Ninguna otra página del sitio puede volver a usarlos.
 
 ---
 
@@ -81,7 +87,7 @@
 > Fisioterapia en Tres Cantos: valoración, tratamiento y ejercicio terapéutico
 
 **Entradilla**
-> En MUV Tres Cantos tratamos el dolor y la lesión musculoesquelética y deportiva, y acompañamos la recuperación con ejercicio pautado por fisioterapeutas. Empezamos siempre por una valoración: primero entendemos de dónde viene la molestia y después decidimos el tratamiento. **Atendemos hasta las nueve de la noche de lunes a viernes y los sábados por la mañana**, para que tratarse no dependa de pedir permiso en el trabajo.
+> En MUV Tres Cantos tratamos el dolor y la lesión musculoesquelética y deportiva, y acompañamos la recuperación con ejercicio pautado por su fisioterapeuta. Empezamos siempre por una valoración: primero entendemos de dónde viene la molestia y después decidimos el tratamiento. **Atendemos hasta las nueve de la noche de lunes a viernes y los sábados por la mañana**, para que tratarse no dependa de pedir permiso en el trabajo.
 
 **Franja de disponibilidad** *(tira de tres columnas bajo el titular, sin encabezado — es el elemento visual de la página)*
 
@@ -250,16 +256,18 @@
 
 **Eyebrow:** Quién le atiende
 **H2**
-> Nuestro equipo de fisioterapeutas en Tres Cantos
+> Su fisioterapeuta en Tres Cantos
 
 **Entradilla**
-> Quien le atiende en esta clínica es siempre un fisioterapeuta colegiado.
+> En esta clínica le atiende José Luis González Coronado, fisioterapeuta colegiado.
 
 *__Aviso de maquetación:__ la entradilla decía «Quien le atiende… Estos son.» y **«Estos son» anunciaba una lista que hoy no existe**, porque las fichas del equipo están pendientes de MUV. Una frase que presenta algo que viene después no puede publicarse si lo que viene después está en rojo. Cuando lleguen las fichas, esa coletilla puede volver.*
 
-**Fichas del equipo**
-> **Plantilla:** en esta clínica atiende **un solo fisioterapeuta, José González** *(confirmado por MUV el 14/10/2026)*. El resto del equipo es de El Cañaveral.
-> <span style="color:#c0392b">`[PENDIENTE MUV: foto, número de colegiado y áreas de trabajo de José González. Sin número de colegiado el bloque pierde la mitad de su valor]`</span>
+**Ficha del fisioterapeuta**
+> **José Luis González Coronado** · Fisioterapeuta colegiado n.º 15502
+> <span style="color:#c0392b">`[PENDIENTE MUV: foto y áreas de trabajo de José Luis González Coronado]`</span>
+
+*__Fuentes de la ficha:__ que en esta clínica solo atiende él lo confirmó MUV el 14/10/2026 (#37). Nombre completo y número de colegiado los facilitó el dueño el 6/10/2026, y coinciden con su ficha pública de Doctoralia («José González»).*
 
 **Acreditación** *(tira de datos bajo las fichas)*
 > **Centro sanitario registrado:** CS 21018, en el registro de centros sanitarios de la Comunidad de Madrid.
@@ -417,7 +425,7 @@
 | **H2** · Servicios de fisioterapia en nuestra clínica de Tres Cantos | servicios de fisioterapia + municipio | Término comercial del sector aplicado a la sede. No choca con `/sedes` («…disponibles en cada clínica»), que compara; este desarrolla. |
 | **H3** *(×7)* · Fisioterapia · Fisioterapia deportiva · Entrenamiento terapéutico individual · …en grupo · Neuromodulación · ATM · Tratamiento de cicatrices | 7 servicios | **Nuevo en la v4.** Los nombres de las tarjetas pasan a ser encabezados. Capturan «fisioterapia deportiva», «entrenamiento terapéutico» y «neuromodulación», que eran keywords de apoyo declaradas **sin un solo encabezado detrás**. Sin municipio: ya lo lleva el H2 del módulo. |
 | **H2** · Cómo es la primera sesión de fisioterapia en MUV Tres Cantos | primera sesión de fisioterapia + marca local | Búsqueda informativa con intención de compra alta. **«MUV Tres Cantos» es nombre propio de negocio, no consulta genérica**, así que suma entidad local sin gastar otra formulación «en Tres Cantos». Sustituye al bloque de precios que aquí no se publica. |
-| **H2** · Nuestro equipo de fisioterapeutas en Tres Cantos | fisioterapeutas + Tres Cantos | Captura «fisioterapeuta en Tres Cantos», la segunda búsqueda del municipio. Encabezado reservado a esta página. |
+| **H2** · Su fisioterapeuta en Tres Cantos | fisioterapeuta + Tres Cantos | Captura «fisioterapeuta en Tres Cantos», la segunda búsqueda del municipio, **literal y en singular**. **Reescrito en la v10.2:** antes era «Nuestro equipo de fisioterapeutas en Tres Cantos», y en esta clínica atiende uno solo. Encabezado reservado a esta página. |
 | **H2** · Instalaciones y equipamiento de la clínica de Tres Cantos | instalaciones + equipamiento | Término que los tres competidores fuertes usan como reclamo. |
 | **H2** · Opiniones sobre la clínica de Tres Cantos | opiniones + municipio | «\<clínica\> opiniones» es búsqueda de decisión. Sin la palabra «pacientes», que MUV no marcó en el documento de arranque. |
 | **H2** · Cómo llegar a nuestra clínica de fisioterapia de Tres Cantos | cómo llegar + clínica de fisioterapia | Búsqueda local pura. Encabezado reservado a esta página. |
