@@ -51,8 +51,11 @@ export const clinics = {
     "el-canaveral": {
       heading: "MUV El Cañaveral",
       address: "C. Victoria Kent, Local 8 · 28052 Madrid",
+      // PENDIENTE MUV: la hora de cierre (#35). El documento dice 22:00 y el
+      // perfil de Google, 21:00: hasta que se confirme, sin horas, como en sus
+      // páginas de servicio y en `locations.ts`.
       hours:
-        "Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00",
+        "De lunes a viernes, por la mañana y por la tarde, y los sábados por la mañana",
       registry: "CS 17623",
       showPhone: false,
       facilities:

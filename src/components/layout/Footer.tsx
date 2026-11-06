@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { footerNav, site } from "@/lib/site";
-import { locations } from "@/lib/locations";
+import { hoursLine, locations, whatsappUrl } from "@/lib/locations";
 import { servicesByLocation, type NavLink } from "@/lib/nav";
 import { Logo } from "@/components/layout/Logo";
 import { Container } from "@/components/ui/Container";
@@ -21,38 +21,39 @@ export function Footer() {
             </p>
 
             <div className="mt-8 space-y-6">
-              {locations.map((location) => (
-                <div key={location.slug} className="text-sm">
-                  <p className="font-display text-lg text-gold-400">
-                    {location.shortName}
-                  </p>
-                  <p className="mt-1 flex items-start gap-2 text-cream/60">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-                    <span>
-                      {location.street}, {location.postalCode} {location.city}
-                    </span>
-                  </p>
-                  <a
-                    href={location.whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-1 flex items-center gap-2 text-cream/60 transition-colors hover:text-gold-400"
-                  >
-                    <Whatsapp className="h-4 w-4 shrink-0" />
-                    {location.phone}
-                  </a>
-                  {/* Por sede: las dos clínicas ya no tienen el mismo horario. */}
-                  <p className="mt-1 flex items-start gap-2 text-cream/60">
-                    <Clock className="mt-0.5 h-4 w-4 shrink-0" />
-                    <span>
-                      {location.hours
-                        .filter((h) => h.time !== "Cerrado")
-                        .map((h) => `${h.days} ${h.time}`)
-                        .join(" · ")}
-                    </span>
-                  </p>
-                </div>
-              ))}
+              {locations.map((location) => {
+                const whatsapp = whatsappUrl(location);
+                return (
+                  <div key={location.slug} className="text-sm">
+                    <p className="font-display text-lg text-gold-400">
+                      {location.shortName}
+                    </p>
+                    <p className="mt-1 flex items-start gap-2 text-cream/60">
+                      <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
+                      <span>
+                        {location.street}, {location.postalCode} {location.city}
+                      </span>
+                    </p>
+                    {/* Sin teléfono confirmado no hay línea, ni hueco (#33). */}
+                    {whatsapp && (
+                      <a
+                        href={whatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-1 flex items-center gap-2 text-cream/60 transition-colors hover:text-gold-400"
+                      >
+                        <Whatsapp className="h-4 w-4 shrink-0" />
+                        {location.phone}
+                      </a>
+                    )}
+                    {/* Por sede: las dos clínicas ya no tienen el mismo horario. */}
+                    <p className="mt-1 flex items-start gap-2 text-cream/60">
+                      <Clock className="mt-0.5 h-4 w-4 shrink-0" />
+                      <span>{hoursLine(location)}</span>
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
 

@@ -27,16 +27,25 @@ export type Location = {
   city: string;
   region: string;
   country: string;
-  phone: string;
-  phoneHref: string;
-  /** Contact via WhatsApp (the phone numbers are WhatsApp lines). */
-  whatsappUrl: string;
+  /**
+   * Teléfono, tal cual se publica («614 13 14 05»). Es también la línea de
+   * WhatsApp. Sin definir = MUV no lo ha confirmado: ninguna página lo muestra,
+   * ni como número ni como enlace `wa.me`, y el `MedicalClinic` no declara
+   * `telephone`. Es el único punto que hay que rellenar cuando llegue.
+   */
+  phone?: string;
   email: string;
   /** Booking via Doctoralia. Also feeds `sameAs` in the schema. */
   bookingUrl: string;
   geo: { lat: number; lng: number };
   mapEmbed: string;
-  hours: { days: string; time: string }[];
+  /**
+   * Horario por días. Sin definir = la hora de cierre está en disputa y se
+   * publica `hoursSummary` en su lugar.
+   */
+  hours?: { days: string; time: string }[];
+  /** El horario sin horas, mientras `hours` no esté confirmado. */
+  hoursSummary?: string;
   /**
    * Horario en formato schema.org, por sede y no compartido: son dos negocios
    * locales distintos. Si falta, la sede NO declara `openingHoursSpecification`.
@@ -71,12 +80,11 @@ export const locations: Location[] = [
     city: "Madrid",
     region: "Comunidad de Madrid",
     country: "ES",
-    // PENDIENTE MUV: cuatro fuentes públicas —web actual, Doctoralia, Google
-    // Business e Instagram— publican 634 47 85 44, que no coincide con este.
-    // Hasta que MUV confirme cuál es el bueno no se publica ninguno.
-    phone: "603 30 30 10",
-    phoneHref: "+34603303010",
-    whatsappUrl: "https://wa.me/34603303010",
+    // PENDIENTE MUV: el teléfono (#33). El repositorio tenía 603 30 30 10, y
+    // cuatro fuentes públicas —web actual, Doctoralia, Google Business e
+    // Instagram— publican 634 47 85 44. Hasta que MUV confirme cuál es el bueno
+    // no se publica ninguno: cuando llegue, basta con escribirlo aquí.
+    phone: undefined,
     email: "info@clinicamuv.com",
     // La ficha real es `muv-canaveral`; `clinica-muv-el-canaveral` da 404.
     bookingUrl: "https://www.doctoralia.es/clinicas/muv-canaveral",
@@ -88,15 +96,14 @@ export const locations: Location[] = [
     geo: { lat: 40.3996, lng: -3.5606 },
     mapEmbed:
       "https://www.google.com/maps?q=C.+Victoria+Kent+8,+28052+Madrid&output=embed",
-    hours: [
-      { days: "Lunes a viernes", time: "10:00–14:00 · 16:00–22:00" },
-      { days: "Sábado", time: "10:00–14:00" },
-      { days: "Domingo", time: "Cerrado" },
-    ],
-    // PENDIENTE MUV: la hora de cierre. La web dice 22:00 y el perfil de Google
-    // de esta clínica dice 21:00. Mientras no se resuelva, esta sede NO declara
-    // `openingHoursSpecification`: un schema que contradice al perfil de Google
-    // es una señal local en contra. Por eso `openingHours` va sin definir.
+    // PENDIENTE MUV: la hora de cierre (#35). La web decía 22:00 y el perfil
+    // de Google de esta clínica dice 21:00. Mientras no se resuelva, el horario
+    // se publica sin horas, igual que en sus páginas de servicio, y esta sede
+    // NO declara `openingHoursSpecification`: un schema que contradice al
+    // perfil de Google es una señal local en contra. Cuando llegue, se define
+    // `hours` (y `openingHours`) y se retira `hoursSummary`.
+    hoursSummary:
+      "De lunes a viernes, por la mañana y por la tarde, y los sábados por la mañana",
     healthRegistry: "CS 17623",
     healthManager: {
       name: "Álvaro Ortega Rienda",
@@ -135,8 +142,6 @@ export const locations: Location[] = [
     // Confirmado por MUV el 14/10/2026: es el que ya publicaban la web actual,
     // Doctoralia e Instagram. El anterior (658 59 76 02) era el erróneo.
     phone: "614 13 14 05",
-    phoneHref: "+34614131405",
-    whatsappUrl: "https://wa.me/34614131405",
     email: "info@clinicamuv.com",
     bookingUrl: "https://www.doctoralia.es/clinicas/clinica-muv-tres-cantos",
     // Corregida el 17/08/2026. La anterior (40.6019, -3.7088) caía a 1,66 km,
@@ -184,4 +189,28 @@ export const locations: Location[] = [
 
 export function getLocation(slug: string): Location | undefined {
   return locations.find((l) => l.slug === slug);
+}
+
+/** El teléfono en formato internacional, para `tel:` y para el schema. */
+export function phoneIntl(location: Location): string | undefined {
+  return location.phone && `+34 ${location.phone}`;
+}
+
+export function phoneHref(location: Location): string | undefined {
+  return location.phone && `tel:+34${location.phone.replace(/\s/g, "")}`;
+}
+
+/** Enlace de WhatsApp: los teléfonos de las sedes son líneas de WhatsApp. */
+export function whatsappUrl(location: Location): string | undefined {
+  return location.phone && `https://wa.me/34${location.phone.replace(/\s/g, "")}`;
+}
+
+/** El horario en una línea, sin el domingo cerrado. */
+export function hoursLine(location: Location): string {
+  return location.hours
+    ? location.hours
+        .filter((h) => h.time !== "Cerrado")
+        .map((h) => `${h.days} ${h.time}`)
+        .join(" · ")
+    : (location.hoursSummary ?? "");
 }

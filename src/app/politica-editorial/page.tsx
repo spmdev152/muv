@@ -29,7 +29,7 @@ const sections = [
   },
   {
     title: "Actualización y correcciones",
-    text: "Revisamos periódicamente los contenidos para mantenerlos actualizados. Si detectas un error, puedes escribirnos y lo corregiremos a la mayor brevedad.",
+    text: "Revisamos periódicamente los contenidos para mantenerlos actualizados. Si detecta un error, puede escribirnos y lo corregiremos a la mayor brevedad.",
   },
 ];
 
