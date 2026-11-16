@@ -38,7 +38,7 @@ export default function BlogPage() {
                     {doc.frontmatter.image && (
                       <Image
                         src={doc.frontmatter.image}
-                        alt={doc.frontmatter.title}
+                        alt={doc.frontmatter.imageAlt ?? doc.frontmatter.title}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25rem"
                         className="object-cover transition-transform duration-700 group-hover:scale-105"

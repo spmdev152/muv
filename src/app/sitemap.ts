@@ -60,6 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const doc of getCollection(name)) {
       entries.push({
         url: `${base}${prefix}/${doc.slug}`,
+        lastModified: doc.frontmatter.updated ?? doc.frontmatter.date,
         changeFrequency: "monthly",
         priority: 0.6,
       });

@@ -325,6 +325,7 @@ export default function HomePage() {
                     title={post.frontmatter.title}
                     date={post.frontmatter.date}
                     image={post.frontmatter.image}
+                    imageAlt={post.frontmatter.imageAlt}
                   />
                 </Reveal>
               ))}

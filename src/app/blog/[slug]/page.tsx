@@ -23,7 +23,7 @@ export async function generateMetadata({
   const doc = getDoc("blog", slug);
   if (!doc) return {};
   return buildMetadata({
-    title: doc.frontmatter.title,
+    title: doc.frontmatter.seoTitle ?? doc.frontmatter.title,
     description: doc.frontmatter.description,
     path: `/blog/${slug}`,
     image: doc.frontmatter.image,
@@ -49,6 +49,7 @@ export default async function BlogPostPage({
           title: frontmatter.title,
           description: frontmatter.description,
           date: frontmatter.date,
+          updated: frontmatter.updated,
           author: frontmatter.author,
           image: frontmatter.image,
           path: `/blog/${slug}`,
@@ -80,7 +81,7 @@ export default async function BlogPostPage({
             <div className="relative aspect-[16/9] overflow-hidden rounded-[2rem] shadow-xl shadow-olive-900/15">
               <Image
                 src={frontmatter.image}
-                alt={frontmatter.title}
+                alt={frontmatter.imageAlt ?? frontmatter.title}
                 fill
                 preload
                 loading="eager"
