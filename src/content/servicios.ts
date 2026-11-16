@@ -95,7 +95,7 @@ export const modules: ServiceModule[] = [
       {
         id: "fisioterapia-invasiva-ecografia",
         title: "Fisioterapia invasiva y ecografía",
-        text: "La ecografía musculoesquelética permite ver el músculo o el tendón mientras se valora, y seguir la aguja en la pantalla durante el tratamiento. Así se guían las dos técnicas con aguja, punción seca y neuromodulación percutánea: quien trata ve en todo momento dónde está la punta.",
+        text: "La ecografía musculoesquelética permite ver el músculo o el tendón mientras se valora, y seguir la aguja en la pantalla durante el tratamiento. Así se guían las dos técnicas con aguja, punción seca y neuromodulación percutánea: quien trata ve en todo momento dónde está la punta. También sirve para el seguimiento: en las lesiones que lo necesitan, la ecografía se repite y se compara con la anterior para medir el progreso.",
         where: [
           {
             ...EL_CANAVERAL,
@@ -114,7 +114,7 @@ export const modules: ServiceModule[] = [
       {
         id: "neuromodulacion",
         title: "Neuromodulación",
-        text: "La neuromodulación percutánea estimula un nervio con una corriente eléctrica suave, a través de una aguja fina que se coloca viendo el nervio en la ecografía. Se emplea para modular el dolor que se mantiene en el tiempo. Todavía hay pocos estudios sobre ella, así que en general se usa junto a otros tratamientos, nunca sola.",
+        text: "La neuromodulación percutánea estimula un nervio con una corriente eléctrica suave, a través de una aguja fina que se coloca viendo el nervio en la ecografía. Se emplea para modular el dolor que se mantiene en el tiempo, y en general se combina con el ejercicio y con otros tratamientos.",
         where: [
           {
             ...EL_CANAVERAL,

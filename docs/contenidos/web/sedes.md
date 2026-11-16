@@ -15,16 +15,13 @@
 
 ---
 
-## ⚠ Esta página tiene 10 datos pendientes
+## ⚠ Esta página tiene 7 datos pendientes
 
 | Módulo | Qué falta |
 |---|---|
 | **Las dos clínicas** | <span style="color:#c0392b">zona de atención. Decía «El Cañaveral, Vicálvaro y el este de Madrid», deducido por proximidad geográfica en un mapa y no facilitado por MUV. Se retira hasta que lo digan ellos</span> |
 | **Las dos clínicas** | <span style="color:#c0392b">634 47 85 44 — el que publican la web actual, Doctoralia, Google Business e Instagram. locations.ts dice 603 30 30 10 y no coincide con ninguna. Pendiente de que MUV confirme</span> |
 | **Las dos clínicas** | <span style="color:#c0392b">zona de atención. Decía «Tres Cantos, Soto de Viñuelas y Colmenar Viejo», deducido por proximidad geográfica. Se retira hasta que lo confirme MUV</span> |
-| **Las dos clínicas** | <span style="color:#c0392b">614 13 14 05 — el que publican la web actual, Doctoralia e Instagram. locations.ts dice 658 59 76 02 y no coincide con ninguna. Pendiente de que MUV confirme</span> |
-| **Las dos clínicas** | <span style="color:#c0392b">pendiente del número de registro de Tres Cantos</span> |
-| **El respaldo de las dos clínicas** | <span style="color:#c0392b">número de registro de Tres Cantos. En cuanto llegue, la frase pasa a «Las dos clínicas están inscritas…, con los números X e Y»</span> |
 | **El respaldo de las dos clínicas** | <span style="color:#c0392b">(La frase seguía «y el número de colegiado de cada profesional es público en su ficha». Se retira: hoy esas fichas no llevan el número, y publicarlo depende de que MUV facilite los datos. La frase vuelve cuando las fichas existan.)</span> |
 | **Preguntas frecuentes** | <span style="color:#c0392b">Avísenos con al menos 24 horas de antelación y le buscamos otro hueco sin coste. confirmar el plazo de aviso y si hay penalización. Redacción propuesta, no publicar sin validar</span> |
 | **Preguntas frecuentes** | <span style="color:#c0392b">sí o no, pero con respuesta. Si es sí, con qué compañías y si hace falta autorización previa; si es no, decirlo igual y explicar el reembolso, que es lo que hacen los competidores que la responden</span> |
@@ -92,7 +89,7 @@
 > Centro sanitario registrado y fisioterapeutas colegiados
 
 **Tres puntos**
-> **Centro sanitario registrado.** MUV El Cañaveral está inscrita en el registro de centros sanitarios de la Comunidad de Madrid con el número CS 17623. <span style="color:#c0392b">`[PENDIENTE MUV: número de registro de Tres Cantos. En cuanto llegue, la frase pasa a «Las dos clínicas están inscritas…, con los números X e Y»]`</span>
+> **Centro sanitario registrado.** Las dos clínicas están inscritas en el registro de centros sanitarios de la Comunidad de Madrid, con los números CS 17623 (El Cañaveral) y CS 21018 (Tres Cantos).
 > **Fisioterapeutas colegiados.** Todo el equipo está colegiado. <span style="color:#c0392b">*(La frase seguía «y el número de colegiado de cada profesional es público en su ficha». Se retira: hoy esas fichas no llevan el número, y publicarlo depende de que MUV facilite los datos. La frase vuelve cuando las fichas existan.)*</span> → `/profesionales`
 > **Más de 1.800 opiniones verificadas.** Entre las dos clínicas sumamos más de 1.800 valoraciones en Doctoralia, con una media de 5 sobre 5.
 

@@ -145,6 +145,16 @@ export const tresCantosRodilla: SedeServiceContent = {
             },
           ],
         },
+        {
+          title: "Medimos su progreso: ecografía de los ligamentos y tendones de la rodilla",
+          blocks: [
+            {
+              type: "p",
+              text:
+                "Si su lesión necesita un seguimiento cercano —un ligamento lateral, el tendón rotuliano o una rotura en el músculo del muslo—, la controlamos con ecografía a intervalos que van de una vez por semana a una al mes, según el caso. Guardamos cada medición y la cotejamos con la anterior para ver cómo evoluciona su rodilla. El ligamento cruzado anterior apenas se ve en la ecografía: en su caso, el progreso se mide con la exploración y las pruebas de fuerza.",
+            },
+          ],
+        },
       ],
     },
     {
@@ -164,7 +174,7 @@ export const tresCantosRodilla: SedeServiceContent = {
             {
               type: "p",
               text:
-                "Es la base que recomiendan el consenso sobre el dolor femoropatelar y la guía NICE de artrosis. Se parte de una carga que usted tolere y se sube de forma progresiva.",
+                "Es la base del tratamiento de la rodilla. Se parte de una carga que usted tolere y se sube de forma progresiva.",
             },
           ],
         },
@@ -184,7 +194,7 @@ export const tresCantosRodilla: SedeServiceContent = {
             {
               type: "p",
               text:
-                "En la rodilla se utiliza como complemento del ejercicio, cuando la valoración lo indica. Es una técnica reciente y la investigación todavía es limitada.",
+                "En la rodilla se utiliza para aliviar el dolor que persiste, como complemento del ejercicio y cuando la valoración lo indica.",
             },
           ],
         },

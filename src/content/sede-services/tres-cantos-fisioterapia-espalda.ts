@@ -88,7 +88,7 @@ export const tresCantosEspalda: SedeServiceContent = {
             {
               type: "p",
               text:
-                "Episodios que mejoran y reaparecen. Aquí es donde más aporta la fisioterapia: tratar el episodio y preparar la espalda para el siguiente. Una revisión Cochrane de 2010 encontró evidencia moderada de que seguir con ejercicio después del episodio ayuda a prevenir las recurrencias.",
+                "Episodios que mejoran y reaparecen. Aquí es donde más aporta la fisioterapia: tratar el episodio y preparar la espalda para el siguiente. Seguir haciendo ejercicio después del episodio ayuda a prevenir que vuelva.",
             },
           ],
         },
@@ -159,7 +159,7 @@ export const tresCantosEspalda: SedeServiceContent = {
         {
           type: "p",
           text:
-            "Las guías de lumbalgia recomiendan el ejercicio y sitúan la terapia manual solo dentro de un programa que lo incluya. Así lo planteamos: el ejercicio es el centro y lo demás lo acompaña. Las demás técnicas de la clínica se explican en la página de [fisioterapia deportiva y readaptación](/sedes/tres-cantos/fisioterapia-deportiva#tecnicas).",
+            "El ejercicio es el centro del tratamiento, y la terapia manual y las demás técnicas lo acompañan. Las demás técnicas de la clínica se explican en la página de [fisioterapia deportiva y readaptación](/sedes/tres-cantos/fisioterapia-deportiva#tecnicas).",
         },
       ],
       subsections: [
@@ -169,7 +169,7 @@ export const tresCantosEspalda: SedeServiceContent = {
             {
               type: "p",
               text:
-                "Es la base. Una revisión Cochrane analiza el ejercicio en el dolor lumbar crónico. Las guías de cuello y de espalda lo sitúan en primer lugar. Se pauta a su nivel y se sube poco a poco.",
+                "Es la base del tratamiento, tanto de la espalda como del cuello. Se pauta a su nivel y se sube poco a poco.",
             },
           ],
         },
@@ -189,7 +189,7 @@ export const tresCantosEspalda: SedeServiceContent = {
             {
               type: "p",
               text:
-                "Una aguja muy fina junto a un nervio, guiada con ecografía, para aliviar algunos dolores persistentes. Es una técnica reciente con investigación todavía limitada; se considera un complemento del ejercicio, no un tratamiento único.",
+                "Una aguja muy fina junto a un nervio, guiada con ecografía, para aliviar algunos dolores persistentes. Se utiliza como complemento del ejercicio.",
             },
           ],
         },

@@ -83,6 +83,65 @@ export default function HomePage() {
       {/* Módulo 2 · Franja de confianza */}
       <TrustStrip items={trust} />
 
+      {/* Módulo 3 · Medimos su progreso (sustituye a «Metodología», #57) */}
+      <section className="bg-cream-dark/50 py-20 md:py-28">
+        <Container size="wide">
+          {/*
+            `about.webp` es vertical (1920x2560). En un contenedor apaisado se
+            perdía casi la mitad de la foto y quedaba mucho más baja que la
+            columna de texto. En lg la imagen ocupa el alto de la fila, así que
+            las dos columnas acaban a la misma altura y el recorte es mínimo.
+          */}
+          <div className="grid gap-14 lg:grid-cols-2 lg:items-stretch">
+            <Reveal className="lg:h-full">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-xl shadow-olive-900/15 sm:aspect-[4/3] lg:aspect-auto lg:h-full">
+                <Image
+                  src="/img/about.webp"
+                  alt={method.imageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 37rem"
+                  className="object-cover"
+                />
+              </div>
+            </Reveal>
+            <div>
+              <SectionHeading
+                eyebrow={method.eyebrow}
+                title={method.title}
+                description={method.intro}
+              />
+              <div className="mt-10 space-y-8">
+                {method.steps.map((step, i) => (
+                  <Reveal key={step.n} delay={i * 0.08}>
+                    <div className="flex gap-5">
+                      <span className="font-display text-2xl text-gold-600">
+                        {step.n}
+                      </span>
+                      <div>
+                        <h3 className="text-xl text-olive-700">{step.title}</h3>
+                        <p className="mt-2 leading-relaxed text-ink-soft">
+                          {step.text}
+                        </p>
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+              <Reveal delay={0.3}>
+                <Button
+                  href={method.cta.href}
+                  variant="outline"
+                  className="mt-10"
+                >
+                  {method.cta.label}
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Reveal>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* Módulo 3 · Pilares */}
       <section className="py-20 md:py-28">
         <Container>
@@ -178,63 +237,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Módulo 6 · Metodología */}
-      <section className="bg-cream-dark/50 py-20 md:py-28">
-        <Container size="wide">
-          {/*
-            `about.webp` es vertical (1920x2560). En un contenedor apaisado se
-            perdía casi la mitad de la foto y quedaba mucho más baja que la
-            columna de texto. En lg la imagen ocupa el alto de la fila, así que
-            las dos columnas acaban a la misma altura y el recorte es mínimo.
-          */}
-          <div className="grid gap-14 lg:grid-cols-2 lg:items-stretch">
-            <Reveal className="lg:h-full">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-xl shadow-olive-900/15 sm:aspect-[4/3] lg:aspect-auto lg:h-full">
-                <Image
-                  src="/img/about.webp"
-                  alt={method.imageAlt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 37rem"
-                  className="object-cover"
-                />
-              </div>
-            </Reveal>
-            <div>
-              <SectionHeading eyebrow={method.eyebrow} title={method.title} />
-              <div className="mt-10 space-y-8">
-                {method.steps.map((step, i) => (
-                  <Reveal key={step.n} delay={i * 0.08}>
-                    <div className="flex gap-5">
-                      <span className="font-display text-2xl text-gold-600">
-                        {step.n}
-                      </span>
-                      <div>
-                        <h3 className="text-xl text-olive-700">{step.title}</h3>
-                        <p className="mt-2 leading-relaxed text-ink-soft">
-                          {step.text}
-                        </p>
-                      </div>
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
-              <Reveal delay={0.3}>
-                <Button
-                  href={method.cta.href}
-                  variant="outline"
-                  className="mt-10"
-                >
-                  {method.cta.label}
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Reveal>
-            </div>
-          </div>
-        </Container>
-      </section>
-
       {/* Módulo 7 · Sedes */}
-      <section className="py-20 md:py-28">
+      <section className="bg-cream-dark/50 py-20 md:py-28">
         <Container size="wide">
           <SectionHeading
             align="center"
@@ -274,7 +278,7 @@ export default function HomePage() {
       */}
 
       {/* Módulo 9 · Preguntas frecuentes */}
-      <section className="bg-cream-dark/50 py-20 md:py-28">
+      <section className="py-20 md:py-28">
         <Container size="narrow">
           <SectionHeading
             align="center"
@@ -289,7 +293,7 @@ export default function HomePage() {
 
       {/* Módulo 10 · Blog */}
       {posts.length > 0 && (
-        <section className="py-20 md:py-28">
+        <section className="bg-cream-dark/50 py-20 md:py-28">
           <Container size="wide">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <SectionHeading

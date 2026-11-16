@@ -85,7 +85,7 @@ export const tresCantos: SedeContent = {
             text: ", dolor que despierta por la noche al apoyarse de ese lado, tendinitis del supraespinoso, pinzamiento, hombro que se va quedando rígido y pérdida de fuerza para gestos cotidianos como alcanzar un estante o abrocharse.",
           },
           {
-            text: "El tratamiento no termina cuando deja de doler: recuperar la fuerza y el control del movimiento es lo que sostiene el resultado, y por eso el plan incluye ejercicio y no solo camilla.",
+            text: "El tratamiento no termina cuando deja de doler: recuperar la fuerza y el control del movimiento es lo que sostiene el resultado, y por eso el plan incluye ejercicio y no solo camilla. Si hay una rotura o una lesión de tendón, la seguimos con ecografía y medimos su progreso de una revisión a otra.",
           },
         ],
       },

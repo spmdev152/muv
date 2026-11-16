@@ -75,6 +75,16 @@ export const elCanaveralInvasivaEcografia: SedeServiceContent = {
             },
           ],
         },
+        {
+          title: "Medimos su progreso: la ecografía, revisión a revisión",
+          blocks: [
+            {
+              type: "p",
+              text:
+                "La ecografía no solo sirve para empezar. Cuando una lesión hay que vigilarla de cerca —una rotura muscular, un ligamento o un tendón dañado—, volvemos a hacerla cada semana, cada dos semanas o una vez al mes. Registramos cada imagen y cada medida, y las ponemos al lado de las anteriores para ajustar el tratamiento a cómo evoluciona el tejido.",
+            },
+          ],
+        },
       ],
     },
     {
@@ -95,7 +105,7 @@ export const elCanaveralInvasivaEcografia: SedeServiceContent = {
             {
               type: "p",
               text:
-                "Se introduce una aguja delgada en un punto contracturado del músculo, sin inyectar fármacos, para soltar la tensión y calmar el dolor. En el dolor cervical con puntos gatillo, una revisión de 2020 halló evidencia entre baja y moderada de alivio a corto plazo.",
+                "Se introduce una aguja delgada en un punto contracturado del músculo, sin inyectar fármacos, para soltar la tensión y calmar el dolor.",
             },
           ],
         },
@@ -105,7 +115,7 @@ export const elCanaveralInvasivaEcografia: SedeServiceContent = {
             {
               type: "p",
               text:
-                "Con la aguja cerca de un nervio y a la vista en la pantalla, se aplica una corriente muy suave. Se busca modular la señal del dolor. Es una técnica reciente y hay pocos estudios: por eso se considera un complemento y no un tratamiento único.",
+                "Con la aguja cerca de un nervio y a la vista en la pantalla, se aplica una corriente muy suave. Se busca modular la señal del dolor, y se combina con el ejercicio y con el resto del tratamiento.",
             },
           ],
         },
@@ -193,7 +203,7 @@ export const elCanaveralInvasivaEcografia: SedeServiceContent = {
             {
               type: "p",
               text:
-                "En el punto de la aguja puede salir una gota de sangre o un moratón, y la zona puede quedar sensible. Es lo más habitual. En un estudio con unos 20.500 tratamientos de punción seca, declarados por los propios fisioterapeutas, el 37 % tuvo algún efecto leve. Los graves fueron alrededor de uno por cada mil.",
+                "En el punto de la aguja puede salir una gota de sangre o un moratón, y la zona puede quedar sensible. Es lo más habitual, y suele ser leve. Los efectos graves son muy poco frecuentes.",
             },
           ],
         },
@@ -364,12 +374,12 @@ export const elCanaveralInvasivaEcografia: SedeServiceContent = {
       {
         question: "¿Qué riesgos tiene la punción seca?",
         answer:
-          "Los efectos más habituales son leves: sangrado en el punto de la aguja, moratón o dolor durante la técnica. En un estudio con unos 20.500 tratamientos, declarados por fisioterapeutas, el 37 % tuvo algún efecto leve. Los graves fueron alrededor de uno por cada mil. Por eso conviene avisar antes de un embarazo, de los anticoagulantes o de una infección.",
+          "Los efectos más habituales son leves: sangrado en el punto de la aguja, moratón o dolor durante la técnica. Los graves son muy poco frecuentes. Aun así, conviene avisar antes de un embarazo, de los anticoagulantes o de una infección.",
       },
       {
         question: "¿Cuánto dura el efecto de la punción seca?",
         answer:
-          "Depende de cada persona y del problema. En el dolor cervical con puntos gatillo, una revisión de 2020 halló evidencia entre baja y moderada de alivio a corto plazo.",
+          "Depende de cada persona y del problema. Se valora en cada caso y se combina con el ejercicio.",
       },
     ],
   },
