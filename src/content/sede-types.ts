@@ -91,7 +91,7 @@ export type SedeContent = {
     title: string;
     facts: { label: string; value: string }[];
     hoursHeading: string;
-    /** Sin definir = la hora de cierre está en disputa y no se publica. */
+    /** Sin definir = no se publica el horario. */
     hoursText?: string;
     bookingNote: string;
     mapAlt: string;

@@ -3,7 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { MapPin, ArrowRight, Whatsapp, X } from "@/components/ui/icons";
-import { locations, whatsappUrl } from "@/lib/locations";
+import { fullAddress, locations, whatsappUrl } from "@/lib/locations";
 
 type Props = {
   open: boolean;
@@ -96,7 +96,7 @@ export function BookingModal({ open, onClose }: Props) {
               </h3>
               <p className="mt-1 flex items-center gap-1.5 text-xs text-ink-soft">
                 <MapPin className="h-3.5 w-3.5 shrink-0 text-gold-600" />
-                {location.street}, {location.postalCode} {location.city}
+                {fullAddress(location)}
               </p>
               <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3">
                 <Button href={location.bookingUrl} external size="sm">

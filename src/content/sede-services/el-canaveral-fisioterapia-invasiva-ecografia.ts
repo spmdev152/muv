@@ -5,11 +5,12 @@
  * Fuente: `docs/contenidos/MUV-WEB-EL-CANAVERAL-INVASIVA-ECOGRAFIA.pdf` (#43), texto
  * literal. Lo que el PDF marca en rojo no está aquí.
  *
- * El teléfono no aparece en «Dónde estamos»: está en rojo hasta que MUV lo
- * confirme (#33). Tampoco la hora de cierre (#35).
+ * El teléfono y el horario de «Dónde estamos» los confirmó MUV el 16/11/2026
+ * (#58).
  */
 
 import type { SedeServiceContent } from "@/content/sede-service-types";
+import { addressOf } from "@/lib/locations";
 
 export const elCanaveralInvasivaEcografia: SedeServiceContent = {
   location: "el-canaveral",
@@ -387,8 +388,9 @@ export const elCanaveralInvasivaEcografia: SedeServiceContent = {
     id: "donde-estamos",
     title: "Dónde estamos y cuándo abrimos",
     details: [
-      "**MUV El Cañaveral** · C. Victoria Kent, Local 8 · 28052 Madrid *(El Cañaveral, distrito de Vicálvaro)*",
-      "**Horario:** atendemos de lunes a viernes, por la mañana y por la tarde, y los sábados por la mañana. Para el horario exacto, llame a la clínica o pida cita.",
+      `**MUV El Cañaveral** · ${addressOf("el-canaveral")}`,
+      "**Horario:** de lunes a viernes, de 9:00 a 21:00; los sábados, de 9:00 a 14:00. Los domingos cerramos.",
+      "**Teléfono:** 634 47 85 44",
     ],
     directions:
       "Hay una parada de autobús muy cerca de la puerta. Los detalles están en la página de [MUV El Cañaveral](/sedes/el-canaveral#como-llegar).",

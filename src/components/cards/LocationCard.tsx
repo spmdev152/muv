@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { whatsappUrl, type Location } from "@/lib/locations";
+import { fullAddress, whatsappUrl, type Location } from "@/lib/locations";
 import {
   ArrowRight,
   Clock,
@@ -78,7 +78,7 @@ export function LocationCard({
           <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
           {address ?? (
             <>
-              {location.street}, {location.postalCode} {location.city}
+              {fullAddress(location)}
             </>
           )}
         </p>

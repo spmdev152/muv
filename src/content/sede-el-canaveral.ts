@@ -15,6 +15,7 @@
  */
 
 import type { SedeContent } from "@/content/sede-types";
+import { addressOf } from "@/lib/locations";
 
 export const elCanaveral: SedeContent = {
   meta: {
@@ -29,9 +30,7 @@ export const elCanaveral: SedeContent = {
     title:
       "Fisioterapia en El Cañaveral, Madrid: valoración, tratamiento y ejercicio terapéutico",
     lede: "En MUV El Cañaveral tratamos el dolor y la lesión musculoesquelética y deportiva, y además reunimos las áreas que no están en nuestra otra clínica: suelo pélvico, embarazo, postparto, fisioterapia pediátrica, Pilates terapéutico y diatermia. Empezamos siempre por una valoración: primero entendemos de dónde viene la molestia y después decidimos el tratamiento.",
-    // Franja de garantías. La columna del horario va sin hora de cierre: el
-    // perfil de Google de esta clínica publica 21:00 y la web publica 22:00.
-    // PENDIENTE MUV: la hora de cierre.
+    // Franja de garantías.
     strip: [
       {
         label: "Centro sanitario registrado",
@@ -40,16 +39,14 @@ export const elCanaveral: SedeContent = {
       },
       {
         label: "Horario de mañana y tarde",
-        value: "De lunes a viernes y también los sábados por la mañana.",
+        value: "De lunes a viernes, de 9:00 a 21:00, y los sábados de 9:00 a 14:00.",
       },
       { label: "Cita online", value: "Reserve día y hora sin llamar." },
     ],
-    address: "C. Victoria Kent, Local 8 · 28052 Madrid (El Cañaveral, distrito de Vicálvaro)",
+    address: addressOf("el-canaveral"),
     // PENDIENTE MUV: zona de atención. La que había —El Cañaveral, Vicálvaro y
     // el este de Madrid— se dedujo mirando un mapa. Aquí importa más que en
     // Tres Cantos porque el barrio linda con Coslada y San Fernando de Henares.
-    // PENDIENTE MUV: el teléfono. Cuatro fuentes públicas dicen 634 47 85 44 y
-    // `locations.ts` dice otro. No se publica ninguno.
     imageAlt:
       "Sala de tratamiento de la clínica de fisioterapia MUV en El Cañaveral",
   },
@@ -231,8 +228,7 @@ export const elCanaveral: SedeContent = {
     facts: [
       {
         label: "Dirección",
-        value:
-          "C. Victoria Kent, Local 8 · 28052 Madrid — barrio de El Cañaveral, distrito de Vicálvaro.",
+        value: addressOf("el-canaveral"),
       },
       {
         label: "En metro o Cercanías",
@@ -247,12 +243,9 @@ export const elCanaveral: SedeContent = {
       // PENDIENTE MUV: accesibilidad — entrada a pie de calle o con escalón,
       // ascensor y aseo adaptado.
     ],
-    hoursHeading: "Horario de la clínica: mañanas, tardes y sábados",
-    // PENDIENTE MUV: la hora de cierre. El perfil de Google de esta clínica
-    // publica que cierra a las 21:00 y la web publica las 22:00. Hasta que se
-    // decida cuál es la buena no se publica el horario ni se declara
-    // `openingHoursSpecification` — ver `locations.ts`.
-    hoursText: undefined,
+    hoursHeading: "Horario de la clínica: de 9:00 a 21:00 y sábados por la mañana",
+    hoursText:
+      "Abrimos de lunes a viernes de 9:00 a 21:00, y los sábados de 9:00 a 14:00.",
     bookingNote:
       "Puede consultar los huecos disponibles y reservar desde la agenda en línea.",
     mapAlt:

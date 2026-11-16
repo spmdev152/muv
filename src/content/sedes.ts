@@ -14,6 +14,8 @@
  * inventa.
  */
 
+import { addressOf } from "@/lib/locations";
+
 export const meta = {
   /** 57 caracteres. */
   title: "Nuestras clínicas de fisioterapia en Madrid | Clínica MUV",
@@ -40,9 +42,7 @@ export const hero = {
  * Vicálvaro y el este de Madrid» y «Tres Cantos, Soto de Viñuelas y Colmenar
  * Viejo»— se dedujo por proximidad en un mapa y no la facilitó MUV.
  *
- * PENDIENTE MUV: el teléfono de El Cañaveral. Cuatro fuentes públicas
- * contradicen a `locations.ts`, así que su ficha va sin teléfono. El de Tres
- * Cantos lo confirmó MUV el 14/10/2026 y ya se publica.
+ * Teléfonos, direcciones y horarios confirmados por MUV el 16/11/2026 (#58).
  */
 export const clinics = {
   eyebrow: "Dónde estamos",
@@ -50,14 +50,10 @@ export const clinics = {
   cards: {
     "el-canaveral": {
       heading: "MUV El Cañaveral",
-      address: "C. Victoria Kent, Local 8 · 28052 Madrid",
-      // PENDIENTE MUV: la hora de cierre (#35). El documento dice 22:00 y el
-      // perfil de Google, 21:00: hasta que se confirme, sin horas, como en sus
-      // páginas de servicio y en `locations.ts`.
-      hours:
-        "De lunes a viernes, por la mañana y por la tarde, y los sábados por la mañana",
+      address: addressOf("el-canaveral"),
+      hours: "Lunes a viernes, 9:00–21:00 · Sábados, 9:00–14:00",
       registry: "CS 17623",
-      showPhone: false,
+      showPhone: true,
       facilities:
         "Boxes individuales, sala de Pilates con máquinas y zona de entrenamiento funcional.",
       ctaLabel: "Ver la clínica de fisioterapia de El Cañaveral",
@@ -66,9 +62,9 @@ export const clinics = {
     },
     "tres-cantos": {
       heading: "MUV Tres Cantos",
-      address: "Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos",
+      address: addressOf("tres-cantos"),
       hours:
-        "Lunes a viernes, 10:00–14:00 y 16:00–21:00 · Sábados, 9:00–14:00",
+        "Lunes a viernes, 10:00–22:00 · Sábados, 9:00–14:00",
       registry: "CS 21018",
       showPhone: true,
       facilities:

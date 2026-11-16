@@ -39,13 +39,8 @@ export type Location = {
   bookingUrl: string;
   geo: { lat: number; lng: number };
   mapEmbed: string;
-  /**
-   * Horario por días. Sin definir = la hora de cierre está en disputa y se
-   * publica `hoursSummary` en su lugar.
-   */
-  hours?: { days: string; time: string }[];
-  /** El horario sin horas, mientras `hours` no esté confirmado. */
-  hoursSummary?: string;
+  /** Horario por días, tal cual lo confirmó MUV. */
+  hours: { days: string; time: string }[];
   /**
    * Horario en formato schema.org, por sede y no compartido: son dos negocios
    * locales distintos. Si falta, la sede NO declara `openingHoursSpecification`.
@@ -75,35 +70,33 @@ export const locations: Location[] = [
     name: "MUV El Cañaveral",
     shortName: "El Cañaveral",
     area: "Vicálvaro",
-    street: "C. Victoria Kent, Local 8",
+    // Con el barrio, como la ficha de Google (#58).
+    street: "C. Victoria Kent, Local 8, Vicálvaro",
     postalCode: "28052",
     city: "Madrid",
     region: "Comunidad de Madrid",
     country: "ES",
-    // PENDIENTE MUV: el teléfono (#33). El repositorio tenía 603 30 30 10, y
-    // cuatro fuentes públicas —web actual, Doctoralia, Google Business e
-    // Instagram— publican 634 47 85 44. Hasta que MUV confirme cuál es el bueno
-    // no se publica ninguno: cuando llegue, basta con escribirlo aquí.
-    phone: undefined,
+    // Confirmado por MUV el 16/11/2026 (#58): es el que ya publicaban Google,
+    // Doctoralia, Instagram y la web actual. El 603 30 30 10 era el erróneo.
+    phone: "634 47 85 44",
     email: "info@clinicamuv.com",
     // La ficha real es `muv-canaveral`; `clinica-muv-el-canaveral` da 404.
     bookingUrl: "https://www.doctoralia.es/clinicas/muv-canaveral",
-    // Corregida el 17/08/2026. La anterior (40.4079, -3.5709) caía a 1,27 km,
-    // en el polígono industrial. Esta es el eje de la calle Victoria Kent en
-    // El Cañaveral, con barrio y CP correctos (OpenStreetMap).
-    // PENDIENTE MUV: la coordenada del portal, que pueden dar desde su perfil
-    // de Google Business.
-    geo: { lat: 40.3996, lng: -3.5606 },
+    // La de la ficha de Google Business (#22, #58).
+    geo: { lat: 40.4012311, lng: -3.5626399 },
+    // Apunta a la ficha de Google, no a una búsqueda por dirección (#49).
     mapEmbed:
-      "https://www.google.com/maps?q=C.+Victoria+Kent+8,+28052+Madrid&output=embed",
-    // PENDIENTE MUV: la hora de cierre (#35). La web decía 22:00 y el perfil
-    // de Google de esta clínica dice 21:00. Mientras no se resuelva, el horario
-    // se publica sin horas, igual que en sus páginas de servicio, y esta sede
-    // NO declara `openingHoursSpecification`: un schema que contradice al
-    // perfil de Google es una señal local en contra. Cuando llegue, se define
-    // `hours` (y `openingHours`) y se retira `hoursSummary`.
-    hoursSummary:
-      "De lunes a viernes, por la mañana y por la tarde, y los sábados por la mañana",
+      "https://www.google.com/maps?q=MUV+Ca%C3%B1averal+fisioterapia+y+Pilates&ll=40.4012311,-3.5626399&z=17&output=embed",
+    // Confirmado por MUV el 16/11/2026 (#35, #58).
+    hours: [
+      { days: "Lunes a viernes", time: "9:00–21:00" },
+      { days: "Sábado", time: "9:00–14:00" },
+      { days: "Domingo", time: "Cerrado" },
+    ],
+    openingHours: [
+      { "@type": "OpeningHoursSpecification", dayOfWeek: WEEKDAYS, opens: "09:00", closes: "21:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "09:00", closes: "14:00" },
+    ],
     healthRegistry: "CS 17623",
     healthManager: {
       name: "Álvaro Ortega Rienda",
@@ -144,25 +137,22 @@ export const locations: Location[] = [
     phone: "614 13 14 05",
     email: "info@clinicamuv.com",
     bookingUrl: "https://www.doctoralia.es/clinicas/clinica-muv-tres-cantos",
-    // Corregida el 17/08/2026. La anterior (40.6019, -3.7088) caía a 1,66 km,
-    // junto a la estación de Cercanías. Esta es el eje de la Avenida de Madrid
-    // (OpenStreetMap).
-    // PENDIENTE MUV: la coordenada del portal.
-    geo: { lat: 40.6142, lng: -3.72 },
+    // La de la ficha de Google Business (#22, #58).
+    geo: { lat: 40.6222552, lng: -3.7228582 },
+    // Apunta a la ficha de Google, no a una búsqueda por dirección (#49).
     mapEmbed:
-      "https://www.google.com/maps?q=Av.+de+Madrid+19,+28760+Tres+Cantos&output=embed",
-    // Horario definitivo, confirmado por MUV el 14/10/2026. Antes cerraba a las
-    // 22:00 entre semana y abría a las 10:00 el sábado.
+      "https://www.google.com/maps?q=Cl%C3%ADnica+MUV+Fisioterapia+Deportiva+en+Tres+Cantos&ll=40.6222552,-3.7228582&z=17&output=embed",
+    // Confirmado por MUV el 16/11/2026 (#58): de 10:00 a 22:00 sin cierre a
+    // mediodía. Sustituye al del 14/10/2026 (10:00–14:00 · 16:00–21:00).
     hours: [
-      { days: "Lunes a viernes", time: "10:00–14:00 · 16:00–21:00" },
+      { days: "Lunes a viernes", time: "10:00–22:00" },
       { days: "Sábado", time: "9:00–14:00" },
       { days: "Domingo", time: "Cerrado" },
     ],
     // Con el sábado dentro: es lo que permite que Google lo muestre en el
     // resultado.
     openingHours: [
-      { "@type": "OpeningHoursSpecification", dayOfWeek: WEEKDAYS, opens: "10:00", closes: "14:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: WEEKDAYS, opens: "16:00", closes: "21:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: WEEKDAYS, opens: "10:00", closes: "22:00" },
       { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "09:00", closes: "14:00" },
     ],
     healthRegistry: "CS 21018",
@@ -208,9 +198,23 @@ export function whatsappUrl(location: Location): string | undefined {
 /** El horario en una línea, sin el domingo cerrado. */
 export function hoursLine(location: Location): string {
   return location.hours
-    ? location.hours
-        .filter((h) => h.time !== "Cerrado")
-        .map((h) => `${h.days} ${h.time}`)
-        .join(" · ")
-    : (location.hoursSummary ?? "");
+    .filter((h) => h.time !== "Cerrado")
+    .map((h) => `${h.days} ${h.time}`)
+    .join(" · ");
+}
+
+/**
+ * La dirección completa en una línea, tal cual la publica la ficha de Google
+ * (#58). Es la única forma de escribirla: ninguna página la copia a mano.
+ */
+export function fullAddress(location: Location): string {
+  const region = location.city === "Madrid" ? "" : ", Madrid";
+  return `${location.street}, ${location.postalCode} ${location.city}${region}`;
+}
+
+/** `fullAddress` de una sede por su slug, para los textos de `src/content/`. */
+export function addressOf(slug: string): string {
+  const location = getLocation(slug);
+  if (!location) throw new Error(`Sede desconocida: ${slug}`);
+  return fullAddress(location);
 }

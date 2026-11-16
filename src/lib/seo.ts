@@ -109,16 +109,8 @@ function geoCoordinates(location: Location) {
  *
  * Se declara una sola vez por clínica, en su propia página.
  *
- * Tres campos se omiten a propósito mientras MUV no facilite el dato, porque un
- * schema que contradice a Google Business resta en vez de sumar:
- *
- * - `telephone`: sale de `location.phone`, que en El Cañaveral va sin definir
- *   hasta que MUV confirme el número (#33). El de Tres Cantos está confirmado
- *   desde el 14/10/2026 y se declara (#51).
- * - `openingHoursSpecification`: sale de `location.openingHours`, que en El
- *   Cañaveral va sin definir hasta que se resuelva si cierra a las 21:00 o a
- *   las 22:00.
- * - `areaServed`: la zona de atención se dedujo de un mapa y se retiró.
+ * `areaServed` se omite a propósito: la zona de atención se dedujo de un mapa y
+ * se retiró. Un schema que contradice a Google Business resta en vez de sumar.
  *
  * Nunca se declara `aggregateRating` con las opiniones de Doctoralia ni de
  * Google: están recogidas en otra plataforma.

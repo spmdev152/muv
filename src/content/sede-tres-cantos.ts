@@ -14,23 +14,24 @@
  */
 
 import type { SedeContent } from "@/content/sede-types";
+import { addressOf } from "@/lib/locations";
 
 export const tresCantos: SedeContent = {
   meta: {
     /** 58 caracteres. */
-    title: "Fisioterapia en Tres Cantos hasta las 21 h y sábados | MUV",
+    title: "Fisioterapia en Tres Cantos hasta las 22 h y sábados | MUV",
     /** 149 caracteres. */
     description:
-      "Clínica de fisioterapia en Tres Cantos: valoramos antes de tratar. Abrimos hasta las 21:00 de lunes a viernes y los sábados por la mañana. Pida cita.",
+      "Clínica de fisioterapia en Tres Cantos: valoramos antes de tratar. Abrimos hasta las 22:00 de lunes a viernes y los sábados por la mañana. Pida cita.",
   },
 
   hero: {
     title:
       "Fisioterapia en Tres Cantos: valoración, tratamiento y ejercicio terapéutico",
-    lede: "En MUV Tres Cantos tratamos el dolor y la lesión musculoesquelética y deportiva, y acompañamos la recuperación con ejercicio pautado por su fisioterapeuta. Empezamos siempre por una valoración: primero entendemos de dónde viene la molestia y después decidimos el tratamiento. Atendemos hasta las nueve de la noche de lunes a viernes y los sábados por la mañana, para que tratarse no dependa de pedir permiso en el trabajo.",
+    lede: "En MUV Tres Cantos tratamos el dolor y la lesión musculoesquelética y deportiva, y acompañamos la recuperación con ejercicio pautado por su fisioterapeuta. Empezamos siempre por una valoración: primero entendemos de dónde viene la molestia y después decidimos el tratamiento. Atendemos hasta las diez de la noche de lunes a viernes y los sábados por la mañana, para que tratarse no dependa de pedir permiso en el trabajo.",
     strip: [
       {
-        label: "Hasta las 21:00",
+        label: "Hasta las 22:00",
         value: "De lunes a viernes, con la última sesión al salir de trabajar.",
       },
       {
@@ -39,7 +40,7 @@ export const tresCantos: SedeContent = {
       },
       { label: "Cita online", value: "Reserve día y hora sin llamar." },
     ],
-    address: "Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos",
+    address: addressOf("tres-cantos"),
     // PENDIENTE MUV: zona de atención. La que había —Tres Cantos, Soto de
     // Viñuelas y Colmenar Viejo— estaba deducida por proximidad en un mapa.
     imageAlt:
@@ -205,7 +206,7 @@ export const tresCantos: SedeContent = {
     facts: [
       {
         label: "Dirección",
-        value: "Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos, Madrid",
+        value: addressOf("tres-cantos"),
       },
       { label: "En coche", value: "Salida de la M-607." },
       {
@@ -227,9 +228,9 @@ export const tresCantos: SedeContent = {
       // ascensor y aseo adaptado.
     ],
     hoursHeading:
-      "Horario de la clínica: tardes hasta las 21:00 y sábados por la mañana",
+      "Horario de la clínica: tardes hasta las 22:00 y sábados por la mañana",
     hoursText:
-      "Abrimos de lunes a viernes de 10:00 a 14:00 y de 16:00 a 21:00, y los sábados de 9:00 a 14:00.",
+      "Abrimos de lunes a viernes de 10:00 a 22:00, y los sábados de 9:00 a 14:00.",
     bookingNote:
       "Puede consultar los huecos disponibles y reservar desde la agenda en línea.",
     mapAlt: "Ubicación de la clínica de fisioterapia MUV en Tres Cantos",

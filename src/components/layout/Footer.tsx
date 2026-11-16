@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { footerNav, site } from "@/lib/site";
-import { hoursLine, locations, whatsappUrl } from "@/lib/locations";
+import { fullAddress, hoursLine, locations, whatsappUrl } from "@/lib/locations";
 import { servicesByLocation, type NavLink } from "@/lib/nav";
 import { Logo } from "@/components/layout/Logo";
 import { Container } from "@/components/ui/Container";
@@ -31,7 +31,7 @@ export function Footer() {
                     <p className="mt-1 flex items-start gap-2 text-cream/60">
                       <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
                       <span>
-                        {location.street}, {location.postalCode} {location.city}
+                        {fullAddress(location)}
                       </span>
                     </p>
                     {/* Sin teléfono confirmado no hay línea, ni hueco (#33). */}

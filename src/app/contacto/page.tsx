@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { Reveal } from "@/components/motion/Reveal";
 import { MapPin, Whatsapp, Mail, Clock } from "@/components/ui/icons";
 import { BookingButton } from "@/components/BookingButton";
-import { hoursLine, locations, whatsappUrl } from "@/lib/locations";
+import { fullAddress, hoursLine, locations, whatsappUrl } from "@/lib/locations";
 import { site } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo";
 
@@ -51,7 +51,7 @@ export default function ContactoPage() {
                       <ul className="mt-4 space-y-3 text-sm text-ink-soft">
                         <li className="flex items-start gap-2">
                           <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-600" />
-                          {location.street}, {location.postalCode} {location.city}
+                          {fullAddress(location)}
                         </li>
                         {/* Sin teléfono confirmado, sin línea (#33). */}
                         {whatsapp && (
