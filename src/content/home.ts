@@ -15,6 +15,8 @@
  */
 
 /** Metadatos de la página. */
+import { addressOf } from "@/lib/locations";
+
 export const meta = {
   /** 60 caracteres. Se publica literal, sin la plantilla «· MUV» del layout. */
   title: "Clínica MUV | Fisioterapia y ejercicio terapéutico en Madrid",
@@ -284,8 +286,7 @@ export const method = {
  * La dirección y el horario se copian tal cual: es NAP y tiene que coincidir
  * carácter a carácter con Google Business Profile y con Doctoralia.
  *
- * PENDIENTE MUV (3/3): los teléfonos no se publican aquí. El número del
- * repositorio y el de Doctoralia no coinciden en ninguna de las dos sedes.
+ * Teléfonos, direcciones y horarios confirmados por MUV el 16/11/2026 (#58).
  */
 export const locationsSection = {
   eyebrow: "Sedes",
@@ -296,18 +297,17 @@ export const locationsSection = {
     "el-canaveral": {
       blurb:
         "Nuestra cartera más amplia: fisioterapia general y deportiva, entrenamiento terapéutico, Pilates, diatermia, neuromodulación y las áreas de suelo pélvico, embarazo, postparto y pediatría.",
-      address: "C. Victoria Kent, Local 8 · 28052 Madrid (Vicálvaro)",
-      hours:
-        "Lunes a viernes, 10:00–14:00 y 16:00–22:00 · Sábados, 10:00–14:00",
+      address: addressOf("el-canaveral"),
+      hours: "Lunes a viernes, 9:00–21:00 · Sábados, 9:00–14:00",
       ctaLabel: "Ver MUV El Cañaveral",
       imageAlt: "Interior de la clínica MUV El Cañaveral, en Vicálvaro",
     },
     "tres-cantos": {
       blurb:
         "Enfoque musculoesquelético y deportivo con progresión mediante ejercicio: fisioterapia general y deportiva, entrenamiento terapéutico individual y grupal, neuromodulación y tratamiento de cicatrices.",
-      address: "Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos",
+      address: addressOf("tres-cantos"),
       hours:
-        "Lunes a viernes, 10:00–14:00 y 16:00–21:00 · Sábados, 9:00–14:00",
+        "Lunes a viernes, 10:00–22:00 · Sábados, 9:00–14:00",
       ctaLabel: "Ver MUV Tres Cantos",
       imageAlt: "Interior de la clínica MUV Tres Cantos",
     },
@@ -375,7 +375,7 @@ export const faqs = [
     // Desde que Tres Cantos tiene el suyo, cada sede va por separado.
     question: "¿Abren los sábados?",
     answer:
-      "Sí, las dos clínicas abren los sábados por la mañana: El Cañaveral de 10:00 a 14:00 y Tres Cantos de 9:00 a 14:00. De lunes a viernes, El Cañaveral abre de 10:00 a 14:00 y de 16:00 a 22:00, y Tres Cantos de 10:00 a 14:00 y de 16:00 a 21:00.",
+      "Sí, las dos clínicas abren los sábados de 9:00 a 14:00. De lunes a viernes, El Cañaveral abre de 9:00 a 21:00 y Tres Cantos de 10:00 a 22:00.",
   },
 ] as const;
 

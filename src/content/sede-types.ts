@@ -61,7 +61,11 @@ export type SedeContent = {
     eyebrow: string;
     title: string;
     lede: string;
-    /** Las fichas del equipo esperan dato de MUV: no hay campo para ellas. */
+    /**
+     * Fichas del equipo: solo las que tienen nombre y número de colegiado
+     * facilitados por MUV. La foto y las áreas de trabajo siguen pendientes.
+     */
+    members?: { name: string; role: string }[];
     accreditation: { label: string; value: string }[];
   };
 
@@ -87,7 +91,7 @@ export type SedeContent = {
     title: string;
     facts: { label: string; value: string }[];
     hoursHeading: string;
-    /** Sin definir = la hora de cierre está en disputa y no se publica. */
+    /** Sin definir = no se publica el horario. */
     hoursText?: string;
     bookingNote: string;
     mapAlt: string;

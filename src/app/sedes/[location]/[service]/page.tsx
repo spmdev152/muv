@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { BookingButton } from "@/components/BookingButton";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ArrowRight, MapPin, Whatsapp } from "@/components/ui/icons";
-import { getLocation } from "@/lib/locations";
+import { getLocation, whatsappUrl } from "@/lib/locations";
 import { buildMetadata, faqJsonLd, sedeServiceJsonLd } from "@/lib/seo";
 import { cn } from "@/lib/cn";
 import type { ServiceBlock } from "@/content/sede-service-types";
@@ -38,13 +38,6 @@ const SEDE_CONTENT: Record<string, SedeContent> = {
   "el-canaveral": elCanaveral,
   "tres-cantos": tresCantos,
 };
-
-/**
- * Sedes cuyo teléfono (y por tanto su WhatsApp) sigue sin confirmar. El de El
- * Cañaveral en `locations.ts` no coincide con ninguna de las fuentes públicas
- * de MUV (#33) y sus PDF lo dejan en rojo: no se ofrece hasta que se confirme.
- */
-const UNCONFIRMED_PHONE = new Set(["el-canaveral"]);
 
 // Solo existen las ocho rutas declaradas: cualquier otra es un 404.
 export const dynamicParams = false;
@@ -145,9 +138,9 @@ export default async function SedeServicePage({
   if (!location || !content) notFound();
 
   const path = sedeServicePath(content);
-  const whatsappUrl = UNCONFIRMED_PHONE.has(location.slug)
-    ? undefined
-    : location.whatsappUrl;
+  // Sin teléfono confirmado en `locations.ts` (El Cañaveral, #33) no hay
+  // WhatsApp: sus PDF lo dejan en rojo.
+  const whatsapp = whatsappUrl(location);
   // El schema publica la respuesta en texto plano; en pantalla, con su enlace.
   const faqItems: QA[] = content.faq.items.map((item) => ({
     question: item.question,
@@ -199,8 +192,8 @@ export default async function SedeServicePage({
             <Reveal delay={0.08}>
               <div className="flex flex-wrap items-center gap-4">
                 <BookingButton size="lg" bookingUrl={location.bookingUrl} />
-                {whatsappUrl && (
-                  <Button href={whatsappUrl} external variant="outline" size="lg">
+                {whatsapp && (
+                  <Button href={whatsapp} external variant="outline" size="lg">
                     <Whatsapp className="h-[18px] w-[18px]" />
                     WhatsApp
                   </Button>
@@ -313,9 +306,9 @@ export default async function SedeServicePage({
                     bookingUrl={location.bookingUrl}
                     size="lg"
                   />
-                  {whatsappUrl && (
+                  {whatsapp && (
                     <Button
-                      href={whatsappUrl}
+                      href={whatsapp}
                       external
                       variant="outline"
                       size="lg"

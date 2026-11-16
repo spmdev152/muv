@@ -11,6 +11,7 @@
  */
 
 import type { SedeServiceContent } from "@/content/sede-service-types";
+import { addressOf } from "@/lib/locations";
 
 export const tresCantosRodilla: SedeServiceContent = {
   location: "tres-cantos",
@@ -389,8 +390,8 @@ export const tresCantosRodilla: SedeServiceContent = {
     id: "donde-estamos",
     title: "Dónde estamos y cuándo abrimos",
     details: [
-      "**MUV Tres Cantos** · Av. de Madrid, 19, Loc 5 · 28760 Tres Cantos",
-      "**Horario:** de lunes a viernes, de 10:00 a 14:00 y de 16:00 a 21:00; los sábados, de 9:00 a 14:00. Los domingos cerramos.",
+      `**MUV Tres Cantos** · ${addressOf("tres-cantos")}`,
+      "**Horario:** de lunes a viernes, de 10:00 a 22:00; los sábados, de 9:00 a 14:00. Los domingos cerramos.",
       "**Teléfono:** 614 13 14 05",
     ],
     directions:

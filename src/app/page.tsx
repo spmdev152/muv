@@ -261,8 +261,6 @@ export default function HomePage() {
                     hours={card?.hours}
                     ctaLabel={card?.ctaLabel}
                     imageAlt={card?.imageAlt}
-                    // PENDIENTE MUV: qué teléfono es el correcto en cada sede.
-                    showPhone={false}
                   />
                 </Reveal>
               );

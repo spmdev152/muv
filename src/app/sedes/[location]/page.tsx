@@ -13,8 +13,8 @@ import { Button } from "@/components/ui/Button";
 import { BookingButton } from "@/components/BookingButton";
 import { CTASection } from "@/components/sections/CTASection";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { ArrowRight, MapPin, ShieldCheck } from "@/components/ui/icons";
-import { locations, getLocation } from "@/lib/locations";
+import { ArrowRight, MapPin, Phone, ShieldCheck } from "@/components/ui/icons";
+import { locations, getLocation, phoneHref } from "@/lib/locations";
 import { buildMetadata, clinicJsonLd, faqJsonLd } from "@/lib/seo";
 import type { SedeContent } from "@/content/sede-types";
 import { elCanaveral } from "@/content/sede-el-canaveral";
@@ -26,7 +26,7 @@ import { plainText } from "@/components/ui/RichText";
  * `/sedes/<sede>` — una plantilla para las dos clínicas.
  *
  * Copy aprobada en `docs/contenidos/sede-el-canaveral.md` (v2) y
- * `sede-tres-cantos.md` (v10). Son documentos gemelos: mismos diez módulos y
+ * `sede-tres-cantos.md` (v10.2). Son documentos gemelos: mismos diez módulos y
  * misma numeración, así que la maquetación es común y solo cambia el contenido.
  *
  * Cada página defiende «fisioterapia <municipio>» y tiene prohibido repetir el
@@ -86,6 +86,18 @@ export default async function SedePage({
   }));
   const catalog = [...featured, ...content.services.items];
 
+  // Módulo 8: el teléfono va justo detrás de la dirección, como en el
+  // documento, y sale de `locations.ts`: solo si está confirmado (#33).
+  const directionFacts: { label: string; value: string; href?: string }[] =
+    content.directions.facts.flatMap((fact) =>
+      fact.label === "Dirección" && location.phone
+        ? [
+            fact,
+            { label: "Teléfono", value: location.phone, href: phoneHref(location) },
+          ]
+        : [fact],
+    );
+
   return (
     <>
       <JsonLd data={clinicJsonLd(location, catalog)} />
@@ -116,7 +128,23 @@ export default async function SedePage({
                 <MapPin className="mt-1 h-5 w-5 shrink-0 text-gold-600" />
                 {content.hero.address}
               </p>
-              {/* PENDIENTE MUV: el teléfono y la zona de atención. */}
+              {/* El teléfono, solo si está confirmado en `locations.ts`: el de
+                  El Cañaveral sigue pendiente (#33). PENDIENTE MUV: la zona de
+                  atención. */}
+              {location.phone && (
+                <p className="mt-2 flex items-start gap-2 text-ink-soft">
+                  <Phone className="mt-1 h-5 w-5 shrink-0 text-gold-600" />
+                  <span>
+                    Teléfono:{" "}
+                    <a
+                      href={phoneHref(location)}
+                      className="font-medium text-olive-700 hover:text-gold-700"
+                    >
+                      {location.phone}
+                    </a>
+                  </span>
+                </p>
+              )}
             </Reveal>
             <Reveal delay={0.08}>
               <div className="flex flex-wrap items-center gap-4">
@@ -263,10 +291,24 @@ export default async function SedePage({
             description={content.team.lede}
           />
           {/*
-            Las fichas del equipo esperan dato de MUV: nombre, foto, número de
-            colegiado y áreas de cada fisioterapeuta. No se maquetan con los
-            `.mdx` actuales, que llevan `Col. nº 0000`.
+            Solo las fichas con nombre y número de colegiado facilitados por
+            MUV. No se maquetan con los `.mdx` actuales, que llevan
+            `Col. nº 0000` (#28). La foto y las áreas siguen pendientes.
           */}
+          {content.team.members && content.team.members.length > 0 && (
+            <ul className="mt-10 grid gap-6 md:grid-cols-2">
+              {content.team.members.map((member) => (
+                <Reveal key={member.name} as="li">
+                  <div className="h-full rounded-3xl border border-olive-900/10 bg-white p-6">
+                    <h3 className="font-display text-xl text-olive-700">
+                      {member.name}
+                    </h3>
+                    <p className="mt-1 text-sm text-gold-700">{member.role}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </ul>
+          )}
           {content.team.accreditation.length > 0 && (
             <ul className="mt-10 grid gap-6 md:grid-cols-2">
               {content.team.accreditation.map((fact, i) => (
@@ -347,13 +389,19 @@ export default async function SedePage({
           <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:items-start">
             <div>
               <dl className="space-y-5">
-                {content.directions.facts.map((fact) => (
+                {directionFacts.map((fact) => (
                   <Reveal key={fact.label}>
                     <dt className="font-display text-base text-olive-700">
                       {fact.label}
                     </dt>
                     <dd className="mt-1 leading-relaxed text-ink-soft">
-                      {fact.value}
+                      {fact.href ? (
+                        <a href={fact.href} className="hover:text-olive-700">
+                          {fact.value}
+                        </a>
+                      ) : (
+                        fact.value
+                      )}
                     </dd>
                   </Reveal>
                 ))}
