@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/sections/PageHero";
 import { ContactForm } from "@/components/sections/ContactForm";
@@ -31,8 +32,15 @@ export default function ContactoPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_24rem]">
             <div>
               <h2 className="text-2xl text-olive-800">Envíenos un mensaje</h2>
+              <p className="mt-3 text-ink-soft">
+                ¿Quiere trabajar en MUV? Elija «Trabajar en MUV» y adjunte su CV.
+              </p>
               <div className="mt-8">
-                <ContactForm />
+                {/* `useSearchParams` (?motivo=empleo) needs a Suspense boundary
+                    to keep the page static. */}
+                <Suspense>
+                  <ContactForm />
+                </Suspense>
               </div>
             </div>
 

@@ -32,6 +32,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# emails written by the contact form when SMTP_URL is not set (#66)
+/.mail/
 
 # vercel
 .vercel
