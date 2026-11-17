@@ -7,6 +7,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { Select } from "@/components/forms/Select";
 import { Button } from "@/components/ui/Button";
 import { sendApplication } from "@/app/contacto/actions";
 import {
@@ -38,6 +39,7 @@ function FieldError({ id, message }: { id: string; message?: string }) {
  * attach their CV, and a server action emails it to the clinic.
  */
 export function JobApplicationForm() {
+  const [clinic, setClinic] = useState("");
   const [position, setPosition] = useState("");
   const [cvError, setCvError] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -47,6 +49,7 @@ export function JobApplicationForm() {
 
       if (result.status === "success") {
         formRef.current?.reset();
+        setClinic("");
         setPosition("");
       }
 
@@ -131,46 +134,29 @@ export function JobApplicationForm() {
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <select
+          <Select
             name="sede"
-            required
-            defaultValue=""
+            options={CLINIC_OPTIONS}
+            value={clinic}
+            onChange={setClinic}
+            placeholder="Clínica"
             aria-label="Clínica en la que le gustaría trabajar"
-            aria-invalid={Boolean(errors.sede)}
+            invalid={Boolean(errors.sede)}
             aria-describedby={describedBy("sede")}
-            className={field}
-          >
-            <option value="" disabled>
-              Clínica
-            </option>
-            {CLINIC_OPTIONS.map((o) => (
-              <option key={o.value} value={o.value}>
-                {o.label}
-              </option>
-            ))}
-          </select>
+          />
           <FieldError id={`${id}-sede-error`} message={errors.sede} />
         </div>
         <div>
-          <select
+          <Select
             name="puesto"
-            required
+            options={POSITION_OPTIONS}
             value={position}
-            onChange={(e) => setPosition(e.currentTarget.value)}
+            onChange={setPosition}
+            placeholder="Puesto"
             aria-label="Puesto"
-            aria-invalid={Boolean(errors.puesto)}
+            invalid={Boolean(errors.puesto)}
             aria-describedby={describedBy("puesto")}
-            className={field}
-          >
-            <option value="" disabled>
-              Puesto
-            </option>
-            {POSITION_OPTIONS.map((o) => (
-              <option key={o.value} value={o.value}>
-                {o.label}
-              </option>
-            ))}
-          </select>
+          />
           <FieldError id={`${id}-puesto-error`} message={errors.puesto} />
         </div>
       </div>
