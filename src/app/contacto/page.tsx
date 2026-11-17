@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/sections/PageHero";
-import { ContactForm } from "@/components/sections/ContactForm";
+import { JobApplicationForm } from "@/components/sections/JobApplicationForm";
 import { Reveal } from "@/components/motion/Reveal";
 import { MapPin, Whatsapp, Mail, Clock } from "@/components/ui/icons";
 import { BookingButton } from "@/components/BookingButton";
@@ -30,17 +29,16 @@ export default function ContactoPage() {
       <section className="pb-20 md:pb-28">
         <Container size="wide">
           <div className="grid gap-12 lg:grid-cols-[1fr_24rem]">
-            <div>
-              <h2 className="text-2xl text-olive-800">Envíenos un mensaje</h2>
+            <div id="trabaje-con-nosotros" className="scroll-mt-28">
+              <h2 className="text-2xl text-olive-800">Trabaje con nosotros</h2>
               <p className="mt-3 text-ink-soft">
-                ¿Quiere trabajar en MUV? Elija «Trabajar en MUV» y adjunte su CV.
+                ¿Quiere formar parte del equipo de MUV? Envíenos su CV y nos
+                pondremos en contacto con usted si encaja con lo que buscamos.
+                Para pedir cita o resolver dudas, escríbanos por WhatsApp o
+                reserve en la clínica que prefiera.
               </p>
               <div className="mt-8">
-                {/* `useSearchParams` (?motivo=empleo) needs a Suspense boundary
-                    to keep the page static. */}
-                <Suspense>
-                  <ContactForm />
-                </Suspense>
+                <JobApplicationForm />
               </div>
             </div>
 

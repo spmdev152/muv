@@ -35,8 +35,13 @@ export async function sendMail(message: Mail.Options): Promise<void> {
     .sendMail(message);
   const dir = path.join(
     // The outbox is a runtime folder, not a build input: keep it out of tracing.
-    /* turbopackIgnore: true */ process.cwd(), process.env.MAIL_OUTBOX ?? ".mail");
-  const file = path.join(dir, `${new Date().toISOString().replace(/[:.]/g, "-")}.eml`);
+    /* turbopackIgnore: true */ process.cwd(),
+    process.env.MAIL_OUTBOX ?? ".mail",
+  );
+  const file = path.join(
+    dir,
+    `${new Date().toISOString().replace(/[:.]/g, "-")}.eml`,
+  );
 
   await mkdir(dir, { recursive: true });
   await writeFile(file, raw as Buffer);

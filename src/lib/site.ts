@@ -42,7 +42,7 @@ export const footerNav = {
     { label: "Profesionales", href: "/profesionales" },
     { label: "Política editorial", href: "/politica-editorial" },
     { label: "Blog", href: "/blog" },
-    { label: "Trabaje con nosotros", href: "/contacto?motivo=empleo" },
+    { label: "Trabaje con nosotros", href: "/contacto#trabaje-con-nosotros" },
   ],
   Sedes: [
     { label: "El Cañaveral", href: "/sedes/el-canaveral" },

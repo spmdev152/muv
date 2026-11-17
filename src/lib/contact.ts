@@ -1,10 +1,7 @@
 /**
- * Shared rules of the contact form (#66): the client uses them to give instant
- * feedback, and the server action enforces them again.
+ * Shared rules of the job application form (#66): the client uses them to give
+ * instant feedback, and the server action enforces them again.
  */
-
-export const REASONS = ["consulta", "empleo"] as const;
-export type Reason = (typeof REASONS)[number];
 
 export const CLINIC_OPTIONS = [
   { value: "el-canaveral", label: "MUV El Cañaveral" },
@@ -24,16 +21,12 @@ export const CV_MAX_BYTES = 5 * 1024 * 1024;
 export const CV_ACCEPT =
   ".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 
-export type ContactState = {
+export type ApplicationState = {
   status: "idle" | "success" | "error";
   message?: string;
   /** Field name -> message, shown next to the field. */
   errors?: Partial<Record<string, string>>;
 };
-
-export function isReason(value: unknown): value is Reason {
-  return REASONS.includes(value as Reason);
-}
 
 /** Checks extension and size; the server also checks the file signature. */
 export function cvProblem(file: { name: string; size: number }): string | null {

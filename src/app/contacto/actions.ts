@@ -5,8 +5,7 @@ import {
   CLINIC_OPTIONS,
   POSITION_OPTIONS,
   cvProblem,
-  isReason,
-  type ContactState,
+  type ApplicationState,
 } from "@/lib/contact";
 import { MailNotConfiguredError, mailFrom, sendMail } from "@/lib/mail.server";
 import { site } from "@/lib/site";
@@ -20,7 +19,11 @@ const recent = new Map<string, number[]>();
 /** PDF, DOC (OLE2) and DOCX (ZIP), by their first bytes. */
 const SIGNATURES: { ext: RegExp; bytes: number[]; type: string }[] = [
   { ext: /\.pdf$/i, bytes: [0x25, 0x50, 0x44, 0x46], type: "application/pdf" },
-  { ext: /\.doc$/i, bytes: [0xd0, 0xcf, 0x11, 0xe0], type: "application/msword" },
+  {
+    ext: /\.doc$/i,
+    bytes: [0xd0, 0xcf, 0x11, 0xe0],
+    type: "application/msword",
+  },
   {
     ext: /\.docx$/i,
     bytes: [0x50, 0x4b, 0x03, 0x04],
@@ -39,7 +42,10 @@ function oneLine(value: string): string {
   return value.replace(/[\r\n]+/g, " ");
 }
 
-function labelOf(options: readonly { value: string; label: string }[], value: string) {
+function labelOf(
+  options: readonly { value: string; label: string }[],
+  value: string,
+) {
   return options.find((o) => o.value === value)?.label;
 }
 
@@ -62,11 +68,15 @@ async function readCv(file: File) {
 
   const buffer = Buffer.from(await file.arrayBuffer());
   const match = SIGNATURES.find(
-    (s) => s.ext.test(file.name) && s.bytes.every((byte, i) => buffer[i] === byte),
+    (s) =>
+      s.ext.test(file.name) && s.bytes.every((byte, i) => buffer[i] === byte),
   );
 
   if (!match) {
-    return { ok: false, problem: "El archivo no es un PDF o Word válido." } as const;
+    return {
+      ok: false,
+      problem: "El archivo no es un PDF o Word válido.",
+    } as const;
   }
 
   return {
@@ -87,21 +97,14 @@ function slug(value: string): string {
 }
 
 /**
- * Sends the contact form by email (#66): an enquiry to `CONTACT_EMAIL`, or a
- * job application with the CV attached to `CAREERS_EMAIL`. The CV is never
- * stored on the server.
+ * Emails a job application with the CV attached to `CAREERS_EMAIL` (#66). The
+ * CV is never stored on the server.
  */
-export async function sendContact(
-  _prev: ContactState,
+export async function sendApplication(
+  _prev: ApplicationState,
   data: FormData,
-): Promise<ContactState> {
+): Promise<ApplicationState> {
   if (text(data, "web", 200)) return { status: "success" };
-
-  const reason = data.get("motivo");
-
-  if (!isReason(reason)) {
-    return { status: "error", message: "Elija el motivo de su mensaje." };
-  }
 
   const name = oneLine(text(data, "nombre", 120));
   const email = oneLine(text(data, "email", 200));
@@ -116,43 +119,47 @@ export async function sendContact(
     errors.privacidad = "Necesitamos su consentimiento para tratar sus datos.";
   }
 
-  const lines = [`Nombre: ${name}`, `Email: ${email}`, `Teléfono: ${phone || "-"}`];
-  let subject: string;
-  let to: string;
-  let attachments: { filename: string; content: Buffer; contentType: string }[] = [];
+  const lines = [
+    `Nombre: ${name}`,
+    `Email: ${email}`,
+    `Teléfono: ${phone || "-"}`,
+  ];
+  let attachments: {
+    filename: string;
+    content: Buffer;
+    contentType: string;
+  }[] = [];
+  const clinic = labelOf(CLINIC_OPTIONS, text(data, "sede", 40));
+  const position = labelOf(POSITION_OPTIONS, text(data, "puesto", 40));
+  const collegiate = oneLine(text(data, "colegiado", 20));
+  const file = data.get("cv");
 
-  if (reason === "consulta") {
-    if (!message) errors.mensaje = "Escriba su consulta.";
+  if (!clinic) errors.sede = "Elija una clínica.";
+  if (!position) errors.puesto = "Elija un puesto.";
 
-    subject = `Consulta web: ${name}`;
-    to = process.env.CONTACT_EMAIL ?? site.email;
+  if (!(file instanceof File) || file.size === 0) {
+    errors.cv = "Adjunte su CV.";
   } else {
-    const clinic = labelOf(CLINIC_OPTIONS, text(data, "sede", 40));
-    const position = labelOf(POSITION_OPTIONS, text(data, "puesto", 40));
-    const collegiate = oneLine(text(data, "colegiado", 20));
-    const file = data.get("cv");
+    const cv = await readCv(file);
 
-    if (!clinic) errors.sede = "Elija una clínica.";
-    if (!position) errors.puesto = "Elija un puesto.";
-
-    if (!(file instanceof File) || file.size === 0) {
-      errors.cv = "Adjunte su CV.";
+    if (!cv.ok) {
+      errors.cv = cv.problem;
     } else {
-      const cv = await readCv(file);
-
-      if (!cv.ok) {
-        errors.cv = cv.problem;
-      } else {
-        attachments = [
-          { filename: `CV-${slug(name) || "candidato"}.${cv.ext}`, content: cv.buffer, contentType: cv.type },
-        ];
-      }
+      attachments = [
+        {
+          filename: `CV-${slug(name) || "candidato"}.${cv.ext}`,
+          content: cv.buffer,
+          contentType: cv.type,
+        },
+      ];
     }
-
-    lines.push(`Clínica: ${clinic}`, `Puesto: ${position}`, `Nº de colegiado: ${collegiate || "-"}`);
-    subject = `Candidatura: ${name} · ${position} · ${clinic}`;
-    to = process.env.CAREERS_EMAIL ?? process.env.CONTACT_EMAIL ?? site.email;
   }
+
+  lines.push(
+    `Clínica: ${clinic}`,
+    `Puesto: ${position}`,
+    `Nº de colegiado: ${collegiate || "-"}`,
+  );
 
   if (Object.keys(errors).length > 0) {
     return { status: "error", message: "Revise los campos marcados.", errors };
@@ -161,36 +168,38 @@ export async function sendContact(
   if (await isRateLimited()) {
     return {
       status: "error",
-      message: "Ha enviado varios mensajes seguidos. Inténtelo de nuevo en unos minutos.",
+      message:
+        "Ha enviado varias candidaturas seguidas. Inténtelo de nuevo en unos minutos.",
     };
   }
 
   try {
     await sendMail({
       from: mailFrom(),
-      to,
+      to: process.env.CAREERS_EMAIL ?? site.email,
       replyTo: { name, address: email },
-      subject,
+      subject: `Candidatura: ${name} · ${position} · ${clinic}`,
       text: `${lines.join("\n")}\n\n${message || "(sin mensaje)"}\n\n— Enviado desde el formulario de ${site.url}/contacto`,
       attachments,
     });
   } catch (error) {
-    console.error("[contact] email not sent:", error instanceof Error ? error.message : error);
+    console.error(
+      "[empleo] application not sent:",
+      error instanceof Error ? error.message : error,
+    );
 
     return {
       status: "error",
       message:
         error instanceof MailNotConfiguredError
           ? `El formulario no está disponible ahora mismo. Escríbanos a ${site.email}.`
-          : `No hemos podido enviar su mensaje. Inténtelo de nuevo o escríbanos a ${site.email}.`,
+          : `No hemos podido enviar su candidatura. Inténtelo de nuevo o escríbanos a ${site.email}.`,
     };
   }
 
   return {
     status: "success",
     message:
-      reason === "consulta"
-        ? "Hemos recibido su consulta. Le responderemos lo antes posible."
-        : "Hemos recibido su candidatura. Si encaja con lo que buscamos, nos pondremos en contacto con usted.",
+      "Hemos recibido su candidatura. Si encaja con lo que buscamos, nos pondremos en contacto con usted.",
   };
 }

@@ -34,7 +34,7 @@ yarn-error.log*
 .env*
 !.env.example
 
-# emails written by the contact form when SMTP_URL is not set (#66)
+# emails written by the job application form when SMTP_URL is not set (#66)
 /.mail/
 
 # vercel
