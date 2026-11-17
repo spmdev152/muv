@@ -253,6 +253,7 @@ export function articleJsonLd({
   title,
   description,
   date,
+  updated,
   author,
   image,
   path,
@@ -260,6 +261,7 @@ export function articleJsonLd({
   title: string;
   description: string;
   date?: string;
+  updated?: string;
   author?: string;
   image?: string;
   path: string;
@@ -270,6 +272,7 @@ export function articleJsonLd({
     headline: title,
     description,
     datePublished: date,
+    dateModified: updated ?? date,
     image: image ? `${site.url}${image}` : undefined,
     author: { "@type": "Person", name: author ?? site.legalName },
     publisher: { "@type": "Organization", name: site.legalName },

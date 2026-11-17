@@ -23,7 +23,15 @@ export type Frontmatter = {
   parent?: string;
   // Blog
   date?: string;
+  /** Last edit (YYYY-MM-DD); feeds `dateModified` and the sitemap. */
+  updated?: string;
   author?: string;
+  /** SEO <title> when it differs from the H1 (posts imported from WordPress). */
+  seoTitle?: string;
+  imageAlt?: string;
+  category?: string;
+  /** Original URL on the WordPress site the post was imported from (#63). */
+  source?: string;
   // Professionals
   role?: string;
   locations?: string[];
