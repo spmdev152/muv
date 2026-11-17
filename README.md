@@ -50,7 +50,24 @@ y los metadatos se generan a partir de ellos.
 - `sitemap.xml`, `robots.txt` y `opengraph-image` generados automáticamente.
 - La URL base se define en `src/lib/site.ts` (`site.url`) — actualizar al dominio final.
 
+## Formulario de empleo
+
+`/contacto#trabaje-con-nosotros` recibe candidaturas: clínica, puesto y CV (PDF o Word, hasta 5 MB).
+Una server action (`src/app/contacto/actions.ts`) las envía por email con `nodemailer`; el CV va
+adjunto y no se guarda en el servidor.
+
+| Variable | Uso |
+|---|---|
+| `SMTP_URL` | Servidor SMTP como URL, p. ej. `smtps://info%40clinicamuv.com:<contraseña>@mail.clinicamuv.com:465` |
+| `EMAIL_FROM` | Remitente; tiene que ser el buzón con el que se autentica `SMTP_URL`. Por defecto `Web MUV <info@clinicamuv.com>` |
+| `CAREERS_EMAIL` | Destino de las candidaturas. Por defecto `info@clinicamuv.com` |
+| `MAIL_OUTBOX` | Carpeta donde se guardan los emails como `.eml` cuando no hay `SMTP_URL` (también con `npm run start`) |
+
+Sin `SMTP_URL`, `npm run dev` guarda cada email en `.mail/`; en producción el formulario avisa de que
+no está disponible y remite a `info@clinicamuv.com`. Las variables van en `.env.local` en local y como
+variables de entorno de ejecución en el servidor; nunca en el repositorio.
+
 ## Pendiente / próximas fases
 
 Copy y SEO definitivos, integración de CMS headless (opcional), analítica y consentimiento de
-cookies, y backend real del formulario de contacto (ahora compone un `mailto`).
+cookies.

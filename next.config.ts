@@ -24,6 +24,11 @@ const RETIRED: [string, string][] = [
 
 const nextConfig: NextConfig = {
   transpilePackages: ["three", "@react-three/fiber", "@react-three/drei"],
+  experimental: {
+    // The job application form sends a CV of up to 5 MB to a server action (#66); the
+    // default limit is 1 MB. The margin covers the other fields and encoding.
+    serverActions: { bodySizeLimit: "6mb" },
+  },
   async redirects() {
     return [
       {

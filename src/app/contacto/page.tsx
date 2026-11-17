@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/sections/PageHero";
-import { ContactForm } from "@/components/sections/ContactForm";
+import { JobApplicationForm } from "@/components/sections/JobApplicationForm";
 import { Reveal } from "@/components/motion/Reveal";
 import { MapPin, Whatsapp, Mail, Clock } from "@/components/ui/icons";
 import { BookingButton } from "@/components/BookingButton";
@@ -12,7 +12,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Contacto",
   description:
-    "Contacte con MUV. Pida su cita en El Cañaveral o Tres Cantos, llámenos o escríbanos. Estaremos encantados de ayudarle.",
+    "Trabaje con nosotros: envíe su currículum a MUV y díganos en cuál de nuestras clínicas de fisioterapia, El Cañaveral o Tres Cantos, le gustaría trabajar.",
   path: "/contacto",
 });
 
@@ -21,18 +21,18 @@ export default function ContactoPage() {
     <>
       <PageHero
         eyebrow="Contacto"
-        title="Hablemos"
-        description="¿Tiene dudas o quiere pedir cita? Escríbanos por WhatsApp o reserve online en la sede que prefiera."
+        title="Trabaje con nosotros"
+        description="¿Quiere formar parte del equipo de MUV? Envíenos su currículum y nos pondremos en contacto con usted si encaja con lo que buscamos."
         crumbs={[{ label: "Contacto", href: "/contacto" }]}
       />
 
       <section className="pb-20 md:pb-28">
         <Container size="wide">
           <div className="grid gap-12 lg:grid-cols-[1fr_24rem]">
-            <div>
-              <h2 className="text-2xl text-olive-800">Envíenos un mensaje</h2>
+            <div id="trabaje-con-nosotros" className="scroll-mt-28">
+              <h2 className="text-2xl text-olive-800">Envíenos su currículum</h2>
               <div className="mt-8">
-                <ContactForm />
+                <JobApplicationForm />
               </div>
             </div>
 
