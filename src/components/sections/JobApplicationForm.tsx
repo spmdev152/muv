@@ -176,7 +176,7 @@ export function JobApplicationForm() {
           htmlFor={`${id}-cv`}
           className="mb-2 block px-1 text-sm font-medium text-olive-800"
         >
-          Su CV{" "}
+          Su currículum{" "}
           <span className="font-normal text-ink-soft">
             (PDF o Word, hasta 5 MB)
           </span>

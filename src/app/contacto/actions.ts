@@ -138,7 +138,7 @@ export async function sendApplication(
   if (!position) errors.puesto = "Elija un puesto.";
 
   if (!(file instanceof File) || file.size === 0) {
-    errors.cv = "Adjunte su CV.";
+    errors.cv = "Adjunte su currículum.";
   } else {
     const cv = await readCv(file);
 

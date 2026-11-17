@@ -30,11 +30,11 @@ export type ApplicationState = {
 
 /** Checks extension and size; the server also checks the file signature. */
 export function cvProblem(file: { name: string; size: number }): string | null {
-  if (file.size === 0) return "Adjunte su CV.";
+  if (file.size === 0) return "Adjunte su currículum.";
   if (!/\.(pdf|docx?)$/i.test(file.name)) {
-    return "El CV tiene que ser un PDF o un documento de Word (.doc, .docx).";
+    return "El currículum tiene que ser un PDF o un documento de Word (.doc, .docx).";
   }
-  if (file.size > CV_MAX_BYTES) return "El CV no puede pasar de 5 MB.";
+  if (file.size > CV_MAX_BYTES) return "El currículum no puede pasar de 5 MB.";
 
   return null;
 }

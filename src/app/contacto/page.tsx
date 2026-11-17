@@ -12,7 +12,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Contacto",
   description:
-    "Trabaje con nosotros: envíe su CV a MUV y díganos en cuál de nuestras clínicas de fisioterapia, El Cañaveral o Tres Cantos, le gustaría trabajar.",
+    "Trabaje con nosotros: envíe su currículum a MUV y díganos en cuál de nuestras clínicas de fisioterapia, El Cañaveral o Tres Cantos, le gustaría trabajar.",
   path: "/contacto",
 });
 
@@ -22,7 +22,7 @@ export default function ContactoPage() {
       <PageHero
         eyebrow="Contacto"
         title="Trabaje con nosotros"
-        description="¿Quiere formar parte del equipo de MUV? Envíenos su CV y nos pondremos en contacto con usted si encaja con lo que buscamos."
+        description="¿Quiere formar parte del equipo de MUV? Envíenos su currículum y nos pondremos en contacto con usted si encaja con lo que buscamos."
         crumbs={[{ label: "Contacto", href: "/contacto" }]}
       />
 
