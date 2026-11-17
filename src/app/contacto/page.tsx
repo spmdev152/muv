@@ -12,7 +12,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Contacto",
   description:
-    "Contacte con MUV. Pida su cita en El Cañaveral o Tres Cantos, llámenos o escríbanos. Estaremos encantados de ayudarle.",
+    "Trabaje con nosotros: envíe su CV a MUV y díganos en cuál de nuestras clínicas de fisioterapia, El Cañaveral o Tres Cantos, le gustaría trabajar.",
   path: "/contacto",
 });
 
@@ -21,8 +21,8 @@ export default function ContactoPage() {
     <>
       <PageHero
         eyebrow="Contacto"
-        title="Hablemos"
-        description="¿Tiene dudas o quiere pedir cita? Escríbanos por WhatsApp o reserve online en la sede que prefiera."
+        title="Trabaje con nosotros"
+        description="¿Quiere formar parte del equipo de MUV? Envíenos su CV y nos pondremos en contacto con usted si encaja con lo que buscamos."
         crumbs={[{ label: "Contacto", href: "/contacto" }]}
       />
 
@@ -30,13 +30,7 @@ export default function ContactoPage() {
         <Container size="wide">
           <div className="grid gap-12 lg:grid-cols-[1fr_24rem]">
             <div id="trabaje-con-nosotros" className="scroll-mt-28">
-              <h2 className="text-2xl text-olive-800">Trabaje con nosotros</h2>
-              <p className="mt-3 text-ink-soft">
-                ¿Quiere formar parte del equipo de MUV? Envíenos su CV y nos
-                pondremos en contacto con usted si encaja con lo que buscamos.
-                Para pedir cita o resolver dudas, escríbanos por WhatsApp o
-                reserve en la clínica que prefiera.
-              </p>
+              <h2 className="text-2xl text-olive-800">Envíenos su candidatura</h2>
               <div className="mt-8">
                 <JobApplicationForm />
               </div>
