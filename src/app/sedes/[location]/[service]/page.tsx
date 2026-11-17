@@ -10,7 +10,8 @@ import { Button } from "@/components/ui/Button";
 import { BookingButton } from "@/components/BookingButton";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ArrowRight, MapPin, Whatsapp } from "@/components/ui/icons";
-import { getLocation, whatsappUrl } from "@/lib/locations";
+import { MapEmbed } from "@/components/MapEmbed";
+import { fullAddress, getLocation, whatsappUrl } from "@/lib/locations";
 import { buildMetadata, faqJsonLd, sedeServiceJsonLd } from "@/lib/seo";
 import { cn } from "@/lib/cn";
 import type { ServiceBlock } from "@/content/sede-service-types";
@@ -325,12 +326,10 @@ export default async function SedeServicePage({
                 mismo título accesible. */}
             <Reveal delay={0.1}>
               <div className="overflow-hidden rounded-3xl border border-olive-900/10 shadow-lg shadow-olive-900/10">
-                <iframe
-                  title={SEDE_CONTENT[location.slug]?.directions.mapAlt}
+                <MapEmbed
+                  title={SEDE_CONTENT[location.slug]?.directions.mapAlt ?? location.name}
                   src={location.mapEmbed}
-                  className="h-[26rem] w-full"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
+                  address={fullAddress(location)}
                 />
               </div>
             </Reveal>

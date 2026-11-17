@@ -5,6 +5,7 @@ import { servicesByLocation, type NavLink } from "@/lib/nav";
 import { Logo } from "@/components/layout/Logo";
 import { Container } from "@/components/ui/Container";
 import { MapPin, Whatsapp, Mail, Clock } from "@/components/ui/icons";
+import { LEGAL_PAGES, ownerName } from "@/lib/legal";
 
 export function Footer() {
   return (
@@ -105,16 +106,18 @@ export function Footer() {
               {site.email}
             </a>
             <span className="hidden md:inline">·</span>
-            <Link href="/politica-editorial" className="hover:text-gold-400">
-              Política editorial
-            </Link>
+            {LEGAL_PAGES.map((page) => (
+              <Link key={page.href} href={page.href} className="hover:text-gold-400">
+                {page.label}
+              </Link>
+            ))}
           </div>
         </div>
 
         {/* `/50` y no `/40`: sobre `olive-800` el 40% daba 3,49:1 y WCAG AA
             pide 4,5:1 para texto normal. Al 50% son 4,66:1. */}
         <p className="mt-8 text-xs text-cream/50">
-          © {2026} {site.legalName}. Todos los derechos reservados.
+          © {2026} {ownerName()}. Todos los derechos reservados.
         </p>
       </Container>
     </footer>
