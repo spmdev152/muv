@@ -169,7 +169,7 @@ export async function sendApplication(
     return {
       status: "error",
       message:
-        "Ha enviado varias candidaturas seguidas. Inténtelo de nuevo en unos minutos.",
+        "Ha enviado varios currículums seguidos. Inténtelo de nuevo en unos minutos.",
     };
   }
 
@@ -178,7 +178,7 @@ export async function sendApplication(
       from: mailFrom(),
       to: process.env.CAREERS_EMAIL ?? site.email,
       replyTo: { name, address: email },
-      subject: `Candidatura: ${name} · ${position} · ${clinic}`,
+      subject: `Currículum: ${name} · ${position} · ${clinic}`,
       text: `${lines.join("\n")}\n\n${message || "(sin mensaje)"}\n\n— Enviado desde el formulario de ${site.url}/contacto`,
       attachments,
     });
@@ -193,13 +193,13 @@ export async function sendApplication(
       message:
         error instanceof MailNotConfiguredError
           ? `El formulario no está disponible ahora mismo. Escríbanos a ${site.email}.`
-          : `No hemos podido enviar su candidatura. Inténtelo de nuevo o escríbanos a ${site.email}.`,
+          : `No hemos podido enviar su currículum. Inténtelo de nuevo o escríbanos a ${site.email}.`,
     };
   }
 
   return {
     status: "success",
     message:
-      "Hemos recibido su candidatura. Si encaja con lo que buscamos, nos pondremos en contacto con usted.",
+      "Hemos recibido su currículum. Si encaja con lo que buscamos, nos pondremos en contacto con usted.",
   };
 }

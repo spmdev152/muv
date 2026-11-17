@@ -30,7 +30,7 @@ export default function ContactoPage() {
         <Container size="wide">
           <div className="grid gap-12 lg:grid-cols-[1fr_24rem]">
             <div id="trabaje-con-nosotros" className="scroll-mt-28">
-              <h2 className="text-2xl text-olive-800">Envíenos su candidatura</h2>
+              <h2 className="text-2xl text-olive-800">Envíenos su currículum</h2>
               <div className="mt-8">
                 <JobApplicationForm />
               </div>

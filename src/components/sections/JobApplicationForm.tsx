@@ -234,7 +234,7 @@ export function JobApplicationForm() {
           <span>
             {/* PENDIENTE (#60): enlazar la política de privacidad cuando exista. */}
             He leído y acepto la política de privacidad. MUV usará sus datos y
-            su CV solo para valorar su candidatura.
+            su currículum solo para valorar su perfil.
           </span>
         </label>
         <FieldError id={`${id}-privacidad-error`} message={errors.privacidad} />
@@ -242,7 +242,7 @@ export function JobApplicationForm() {
 
       <div className="flex flex-wrap items-center gap-4">
         <Button type="submit" size="lg" disabled={pending}>
-          {pending ? "Enviando…" : "Enviar candidatura"}
+          {pending ? "Enviando…" : "Enviar currículum"}
         </Button>
         <p
           role="status"
