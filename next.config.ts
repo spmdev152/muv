@@ -23,6 +23,9 @@ const RETIRED: [string, string][] = [
 ];
 
 const nextConfig: NextConfig = {
+  // Self-contained server for the Docker image (#61): `.next/standalone` holds
+  // only the files and dependencies the app needs at runtime.
+  output: "standalone",
   transpilePackages: ["three", "@react-three/fiber", "@react-three/drei"],
   experimental: {
     // The job application form sends a CV of up to 5 MB to a server action (#66); the

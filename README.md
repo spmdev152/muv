@@ -15,9 +15,10 @@ enfocado en una estética elegante y minimalista y en el **SEO local de las dos 
 ## Comandos
 
 ```bash
-npm run dev      # desarrollo
-npm run build    # build de producción (prerenderiza todas las rutas)
-npm run start    # servir el build
+bun install      # dependencias (bun es el gestor del proyecto; no hay package-lock)
+bun run dev      # desarrollo
+bun run build    # build de producción (prerenderiza todas las rutas)
+bun run start    # servir el build
 node scripts/process-images.mjs <dir>   # HEIC/JPG -> WebP en /public/img
 node scripts/seed-content.mjs            # regenerar el MDX de ejemplo
 node scripts/shot.mjs <url> <prefijo>    # capturas por secciones (QA visual)
@@ -50,6 +51,25 @@ y los metadatos se generan a partir de ellos.
 - `sitemap.xml`, `robots.txt` y `opengraph-image` generados automáticamente.
 - La URL base se define en `src/lib/site.ts` (`site.url`) — actualizar al dominio final.
 
+## Despliegue
+
+La web corre en Dokploy (#61) como imagen Docker (`Dockerfile`, etapa `runtime`): Next.js en modo
+`standalone` servido con Node en el puerto 3000. Probar la imagen en local:
+
+```bash
+docker build --target runtime -t muv .
+docker run --rm -p 3000:3000 muv
+```
+
+| Entorno | Rama | Dominio | Indexable |
+|---|---|---|---|
+| pre | `main` (se despliega en cada push) | `muv.lab.push2solutions.es` | No (`X-Robots-Tag: noindex`) |
+| production | `main` (despliegue manual) | `clinicamuv.com` | Sí |
+
+Las variables de entorno (`SMTP_URL`, `EMAIL_FROM`, `CAREERS_EMAIL`) se configuran en Dokploy como
+variables de ejecución, nunca como argumentos de build ni en el repositorio. Para volver atrás, se
+redespliega el despliegue anterior desde el historial de la aplicación en Dokploy.
+
 ## Formulario de empleo
 
 `/contacto#trabaje-con-nosotros` recibe candidaturas: clínica, puesto y CV (PDF o Word, hasta 5 MB).
@@ -61,9 +81,9 @@ adjunto y no se guarda en el servidor.
 | `SMTP_URL` | Servidor SMTP como URL, p. ej. `smtps://info%40clinicamuv.com:<contraseña>@mail.clinicamuv.com:465` |
 | `EMAIL_FROM` | Remitente; tiene que ser el buzón con el que se autentica `SMTP_URL`. Por defecto `Web MUV <info@clinicamuv.com>` |
 | `CAREERS_EMAIL` | Destino de las candidaturas. Por defecto `info@clinicamuv.com` |
-| `MAIL_OUTBOX` | Carpeta donde se guardan los emails como `.eml` cuando no hay `SMTP_URL` (también con `npm run start`) |
+| `MAIL_OUTBOX` | Carpeta donde se guardan los emails como `.eml` cuando no hay `SMTP_URL` (también con `bun run start`) |
 
-Sin `SMTP_URL`, `npm run dev` guarda cada email en `.mail/`; en producción el formulario avisa de que
+Sin `SMTP_URL`, `bun run dev` guarda cada email en `.mail/`; en producción el formulario avisa de que
 no está disponible y remite a `info@clinicamuv.com`. Las variables van en `.env.local` en local y como
 variables de entorno de ejecución en el servidor; nunca en el repositorio.
 
