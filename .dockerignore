@@ -1,0 +1,15 @@
+.git
+.github
+.next
+.vercel
+.worktrees
+.empryo
+.mail
+node_modules
+coverage
+docs
+historical-data
+.env*
+!.env.example
+Dockerfile
+.dockerignore
