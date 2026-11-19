@@ -4,15 +4,16 @@ import { site } from "@/lib/site";
  * Data of the website owner for the legal notice, privacy and cookie policies
  * (#60). Required by LSSI-CE art. 10 and GDPR art. 13.
  *
- * PENDIENTE MUV: every `undefined` value. While one is missing, the legal pages
+ * Owner and tax ID confirmed by MUV on 17/11/2026 (the "B" of the NIF is a
+ * sociedad limitada). PENDIENTE MUV: every `undefined` value. While one is missing, the legal pages
  * show a visible "Pendiente" marker, are served with `noindex` and stay out of
  * the sitemap, so incomplete legal texts never reach Google.
  */
 export const legal = {
   /** Razón social (or the full name of the self-employed owner). */
-  owner: undefined as string | undefined,
+  owner: "Kinetic Care, S.L." as string | undefined,
   /** NIF / CIF. */
-  taxId: undefined as string | undefined,
+  taxId: "B55384945" as string | undefined,
   /** Domicilio social. */
   registeredAddress: undefined as string | undefined,
   /** Registro Mercantil entry, only when the owner is a company. */
