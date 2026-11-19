@@ -18,6 +18,7 @@ import {
   type ApplicationState,
 } from "@/lib/contact";
 import { cn } from "@/lib/cn";
+import Link from "next/link";
 
 const field =
   "w-full rounded-2xl border border-olive-900/15 bg-white px-4 py-3 text-olive-900 outline-none transition-colors placeholder:text-ink-soft/60 focus:border-olive-500 aria-[invalid=true]:border-red-700/60";
@@ -232,8 +233,15 @@ export function JobApplicationForm() {
             className="mt-0.5 h-4 w-4 shrink-0 accent-olive-500"
           />
           <span>
-            {/* PENDIENTE (#60): enlazar la política de privacidad cuando exista. */}
-            He leído y acepto la política de privacidad. MUV usará sus datos y
+            He leído y acepto la{" "}
+            <Link
+              href="/politica-de-privacidad"
+              target="_blank"
+              className="font-medium text-olive-700 underline decoration-gold-400 underline-offset-4"
+            >
+              política de privacidad
+            </Link>
+            . MUV usará sus datos y
             su currículum solo para valorar su perfil.
           </span>
         </label>

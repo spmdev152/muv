@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 import { locations } from "@/lib/locations";
 import { getCollection } from "@/lib/content";
 import { sedeServicePath, sedeServices } from "@/content/sede-services";
+import { LEGAL_PAGES, isLegalComplete } from "@/lib/legal";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -17,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/sobre-nosotros",
     "/sobre-nosotros/metodologia",
     "/politica-editorial",
+    // Hasta que MUV facilite sus datos legales, estas páginas son `noindex` (#60).
+    ...(isLegalComplete() ? LEGAL_PAGES.map((page) => page.href) : []),
   ];
 
   const entries: MetadataRoute.Sitemap = staticRoutes.map((path) => ({

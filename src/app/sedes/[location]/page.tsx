@@ -14,7 +14,8 @@ import { BookingButton } from "@/components/BookingButton";
 import { CTASection } from "@/components/sections/CTASection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ArrowRight, MapPin, Phone, ShieldCheck } from "@/components/ui/icons";
-import { locations, getLocation, phoneHref } from "@/lib/locations";
+import { MapEmbed } from "@/components/MapEmbed";
+import { fullAddress, locations, getLocation, phoneHref } from "@/lib/locations";
 import { buildMetadata, clinicJsonLd, faqJsonLd } from "@/lib/seo";
 import type { SedeContent } from "@/content/sede-types";
 import { elCanaveral } from "@/content/sede-el-canaveral";
@@ -421,12 +422,10 @@ export default async function SedePage({
 
             <Reveal delay={0.1}>
               <div className="overflow-hidden rounded-3xl border border-olive-900/10 shadow-lg shadow-olive-900/10">
-                <iframe
+                <MapEmbed
                   title={content.directions.mapAlt}
                   src={location.mapEmbed}
-                  className="h-[26rem] w-full"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
+                  address={fullAddress(location)}
                 />
               </div>
             </Reveal>

@@ -51,6 +51,12 @@ const nextConfig: NextConfig = {
         destination,
         statusCode: 301 as const,
       })),
+      {
+        // La política de privacidad de la web antigua (WordPress), #60.
+        source: "/politica-privacidad",
+        destination: "/politica-de-privacidad",
+        statusCode: 301 as const,
+      },
     ];
   },
 };
