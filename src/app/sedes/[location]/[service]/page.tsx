@@ -191,7 +191,7 @@ export default async function SedeServicePage({
             </Reveal>
             <Reveal delay={0.08}>
               <div className="flex flex-wrap items-center gap-4">
-                <BookingButton size="lg" bookingUrl={location.bookingUrl} />
+                <BookingButton size="lg" locationSlug={location.slug} />
                 {whatsapp && (
                   <Button href={whatsapp} external variant="outline" size="lg">
                     <Whatsapp className="h-[18px] w-[18px]" />
@@ -303,7 +303,7 @@ export default async function SedeServicePage({
                 <div className="mt-8 flex flex-wrap items-center gap-4">
                   <BookingButton
                     label={content.contact.cta}
-                    bookingUrl={location.bookingUrl}
+                    locationSlug={location.slug}
                     size="lg"
                   />
                   {whatsapp && (

@@ -11,36 +11,21 @@ type Props = {
   size?: "sm" | "md" | "lg";
   className?: string;
   /**
-   * Doctoralia de una sede concreta. En las páginas que pertenecen a una sola
-   * clínica el botón reserva directamente en ella: ni selector ni la otra sede.
+   * Clinic of the page. On pages that belong to a single clinic the modal
+   * opens straight on its calendar: no picker, no other clinic.
    */
-  bookingUrl?: string;
+  locationSlug?: string | undefined;
 };
 
-/** Booking CTA: opens the location-picker modal (each one books on its own Doctoralia). */
+/** Booking CTA: opens the booking modal with the Doctoralia calendar (#73). */
 export function BookingButton({
   label = "Pedir cita",
   variant = "primary",
   size = "md",
   className,
-  bookingUrl,
+  locationSlug,
 }: Props) {
   const [open, setOpen] = useState(false);
-
-  if (bookingUrl) {
-    return (
-      <Button
-        href={bookingUrl}
-        external
-        variant={variant}
-        size={size}
-        className={className}
-      >
-        <Calendar className="h-[18px] w-[18px]" />
-        {label}
-      </Button>
-    );
-  }
 
   return (
     <>
@@ -53,7 +38,11 @@ export function BookingButton({
         <Calendar className="h-[18px] w-[18px]" />
         {label}
       </Button>
-      <BookingModal open={open} onClose={() => setOpen(false)} />
+      <BookingModal
+        open={open}
+        onClose={() => setOpen(false)}
+        locationSlug={locationSlug}
+      />
     </>
   );
 }
