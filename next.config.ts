@@ -46,10 +46,33 @@ const WORDPRESS_POSTS = [
   "tendinitis-de-hombro-tratamiento-fisioterapeutico-para-aliviar-el-dolor-y-recuperar-la-movilidad",
 ];
 
+/**
+ * Other WordPress URLs with no page of their own here (#34): the old contact
+ * form's thank-you page, the location page, the RSS feeds and the category
+ * archives, whose slugs are listed in the old sitemap.
+ */
+const WORDPRESS_PAGES: [string, string][] = [
+  ["/tres-cantos", "/sedes/tres-cantos"],
+  ["/gracias", "/"],
+  ["/feed", "/blog"],
+  ["/comments/feed", "/blog"],
+  ["/category/fisioterapia-avanzada", "/blog"],
+  ["/category/fisioterapia-del-suelo-pelvico", "/blog"],
+  ["/category/fisioterapia-deportiva", "/blog"],
+  ["/category/fisioterapia-pediatrica", "/blog"],
+  ["/category/pilates", "/blog"],
+];
+
+
 const nextConfig: NextConfig = {
   // Self-contained server for the Docker image (#61): `.next/standalone` holds
   // only the files and dependencies the app needs at runtime.
   output: "standalone",
+  // Next's own trailing-slash 308 ran before the redirects below, so an old
+  // WordPress URL (`/<slug>/`) took two hops. Without it, these sources also
+  // match the slashed form and answer with a single 301; `src/proxy.ts`
+  // removes the slash from every other path (#34).
+  skipTrailingSlashRedirect: true,
   transpilePackages: ["three", "@react-three/fiber", "@react-three/drei"],
   experimental: {
     // The job application form sends a CV of up to 5 MB to a server action (#66); the
@@ -87,13 +110,12 @@ const nextConfig: NextConfig = {
         destination: `/blog/${slug}`,
         statusCode: 301 as const,
       })),
-      {
-        source: "/tres-cantos",
-        destination: "/sedes/tres-cantos",
+      ...WORDPRESS_PAGES.map(([source, destination]) => ({
+        source,
+        destination,
         statusCode: 301 as const,
-      },
-      // Los archivos por categoría y la paginación del blog no tienen
-      // equivalente: el blog nuevo es un único listado.
+      })),
+      // Cualquier otra categoría o subruta de categoría que no estuviera en el sitemap.
       {
         source: "/category/:slug*",
         destination: "/blog",
