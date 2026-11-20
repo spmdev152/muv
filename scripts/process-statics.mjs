@@ -62,7 +62,6 @@ const MAP = [
   { src: "MUV Cañaveral/DSC_1451_Original.jpg", out: "canaveral-01.webp" },
   { src: "MUV Cañaveral/DSC_1458_Original.jpg", out: "canaveral-02.webp" },
   { src: "MUV Cañaveral/DSC_1510_Original.jpg", out: "canaveral-03.webp" },
-  { src: "MUV Cañaveral/DSC_1555_Original.jpg", out: "canaveral-04.webp" },
   { src: "MUV Cañaveral/DSC_1560_Original.jpg", out: "canaveral-05.webp" },
   { src: "MUV Cañaveral/DSC_1569_Original.jpg", out: "canaveral-06.webp" },
 

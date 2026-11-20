@@ -207,7 +207,7 @@ export const elCanaveral: SedeContent = {
       "Fachada de la clínica MUV en la calle Victoria Kent, El Cañaveral",
       "Recepción de la clínica de fisioterapia MUV El Cañaveral",
       "Box individual de tratamiento con camilla Gymna Pro",
-      "Sala de Pilates terapéutico con máquinas",
+      "Sala de tratamiento de MUV El Cañaveral con camilla y equipo de diatermia",
       "Zona de entrenamiento funcional de la clínica de El Cañaveral",
       "Equipo de neuromodulación ecoguiada de MUV El Cañaveral",
     ],
