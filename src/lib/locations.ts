@@ -115,7 +115,7 @@ export const locations: Location[] = [
       "/img/canaveral-01.webp",
       "/img/canaveral-02.webp",
       "/img/canaveral-03.webp",
-      "/img/canaveral-04.webp",
+      "/img/service-fisioterapia.webp",
       "/img/canaveral-05.webp",
       "/img/canaveral-06.webp",
     ],
