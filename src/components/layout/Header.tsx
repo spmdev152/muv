@@ -39,7 +39,7 @@ export function Header({ nav }: { nav: NavItem[] }) {
   // En las páginas de servicio de una sede (`/sedes/<sede>/<servicio>`) la cita
   // va directa al Doctoralia de esa clínica, igual que los botones de la página.
   const sedeSlug = pathname.match(/^\/sedes\/([^/]+)\/[^/]+/)?.[1];
-  const bookingUrl = sedeSlug ? getLocation(sedeSlug)?.bookingUrl : undefined;
+  const bookingLocation = sedeSlug && getLocation(sedeSlug) ? sedeSlug : undefined;
 
   return (
     <header
@@ -170,7 +170,7 @@ export function Header({ nav }: { nav: NavItem[] }) {
           <BookingButton
             size="sm"
             variant={onDark ? "cream" : "primary"}
-            bookingUrl={bookingUrl}
+            locationSlug={bookingLocation}
           />
         </div>
 
@@ -285,7 +285,7 @@ export function Header({ nav }: { nav: NavItem[] }) {
               <BookingButton
                 className="w-full"
                 size="lg"
-                bookingUrl={bookingUrl}
+                locationSlug={bookingLocation}
               />
             </div>
           </div>

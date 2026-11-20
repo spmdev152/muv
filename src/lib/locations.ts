@@ -177,6 +177,11 @@ export const locations: Location[] = [
   },
 ];
 
+/** Doctoralia facility slug, the last segment of `bookingUrl` (#73). */
+export function doctoraliaFacility(location: Location): string {
+  return location.bookingUrl.split("/").filter(Boolean).pop() ?? "";
+}
+
 export function getLocation(slug: string): Location | undefined {
   return locations.find((l) => l.slug === slug);
 }
