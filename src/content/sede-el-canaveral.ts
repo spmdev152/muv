@@ -199,17 +199,15 @@ export const elCanaveral: SedeContent = {
     eyebrow: "La clínica",
     title: "Instalaciones y equipamiento de la clínica de El Cañaveral",
     text: "La clínica tiene boxes individuales de tratamiento, una sala de Pilates con máquinas y una zona de entrenamiento funcional, que es lo que permite pasar del tratamiento en camilla al trabajo de carga sin cambiar de sitio ni esperar. Trabajamos con camillas Gymna Pro, electroterapia, polea inercial, equipos de neuromodulación ecoguiada y ecógrafo.",
-    // PENDIENTE MUV: emparejamiento foto ↔ ALT. Estos textos vienen del
-    // documento, pero no describen la foto que les toca en el repositorio.
-    // Se publican a la espera de aclararlo con el cliente; al corregirlo solo
-    // hay que reordenar esta lista.
+    // Un ALT por foto, en el orden de `gallery`, que describe lo que se ve. Los
+    // del documento describían otras fotos.
     galleryAlt: [
       "Fachada de la clínica MUV en la calle Victoria Kent, El Cañaveral",
-      "Recepción de la clínica de fisioterapia MUV El Cañaveral",
-      "Box individual de tratamiento con camilla Gymna Pro",
+      "Escaparate de la clínica MUV El Cañaveral visto desde la acera",
+      "Sala de ejercicio con el rótulo «Pilates» en el cristal, en blanco y negro",
       "Sala de tratamiento de MUV El Cañaveral con camilla y equipo de diatermia",
-      "Zona de entrenamiento funcional de la clínica de El Cañaveral",
-      "Equipo de neuromodulación ecoguiada de MUV El Cañaveral",
+      "Técnica con aguja guiada por ecografía, en detalle",
+      "Ecógrafo y sonda durante una técnica guiada por ecografía",
     ],
   },
 

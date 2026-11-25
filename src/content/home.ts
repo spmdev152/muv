@@ -144,7 +144,7 @@ export const services = {
       title: "Fisioterapia",
       text: "Valoración y tratamiento manual e instrumental para recuperar el movimiento.",
       availability: "Ambas sedes",
-      imageAlt: "Valoración fisioterápica de la movilidad del hombro en camilla",
+      imageAlt: "Camilla en una sala de tratamiento de MUV",
     },
     {
       slug: "fisioterapia-deportiva",
@@ -153,7 +153,7 @@ export const services = {
       text: "Recuperación y readaptación al gesto deportivo, del aficionado al federado.",
       availability: "Ambas sedes",
       imageAlt:
-        "Readaptación al gesto deportivo en la sala de entrenamiento de MUV",
+        "Profesional de MUV con guantes y una sonda de ecografía, junto al ecógrafo",
     },
     {
       slug: "entrenamiento-terapeutico",
@@ -162,7 +162,7 @@ export const services = {
       text: "Ejercicio pautado y supervisado por fisioterapeutas, individual o en grupo.",
       availability: "Ambas sedes",
       imageAlt:
-        "Sesión de ejercicio terapéutico supervisada por un fisioterapeuta",
+        "Sala de ejercicio de MUV con esterillas sobre césped artificial",
     },
     {
       slug: "neuromodulacion",
@@ -170,7 +170,7 @@ export const services = {
       title: "Neuromodulación",
       text: "Tecnología ecoguiada para modular el sistema nervioso en el dolor persistente.",
       availability: "Ambas sedes",
-      imageAlt: "Aplicación de neuromodulación ecoguiada en la clínica",
+      imageAlt: "Técnica con aguja guiada por ecografía en MUV",
     },
     {
       slug: "suelo-pelvico",
@@ -178,7 +178,7 @@ export const services = {
       title: "Suelo pélvico",
       text: "Prevención y tratamiento de las disfunciones del suelo pélvico.",
       availability: "Solo El Cañaveral",
-      imageAlt: "Consulta de fisioterapia de suelo pélvico en MUV El Cañaveral",
+      imageAlt: "Sala de tratamiento de MUV con camilla, taburete y equipos",
     },
     {
       slug: "pilates-terapeutico",
@@ -187,7 +187,7 @@ export const services = {
       text: "Control, estabilidad y conciencia corporal con enfoque clínico.",
       availability: "Solo El Cañaveral",
       imageAlt:
-        "Ejercicio de Pilates terapéutico con máquina en MUV El Cañaveral",
+        "Sala de ejercicio de MUV con esterillas, balones y discos de pesas",
     },
   ],
 } as const;
@@ -214,20 +214,20 @@ export const conditions = {
       href: "/sedes/tres-cantos/fisioterapia-espalda",
       title: "Dolor de espalda",
       text: "Dolor lumbar, cervical o dorsal, reciente o de larga evolución.",
-      imageAlt: "Exploración de la columna lumbar en consulta de fisioterapia",
+      imageAlt: "Terapia manual en la parte alta de la espalda",
     },
     {
       slug: "lesion-rodilla",
       href: "/sedes/tres-cantos/fisioterapia-rodilla",
       title: "Lesión de rodilla",
       text: "Dolor y limitación de rodilla, con readaptación progresiva a su actividad.",
-      imageAlt: "Valoración de la movilidad de la rodilla en camilla",
+      imageAlt: "Ejercicio de equilibrio sobre una pierna con ayuda de un profesional de MUV",
     },
     {
       slug: "lesion-hombro",
       title: "Lesión de hombro",
       text: "Dolor de hombro y pérdida de movilidad o de fuerza.",
-      imageAlt: "Exploración del hombro por un fisioterapeuta de MUV",
+      imageAlt: "Sonda de ecografía y aguja sobre la piel, en detalle",
     },
     {
       slug: "atm",
@@ -251,7 +251,7 @@ export const method = {
   title: "Medimos su progreso: valoración, ecografía y seguimiento hasta el alta",
   intro:
     "En las lesiones que necesitan un seguimiento cercano —roturas musculares o de ligamento, diástasis abdominal, lesiones de rodilla o de hombro— no damos por hecho que va mejor: lo medimos. Trabajamos así en las dos clínicas.",
-  imageAlt: "Equipo de fisioterapeutas de Clínica MUV en consulta",
+  imageAlt: "Sala de tratamiento de Clínica MUV con camilla y equipos de fisioterapia",
   cta: {
     label: "Conocer nuestra metodología",
     href: "/sobre-nosotros/metodologia",
@@ -309,7 +309,7 @@ export const locationsSection = {
       hours:
         "Lunes a viernes, 10:00–22:00 · Sábados, 9:00–14:00",
       ctaLabel: "Ver MUV Tres Cantos",
-      imageAlt: "Interior de la clínica MUV Tres Cantos",
+      imageAlt: "Mujer con una niña en brazos",
     },
   },
 } as const;

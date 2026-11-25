@@ -339,17 +339,11 @@ export default async function SedePage({
             description={content.facilities.text}
           />
           {/*
-            PENDIENTE MUV: el emparejamiento foto ↔ ALT. Los ALT aprobados no
-            describen la foto que les toca —en El Cañaveral fallan cinco de
-            seis— y en el juego no existe ninguna imagen de recepción, de box
-            de tratamiento ni de zona de entrenamiento funcional. Además
-            `tres-cantos-01` muestra fisioterapia pediátrica, que esa sede no
-            presta, y dos fotos de El Cañaveral muestran punción ecoguiada, que
-            no está en el catálogo aprobado.
-
-            Se publica igualmente por decisión de producto, a la espera de
-            aclararlo con el cliente. Al corregirlo solo hay que reordenar
-            `galleryAlt` en los dos ficheros de `src/content/`.
+            PENDIENTE MUV: las fotos. En el juego no existe ninguna imagen de
+            recepción, y las de Tres Cantos muestran ejercicio con bebés, que
+            esa sede no presta. Los ALT (`galleryAlt`, en los dos ficheros de
+            `src/content/`) describen lo que se ve: si cambia una foto, cambia
+            el suyo.
           */}
           <div className="mt-12">
             <Gallery

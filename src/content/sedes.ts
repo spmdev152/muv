@@ -58,7 +58,7 @@ export const clinics = {
         "Boxes individuales, sala de Pilates con máquinas y zona de entrenamiento funcional.",
       ctaLabel: "Ver la clínica de fisioterapia de El Cañaveral",
       imageAlt:
-        "Fachada de la clínica MUV El Cañaveral en la calle Victoria Kent",
+        "Interior de la clínica MUV El Cañaveral, con el nombre de MUV en el cristal",
     },
     "tres-cantos": {
       heading: "MUV Tres Cantos",
@@ -71,7 +71,7 @@ export const clinics = {
         "Sala de tratamiento y zona de ejercicio para trabajo individual y en grupo reducido.",
       ctaLabel: "Ver la clínica de fisioterapia de Tres Cantos",
       imageAlt:
-        "Recepción de la clínica MUV Tres Cantos en la avenida de Madrid",
+        "Mujer con una niña en brazos",
     },
   },
 } as const;
