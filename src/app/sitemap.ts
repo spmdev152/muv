@@ -48,23 +48,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // Contenido dinámico. Las colecciones `services` y `conditions` ya no tienen
-  // página: `/servicios/<servicio>` y `/dolencias-y-lesiones/<dolencia>` se
-  // retiraron con una 301 y no se listan (#31).
-  const collections = [
-    { name: "professionals" as const, prefix: "/profesionales" },
-    { name: "blog" as const, prefix: "/blog" },
-  ];
-
-  for (const { name, prefix } of collections) {
-    for (const doc of getCollection(name)) {
-      entries.push({
-        url: `${base}${prefix}/${doc.slug}`,
-        lastModified: doc.frontmatter.updated ?? doc.frontmatter.date,
-        changeFrequency: "monthly",
-        priority: 0.6,
-      });
-    }
+  // Contenido dinámico: solo el blog. Las colecciones `services` y `conditions`
+  // ya no tienen página: `/servicios/<servicio>` y
+  // `/dolencias-y-lesiones/<dolencia>` se retiraron con una 301 y no se listan
+  // (#31). Tampoco hay fichas individuales de profesionales (#28).
+  for (const doc of getCollection("blog")) {
+    entries.push({
+      url: `${base}/blog/${doc.slug}`,
+      lastModified: doc.frontmatter.updated ?? doc.frontmatter.date,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
   }
 
   return entries;

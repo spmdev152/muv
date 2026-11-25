@@ -40,30 +40,6 @@
     "output": "/img/service-diatermia.webp"
   },
   {
-    "source": "profesionales/CEOMUV.heic",
-    "output": "/img/team-ceo.webp"
-  },
-  {
-    "source": "profesionales/JosedirectorMUV3cantos.JPG",
-    "output": "/img/team-jose.webp"
-  },
-  {
-    "source": "profesionales/LuciaSuelopelvico.HEIC",
-    "output": "/img/team-lucia.webp"
-  },
-  {
-    "source": "profesionales/Gonzalofisioinvasiva.heic",
-    "output": "/img/team-gonzalo.webp"
-  },
-  {
-    "source": "profesionales/VallejoFisiodepor.heic",
-    "output": "/img/team-vallejo.webp"
-  },
-  {
-    "source": "profesionales/Nuria.jpg",
-    "output": "/img/team-nuria.webp"
-  },
-  {
     "source": "Sobre nosotros/IMG_5038.heif",
     "output": "/img/about.webp"
   },

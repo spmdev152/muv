@@ -177,8 +177,8 @@ export const elCanaveral: SedeContent = {
     // PENDIENTE MUV: nombre, foto, número de colegiado y áreas de trabajo de
     // cada fisioterapeuta, y en particular quién lleva suelo pélvico y
     // pediatría, que es la mitad diferencial de esta clínica. Las fichas del
-    // equipo no se maquetan: los seis `.mdx` de `content/professionals/` llevan
-    // `Col. nº 0000` y no coinciden con quienes Doctoralia muestra atendiendo.
+    // equipo no se maquetan hasta tener esos datos: las seis de relleno se
+    // retiraron (#28).
     accreditation: [
       {
         label: "Centro sanitario registrado",

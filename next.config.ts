@@ -126,6 +126,13 @@ const nextConfig: NextConfig = {
         destination: "/blog",
         statusCode: 301 as const,
       },
+      // The individual profiles were placeholders and are gone (#28). The two
+      // confirmed professionals are listed on `/profesionales` itself.
+      {
+        source: "/profesionales/:slug",
+        destination: "/profesionales",
+        statusCode: 301 as const,
+      },
     ];
   },
 };
