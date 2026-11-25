@@ -29,19 +29,22 @@ type Props = {
  */
 export function AvailabilityTable({ caption, columns, rows }: Props) {
   return (
-    <div className="overflow-x-auto rounded-3xl border border-olive-900/10 bg-white">
+    // `relative`: the `sr-only` texts are absolutely positioned, and without a
+    // positioned ancestor here they escaped the scroll box and made the whole
+    // page wider than the screen on mobile.
+    <div className="relative overflow-x-auto rounded-3xl border border-olive-900/10 bg-white">
       <table className="w-full border-collapse text-left">
         <caption className="sr-only">{caption}</caption>
         <thead>
           <tr className="border-b border-olive-900/10 bg-cream-dark/40">
-            <th scope="col" className="px-5 py-4 text-sm font-semibold text-olive-800">
+            <th scope="col" className="px-3 py-4 text-sm sm:px-5 font-semibold text-olive-800">
               Servicio
             </th>
             {columns.map((c) => (
               <th
                 key={c}
                 scope="col"
-                className="whitespace-nowrap px-5 py-4 text-center text-sm font-semibold text-olive-800"
+                className="px-2 py-4 text-center text-sm sm:whitespace-nowrap sm:px-5 font-semibold text-olive-800"
               >
                 {c}
               </th>
@@ -54,7 +57,7 @@ export function AvailabilityTable({ caption, columns, rows }: Props) {
               key={row.label}
               className="border-b border-olive-900/10 last:border-0"
             >
-              <th scope="row" className="px-5 py-3.5 font-normal">
+              <th scope="row" className="px-3 py-3.5 text-sm font-normal sm:px-5 sm:text-base">
                 <Link
                   href={row.href}
                   className="text-olive-800 underline-offset-4 transition-colors hover:text-gold-700 hover:underline"
@@ -62,13 +65,13 @@ export function AvailabilityTable({ caption, columns, rows }: Props) {
                   {row.label}
                 </Link>
                 {row.note && (
-                  <span className="ml-1 text-sm text-ink-soft">
+                  <span className="ml-1 text-xs text-ink-soft sm:text-sm">
                     ({row.note})
                   </span>
                 )}
               </th>
               {row.at.map((available, i) => (
-                <td key={columns[i]} className="px-5 py-3.5 text-center">
+                <td key={columns[i]} className="px-2 py-3.5 text-center sm:px-5">
                   {available ? (
                     <>
                       <Check
