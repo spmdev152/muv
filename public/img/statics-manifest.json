@@ -40,6 +40,14 @@
     "output": "/img/service-diatermia.webp"
   },
   {
+    "source": "profesionales/CEOMUV.heic",
+    "output": "/img/team-ceo.webp"
+  },
+  {
+    "source": "profesionales/JosedirectorMUV3cantos.JPG",
+    "output": "/img/team-jose.webp"
+  },
+  {
     "source": "Sobre nosotros/IMG_5038.heif",
     "output": "/img/about.webp"
   },
