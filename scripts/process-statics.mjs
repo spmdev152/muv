@@ -45,14 +45,6 @@ const MAP = [
   { src: "Servicios/Neuromodulacion.jpeg", out: "service-neuromodulacion.webp" },
   { src: "Servicios/Diatermia.heic", out: "service-diatermia.webp" },
 
-  // Professionals (real team)
-  { src: "profesionales/CEOMUV.heic", out: "team-ceo.webp" },
-  { src: "profesionales/JosedirectorMUV3cantos.JPG", out: "team-jose.webp" },
-  { src: "profesionales/LuciaSuelopelvico.HEIC", out: "team-lucia.webp" },
-  { src: "profesionales/Gonzalofisioinvasiva.heic", out: "team-gonzalo.webp" },
-  { src: "profesionales/VallejoFisiodepor.heic", out: "team-vallejo.webp" },
-  { src: "profesionales/Nuria.jpg", out: "team-nuria.webp" },
-
   // About (Sobre nosotros)
   { src: "Sobre nosotros/IMG_5038.heif", out: "about.webp" },
   { src: "Sobre nosotros/IMG_0127.heif", out: "hero-home.webp" },

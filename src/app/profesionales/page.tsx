@@ -1,95 +1,68 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/sections/PageHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { CTASection } from "@/components/sections/CTASection";
-import { ArrowRight } from "@/components/ui/icons";
-import { Tabs } from "@/components/ui/Tabs";
-import { getCollection, type Doc } from "@/lib/content";
-import { locations } from "@/lib/locations";
+import { cards, hero, meta } from "@/content/profesionales";
+import { getLocation } from "@/lib/locations";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Nuestro equipo de fisioterapeutas",
-  description:
-    "Conozca al equipo de fisioterapeutas de MUV: profesionales especializados en fisioterapia, suelo pélvico, deportiva y pediátrica en Madrid.",
+  title: meta.title,
+  description: meta.description,
   path: "/profesionales",
 });
 
 /**
- * Una pestaña por clínica. La tarjeta ya no dice en qué sede atiende cada
- * profesional: lo dice la pestaña en la que está.
+ * A single page with the two professionals MUV has confirmed (#28). There are
+ * no individual profile pages: `/profesionales/<slug>` redirects here.
  */
 export default function ProfesionalesPage() {
-  const team = getCollection("professionals");
-  const tabs = locations.map((location) => ({
-    id: location.slug,
-    label: location.shortName,
-    content: (
-      <TeamGrid
-        team={team.filter((doc) =>
-          doc.frontmatter.locations?.includes(location.slug),
-        )}
-      />
-    ),
-  }));
-
   return (
     <>
       <PageHero
         eyebrow="Profesionales"
-        title="Las personas que cuidan de usted"
-        description="Un equipo especializado, en formación continua y comprometido con su recuperación."
+        title={hero.title}
+        description={hero.lede}
         crumbs={[{ label: "Profesionales", href: "/profesionales" }]}
       />
 
       <section className="pb-20 md:pb-28">
         <Container size="wide">
-          <Tabs tabs={tabs} label="Equipo por clínica" />
+          <ul className="grid gap-6 md:grid-cols-2">
+            {cards.map((card, i) => {
+              const location = getLocation(card.location);
+
+              return (
+                <Reveal key={card.name} delay={i * 0.08} as="li">
+                  <div className="h-full rounded-3xl border border-olive-900/10 bg-white p-8">
+                    {location && (
+                      <p className="eyebrow mb-3">
+                        <Link
+                          href={`/sedes/${location.slug}`}
+                          className="hover:underline"
+                        >
+                          {location.name}
+                        </Link>
+                      </p>
+                    )}
+                    <h2 className="font-display text-2xl text-olive-700">
+                      {card.name}
+                    </h2>
+                    <p className="mt-2 text-ink-soft">{card.role}</p>
+                    <p className="mt-1 text-sm text-gold-700">
+                      {card.collegiate}
+                    </p>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </ul>
         </Container>
       </section>
 
       <CTASection />
     </>
-  );
-}
-
-function TeamGrid({ team }: { team: Doc[] }) {
-  return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {team.map((doc, i) => (
-        <Reveal key={doc.slug} delay={(i % 3) * 0.08}>
-          <Link
-            href={`/profesionales/${doc.slug}`}
-            className="group block overflow-hidden rounded-3xl border border-olive-900/10 bg-white transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-olive-900/10"
-          >
-            <div className="relative aspect-[4/5] overflow-hidden">
-              {doc.frontmatter.image && (
-                <Image
-                  src={doc.frontmatter.image}
-                  alt={doc.frontmatter.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25rem"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-olive-900/60 to-transparent" />
-            </div>
-            <div className="p-6">
-              <h2 className="text-xl text-olive-800">{doc.frontmatter.title}</h2>
-              <p className="mt-1 text-sm text-gold-700">
-                {doc.frontmatter.role}
-              </p>
-              <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-olive-600">
-                Ver perfil
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </span>
-            </div>
-          </Link>
-        </Reveal>
-      ))}
-    </div>
   );
 }

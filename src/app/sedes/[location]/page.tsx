@@ -292,8 +292,7 @@ export default async function SedePage({
           />
           {/*
             Solo las fichas con nombre y número de colegiado facilitados por
-            MUV. No se maquetan con los `.mdx` actuales, que llevan
-            `Col. nº 0000` (#28). La foto y las áreas siguen pendientes.
+            MUV (#28). La foto y las áreas siguen pendientes.
           */}
           {content.team.members && content.team.members.length > 0 && (
             <ul className="mt-10 grid gap-6 md:grid-cols-2">

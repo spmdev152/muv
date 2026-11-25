@@ -224,31 +224,6 @@ export function sedeServiceJsonLd({
   };
 }
 
-export function personJsonLd({
-  name,
-  role,
-  description,
-  image,
-  path,
-}: {
-  name: string;
-  role?: string;
-  description: string;
-  image?: string;
-  path: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name,
-    jobTitle: role,
-    description,
-    image: image ? `${site.url}${image}` : undefined,
-    url: `${site.url}${path}`,
-    worksFor: { "@type": "MedicalOrganization", name: site.legalName },
-  };
-}
-
 export function articleJsonLd({
   title,
   description,

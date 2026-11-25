@@ -6,11 +6,7 @@ const CONTENT_DIR = path.join(process.cwd(), "content");
 
 // Collection keys map to folders under /content (kept separate from the
 // Spanish URL route segments).
-export type Collection =
-  | "services"
-  | "conditions"
-  | "professionals"
-  | "blog";
+export type Collection = "services" | "conditions" | "blog";
 
 export type Frontmatter = {
   title: string;
@@ -32,10 +28,6 @@ export type Frontmatter = {
   category?: string;
   /** Original URL on the WordPress site the post was imported from (#63). */
   source?: string;
-  // Professionals
-  role?: string;
-  locations?: string[];
-  credentials?: string;
   // Embedded FAQs
   faqs?: { question: string; answer: string }[];
 };

@@ -1,6 +1,7 @@
 /**
  * Generates the initial MDX content (placeholder copy consistent with the
- * physiotherapy sector) for services, conditions, professionals and blog.
+ * physiotherapy sector) for services, conditions and blog. It no longer seeds
+ * professionals: placeholder profiles are not published (#28).
  * The SEO team will replace this copy later on.
  *
  * User-facing strings (titles, body copy) stay in Spanish on purpose; only the
@@ -418,143 +419,6 @@ const conditions = [
   },
 ];
 
-// Real team members. First names/roles come from the source photos; surnames
-// are placeholders pending confirmation from the client.
-const professionals = [
-  {
-    slug: "alvaro-sanz",
-    title: "Álvaro Sanz",
-    order: 1,
-    role: "Dueño de la clínica · Fisioterapeuta",
-    image: "/img/team-ceo.webp",
-    locations: ["el-canaveral"],
-    credentials: "Col. nº 0000 · Dueño de MUV El Cañaveral",
-    description:
-      "Fisioterapeuta y dueño de la clínica MUV El Cañaveral.",
-    excerpt: "Dueño de MUV El Cañaveral y fisioterapeuta.",
-    intro:
-      "Álvaro es el dueño de MUV El Cañaveral. Lidera la clínica con una idea clara: una fisioterapia eficaz, eficiente y, sobre todo, empática, con la persona en el centro.",
-    points: [
-      "Dirección de la clínica de El Cañaveral",
-      "Fisioterapia avanzada y ejercicio terapéutico",
-      "Formación continua del equipo",
-    ],
-    closing:
-      "Su visión marca la forma de cuidar de MUV El Cañaveral: rigor, cercanía y trabajo en equipo.",
-    faqs: [],
-  },
-  {
-    slug: "jose-gonzalez",
-    title: "José González",
-    order: 2,
-    role: "Director de la clínica · Fisioterapeuta",
-    image: "/img/team-jose.webp",
-    locations: ["tres-cantos"],
-    credentials: "Col. nº 0000 · Director de la sede de Tres Cantos",
-    description:
-      "Fisioterapeuta y director de la sede de MUV en Tres Cantos.",
-    excerpt: "Director de la sede de Tres Cantos.",
-    intro:
-      "José dirige la sede de Tres Cantos y es el fisioterapeuta que atiende en ella, con un trato cercano y un enfoque basado en la evidencia.",
-    points: [
-      "Dirección de la sede de Tres Cantos",
-      "Fisioterapia y terapia manual",
-      "Seguimiento de cada caso de principio a fin",
-    ],
-    closing:
-      "Vela por que cada paciente de Tres Cantos reciba una atención personalizada de principio a fin.",
-    faqs: [],
-  },
-  {
-    slug: "lucia-fernandez",
-    title: "Lucía Fernández",
-    order: 3,
-    role: "Fisioterapeuta · Suelo pélvico",
-    image: "/img/team-lucia.webp",
-    locations: ["el-canaveral"],
-    credentials: "Col. nº 0000 · Máster en Fisioterapia Obstétrica y Uroginecológica",
-    description:
-      "Fisioterapeuta especialista en suelo pélvico y salud de la mujer en MUV.",
-    excerpt: "Especialista en suelo pélvico y salud de la mujer.",
-    intro:
-      "Lucía es fisioterapeuta especializada en suelo pélvico, embarazo y postparto. Su trato cercano y su enfoque respetuoso son su seña de identidad.",
-    points: [
-      "Suelo pélvico y uroginecología",
-      "Preparación al parto y postparto",
-      "Tratamiento del dolor pélvico",
-    ],
-    closing:
-      "Acompaña a cada paciente con cercanía y rigor en todas las etapas de su salud.",
-    faqs: [],
-  },
-  {
-    slug: "gonzalo-herrera",
-    title: "Gonzalo Herrera",
-    order: 4,
-    role: "Fisioterapeuta · Técnicas invasivas y ecografía",
-    image: "/img/team-gonzalo.webp",
-    locations: ["el-canaveral"],
-    credentials: "Col. nº 0000 · Experto en ecografía y punción seca",
-    description:
-      "Fisioterapeuta especialista en fisioterapia invasiva ecoguiada y punción seca.",
-    excerpt: "Especialista en fisioterapia invasiva y ecografía.",
-    intro:
-      "Gonzalo está especializado en fisioterapia invasiva ecoguiada. Utiliza la ecografía para tratar con precisión el origen del dolor neuromuscular.",
-    points: [
-      "Técnicas invasivas ecoguiadas",
-      "Punción seca y neuromodulación",
-      "Diagnóstico ecográfico",
-    ],
-    closing:
-      "Combina precisión técnica y ejercicio terapéutico para resultados duraderos.",
-    faqs: [],
-  },
-  {
-    slug: "nuria-romero",
-    title: "Nuria Romero",
-    order: 5,
-    role: "Fisioterapeuta",
-    image: "/img/team-nuria.webp",
-    locations: ["el-canaveral"],
-    credentials: "Col. nº 0000 · Fisioterapia y ejercicio terapéutico",
-    description:
-      "Fisioterapeuta especialista en terapia manual y ejercicio terapéutico en MUV El Cañaveral.",
-    excerpt: "Fisioterapia y ejercicio terapéutico.",
-    intro:
-      "Nuria combina la terapia manual con el ejercicio terapéutico para acompañar a cada paciente hacia una recuperación completa y duradera.",
-    points: [
-      "Terapia manual",
-      "Ejercicio terapéutico pautado",
-      "Prevención de recaídas",
-    ],
-    closing:
-      "Su cercanía y su rigor hacen que cada paciente se sienta acompañado en todo el proceso.",
-    faqs: [],
-  },
-  {
-    slug: "david-vallejo",
-    title: "David Vallejo",
-    order: 6,
-    role: "Fisioterapeuta · Deportiva",
-    image: "/img/team-vallejo.webp",
-    locations: ["el-canaveral"],
-    credentials: "Col. nº 0000 · Máster en Fisioterapia Deportiva",
-    description:
-      "Fisioterapeuta especialista en fisioterapia deportiva y readaptación de lesiones.",
-    excerpt: "Especialista en fisioterapia deportiva y readaptación.",
-    intro:
-      "David acompaña a deportistas en la recuperación de sus lesiones y en el retorno seguro a la competición, combinando técnica manual y trabajo de fuerza.",
-    points: [
-      "Lesiones deportivas y readaptación",
-      "Ecografía y técnicas invasivas",
-      "Trabajo de fuerza y prevención",
-    ],
-    closing:
-      "Su objetivo es que cada deportista vuelva más fuerte y con menos riesgo de recaída.",
-    faqs: [],
-  },
-];
-
 const blog = [
   {
     slug: "5-senales-acudir-fisioterapeuta",
@@ -637,10 +501,6 @@ function frontmatter(item, collection) {
   if (item.parent) fm.push(`parent: "${item.parent}"`);
   if (item.date) fm.push(`date: "${item.date}"`);
   if (item.author) fm.push(`author: "${item.author}"`);
-  if (item.role) fm.push(`role: "${item.role}"`);
-  if (item.credentials) fm.push(`credentials: "${item.credentials}"`);
-  if (item.locations)
-    fm.push(`locations: [${item.locations.map((s) => `"${s}"`).join(", ")}]`);
   if (item.faqs && item.faqs.length) {
     fm.push("faqs:");
     fm.push(faqBlock(item.faqs));
@@ -665,6 +525,5 @@ async function writeDocs(collection, items) {
 
 await writeDocs("services", [...services, ...trainingChildren]);
 await writeDocs("conditions", conditions);
-await writeDocs("professionals", professionals);
 await writeDocs("blog", blog);
 console.log("\nMDX content generated.");
