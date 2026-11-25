@@ -45,6 +45,10 @@ const MAP = [
   { src: "Servicios/Neuromodulacion.jpeg", out: "service-neuromodulacion.webp" },
   { src: "Servicios/Diatermia.heic", out: "service-diatermia.webp" },
 
+  // Professionals: only the two confirmed ones (#28)
+  { src: "profesionales/CEOMUV.heic", out: "team-ceo.webp" },
+  { src: "profesionales/JosedirectorMUV3cantos.JPG", out: "team-jose.webp" },
+
   // About (Sobre nosotros)
   { src: "Sobre nosotros/IMG_5038.heif", out: "about.webp" },
   { src: "Sobre nosotros/IMG_0127.heif", out: "hero-home.webp" },
