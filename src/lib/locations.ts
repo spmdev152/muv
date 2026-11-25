@@ -70,8 +70,9 @@ export const locations: Location[] = [
     name: "MUV El Cañaveral",
     shortName: "El Cañaveral",
     area: "Vicálvaro",
-    // Con el barrio, como la ficha de Google (#58).
-    street: "C. Victoria Kent, Local 8, Vicálvaro",
+    // Definitiva, confirmada por MUV el 20/11/2026 (#58). Google y Doctoralia
+    // los actualiza MUV.
+    street: "Calle de Victoria Kent, 8",
     postalCode: "28052",
     city: "Madrid",
     region: "Comunidad de Madrid",
@@ -125,9 +126,9 @@ export const locations: Location[] = [
     name: "MUV Tres Cantos",
     shortName: "Tres Cantos",
     area: "Tres Cantos",
-    // Tal cual la escribe el perfil de Google Business (comprobado el
-    // 14/10/2026): «Loc 5», no «Local 5».
-    street: "Av. de Madrid, 19, Loc 5",
+    // Definitiva, confirmada por MUV el 20/11/2026 (#58). Google y Doctoralia
+    // los actualiza MUV.
+    street: "Avenida de Madrid, 19, Local 5",
     postalCode: "28760",
     city: "Tres Cantos",
     region: "Comunidad de Madrid",
@@ -209,8 +210,8 @@ export function hoursLine(location: Location): string {
 }
 
 /**
- * La dirección completa en una línea, tal cual la publica la ficha de Google
- * (#58). Es la única forma de escribirla: ninguna página la copia a mano.
+ * La dirección completa en una línea, tal cual la confirmó MUV (#58). Es la
+ * única forma de escribirla: ninguna página la copia a mano.
  */
 export function fullAddress(location: Location): string {
   const region = location.city === "Madrid" ? "" : ", Madrid";

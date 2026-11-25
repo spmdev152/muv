@@ -47,6 +47,13 @@
 
 @layer base {
   html {
+    /*
+      The site has a single light theme. `only` opts out of the automatic dark
+      mode some browsers force on mobile (Chrome for Android): it darkens the
+      cream background but not the dark strokes over it, so the logo and the
+      menu button disappeared. Plain `light` does not opt out.
+    */
+    color-scheme: only light;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
   }

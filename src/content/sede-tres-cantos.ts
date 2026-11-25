@@ -178,17 +178,17 @@ export const tresCantos: SedeContent = {
     // equipamiento, pero hay que decidir dos cosas distintas: si se nombra
     // como equipamiento y si se ofrece la ecografía como servicio, que NO está
     // en el catálogo aprobado. Hasta entonces no se nombra.
-    // PENDIENTE MUV: emparejamiento foto ↔ ALT. Estos textos vienen del
-    // documento, pero no describen la foto que les toca en el repositorio.
-    // Se publican a la espera de aclararlo con el cliente; al corregirlo solo
-    // hay que reordenar esta lista.
+    // Un ALT por foto, en el orden de `gallery`, que describe lo que se ve. Los
+    // del documento describían otras fotos.
+    // PENDIENTE MUV: fotos de esta clínica. Estas son de ejercicio con bebés,
+    // que aquí no se presta, y hace falta el permiso para publicar a menores.
     galleryAlt: [
-      "Fachada de la clínica MUV en la avenida de Madrid, 19, Tres Cantos",
-      "Recepción de la clínica de fisioterapia MUV Tres Cantos",
-      "Camilla Gymna Pro en la sala de tratamiento de MUV Tres Cantos",
-      "Zona de entrenamiento terapéutico con material de ejercicio",
-      "Sesión de ejercicio terapéutico supervisada por un fisioterapeuta",
-      "Equipo de neuromodulación ecoguiada de la clínica de Tres Cantos",
+      "Mujer de pie con un bebé en brazos",
+      "Mujer que sujeta a una niña sonriente durante un ejercicio",
+      "Bebé boca abajo en el suelo y mujer con los brazos en alto al fondo",
+      "Mujer sentada en el suelo con los brazos abiertos junto a una niña",
+      "Mujer y niña estirándose de lado con un brazo en alto",
+      "Mujer tumbada en una esterilla junto a un bebé",
     ],
   },
 

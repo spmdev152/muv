@@ -83,6 +83,18 @@ const moreServices: NavGroup = {
 };
 
 /**
+ * Routes whose header (PageHero) has a dark background image: each clinic page
+ * and its service pages. The Header shows light text over them while in its top
+ * transparent state. They are listed one by one because a pattern on `/sedes/…`
+ * also matched the 404 page, where cream text over cream was invisible.
+ * Keep it aligned with the pages that render <PageHero image=...>.
+ */
+export const darkHeroPaths: string[] = locations.flatMap((location) => [
+  `/sedes/${location.slug}`,
+  ...(sedeServices[location.slug] ?? []).map(sedeServicePath),
+]);
+
+/**
  * Primary header navigation.
  *
  * Sedes va la primera: el sitio posiciona cada clínica por separado y el menú

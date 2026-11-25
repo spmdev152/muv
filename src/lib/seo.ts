@@ -47,7 +47,19 @@ export function buildMetadata({
       siteName: site.name,
       locale: site.locale,
       type,
-      images: image ? [{ url: image }] : undefined,
+      // Without its own image, the brand card from `opengraph-image.tsx`. Setting
+      // `openGraph` here drops the one Next adds by file convention, so it has
+      // to be named.
+      images: [
+        image
+          ? { url: image }
+          : {
+              url: site.ogImage,
+              width: 1200,
+              height: 630,
+              alt: `${site.name} · ${site.tagline}`,
+            },
+      ],
     },
     twitter: {
       card: "summary_large_image",

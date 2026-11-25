@@ -20,18 +20,6 @@ export const site = {
 } as const;
 
 /**
- * Reports whether a route renders a header (PageHero) with a dark background
- * image. The Header uses this to show light text while in its top transparent
- * state (on scroll it switches to a cream background with dark text).
- * Keep it aligned with the pages that render <PageHero image=...>.
- */
-export function hasDarkHero(pathname: string): boolean {
-  // Location pages and their service pages.
-  if (/^\/sedes\/[^/]+/.test(pathname)) return true; // /sedes/<location> and /sedes/<location>/<service>
-  return false;
-}
-
-/**
  * Columnas fijas del pie. Los servicios van aparte, una columna por sede, y
  * salen de `servicesByLocation` (`nav.ts`), la misma fuente que el header.
  */
