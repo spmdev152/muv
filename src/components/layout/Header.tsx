@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
-import { hasDarkHero } from "@/lib/site";
 import { getLocation } from "@/lib/locations";
 import type { NavItem } from "@/lib/nav";
 import { BookingButton } from "@/components/BookingButton";
@@ -12,7 +11,13 @@ import { Button } from "@/components/ui/Button";
 import { ArrowRight, ChevronDown } from "@/components/ui/icons";
 import { Logo } from "@/components/layout/Logo";
 
-export function Header({ nav }: { nav: NavItem[] }) {
+type Props = {
+  nav: NavItem[];
+  /** Routes with a dark image hero (`darkHeroPaths` in `nav.ts`). */
+  darkHeroPaths: string[];
+};
+
+export function Header({ nav, darkHeroPaths }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -35,7 +40,7 @@ export function Header({ nav }: { nav: NavItem[] }) {
   // Over a dark image hero and still in the top transparent state, we use light
   // text so it stays legible. On scroll (cream background) or with the mobile
   // menu open, we return to the usual dark text.
-  const onDark = hasDarkHero(pathname) && !scrolled && !open;
+  const onDark = darkHeroPaths.includes(pathname) && !scrolled && !open;
   // En las páginas de servicio de una sede (`/sedes/<sede>/<servicio>`) la cita
   // va directa al Doctoralia de esa clínica, igual que los botones de la página.
   const sedeSlug = pathname.match(/^\/sedes\/([^/]+)\/[^/]+/)?.[1];
